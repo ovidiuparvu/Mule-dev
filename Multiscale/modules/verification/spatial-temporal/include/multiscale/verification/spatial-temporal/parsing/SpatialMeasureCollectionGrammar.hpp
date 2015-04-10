@@ -56,8 +56,9 @@ namespace multiscale {
                 ComparatorGrammar<Iterator>
                     comparatorRule;                                 /*!< The grammar for parsing comparators */
 
-                SemanticTypeGrammar<Iterator>
-                    semanticTypeRule;                               /*!< The grammar for parsing semantic types */
+                ScaleAndSubsystemGrammar<Iterator>
+                    scaleAndSubsystemRule;                          /*!< The grammar for parsing scales and
+                                                                         subsystems */
 
                 // Rules
 
@@ -98,9 +99,9 @@ namespace multiscale {
                 qi::rule<Iterator, UnarySpatialConstraintAttribute(), qi::space_type>
                     unarySpatialConstraintRule;                     /*!< The rule for parsing a unary spatial
                                                                          constraint */
-                qi::rule<Iterator, UnaryTypeConstraintAttribute(), qi::space_type>
-                    unaryTypeConstraintRule;                        /*!< The rule for parsing a unary type
-                                                                         constraint */
+                qi::rule<Iterator, UnaryScaleAndSubsystemConstraintAttribute(), qi::space_type>
+                    unaryScaleAndSubsystemConstraintRule;           /*!< The rule for parsing a unary scale and
+                                                                         subsystem constraint */
 
                 qi::rule<Iterator, FilterNumericMeasureAttribute(), qi::space_type>
                     filterNumericMeasureRule;                       /*!< The rule for parsing a filter numeric

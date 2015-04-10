@@ -2,6 +2,7 @@
 #define NUMERICSTATEVARIABLEID_HPP
 
 #include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
+#include "multiscale/verification/spatial-temporal/model/StateVariable.hpp"
 
 #include <string>
 
@@ -11,17 +12,16 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing the identity (name, type) of a numeric state variable
-        class NumericStateVariableId {
+        class NumericStateVariableId : public StateVariable {
 
             private:
 
-                std::string name;           /*!< The name of the numeric state variable */
-                std::string semanticType;   /*!< The semantic type of the numeric state variable */
+                std::string name;               /*!< The name of the numeric state variable */
                 
             public:
 
                 NumericStateVariableId(const std::string &name,
-                                       const std::string &semanticType = ScaleAndSubsystem::DEFAULT_VALUE);
+                                       const std::string &scaleAndSubsystem = ScaleAndSubsystem::DEFAULT_VALUE);
 
                 ~NumericStateVariableId();
 
@@ -33,15 +33,6 @@ namespace multiscale {
                  * \param name  The name of the numeric state variable
                  */
                 void setName(const std::string& name);
-
-                //! Get the semantic type of the numeric state variable
-                std::string getSemanticType() const;
-
-                //! Set the semantic type of the numeric state variable
-                /*!
-                 * \param semanticType  The semantic type of the numeric state variable
-                 */
-                void setSemanticType(const std::string &semanticType);
 
                 //! Overload the < operator
                 /*!

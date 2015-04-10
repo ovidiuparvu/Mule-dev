@@ -54,7 +54,7 @@ set(MULE_MSTML_SCHEMA_FOLDER_PATH "config/verification/spatial-temporal/schema")
 set(MULE_MSTML_SCHEMA_PATH "${MULE_MSTML_SCHEMA_FOLDER_PATH}/MSTML_L1V1.xsd")
 
 set(TYPE_SEMANTICS_TABLE_SCHEMA_FOLDER_PATH "${MULE_MSTML_SCHEMA_FOLDER_PATH}")
-set(TYPE_SEMANTICS_TABLE_SCHEMA_PATH "${TYPE_SEMANTICS_TABLE_SCHEMA_FOLDER_PATH}/type_semantics_table.xsd")
+set(TYPE_SEMANTICS_TABLE_SCHEMA_PATH "${TYPE_SEMANTICS_TABLE_SCHEMA_FOLDER_PATH}/multiscale_architecture_graph.xsd")
     
     
 #------------------------------------------------------------

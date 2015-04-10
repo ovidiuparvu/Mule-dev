@@ -6,7 +6,7 @@
 			<name>A</name>
 			<value>1</value>
 		</numericStateVariable>
-		<numericStateVariable semanticType="Cell.EK">
+		<numericStateVariable scaleAndSubsystem="Cell.EK">
 			<name>B</name>
 			<value>3</value>
 		</numericStateVariable>
@@ -16,7 +16,7 @@
 			<name>A</name>
 			<value>0</value>
 		</numericStateVariable>
-		<numericStateVariable semanticType="Cell.EK">
+		<numericStateVariable scaleAndSubsystem="Cell.EK">
 			<name>B</name>
 			<value>2</value>
 		</numericStateVariable>

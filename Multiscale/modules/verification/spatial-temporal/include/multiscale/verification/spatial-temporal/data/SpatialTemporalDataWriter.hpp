@@ -143,14 +143,14 @@ namespace multiscale {
                 addSpatialTypeAttributeToTree(const std::string &spatialType,
                                               pt::ptree &propertyTree);
 
-                //! Add the provided semantic type string as an attribute to the property tree
+                //! Add the provided scale and subsystem as an attribute to the property tree
                 /*!
-                 * \param semanticType  The semantic type value provided as a string
-                 * \param propertyTree  The property tree to which the semantic type attribute is added
+                 * \param scaleAndSubsystem The scale and subsystem provided as a string
+                 * \param propertyTree      The property tree to which the scale and subsystem attribute is added
                  */
                 static void
-                addSemanticTypeAttributeToTree(const std::string &semanticType,
-                                               pt::ptree &propertyTree);
+                addScaleAndSubsystemAttributeToTree(const std::string &scaleAndSubsystem,
+                                                    pt::ptree &propertyTree);
 
                 //! Add the provided attribute to the property tree
                 /*!
@@ -183,7 +183,7 @@ namespace multiscale {
 
                 static const std::string LABEL_TIMEPOINT_VALUE_ATTRIBUTE;
                 static const std::string LABEL_SPATIAL_TYPE_ATTRIBUTE;
-                static const std::string LABEL_SEMANTIC_TYPE_ATTRIBUTE;
+                static const std::string LABEL_SCALE_AND_SUBSYSTEM_ATTRIBUTE;
 
                 static const std::string LABEL_NUMERIC_STATE_VARIABLE_NAME;
                 static const std::string LABEL_NUMERIC_STATE_VARIABLE_VALUE;

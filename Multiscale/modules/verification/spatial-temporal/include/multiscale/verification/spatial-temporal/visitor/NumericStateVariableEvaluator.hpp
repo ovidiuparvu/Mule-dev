@@ -24,19 +24,19 @@ namespace multiscale {
                 static double evaluate(const NumericStateVariableAttribute &numericStateVariable,
                                        const TimePoint &timePoint,
                                        const TypeSemanticsTable &typeSemanticsTable) {
-                    // Obtain the semantic type
-                    std::string semanticType = numericStateVariable.semanticType.get_value_or(
-                                                   ScaleAndSubsystemAttribute()
-                                               ).semanticType;
+                    // Obtain the scale and subsystem
+                    std::string scaleAndSubsystem = numericStateVariable.scaleAndSubsystem.get_value_or(
+                                                        ScaleAndSubsystemAttribute()
+                                                    ).scaleAndSubsystem;
 
                     // Validate the scale and subsystem
-                    SemanticTypeEvaluator::validate(semanticType, typeSemanticsTable);
+                    ScaleAndSubsystemEvaluator::validate(scaleAndSubsystem, typeSemanticsTable);
 
                     // Return the value of the numeric state variable
                     return (
                         evaluate(
                             numericStateVariable.stateVariable.name,
-                            semanticType,
+                            scaleAndSubsystem,
                             timePoint
                         )
                     );
@@ -46,15 +46,15 @@ namespace multiscale {
 
                 //! Evaluate the provided numeric state variable
                 /*!
-                 * \param name          The name of the numeric state variable
-                 * \param semanticType  The semantic type of the numeric state variable
-                 * \param timePoint     The given timepoint
+                 * \param name              The name of the numeric state variable
+                 * \param scaleAndSubsystem The scale and subsystem associated with the numeric state variable
+                 * \param timePoint         The given timepoint
                  */
-                static double evaluate(const std::string &name, const std::string &semanticType,
+                static double evaluate(const std::string &name, const std::string &scaleAndSubsystem,
                                        const TimePoint &timePoint) {
-                    // Construct the numeric state variable identity considering its name and semantic type
+                    // Construct the numeric state variable identity considering its name, and scale and subsystem
                     NumericStateVariableId numericStateVariableId(
-                        name, semanticType
+                        name, scaleAndSubsystem
                     );
 
                     // Return the value of the numeric state variable

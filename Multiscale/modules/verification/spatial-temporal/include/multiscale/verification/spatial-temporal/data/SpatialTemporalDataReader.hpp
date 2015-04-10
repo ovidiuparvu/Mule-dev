@@ -164,15 +164,15 @@ namespace multiscale {
                                                 std::shared_ptr<SpatialEntity> &spatialEntity,
                                                 SubsetSpecificType &spatialEntityType);
 
-                //! Initialise the spatial entity semantic type value using the given spatialEntityTree
+                //! Initialise the spatial entity scale and subsystem using the given spatialEntityTree
                 /*!
-                 * If the value of the semantic type is not provided in the spatialEntityTree
-                 * the default value 0 is used instead.
+                 * If the value of the scale and subsystem is not provided in the spatialEntityTree
+                 * the default empty string "" is used instead.
                  *
                  * \param spatialEntityTree The spatial entity tree
                  * \param spatialEntity     The spatial entity to be initialised
                  */
-                void setSpatialEntitySemanticTypeValue(const pt::ptree &spatialEntityTree,
+                void setSpatialEntityScaleAndSubsystem(const pt::ptree &spatialEntityTree,
                                                        const std::shared_ptr<SpatialEntity> &spatialEntity);
 
                 //! Initialise the spatial entity measure values using the given spatialEntityTree
@@ -237,13 +237,13 @@ namespace multiscale {
                 static const std::string LABEL_TIMEPOINT_VALUE;
 
                 static const std::string LABEL_NUMERIC_STATE_VARIABLE;
-                static const std::string LABEL_NUMERIC_STATE_VARIABLE_SEMANTIC_TYPE;
+                static const std::string LABEL_NUMERIC_STATE_VARIABLE_SCALE_AND_SUBSYSTEM;
                 static const std::string LABEL_NUMERIC_STATE_VARIABLE_NAME;
                 static const std::string LABEL_NUMERIC_STATE_VARIABLE_VALUE;
 
                 static const std::string LABEL_SPATIAL_ENTITY;
                 static const std::string LABEL_SPATIAL_ENTITY_SPATIAL_TYPE;
-                static const std::string LABEL_SPATIAL_ENTITY_SEMANTIC_TYPE;
+                static const std::string LABEL_SPATIAL_ENTITY_SCALE_AND_SUBSYSTEM;
 
                 static const std::string INPUT_FILES_EXTENSION;
                 static const std::string INPUT_FILES_SCHEMA_PATH;

@@ -12,3 +12,7 @@ template class ScaleAndSubsystemStringGrammar<iteratorType>;
 // Constants
 template <>
 const std::string ScaleAndSubsystemStringGrammar<iteratorType>::SCALE_AND_SUBSYSTEM_STRING_PATTERN = "[0-9a-zA-Z]";
+
+template <>
+const std::string ScaleAndSubsystemStringGrammar<iteratorType>::SCALE_AND_SUBSYSTEM_LABEL = "scaleAndSubsystem";
+

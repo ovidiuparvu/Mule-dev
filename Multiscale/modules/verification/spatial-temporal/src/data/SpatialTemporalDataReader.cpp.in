@@ -183,7 +183,7 @@ SpatialTemporalDataReader::timePointHasValue(const pt::ptree &propertyTree, unsi
 
 void
 SpatialTemporalDataReader::addEntitiesToTimePoint(const pt::ptree &timePointTree,
-                                                       TimePoint &timePoint) {
+                                                  TimePoint &timePoint) {
     for (const auto &entityTree : timePointTree) {
         if (entityTree.first.compare(LABEL_NUMERIC_STATE_VARIABLE) == 0) {
             addNumericStateVariableToTimePoint(entityTree.second, timePoint);
@@ -195,17 +195,17 @@ SpatialTemporalDataReader::addEntitiesToTimePoint(const pt::ptree &timePointTree
 
 void
 SpatialTemporalDataReader::addNumericStateVariableToTimePoint(const pt::ptree &numericStateVariableTree,
-                                                                   TimePoint &timePoint) {
+                                                              TimePoint &timePoint) {
     std::string name
         = numericStateVariableTree.get<std::string>(LABEL_NUMERIC_STATE_VARIABLE_NAME);
-    boost::optional<std::string> semanticType
-        = numericStateVariableTree.get_optional<std::string>(LABEL_NUMERIC_STATE_VARIABLE_SEMANTIC_TYPE);
+    boost::optional<std::string> scaleAndSubsystem
+        = numericStateVariableTree.get_optional<std::string>(LABEL_NUMERIC_STATE_VARIABLE_SCALE_AND_SUBSYSTEM);
     double value
         = numericStateVariableTree.get<double>(LABEL_NUMERIC_STATE_VARIABLE_VALUE);
 
     NumericStateVariableId numericStateVariableId(
         name,
-        semanticType.get_value_or(ScaleAndSubsystem::DEFAULT_VALUE)
+        scaleAndSubsystem.get_value_or(ScaleAndSubsystem::DEFAULT_VALUE)
     );
 
     timePoint.addNumericStateVariable(numericStateVariableId, value);
@@ -218,21 +218,21 @@ SpatialTemporalDataReader::addSpatialEntityToTimePoint(const pt::ptree &spatialE
     SubsetSpecificType              spatialEntityType;
 
     createDerivedSpatialEntity(spatialEntityTree, spatialEntity, spatialEntityType);
-    setSpatialEntitySemanticTypeValue(spatialEntityTree, spatialEntity);
+    setSpatialEntityScaleAndSubsystem(spatialEntityTree, spatialEntity);
     setSpatialEntityMeasureValues(spatialEntityTree, spatialEntity);
 
     timePoint.addSpatialEntityAndType(spatialEntity, spatialEntityType);
 }
 
 void
-SpatialTemporalDataReader::setSpatialEntitySemanticTypeValue(const pt::ptree &spatialEntityTree,
+SpatialTemporalDataReader::setSpatialEntityScaleAndSubsystem(const pt::ptree &spatialEntityTree,
                                                              const std::shared_ptr<SpatialEntity> &spatialEntity) {
-    boost::optional<std::string> semanticTypeValue = spatialEntityTree.get_optional<std::string>(
-                                                         LABEL_SPATIAL_ENTITY_SEMANTIC_TYPE
+    boost::optional<std::string> scaleAndSubsystem = spatialEntityTree.get_optional<std::string>(
+                                                         LABEL_SPATIAL_ENTITY_SCALE_AND_SUBSYSTEM
                                                      );
 
-    spatialEntity->setSemanticType(
-        semanticTypeValue.get_value_or(ScaleAndSubsystem::DEFAULT_VALUE)
+    spatialEntity->setScaleAndSubsystem(
+        scaleAndSubsystem.get_value_or(ScaleAndSubsystem::DEFAULT_VALUE)
     );
 }
 
@@ -320,14 +320,14 @@ const std::string SpatialTemporalDataReader::ERR_UNDEFINED_SPATIAL_ENTITY_TYPE  
 const std::string SpatialTemporalDataReader::LABEL_EXPERIMENT                       = "experiment";
 const std::string SpatialTemporalDataReader::LABEL_TIMEPOINT_VALUE                  = "<xmlattr>.value";
 
-const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE               = "numericStateVariable";
-const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_SEMANTIC_TYPE = "<xmlattr>.semanticType";
-const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_NAME          = "name";
-const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_VALUE         = "value";
+const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE                       = "numericStateVariable";
+const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_SCALE_AND_SUBSYSTEM   = "<xmlattr>.scaleAndSubsystem";
+const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_NAME                  = "name";
+const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_VALUE                 = "value";
 
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY                  = "spatialEntity";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_SPATIAL_TYPE     = "<xmlattr>.spatialType";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_SEMANTIC_TYPE    = "<xmlattr>.semanticType";
+const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY                       = "spatialEntity";
+const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_SPATIAL_TYPE          = "<xmlattr>.spatialType";
+const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_SCALE_AND_SUBSYSTEM   = "<xmlattr>.scaleAndSubsystem";
 
 const std::string SpatialTemporalDataReader::INPUT_FILES_EXTENSION      = ".xml";
 const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "${MULE_MSTML_SCHEMA_PATH}";

@@ -18,9 +18,9 @@ namespace multiscale {
             public:
 
                 StateVariableAttribute
-                    stateVariable;  /*!< The state variable */
+                    stateVariable;      /*!< The state variable */
                 boost::optional<ScaleAndSubsystemAttribute>
-                    semanticType;   /*!< The semantic type */
+                    scaleAndSubsystem;  /*!< The scale and subsystem */
 
         };
 
@@ -32,7 +32,7 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NumericStateVariableAttribute,
     (multiscale::verification::StateVariableAttribute, stateVariable)
-    (boost::optional<multiscale::verification::ScaleAndSubsystemAttribute>, semanticType)
+    (boost::optional<multiscale::verification::ScaleAndSubsystemAttribute>, scaleAndSubsystem)
 )
 
 

@@ -3,6 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
+#include "multiscale/verification/spatial-temporal/model/StateVariable.hpp"
 
 #include <functional>
 #include <string>
@@ -13,12 +14,10 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for representing a pseudo-3D spatial entity
-        class SpatialEntity {
+        //! Class for representing a spatial entity
+        class SpatialEntity : public StateVariable {
 
             protected:
-
-                std::string semanticType;                   /*!< The semantic type of the spatial entity */
 
                 std::vector<double> spatialMeasureValues;   /*!< The vector of spatial measures' values.
                                                                  The i-th spatial measure value in the vector
@@ -29,15 +28,6 @@ namespace multiscale {
 
                 SpatialEntity();
                 ~SpatialEntity();
-
-                //! Get the semantic type
-                std::string getSemanticType() const;
-
-                //! Set the value of the semantic type
-                /*!
-                 * \param semanticType The value of the semantic type
-                 */
-                void setSemanticType(const std::string &semanticType);
 
                 //! Get the value of the given spatial measure
                 /*!

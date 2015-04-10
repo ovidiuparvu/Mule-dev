@@ -117,13 +117,13 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 2);
             /*{% endfor %}*/
-                /*{{ spatial_entities[0].name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
+                /*{{ spatial_entities[0].name }}*/->setScaleAndSubsystem(ScaleAndSubsystem::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntityAndType(/*{{ spatial_entities[0].name }}*/, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
             }
             
         /*{% for spatial_entity in spatial_entities[1:] %}*/
-            // Add /*{{ spatial_entity.name }}*/s with default semantic type to the timepoint
+            // Add /*{{ spatial_entity.name }}*/s with default scale and subsystem to the timepoint
             for (std::size_t k = 0; k <= i; k++) {
                 std::shared_ptr<SpatialEntity> /*{{ spatial_entity.name }}*/ = std::make_shared</*{{ spatial_entity.name|first_to_upper }}*/>();
 
@@ -131,12 +131,12 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
             /*{% endfor %}*/
-                /*{{ spatial_entity.name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
+                /*{{ spatial_entity.name }}*/->setScaleAndSubsystem(ScaleAndSubsystem::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntityAndType(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
             
-            // Add /*{{ spatial_entity.name }}*/s with semantic type "Organ.Heart" to the timepoint
+            // Add /*{{ spatial_entity.name }}*/s with scale and subsystem "Organ.Heart" to the timepoint
             for (std::size_t k = 0; k <= i; k++) {
                 std::shared_ptr<SpatialEntity> /*{{ spatial_entity.name }}*/ = std::make_shared</*{{ spatial_entity.name|first_to_upper }}*/>();
 
@@ -144,7 +144,7 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
             /*{% endfor %}*/
-                /*{{ spatial_entity.name }}*/->setSemanticType(SEMANTIC_TYPE_ORGAN_HEART);
+                /*{{ spatial_entity.name }}*/->setScaleAndSubsystem(SCALE_AND_SUBSYSTEM_ORGAN_HEART);
 
                 timePoints[i].addSpatialEntityAndType(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
@@ -356,7 +356,7 @@ TEST_F(CompleteTraceTest, ChangeMeasureRatio) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, ChangeTemporalNumericCollection) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(d([0, 11] {C}(type = Organ.Heart))) = -9]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(d([0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = -9]"));
 }
 
 
@@ -577,7 +577,7 @@ TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentAscent) {
 }
 
 TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentDescent) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] {C}(type = Organ.Heart))) = 7.5]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 7.5]"));
 }
 
 TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentPlateau) {
@@ -589,7 +589,7 @@ TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
 }
 
 TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(type = Organ.Heart))) = 6.6]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 6.6]"));
 }
 
 
@@ -819,28 +819,28 @@ TEST_F(CompleteTraceTest, NumericStateVariableWithoutTypes) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= {B}]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariableTypeLeft) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}]"));
+TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemLeft) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(scaleAndSubsystem = Organ.Kidney) <= {B}]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariableTypeRight) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = Organ.Kidney)]"));
+TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemRight) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(scaleAndSubsystem = Organ.Kidney)]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableBothTypes) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}(type = Organ.Kidney)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(scaleAndSubsystem = Organ.Kidney) <= {B}(scaleAndSubsystem = Organ.Kidney)]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Heart)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(scaleAndSubsystem = Organ.Kidney) <= {C}(scaleAndSubsystem = Organ.Heart)]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableOneNumericStateVariable) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{C}(type = Organ.Heart) = 12]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{C}(scaleAndSubsystem = Organ.Heart) = 12]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableWrongRhsType) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Kidney)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(scaleAndSubsystem = Organ.Kidney) <= {C}(scaleAndSubsystem = Organ.Kidney)]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableWrongName) {
@@ -852,19 +852,19 @@ TEST_F(CompleteTraceTest, NumericStateVariableWrongLongName) {
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableWrongTypeLhs) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Heart) <= {B}]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(scaleAndSubsystem = Organ.Heart) <= {B}]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(type = 213121) <= {B}]"));
+TEST_F(CompleteTraceTest, NumericStateVariableWrongScaleAndSubsystemLhsLargerValue) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(scaleAndSubsystem = 213.121) <= {B}]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariableSemanticTypeNotInTypeSemanticsTable) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({D}(type = Organ.Liver) < 5.01) ^ ({D}(type = Organ.Liver) > 4.99))]"));
+TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemNotInTypeSemanticsTable) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({D}(scaleAndSubsystem = Organ.Liver) < 5.01) ^ ({D}(scaleAndSubsystem = Organ.Liver) > 4.99))]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariableTypeInTypeSemanticsTable) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({B}(type = Organ.Kidney) < 3.01) ^ ({B}(type = Organ.Kidney) > 2.99))]"));
+TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemInTypeSemanticsTable) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({B}(scaleAndSubsystem = Organ.Kidney) < 3.01) ^ ({B}(scaleAndSubsystem = Organ.Kidney) > 2.99))]"));
 }
 
 
@@ -910,13 +910,13 @@ TEST_F(CompleteTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
-// SemanticType
+// ScaleAndSubsystem
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, SemanticType) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.4 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, type = Organ.Heart))) > 0]"));
+TEST_F(CompleteTraceTest, ScaleAndSubsystem) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.4 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, scaleAndSubsystem = Organ.Heart))) > 0]"));
 }
 
 
@@ -929,7 +929,7 @@ TEST_F(CompleteTraceTest, SemanticType) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, SimilarityMeasureAntiSimilar) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [opposite(d([0, 11] {A}), d([0, 11] {C} (type = Organ.Heart)), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [opposite(d([0, 11] {A}), d([0, 11] {C} (scaleAndSubsystem = Organ.Heart)), 0)]"));
 }
 
 TEST_F(CompleteTraceTest, SimilarityMeasureSimilar) {
@@ -1144,7 +1144,7 @@ TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringTime) {
 }
 
 TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringValue) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniformDescent, [0, 11] {C}(type = Organ.Heart))) = 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniformDescent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 3]"));
 }
 
 
@@ -1356,13 +1356,13 @@ TEST_F(CompleteTraceTest, UnaryStatisticalSpatial) {
 /////////////////////////////////////////////////////////
 //
 //
-// UnaryTypeConstraint
+// UnaryScaleAndSubsystemConstraint
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, UnaryTypeConstraint) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, type < Organ.Kidney))) > 0]"));
+TEST_F(CompleteTraceTest, UnaryScaleAndSubsystemConstraint) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, scaleAndSubsystem < Organ.Kidney))) > 0]"));
 }
 
 
@@ -1548,7 +1548,7 @@ TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueReal) {
 }
 
 TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueNumericStateVariable) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({C}(type = Organ.Heart)) < 0) U [0, 10] (d({C}(type = Organ.Heart)) > 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({C}(scaleAndSubsystem = Organ.Heart)) < 0) U [0, 10] (d({C}(scaleAndSubsystem = Organ.Heart)) > 0)]"));
 }
 
 TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueUnaryNumeric) {

@@ -90,9 +90,9 @@ namespace multiscaletest {
         protected:
 
            // Constants
-           static const std::string SEMANTIC_TYPE_ORGAN_HEART;
-           static const std::string SEMANTIC_TYPE_ORGAN_KIDNEY;
-           static const std::string SEMANTIC_TYPE_ORGAN_LIVER;
+           static const std::string SCALE_AND_SUBSYSTEM_ORGAN_HEART;
+           static const std::string SCALE_AND_SUBSYSTEM_ORGAN_KIDNEY;
+           static const std::string SCALE_AND_SUBSYSTEM_ORGAN_LIVER;
 
     };
 

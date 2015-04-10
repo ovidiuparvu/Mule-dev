@@ -95,9 +95,14 @@ void SpatialTemporalDataWriter::addSpatialEntityOfSpecificTypeToTimepointTree(co
                                                                               pt::ptree &timepointTree) {
     pt::ptree spatialEntityTree;
 
-    // Add the spatial and semantic types to the spatial entity tree
-    addSpatialTypeAttributeToTree(spatialEntityType, spatialEntityTree);
-    addSemanticTypeAttributeToTree(spatialEntity->getSemanticType(), spatialEntityTree);
+    addSpatialTypeAttributeToTree(
+        spatialEntityType,
+        spatialEntityTree
+    );
+    addScaleAndSubsystemAttributeToTree(
+        spatialEntity->getScaleAndSubsystem(),
+        spatialEntityTree
+    );
 
     // Add the spatial measures values to the spatial entity tree
     addSpatialMeasuresValuesToTree(spatialEntity, spatialEntityTree);
@@ -130,8 +135,10 @@ pt::ptree SpatialTemporalDataWriter::constructPropertyTreeFromNumericStateVariab
                                                                                    double numericStateVariableValue) {
     pt::ptree numericStateVariableTree;
 
-    // Add the semantic type of the numeric state variable to the tree
-    addSemanticTypeAttributeToTree(numericStateVariableId.getSemanticType(), numericStateVariableTree);
+    addScaleAndSubsystemAttributeToTree(
+        numericStateVariableId.getScaleAndSubsystem(),
+        numericStateVariableTree
+    );
 
     // Add the name and value of the numeric state variable to the tree
     numericStateVariableTree.add(LABEL_NUMERIC_STATE_VARIABLE_NAME, numericStateVariableId.getName());
@@ -149,14 +156,15 @@ void SpatialTemporalDataWriter::addSpatialTypeAttributeToTree(const std::string 
     );
 }
 
-void SpatialTemporalDataWriter::addSemanticTypeAttributeToTree(const std::string &semanticType,
-                                                               pt::ptree &propertyTree) {
-    // If the semantic type is not empty then add it as an attribute to the property tree
-    // The semantic type can be in general empty because it is an optional attribute
-    if (!semanticType.empty()) {
+void SpatialTemporalDataWriter::addScaleAndSubsystemAttributeToTree(const std::string &scaleAndSubsystem,
+                                                                    pt::ptree &propertyTree) {
+    // If the scale and subsystem is not empty then add it as an attribute to the property tree
+    // Otherwise do not add any attribute to the property tree. This is possible because the
+    // scale and subsystem attribute is optional.
+    if (!scaleAndSubsystem.empty()) {
         addAttributeToTree(
-            LABEL_SEMANTIC_TYPE_ATTRIBUTE,
-            semanticType,
+            LABEL_SCALE_AND_SUBSYSTEM_ATTRIBUTE,
+            scaleAndSubsystem,
             propertyTree
         );
     }
@@ -191,9 +199,9 @@ const std::string SpatialTemporalDataWriter::LABEL_TIMEPOINT                = "t
 const std::string SpatialTemporalDataWriter::LABEL_NUMERIC_STATE_VARIABLE   = "numericStateVariable";
 const std::string SpatialTemporalDataWriter::LABEL_SPATIAL_ENTITY           = "spatialEntity";
 
-const std::string SpatialTemporalDataWriter::LABEL_TIMEPOINT_VALUE_ATTRIBUTE    = "value";
-const std::string SpatialTemporalDataWriter::LABEL_SPATIAL_TYPE_ATTRIBUTE       = "spatialType";
-const std::string SpatialTemporalDataWriter::LABEL_SEMANTIC_TYPE_ATTRIBUTE      = "semanticType";
+const std::string SpatialTemporalDataWriter::LABEL_TIMEPOINT_VALUE_ATTRIBUTE        = "value";
+const std::string SpatialTemporalDataWriter::LABEL_SPATIAL_TYPE_ATTRIBUTE           = "spatialType";
+const std::string SpatialTemporalDataWriter::LABEL_SCALE_AND_SUBSYSTEM_ATTRIBUTE    = "scaleAndSubsystem";
 
 const std::string SpatialTemporalDataWriter::LABEL_NUMERIC_STATE_VARIABLE_NAME  = "name";
 const std::string SpatialTemporalDataWriter::LABEL_NUMERIC_STATE_VARIABLE_VALUE = "value";

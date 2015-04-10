@@ -136,11 +136,11 @@ namespace multiscale {
                     return notTimePoint;
                 }
 
-                //! Overloading the "()" operator for the UnaryTypeConstraintAttribute alternative
+                //! Overloading the "()" operator for the UnaryScaleAndSubsystemConstraintAttribute alternative
                 /*!
                  * \param primaryConstraint The primary constraint
                  */
-                TimePoint operator() (const UnaryTypeConstraintAttribute &primaryConstraint) const {
+                TimePoint operator() (const UnaryScaleAndSubsystemConstraintAttribute &primaryConstraint) const {
                     ComparatorType comparatorType = primaryConstraint.comparator.comparatorType;
 
                     return (
@@ -236,8 +236,6 @@ namespace multiscale {
                 ) const {
                     TimePoint unaryConstraintTimePoint(timePoint);
 
-                    // TODO: Refactor rename UnaryTypeConstraint => UnaryScaleAndSubsystemConstraint (Check if
-                    // similar attributes exist for numeric state variables)
                     evaluateScaleAndSubsystemConstraint(unaryConstraintTimePoint, comparator, scaleAndSubsystem);
 
                     return unaryConstraintTimePoint;
@@ -405,7 +403,7 @@ namespace multiscale {
                  * \param comparator            The type of the comparator
                  * \param scaleAndSubsystem     The scale and subsystem
                  */
-                void filterSpatialEntitiesWrtType(
+                void filterSpatialEntitiesWrtScaleAndSubsystem(
                     TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
                     const ComparatorType &comparator, const std::string &scaleAndSubsystem
                 ) const {
@@ -419,8 +417,6 @@ namespace multiscale {
                         );
                     }
                 }
-
-                // TODO: Continue from here
 
                 //! Remove from timepoint the spatial entities which fail to meet the scale and subsystem constraint
                 /*! The assumption for this method is that the considered comparator is "=".
@@ -440,9 +436,9 @@ namespace multiscale {
 
                     // Filter spatial entities considering their type
                     while (beginIt != endIt) {
-                        std::string lhsTypeValue = ((*beginIt)->getSemanticType());
+                        std::string lhsScaleAndSubsystem = ((*beginIt)->getScaleAndSubsystem());
 
-                        if (lhsTypeValue.compare(rhsScaleAndSubsystem) != 0) {
+                        if (lhsScaleAndSubsystem.compare(rhsScaleAndSubsystem) != 0) {
                             beginIt = timePoint.removeSpatialEntity(beginIt, spatialEntityType);
                         } else {
                             beginIt++;
@@ -450,7 +446,7 @@ namespace multiscale {
                     }
                 }
 
-                //! Remove from the timepoint the spatial entities which fail to meet the type constraint
+                //! Remove from timepoint the spatial entities which fail to meet the scale and subsystem constraint
                 /*! The assumption for this method is that the considered comparator is different from "=".
                  *
                  * In this case the type semantics table is used.
@@ -458,24 +454,24 @@ namespace multiscale {
                  * \param timePoint             The timepoint which will be filtered
                  * \param spatialEntityType     The considered spatial entity type
                  * \param comparator            The type of the comparator
-                 * \param rhsSemanticType       The semantic type on the right of the comparator
+                 * \param rhsScaleAndSubsystem  The scale and subsystem on the right hand side of the comparator
                  */
                 void filterSpatialEntitiesWrtScaleAndSubsystemConsideringNonEqualComparator(
                     TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
-                    const ComparatorType &comparator, const std::string &rhsSemanticType
+                    const ComparatorType &comparator, const std::string &rhsScaleAndSubsystem
                 ) const {
-                    // Obtain the type value for the right hand side semantic criteria values
-                    double rhsTypeValue = translateSemanticTypeToAbstractNaturalNumber(rhsSemanticType);
+                    // Obtain the type value for the right hand side scale and subsystem
+                    double rhsTypeValue = translateScaleAndSubsystemToAbstractNaturalNumber(rhsScaleAndSubsystem);
 
                     auto beginIt = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
                     auto endIt   = timePoint.getSpatialEntitiesEndIterator(spatialEntityType);
 
-                    // Filter spatial entities considering their type
+                    // Filter spatial entities considering their scale and subsystem
                     while (beginIt != endIt) {
-                        double lhsTypeValue
-                            = translateSemanticTypeToAbstractNaturalNumber((*beginIt)->getSemanticType());
+                        double lhsScaleAndSubsystem
+                            = translateScaleAndSubsystemToAbstractNaturalNumber((*beginIt)->getScaleAndSubsystem());
 
-                        if (!ComparatorEvaluator::evaluate(lhsTypeValue, comparator, rhsTypeValue)) {
+                        if (!ComparatorEvaluator::evaluate(lhsScaleAndSubsystem, comparator, rhsTypeValue)) {
                             beginIt = timePoint.removeSpatialEntity(beginIt, spatialEntityType);
                         } else {
                             beginIt++;
@@ -500,16 +496,16 @@ namespace multiscale {
                     );
                 }
 
-                //! Translate the given semantic type to an abstract natural number
+                //! Translate the given scale and subsystem to an abstract natural number
                 /*! The type semantics table is used to compute the natural number corresponding
-                 *  to the semantic type.
+                 *  to the scale and subsystem.
                  *
-                 * \param semanticType  The considered semantic type
+                 * \param scaleAndSubsystem The considered scale and subsystem
                  */
-                double translateSemanticTypeToAbstractNaturalNumber(const std::string &semanticType) const {
+                double translateScaleAndSubsystemToAbstractNaturalNumber(const std::string &scaleAndSubsystem) const {
                     return (
                         static_cast<double>(
-                            typeSemanticsTable.getTypeOfSemanticCriteriaValues(semanticType)
+                            typeSemanticsTable.getTypeOfSemanticCriteriaValues(scaleAndSubsystem)
                         )
                     );
                 }

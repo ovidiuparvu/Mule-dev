@@ -8,8 +8,10 @@ using namespace multiscale::verification;
 
 
 NumericStateVariableId::NumericStateVariableId(const std::string &name,
-                                               const std::string &semanticType)
-                                               : name(name), semanticType(semanticType) {}
+                                               const std::string &scaleAndSubsystem)
+                                               : name(name) {
+    this->scaleAndSubsystem = scaleAndSubsystem;
+}
 
 NumericStateVariableId::~NumericStateVariableId() {}
 
@@ -21,19 +23,11 @@ void NumericStateVariableId::setName(const std::string& name) {
     this->name = name;
 }
 
-std::string NumericStateVariableId::getSemanticType() const {
-    return semanticType;
-}
-
-void NumericStateVariableId::setSemanticType(const std::string &semanticType) {
-    this->semanticType = semanticType;
-}
-
 bool NumericStateVariableId::operator<(const NumericStateVariableId &rhs) const {
     if (this->name.compare(rhs.name) < 0) {
         return true;
     } else if (this->name.compare(rhs.name) == 0) {
-        if (this->semanticType.compare(rhs.semanticType) < 0) {
+        if (this->scaleAndSubsystem.compare(rhs.scaleAndSubsystem) < 0) {
             return true;
         }
     }
@@ -45,7 +39,7 @@ std::string NumericStateVariableId::toString() const {
     return (
         OUTPUT_STRING_BEGIN +
         name + OUTPUT_STRING_SEPARATOR +
-        semanticType +
+        scaleAndSubsystem +
         OUTPUT_STRING_END
     );
 }

@@ -150,17 +150,17 @@ namespace multiscale {
         void SpatialMeasureCollectionGrammar<Iterator>::initialisePrimaryConstraintRule() {
             primaryConstraintRule
                 =   notConstraintRule
-                |   unaryTypeConstraintRule
+                |   unaryScaleAndSubsystemConstraintRule
                 |   unarySpatialConstraintRule
                 |   ('(' > constraintRule > ')');
 
             notConstraintRule
                 =   ('~' > constraintRule);
 
-            unaryTypeConstraintRule
-                =   qi::lit("type")
+            unaryScaleAndSubsystemConstraintRule
+                =   qi::lit(ScaleAndSubsystemStringGrammar<Iterator>::SCALE_AND_SUBSYSTEM_LABEL)
                     > comparatorRule
-                    > semanticTypeRule;
+                    > scaleAndSubsystemRule;
 
             unarySpatialConstraintRule
                 =   spatialMeasureRule
@@ -272,10 +272,10 @@ namespace multiscale {
         //! Assign names to the primary constraint rules
         template <typename Iterator>
         void SpatialMeasureCollectionGrammar<Iterator>::assignNamesToPrimaryConstraintRules() {
-            primaryConstraintRule       .name("primaryConstraintRule");
-            notConstraintRule           .name("notConstraintRule");
-            unaryTypeConstraintRule     .name("unaryTypeConstraintRule");
-            unarySpatialConstraintRule  .name("unarySpatialConstraintRule");
+            primaryConstraintRule               .name("primaryConstraintRule");
+            notConstraintRule                   .name("notConstraintRule");
+            unaryScaleAndSubsystemConstraintRule.name("unaryScaleAndSubsystemConstraintRule");
+            unarySpatialConstraintRule          .name("unarySpatialConstraintRule");
         }
 
         //! Assign names to the filter numeric measure rules
@@ -348,7 +348,7 @@ namespace multiscale {
         void SpatialMeasureCollectionGrammar<Iterator>::initialisePrimaryConstraintRuleDebugging() {
             debug(primaryConstraintRule);
             debug(notConstraintRule);
-            debug(unaryTypeConstraintRule);
+            debug(unaryScaleAndSubsystemConstraintRule);
             debug(unarySpatialConstraintRule);
         }
 
@@ -427,7 +427,7 @@ namespace multiscale {
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
             qi::on_error<qi::fail>(
-                unaryTypeConstraintRule,
+                unaryScaleAndSubsystemConstraintRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
             qi::on_error<qi::fail>(

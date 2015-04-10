@@ -9,19 +9,11 @@ using namespace multiscale::verification::spatialmeasure;
 
 
 SpatialEntity::SpatialEntity() {
-    semanticType         = ScaleAndSubsystem::DEFAULT_VALUE;
+    scaleAndSubsystem         = ScaleAndSubsystem::DEFAULT_VALUE;
     spatialMeasureValues = std::vector<double>(NR_SPATIAL_MEASURE_TYPES, 0);
 }
 
 SpatialEntity::~SpatialEntity() {}
-
-std::string SpatialEntity::getSemanticType() const {
-    return semanticType;
-}
-
-void SpatialEntity::setSemanticType(const std::string &semanticType) {
-    this->semanticType = semanticType;
-}
 
 double SpatialEntity::getSpatialMeasureValue(const SpatialMeasureType &spatialMeasureType) const {
     std::size_t spatialMeasureTypeIndex = computeSpatialMeasureTypeIndex(spatialMeasureType);
@@ -46,8 +38,7 @@ bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) {
 }
 
 bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
-    // Return true if lhs.semanticType < rhs.semanticType
-    if (this->semanticType.compare(rhsSpatialEntity.semanticType) == -1) {
+    if (this->scaleAndSubsystem.compare(rhsSpatialEntity.scaleAndSubsystem) == -1) {
         return true;
     }
 
@@ -70,8 +61,7 @@ bool SpatialEntity::operator==(const SpatialEntity &rhsSpatialEntity) {
 }
 
 bool SpatialEntity::operator==(const SpatialEntity &rhsSpatialEntity) const {
-    // Return false if lhs.semanticType != rhs.semanticType
-    if (this->semanticType.compare(rhsSpatialEntity.semanticType) != 0) {
+    if (this->scaleAndSubsystem.compare(rhsSpatialEntity.scaleAndSubsystem) != 0) {
         return false;
     }
 
@@ -105,7 +95,7 @@ bool SpatialEntity::operator!=(const SpatialEntity &rhsSpatialEntity) const {
 }
 
 std::string SpatialEntity::toString() const {
-    std::string outputString = semanticType;
+    std::string outputString = scaleAndSubsystem;
 
     // Add all spatial measure values to the output string
     for (std::size_t i = 0; i < NR_SPATIAL_MEASURE_TYPES; i++) {

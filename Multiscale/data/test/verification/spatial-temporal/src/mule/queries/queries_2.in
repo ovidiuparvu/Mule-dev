@@ -1,6 +1,6 @@
 # The average area of Cell.EK clusters is greater than the value of the Cell.EK B numeric state variable with probability > 0.6 sometimes in the future
 
-P > 0.6 [ F [0, 2] (avg(area(filter(clusters, type = Cell.EK))) < {B}(type = Cell.EK)) ]
+P > 0.6 [ F [0, 2] (avg(area(filter(clusters, scaleAndSubsystem = Cell.EK))) < {B}(scaleAndSubsystem = Cell.EK)) ]
 
 
 # The maximum regions perimeter considering type < Cell.EK is smaller than 3 with probability < 0.1 globally
@@ -10,4 +10,4 @@ P < 0.1 [ G [0, 2] (max(perimeter(union(filter(regions, type < Cell), filter(clu
 
 # The A numeric state variable rate of change is greater than 0.9 and the Cell.EK B numeric state variable rate of change is smaller than 1.1 with probability greater than 0.2 in the forthcoming timepoint
 
-P > 0.2 [ X ((d({A}) > 0.9) ^ (d({B}(type = Cell.EK)) < 1.1)) ]
+P > 0.2 [ X ((d({A}) > 0.9) ^ (d({B}(scaleAndSubsystem = Cell.EK)) < 1.1)) ]

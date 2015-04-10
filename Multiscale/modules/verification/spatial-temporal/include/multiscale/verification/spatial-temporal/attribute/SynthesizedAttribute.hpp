@@ -50,7 +50,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/ImplicationConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/EquivalenceConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnarySpatialConstraintAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/UnaryTypeConstraintAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/UnaryScaleAndSubsystemConstraintAttribute.hpp"
 
 #include "multiscale/verification/spatial-temporal/attribute/SubsetSubsetOperationAttribute.hpp"
 

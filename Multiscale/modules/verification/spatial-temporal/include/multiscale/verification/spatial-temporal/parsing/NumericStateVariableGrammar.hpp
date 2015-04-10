@@ -40,7 +40,7 @@ namespace multiscale {
                     stateVariableNameRule;                      /*!< The rule for parsing the name of a
                                                                      state variable without escaping white space */
                 qi::rule<Iterator, ScaleAndSubsystemAttribute(), qi::space_type>
-                    stateVariableTypeRule;                      /*!< The rule for parsing a state variable type */
+                    stateVariableScaleAndSubsystemRule;                      /*!< The rule for parsing a state variable type */
 
             public:
 

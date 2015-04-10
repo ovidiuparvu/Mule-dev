@@ -15,7 +15,7 @@ namespace multiscale {
         class ConstraintAttribute;
         class NotConstraintAttribute;
         class UnarySpatialConstraintAttribute;
-        class UnaryTypeConstraintAttribute;
+        class UnaryScaleAndSubsystemConstraintAttribute;
 
 
         //! Variant for a primary constraint attribute
@@ -24,7 +24,7 @@ namespace multiscale {
             boost::recursive_wrapper<ConstraintAttribute>,
             boost::recursive_wrapper<NotConstraintAttribute>,
             boost::recursive_wrapper<UnarySpatialConstraintAttribute>,
-            boost::recursive_wrapper<UnaryTypeConstraintAttribute>
+            boost::recursive_wrapper<UnaryScaleAndSubsystemConstraintAttribute>
         > PrimaryConstraintAttributeType;
 
 

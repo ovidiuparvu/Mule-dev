@@ -38,7 +38,7 @@ namespace multiscale {
         void NumericStateVariableGrammar<Iterator>::initialiseGrammar() {
             numericStateVariableRule
                 =   stateVariableRule
-                    > -(stateVariableTypeRule);
+                    > -(stateVariableScaleAndSubsystemRule);
 
             stateVariableRule
                 =   ('{' > stateVariableNameRule > '}');
@@ -46,10 +46,10 @@ namespace multiscale {
             stateVariableNameRule
                 =   qi::raw[ +(qi::char_ - qi::char_("{}")) ];
 
-            stateVariableTypeRule
+            stateVariableScaleAndSubsystemRule
                 =   (
                         '('
-                        > qi::lit("type")
+                        > qi::lit(ScaleAndSubsystemStringGrammar<Iterator>::SCALE_AND_SUBSYSTEM_LABEL)
                         > '='
                         > scaleAndSubsystemRule
                         > ')'
@@ -68,10 +68,10 @@ namespace multiscale {
         //! Assign names to the rules
         template <typename Iterator>
         void NumericStateVariableGrammar<Iterator>::assignNamesToRules() {
-            numericStateVariableRule    .name("numericStateVariableRule");
-            stateVariableRule           .name("stateVariableRule");
-            stateVariableNameRule       .name("stateVariableNameRule");
-            stateVariableTypeRule       .name("stateVariableTypeRule");
+            numericStateVariableRule            .name("numericStateVariableRule");
+            stateVariableRule                   .name("stateVariableRule");
+            stateVariableNameRule               .name("stateVariableNameRule");
+            stateVariableScaleAndSubsystemRule  .name("stateVariableScaleAndSubsystemRule");
         }
 
         //! Initialise the debugging of rules
@@ -80,7 +80,7 @@ namespace multiscale {
             debug(numericStateVariableRule);
             debug(stateVariableRule);
             debug(stateVariableNameRule);
-            debug(stateVariableTypeRule);
+            debug(stateVariableScaleAndSubsystemRule);
         }
 
         //! Initialise the error handling routines
@@ -91,7 +91,7 @@ namespace multiscale {
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
             qi::on_error<qi::fail>(
-                stateVariableTypeRule,
+                stateVariableScaleAndSubsystemRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
         }

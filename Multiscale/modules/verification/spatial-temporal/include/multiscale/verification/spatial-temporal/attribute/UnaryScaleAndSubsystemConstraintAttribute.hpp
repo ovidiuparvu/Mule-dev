@@ -1,5 +1,5 @@
-#ifndef UNARYTYPECONSTRAINTATTRIBUTE_HPP
-#define UNARYTYPECONSTRAINTATTRIBUTE_HPP
+#ifndef UNARYSCALEANDSUBSYSTEMCONSTRAINTATTRIBUTE_HPP
+#define UNARYSCALEANDSUBSYSTEMCONSTRAINTATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ScaleAndSubsystemAttribute.hpp"
@@ -11,8 +11,8 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for representing a "unary" type constraint attribute
-        class UnaryTypeConstraintAttribute {
+        //! Class for representing a "unary" scale and subsystem constraint attribute
+        class UnaryScaleAndSubsystemConstraintAttribute {
 
             public:
 
@@ -27,7 +27,7 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::UnaryTypeConstraintAttribute,
+    multiscale::verification::UnaryScaleAndSubsystemConstraintAttribute,
     (multiscale::verification::ComparatorAttribute, comparator)
     (multiscale::verification::ScaleAndSubsystemAttribute, scaleAndSubsystem)
 )

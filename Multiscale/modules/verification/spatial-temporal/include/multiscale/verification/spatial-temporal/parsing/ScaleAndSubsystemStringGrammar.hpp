@@ -58,6 +58,11 @@ namespace multiscale {
                 // Constants
                 static const std::string SCALE_AND_SUBSYSTEM_STRING_PATTERN;
 
+            public:
+
+                // Constants
+                static const std::string SCALE_AND_SUBSYSTEM_LABEL;
+
         };
 
     };

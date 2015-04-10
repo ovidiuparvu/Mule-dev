@@ -154,6 +154,7 @@ set(CORE_MODEL_CHECKER_SRC
     src/model/ScaleAndSubsystem.cpp
     src/model/SpatialEntity.cpp
     src/model/SpatialTemporalTrace.cpp
+    src/model/StateVariable.cpp
     src/model/TimePoint.cpp
     src/model/TypeSemanticsTable.cpp
     
@@ -397,6 +398,7 @@ set(SPATIAL_TEMPORAL_DATA_READER_SAMPLE_SRC
     src/model/ScaleAndSubsystem.cpp
     src/model/SpatialEntity.cpp
     src/model/SpatialTemporalTrace.cpp
+    src/model/StateVariable.cpp
     src/model/TimePoint.cpp
 
     sample/SpatialTemporalDataReaderSample.cpp
@@ -424,6 +426,7 @@ set(TEMPORAL_DATA_READER_SAMPLE_SRC
     src/model/ScaleAndSubsystem.cpp
     src/model/SpatialEntity.cpp
     src/model/SpatialTemporalTrace.cpp
+    src/model/StateVariable.cpp
     src/model/TimePoint.cpp
 
     sample/TemporalDataReaderSample.cpp

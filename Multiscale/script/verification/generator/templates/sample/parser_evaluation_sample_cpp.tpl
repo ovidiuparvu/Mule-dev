@@ -10,7 +10,7 @@
 /*{% for spatial_entity in spatial_entities %}*/
 #include "multiscale/verification/spatial-temporal/model//*{{ spatial_entity.name|first_to_upper }}*/.hpp"
 /*{% endfor %}*/
-#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
+#include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <iostream>
@@ -73,7 +73,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
         /*{% for spatial_measure in spatial_measures[1:] %}*/
             /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 2);
         /*{% endfor %}*/
-            /*{{ spatial_entities[0].name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
+            /*{{ spatial_entities[0].name }}*/->setScaleAndSubsystem(ScaleAndSubsystem::DEFAULT_VALUE);
 
             timePoints[i].addSpatialEntityAndType(/*{{ spatial_entities[0].name }}*/, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
         }
@@ -87,7 +87,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
             /*{% endfor %}*/
-                /*{{ spatial_entity.name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
+                /*{{ spatial_entity.name }}*/->setScaleAndSubsystem(ScaleAndSubsystem::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntityAndType(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
