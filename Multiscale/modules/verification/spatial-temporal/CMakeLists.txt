@@ -440,14 +440,14 @@ target_link_libraries(TemporalDataReaderSample util)
 
 # TypeSemanticsTableDataReaderSample
 
-set(TYPE_SEMANTICS_TABLE_DATA_READER_SAMPLE_SRC
+set(MULTISCALE_ARCHITECTURE_GRAPH_DATA_READER_SAMPLE_SRC
     src/model/ScaleAndSubsystem.cpp
     src/model/TypeSemanticsTable.cpp
 
     sample/TypeSemanticsTableDataReaderSample.cpp
 )
 
-add_executable(TypeSemanticsTableDataReaderSample ${TYPE_SEMANTICS_TABLE_DATA_READER_SAMPLE_SRC})
+add_executable(TypeSemanticsTableDataReaderSample ${MULTISCALE_ARCHITECTURE_GRAPH_DATA_READER_SAMPLE_SRC})
 AddSample(TypeSemanticsTableDataReaderSample)
 
 target_link_libraries(TypeSemanticsTableDataReaderSample util)

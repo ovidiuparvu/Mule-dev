@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<multiscaleArchitectureGraph>
+	<vertices>
+	   <vertex id="Environment.PlanetEarth"/>
+	   <vertex id="Cell.EK"/>
+	   <vertex id="Cell.PK"/>
+	</vertices>
+	<edges>
+	   <edge beginVertex="Environment.PlanetEarth" endVertex="Cell.EK"/>
+	   <edge beginVertex="Environment.PlanetEarth" endVertex="Cell.PK"/>
+	</edges>
+</multiscaleArchitectureGraph>

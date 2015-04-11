@@ -320,9 +320,9 @@ namespace multiscale {
                 static const std::string    ARG_EXTRA_EVALUATION_PROGRAM_NAME_BOTH;
                 static const std::string    ARG_EXTRA_EVALUATION_PROGRAM_DESCRIPTION;
 
-                static const std::string    ARG_TYPE_SEMANTICS_TABLE_NAME_LONG;
-                static const std::string    ARG_TYPE_SEMANTICS_TABLE_NAME_BOTH;
-                static const std::string    ARG_TYPE_SEMANTICS_TABLE_DESCRIPTION;
+                static const std::string    ARG_MULTISCALE_ARCHITECTURE_GRAPH_NAME_LONG;
+                static const std::string    ARG_MULTISCALE_ARCHITECTURE_GRAPH_NAME_BOTH;
+                static const std::string    ARG_MULTISCALE_ARCHITECTURE_GRAPH_DESCRIPTION;
 
                 static const std::string    ARG_VERBOSE_NAME_LONG;
                 static const std::string    ARG_VERBOSE_NAME_BOTH;
