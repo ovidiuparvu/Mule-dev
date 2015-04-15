@@ -40,9 +40,11 @@ namespace multiscale {
         template <typename Iterator>
         void ScaleAndSubsystemStringGrammar<Iterator>::initialiseGrammar() {
             scaleAndSubsystemStringRule
-                =   +( qi::char_(SCALE_AND_SUBSYSTEM_STRING_PATTERN) )
-                    >> qi::char_('.')
-                    >> +( qi::char_(SCALE_AND_SUBSYSTEM_STRING_PATTERN) );
+                =   qi::lexeme[
+                        +( qi::char_(SCALE_AND_SUBSYSTEM_STRING_PATTERN) )
+                        >> qi::char_('.')
+                        >> +( qi::char_(SCALE_AND_SUBSYSTEM_STRING_PATTERN) )
+                    ];
         }
 
         //! Initialise debug support

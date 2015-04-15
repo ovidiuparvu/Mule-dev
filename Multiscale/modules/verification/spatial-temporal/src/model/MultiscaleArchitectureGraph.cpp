@@ -6,8 +6,6 @@
 #include "multiscale/verification/spatial-temporal/model/MultiscaleArchitectureGraph.hpp"
 
 #include <deque>
-// TODO: Remove
-#include <iostream>
 
 using namespace multiscale::verification;
 
@@ -222,9 +220,6 @@ MultiscaleArchitectureGraph::isUniqueRootVertex() const {
     short nrOfRootVertices= 0;
 
     for (auto predecessorIndex : predecessorIndices) {
-        // TODO: Remove
-        std::cout << "Predecessor index: " << predecessorIndex << std::endl;
-
         if (predecessorIndex == NO_PREDECESSOR_INDEX) {
             nrOfRootVertices++;
 

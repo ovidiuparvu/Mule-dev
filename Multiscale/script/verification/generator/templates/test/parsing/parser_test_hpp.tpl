@@ -1875,31 +1875,35 @@ TEST(ProbabilisticLogicProperty, ProbabilityHigh) {
 /////////////////////////////////////////////////////////
 
 TEST(ScaleAndSubsystem, IncorrectScaleAndSubsystemInvalidCharacter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem > !) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem = !) >= 2]"), InvalidInputException);
 }
 
 TEST(ScaleAndSubsystem, IncorrectScaleAndSubsystemMissingValuesAfterAndBeforeDot) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem > .) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem = .) >= 2]"), InvalidInputException);
 }
 
 TEST(ScaleAndSubsystem, IncorrectScaleAndSubsystemMissingValueBeforeDot) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem > .Heart) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem = .Heart) >= 2]"), InvalidInputException);
 }
 
 TEST(ScaleAndSubsystem, IncorrectScaleAndSubsystemMissingValueAfterDot) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem > Heart.) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem = Heart.) >= 2]"), InvalidInputException);
+}
+
+TEST(ScaleAndSubsystem, IncorrectScaleAndSubsystemCommaInsteadOfDot) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem = Organ,Heart) >= 2]"), InvalidInputException);
 }
 
 TEST(ScaleAndSubsystem, IncorrectScaleAndSubsystemManyDots) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem > ....) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem = Organ..Heart) >= 2]"), InvalidInputException);
 }
 
 TEST(ScaleAndSubsystem, IncorrectScaleAndSubsystemInvalidValuesBeforeAndAfterDots) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem > $.*) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem = $.*) >= 2]"), InvalidInputException);
 }
 
 TEST(ScaleAndSubsystem, IncorrectScaleAndSubsystemSpaceBeforeAndAfterDot) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem > Organ . Kidney) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (scaleAndSubsystem = Organ . Kidney) >= 2]"), InvalidInputException);
 }
 
 TEST(ScaleAndSubsystem, Correct) {

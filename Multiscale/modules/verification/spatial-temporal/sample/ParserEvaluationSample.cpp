@@ -26,8 +26,8 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
     // Variables initialisation
     std::size_t nrOfTimePoints = 12;
 
-    NumericStateVariableId aNumericStateVariableId("A", 0);
-    NumericStateVariableId bNumericStateVariableId("B", 0);
+    NumericStateVariableId aNumericStateVariableId("A", ScaleAndSubsystem::DEFAULT_VALUE);
+    NumericStateVariableId bNumericStateVariableId("B", ScaleAndSubsystem::DEFAULT_VALUE);
 
     double aMinValue = 1;
     double aMaxValue = 0;
