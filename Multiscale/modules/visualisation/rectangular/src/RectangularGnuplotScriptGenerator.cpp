@@ -127,9 +127,9 @@ void RectangularGnuplotScriptGenerator::outputFooter(std::ifstream &fin, std::of
 
 
 // Constants
-const std::string RectangularGnuplotScriptGenerator::HEADER_IN   = "/usr/local/share/mule/config/visualisation/rectangular/header.in";
-const std::string RectangularGnuplotScriptGenerator::CONTENT_IN  = "/usr/local/share/mule/config/visualisation/rectangular/content.in";
-const std::string RectangularGnuplotScriptGenerator::FOOTER_IN   = "/usr/local/share/mule/config/visualisation/rectangular/footer.in";
+const std::string RectangularGnuplotScriptGenerator::HEADER_IN   = "config/visualisation/rectangular/header.in";
+const std::string RectangularGnuplotScriptGenerator::CONTENT_IN  = "config/visualisation/rectangular/content.in";
+const std::string RectangularGnuplotScriptGenerator::FOOTER_IN   = "config/visualisation/rectangular/footer.in";
 
 const std::string RectangularGnuplotScriptGenerator::REPLACE_HEADER_FILENAME    = "OUTPUT_FILENAME";
 const std::string RectangularGnuplotScriptGenerator::REPLACE_HEADER_HEIGHT      = "OUTPUT_DIMENSION1";

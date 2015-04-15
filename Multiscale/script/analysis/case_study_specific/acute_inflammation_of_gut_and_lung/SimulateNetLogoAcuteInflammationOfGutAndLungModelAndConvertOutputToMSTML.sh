@@ -64,14 +64,14 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 # The specification format depends on the considered state variable type as 
 # follows:
 #
-#   + Numeric:  Numeric <column> <semantic-type>, where
+#   + Numeric:  Numeric <column> <scale-and-subsystem>, where
 #       <column>                    represents the starting column from the 
 #                                   processed simulation output file
-#       <semantic-type>             represents the semantic type of the numeric 
-#                                   state variable     
+#       <scale-and-subsystem>       represents the scale and subsystem of the 
+#                                   numeric state variable     
 #
 #   + Cluster:  Cluster <start-column> <stop-column> <simulation-grid-height> 
-#               <simulation-grid-width> <nr-of-entities> <semantic-type>,
+#               <simulation-grid-width> <nr-of-entities> <scale-and-subsystem>,
 #               where:
 #       <start-column>              represents the starting column from the 
 #                                   processed simulation output file
@@ -87,8 +87,8 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 #       <max-pileup>                represents the maximum number of entities
 #                                   which can occupy a position in the
 #                                   discretised space
-#       <semantic-type>             represents the semantic type of the spatial
-#                                   state variable
+#       <scale-and-subsystem>       represents the scale and subsystem of the 
+#                                   spatial state variable
 #       <max-neighbours-distance>   represents the maximum distance between
 #                                   two neighbouring points
 #       <min-neighbours-in-cluster> represents the minimum number of 
@@ -96,7 +96,7 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 #                                   cluster
 #
 #   + Region:   Region <start-column> <stop-column> <simulation-grid-height> 
-#               <simulation-grid-width> <nr-of-concentrations> <semantic-type>, 
+#               <simulation-grid-width> <nr-of-concentrations> <scale-and-subsystem>, 
 #               where:
 #       <start-column>              represents the starting column from the 
 #                                   processed simulation output file
@@ -109,8 +109,8 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 #       <nr-of-concentrations>      represents the number of concentrations 
 #                                   recorded for each position in the 
 #                                   discretised space
-#       <semantic-type>             represents the semantic type of the spatial
-#                                   state variable
+#       <scale-and-subsystem>       represents the scale and subsystem of the 
+#                                   spatial state variable
 #       <alpha>                     represents the value by which the contrast
 #                                   of the image corresponding to the 
 #                                   discretised space is changed 
@@ -139,16 +139,16 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 ###############################################################################
 
 MSTML_GENERATION_SPECIFICATION="
-Region 2 962 31 31 1 Tissue.GutEndothelium.Cellular.Ischemia 0 100 0 0 0 0 0
-Region 963 1923 31 31 1 Tissue.LungEndothelium.Cellular.Ischemia 0 100 0 0 0 0 0
-Numeric 1924 Organ.Gut.Tissue.GutEndothelium
-Numeric 1925 Organ.Lung.Tissue.LungEndothelium
-Numeric 1926 Organism.Human.Organ.Gut
-Numeric 1927 Organism.Human.Organ.Lung
-Numeric 1928 Organ.Gut.Tissue.GutEpithelium
-Numeric 1929 Organ.Gut.Tissue.GutEpithelium
-Numeric 1930 Organ.Lung.Tissue.LungEpithelium
-Numeric 1931 Organ.Lung.Tissue.LungEpithelium
+Region 2 962 31 31 1 Cellular.GutEndotheliumIschemia 0 100 0 0 0 0 0
+Region 963 1923 31 31 1 Cellular.LungEndotheliumIschemia 0 100 0 0 0 0 0
+Numeric 1924 Tissue.GutEndothelium
+Numeric 1925 Tissue.LungEndothelium
+Numeric 1926 Organ.Gut
+Numeric 1927 Organ.Lung
+Numeric 1928 Tissue.GutEpithelium
+Numeric 1929 Tissue.GutEpithelium
+Numeric 1930 Tissue.LungEpithelium
+Numeric 1931 Tissue.LungEpithelium
 ";
 
 
@@ -244,19 +244,19 @@ function ConvertModelSimulationOutputToCsv() {
 #   $1 - The temporary MSTML subfiles folder
 #   $2 - Processed simulation output file path
 #   $3 - Index of column recording values of numeric state variable
-#   $4 - The semantic type of the numeric state variable
+#   $4 - The scale and subsystem of the numeric state variable
 function GenerateNumericTemporaryMSTMLSubfile() {
     # Initialisation
     local temporaryMSTMLSubfilesFolderPath=$1;
     local processedSimulationOutputPath=$2;
     local numericStateVariableColumnIndex=$3;
-    local numericStateVariableSemanticType=$4;
+    local numericStateVariableScaleAndSubsystem=$4;
 
-    local numericStateVariableSemanticTypeOnlyLetters=${numericStateVariableSemanticType//./};
+    local numericStateVariableScaleAndSubsystemOnlyLetters=${numericStateVariableScaleAndSubsystem//./};
 
     local numericStateVariableName=$(cat ${processedSimulationOutputPath} | head -n1 | cut -d"," -f ${numericStateVariableColumnIndex});
     local numericStateVariableValues=$(cat ${processedSimulationOutputPath} | tail -n+2 | cut -d"," -f ${numericStateVariableColumnIndex});
-    local outputFilepath="${temporaryMSTMLSubfilesFolderPath}/Numeric_${numericStateVariableSemanticTypeOnlyLetters}_${numericStateVariableName}.xml";
+    local outputFilepath="${temporaryMSTMLSubfilesFolderPath}/Numeric_${numericStateVariableScaleAndSubsystemOnlyLetters}_${numericStateVariableName}.xml";
 
     # Add header information to the MSTML subfile
     echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>" > ${outputFilepath};
@@ -267,7 +267,7 @@ function GenerateNumericTemporaryMSTMLSubfile() {
     echo "${numericStateVariableValues}" | while read numericStateVariableValue;
     do
         echo -e "\t<timepoint>";
-        echo -e "\t\t<numericStateVariable semanticType=\"${numericStateVariableSemanticType}\">";
+        echo -e "\t\t<numericStateVariable scaleAndSubsystem=\"${numericStateVariableScaleAndSubsystem}\">";
         echo -e "\t\t\t<name>${numericStateVariableName}</name>";
         echo -e "\t\t\t<value>${numericStateVariableValue}</value>";
         echo -e "\t\t</numericStateVariable>";
@@ -317,7 +317,7 @@ function UpdateClusterDetectionConfigurationFile() {
 #   $7 - The number of entities which are tracked by their position in the 
 #        discretised spatial domain
 #   $8 - The maximum number of entities which can pile up on top of each other
-#   $9 - The semantic type of the cluster state variable
+#   $9 - The scale and subsystem of the cluster state variable
 function GenerateClusterTemporaryMSTMLSubfile() {
     # Initialisation
     local temporaryMSTMLSubfilesFolderPath=$1;
@@ -328,18 +328,18 @@ function GenerateClusterTemporaryMSTMLSubfile() {
     local simulationGridWidth=$6;
     local nrOfEntities=$7;
     local maxPileup=$8;
-    local clustersSemanticType=$9;
+    local clustersScaleAndSubsystem=$9;
 
-    local clustersSemanticTypeOnlyLetters=${clustersSemanticType//./};
+    local clustersScaleAndSubsystemOnlyLetters=${clustersScaleAndSubsystem//./};
 
-    local mstmlOutputPath="${temporaryMSTMLSubfilesFolderPath}/Cluster_${clustersSemanticTypeOnlyLetters}.xml";
+    local mstmlOutputPath="${temporaryMSTMLSubfilesFolderPath}/Cluster_${clustersScaleAndSubsystemOnlyLetters}.xml";
 
     local homeFolder=$(pwd);
 
     local inputFileName=${processedSimulationOutputPath##*/};
     local inputFileBasename=${inputFileName%.*};
 
-    local outputFolder="${homeFolder}/results/${inputFileBasename}/Cluster_${clustersSemanticTypeOnlyLetters}";
+    local outputFolder="${homeFolder}/results/${inputFileBasename}/Cluster_${clustersScaleAndSubsystemOnlyLetters}";
 
     local analysisOutputFolder="${outputFolder}/analysis";
 
@@ -401,7 +401,7 @@ function GenerateClusterTemporaryMSTMLSubfile() {
     local inputFileBasenameRoot=$(echo ${inputFileBasename} | rev | cut -d'_' -f2- | rev);
 
     # Run the cluster detection procedure for each input file in parallel
-    ls ${inputDataOutputFolder}/*.in | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${analysisOutputFolder}/{/.} --height=${simulationGridHeight} --width=${simulationGridWidth} --max-pileup=${maxPileup} --debug-mode="false"
+    ls ${inputDataOutputFolder}/*.in | parallel --timeout ${COMMAND_EXECUTION_TIMELIMIT} bin/SimulationDetectClusters --input-file={} --output-file=${analysisOutputFolder}/{/.} --height=${simulationGridHeight} --width=${simulationGridWidth} --max-pileup=${maxPileup} --debug-mode="false"
 
     # Define the variables required to merge the xml files
     local clustersXMLOutputPath=${analysisOutputFolder}/"results_clusters.xml";
@@ -419,7 +419,7 @@ function GenerateClusterTemporaryMSTMLSubfile() {
         # Process each input file
         for file in $(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | sort -V);
         do
-            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"cluster\"\)/\0 semanticType=\"${clustersSemanticType}\"/g" | sed "s/<numericStateVariable>/<numericStateVariable semanticType=\"${clustersSemanticType}\">/g"; 
+            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"cluster\"\)/\0 scaleAndSubsystem=\"${clustersScaleAndSubsystem}\"/g" | sed "s/<numericStateVariable>/<numericStateVariable scaleAndSubsystem=\"${clustersScaleAndSubsystem}\">/g"; 
         done >> ${clustersXMLOutputPath};
 
         # Print the footer to the resulting file
@@ -477,7 +477,7 @@ function UpdateRegionDetectionConfigurationFile() {
 #   $5 - The height (number of rows) of the discretised spatial domain
 #   $6 - The width (number of columns) of the discretised spatial domain
 #   $7 - The number of concentrations recorded for each position in the discretised spatial domain
-#   $8 - The semantic type of the region state variable
+#   $8 - The scale and subsystem of the region state variable
 function GenerateRegionTemporaryMSTMLSubfile() {
     # Initialisation
     local temporaryMSTMLSubfilesFolderPath=$1;
@@ -487,18 +487,18 @@ function GenerateRegionTemporaryMSTMLSubfile() {
     local simulationGridHeight=$5;
     local simulationGridWidth=$6;
     local nrOfConcentrationsForEachPosition=$7;
-    local regionsSemanticType=$8;
+    local regionsScaleAndSubsystem=$8;
 
-    local regionsSemanticTypeOnlyLetters=${regionsSemanticType//./};
+    local regionsScaleAndSubsystemOnlyLetters=${regionsScaleAndSubsystem//./};
 
-    local mstmlOutputPath="${temporaryMSTMLSubfilesFolderPath}/Region_${regionsSemanticTypeOnlyLetters}.xml";
+    local mstmlOutputPath="${temporaryMSTMLSubfilesFolderPath}/Region_${regionsScaleAndSubsystemOnlyLetters}.xml";
 
     local homeFolder=$(pwd);
 
     local inputFileName=${processedSimulationOutputPath##*/};
     local inputFileBasename=${inputFileName%.*};
 
-    local outputFolder="${homeFolder}/results/${inputFileBasename}/Region_${regionsSemanticTypeOnlyLetters}";
+    local outputFolder="${homeFolder}/results/${inputFileBasename}/Region_${regionsScaleAndSubsystemOnlyLetters}";
 
     local analysisOutputFolder="${outputFolder}/analysis";
 
@@ -559,7 +559,7 @@ function GenerateRegionTemporaryMSTMLSubfile() {
     local inputFileBasenameRoot=$(echo ${inputFileBasename} | rev | cut -d'_' -f2- | rev);
 
     # Run the region detection procedure for each input file in parallel
-    ls ${inputDataOutputFolder}/*.in | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${analysisOutputFolder}/{/.} --debug-mode="false"
+    ls ${inputDataOutputFolder}/*.in | parallel --timeout ${COMMAND_EXECUTION_TIMELIMIT} bin/RectangularDetectRegions --input-file={} --output-file=${analysisOutputFolder}/{/.} --debug-mode="false"
 
     # Define the variables required to merge the xml files
     local regionsXMLOutputPath=${analysisOutputFolder}/"results_regions.xml";
@@ -577,7 +577,7 @@ function GenerateRegionTemporaryMSTMLSubfile() {
         # Process each input file
         for file in $(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | sort -V);
         do
-            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"region\"\)/\0 semanticType=\"${regionsSemanticType}\"/g" | sed "s/<numericStateVariable>/<numericStateVariable semanticType=\"${regionsSemanticType}\">/g";
+            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"region\"\)/\0 scaleAndSubsystem=\"${regionsScaleAndSubsystem}\"/g" | sed "s/<numericStateVariable>/<numericStateVariable scaleAndSubsystem=\"${regionsScaleAndSubsystem}\">/g";
         done >> ${regionsXMLOutputPath};
 
         # Print the footer to the resulting file
@@ -623,7 +623,7 @@ function GenerateTemporaryMSTMLSubfiles() {
             local simulationGridWidth=$(echo ${mstmlSubfileSpecification} | cut -d" " -f5);
             local nrOfEntities=$(echo ${mstmlSubfileSpecification} | cut -d" " -f6);
             local maxPileup=$(echo ${mstmlSubfileSpecification} | cut -d" " -f7);
-            local semanticType=$(echo ${mstmlSubfileSpecification} | cut -d" " -f8);
+            local scaleAndSubsystem=$(echo ${mstmlSubfileSpecification} | cut -d" " -f8);
             local maxDistanceBtwNeighours=$(echo ${mstmlSubfileSpecification} | cut -d" " -f9);
             local minNrOfNeighboursInCluster=$(echo ${mstmlSubfileSpecification} | cut -d" " -f10);
            
@@ -631,7 +631,7 @@ function GenerateTemporaryMSTMLSubfiles() {
             UpdateClusterDetectionConfigurationFile ${maxDistanceBtwNeighours} ${minNrOfNeighboursInCluster};
 
             # Generate the cluster temporary MSTML subfile 
-            GenerateClusterTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} ${processedSimulationOutputPath} ${startColumn} ${stopColumn} ${simulationGridHeight} ${simulationGridWidth} ${nrOfEntities} ${maxPileup} ${semanticType};
+            GenerateClusterTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} ${processedSimulationOutputPath} ${startColumn} ${stopColumn} ${simulationGridHeight} ${simulationGridWidth} ${nrOfEntities} ${maxPileup} ${scaleAndSubsystem};
         elif [[ ${stateVariableType} == "Region" ]];
         then
             local startColumn=$(echo ${mstmlSubfileSpecification} | cut -d" " -f2);
@@ -639,7 +639,7 @@ function GenerateTemporaryMSTMLSubfiles() {
             local simulationGridHeight=$(echo ${mstmlSubfileSpecification} | cut -d" " -f4);
             local simulationGridWidth=$(echo ${mstmlSubfileSpecification} | cut -d" " -f5);
             local nrOfConcentrationsForEachPosition=$(echo ${mstmlSubfileSpecification} | cut -d" " -f6);
-            local semanticType=$(echo ${mstmlSubfileSpecification} | cut -d" " -f7);
+            local scaleAndSubsystem=$(echo ${mstmlSubfileSpecification} | cut -d" " -f7);
             local contrastChangingValue=$(echo ${mstmlSubfileSpecification} | cut -d" " -f8);
             local brightnessChangingValue=$(echo ${mstmlSubfileSpecification} | cut -d" " -f9);
             local blurKernelSize=$(echo ${mstmlSubfileSpecification} | cut -d" " -f10);
@@ -652,7 +652,7 @@ function GenerateTemporaryMSTMLSubfiles() {
             UpdateRegionDetectionConfigurationFile ${contrastChangingValue} ${brightnessChangingValue} ${blurKernelSize} ${morphologicalCloseIterations} ${polygonConstructionApproximationDegree} ${regionAreaThresholdValue} ${thresholdValue};
            
             # Generate the cluster temporary MSTML subfile 
-            GenerateRegionTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} ${processedSimulationOutputPath} ${startColumn} ${stopColumn} ${simulationGridHeight} ${simulationGridWidth} ${nrOfConcentrationsForEachPosition} ${semanticType};
+            GenerateRegionTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} ${processedSimulationOutputPath} ${startColumn} ${stopColumn} ${simulationGridHeight} ${simulationGridWidth} ${nrOfConcentrationsForEachPosition} ${scaleAndSubsystem};
         fi;
     done;
     
@@ -691,7 +691,7 @@ function MergeMSTMLSubfiles() {
     # Step 1: Store the timepoints values in a separate file
     ####################################################################################
      
-    cat ${processedSimulationOutputPath} | cut -d"," -f1 >> ${timepointsValuesFilePath};
+    cat ${processedSimulationOutputPath} | cut -d"," -f1 > ${timepointsValuesFilePath};
 
     ####################################################################################
     # Step 2: Merge MSTML subfiles
@@ -767,6 +767,14 @@ do
 
 
     ##############################################################################
+    # Step 0: Initialisation
+    ##############################################################################
+    
+    # Inform the user that the user will be simulated and analysed the i-th time
+    echo "Model simulation and analysis iteration: ${i} (Start time: ${date})";
+
+
+    ##############################################################################
     # Step 1: Simulate the model
     ##############################################################################
     
@@ -797,7 +805,7 @@ do
     ##############################################################################
     # Step 5: Post-processing
     ##############################################################################
-    
+   
     # Separate model simulation output using a blank line
     echo;
 done
@@ -808,11 +816,11 @@ echo "${NR_MODEL_SIMULATIONS} MSTML file(s) were generated successfully.";
 echo "";
 
 
-###############################################################################
+##############################################################################
 #
 # Termination
 #
-###############################################################################
+##############################################################################
 
 # Remove temporary folder(s)
 rm -rf ${OUT_MSTML_SUBFILES_TMP_FOLDER}

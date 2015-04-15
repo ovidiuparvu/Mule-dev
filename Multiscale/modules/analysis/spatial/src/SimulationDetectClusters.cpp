@@ -30,7 +30,7 @@ using namespace multiscale::analysis;
 namespace po = boost::program_options;
 namespace pt = boost::property_tree;
 
-const std::string CONFIG_FILE = "/usr/local/share/mule/config/analysis/spatial/simulation_cluster_detector.xml";
+const std::string CONFIG_FILE = "config/analysis/spatial/simulation_cluster_detector.xml";
 
 const std::string LABEL_ROOT_COMMENT      = "<xmlcomment>";
 const std::string LABEL_EPS               = "detector.eps";

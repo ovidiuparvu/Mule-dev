@@ -544,7 +544,7 @@ const std::string MultiscaleArchitectureGraph::LABEL_EDGE_BEGIN_VERTEX  = "<xmla
 const std::string MultiscaleArchitectureGraph::LABEL_EDGE_END_VERTEX    = "<xmlattr>.endVertex";
 
 const std::string MultiscaleArchitectureGraph::MULTISCALE_ARCHITECTURE_GRAPH_INPUT_FILE_EXTENSION = ".xml";
-const std::string MultiscaleArchitectureGraph::MULTISCALE_ARCHITECTURE_GRAPH_XSD_PATH             = "/usr/local/share/mule/config/verification/spatial-temporal/schema/multiscale_architecture_graph.xsd";
+const std::string MultiscaleArchitectureGraph::MULTISCALE_ARCHITECTURE_GRAPH_XSD_PATH             = "config/verification/spatial-temporal/schema/multiscale_architecture_graph.xsd";
 
 const std::string MultiscaleArchitectureGraph::ERR_INVALID_INPUT_FILE_PATH_BEGIN   = "The provided input file path (";
 const std::string MultiscaleArchitectureGraph::ERR_INVALID_INPUT_FILE_PATH_END     = ") does not point to a regular file with the required extension (" + MULTISCALE_ARCHITECTURE_GRAPH_INPUT_FILE_EXTENSION + "). Please change.";

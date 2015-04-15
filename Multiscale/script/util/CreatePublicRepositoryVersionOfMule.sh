@@ -48,18 +48,20 @@ rm Multiscale/modules/verification/spatial-temporal/sample/PatternAnalysis*;
 rm Multiscale/script/analysis/*.*;
 rm -rf Multiscale/script/analysis/case_study_specific/chemotaxis/;
 rm -rf Multiscale/script/analysis/case_study_specific/dictyostelium/;
+rm -rf Multiscale/script/analysis/util;
 rm -rf Multiscale/script/buildbot/
 rm -rf Multiscale/script/docker/
 rm -rf Multiscale/script/util
 rm -rf Multiscale/script/verification/sample/
+rm -rf Multiscale/script/verification/util/
 rm Multiscale/script/verification/MergeAttributeTestFiles.sh
 rm -rf Multiscale/script/video/
 
 # Remove the update project modified date commands from the main CMakeLists.txt file
-TMP_FILE=$(mktemp) && sed -e '252,261d' Multiscale/CMakeLists.txt > ${TMP_FILE} && mv ${TMP_FILE} Multiscale/CMakeLists.txt;
+projectModifiedDateLineNumber=$(cat Multiscale/CMakeLists.txt | grep -n "# Project modified date" | head -n1 | grep -o "^[0-9]\+") && TMP_FILE=$(mktemp) && sed -e "$((${projectModifiedDateLineNumber} - 1)),$((${projectModifiedDateLineNumber} + 8))d" Multiscale/CMakeLists.txt > ${TMP_FILE} && mv ${TMP_FILE} Multiscale/CMakeLists.txt;
 
 # Remove the pattern analysis targets from the corresponding CMakeLists.txt file
-TMP_FILE=$(mktemp) && sed -e '351,383d' Multiscale/modules/verification/spatial-temporal/CMakeLists.txt > ${TMP_FILE} && mv ${TMP_FILE} Multiscale/modules/verification/spatial-temporal/CMakeLists.txt;
+patternAnalysisLineNumber=$(cat Multiscale/modules/verification/spatial-temporal/CMakeLists.txt | grep -n "# PatternAnalysisInteractiveSample" | head -n1 | grep -o "^[0-9]\+") && TMP_FILE=$(mktemp) && sed -e "${patternAnalysisLineNumber},$((${patternAnalysisLineNumber} + 32))d" Multiscale/modules/verification/spatial-temporal/CMakeLists.txt > ${TMP_FILE} && mv ${TMP_FILE} Multiscale/modules/verification/spatial-temporal/CMakeLists.txt;
 
 # Create the "Debug" and "Release" build folders
 mkdir -p Multiscale/build/Debug;
