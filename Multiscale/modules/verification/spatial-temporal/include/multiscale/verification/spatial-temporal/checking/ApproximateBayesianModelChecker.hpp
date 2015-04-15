@@ -52,23 +52,24 @@ namespace multiscale {
 
             private:
 
-                double probability;            /*!< The probability specified by the user for the
-                                                                                     logic property to be evaluated */
+                double probability;         /*!< The probability specified by the user for the
+                                                 logic property to be evaluated */
 
-                double alpha;                  /*!< The shape parameter \f$ \alpha \f$ for the Beta distribution prior */
-                double beta;                   /*!< The shape parameter \f$ \beta \f$ for the Beta distribution prior */
+                double alpha;               /*!< The shape parameter \f$ \alpha \f$ for the Beta distribution prior */
+                double beta;                /*!< The shape parameter \f$ \beta \f$ for the Beta distribution prior */
 
-                double mean;                   /*!< The value of the mean */
-                double variance;               /*!< The value of the variance */
+                double mean;                /*!< The value of the mean */
+                double variance;            /*!< The value of the variance */
 
-                double varianceThreshold;      /*!< The variance threshold */
+                double varianceThreshold;   /*!< The variance threshold */
 
-                ApproximateBayesianModelCheckingResult  modelCheckingResult;    /*!< The result of the model checking task */
+                ApproximateBayesianModelCheckingResult
+                    modelCheckingResult;    /*!< The result of the model checking task */
 
             public:
 
                 ApproximateBayesianModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
-                                                const TypeSemanticsTable &typeSemanticsTable,
+                                                const MultiscaleArchitectureGraph &multiscaleArchitectureGraph,
                                                 double alpha, double beta, double varianceThreshold);
                 ~ApproximateBayesianModelChecker();
 

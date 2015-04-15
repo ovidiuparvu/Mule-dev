@@ -1,16 +1,17 @@
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 #include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
-#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
+#include "multiscale/verification/spatial-temporal/model/MultiscaleArchitectureGraph.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/ScaleAndSubsystemEvaluator.hpp"
 
 using namespace multiscale::verification;
 
 
-void ScaleAndSubsystemEvaluator::validate(const std::string &scaleAndSubsystem,
-                                          const TypeSemanticsTable &typeSemanticsTable) {
-    // If the scale and subsystem exists in the type semantics table
+void ScaleAndSubsystemEvaluator::validateScaleAndSubsystem(const std::string &scaleAndSubsystem,
+                                                           const MultiscaleArchitectureGraph
+                                                               &multiscaleArchitectureGraph) {
+    // If the scale and subsystem exists in the multiscale architecture graph
     // or has the default value
-    if ((typeSemanticsTable.existsSemanticType(scaleAndSubsystem)) ||
+    if ((multiscaleArchitectureGraph.existsScaleAndSubsystem(scaleAndSubsystem)) ||
         (scaleAndSubsystem.compare(ScaleAndSubsystem::DEFAULT_VALUE) == 0)) {
         // Do nothing
     } else {
@@ -23,7 +24,14 @@ void ScaleAndSubsystemEvaluator::validate(const std::string &scaleAndSubsystem,
     }
 }
 
+bool ScaleAndSubsystemEvaluator::areEqualScalesAndSubsystems(const std::string &lhsScaleAndSubsystem,
+                                                             const std::string &rhsScaleAndSubsystem) {
+    return (
+        lhsScaleAndSubsystem.compare(rhsScaleAndSubsystem) == 0
+    );
+}
+
 
 // Constants
 const std::string ScaleAndSubsystemEvaluator::ERR_INVALID_SCALE_AND_SUBSYSTEM_BEGIN = "The scale and subsystem (";
-const std::string ScaleAndSubsystemEvaluator::ERR_INVALID_SCALE_AND_SUBSYSTEM_END   = ") specified in the logic statement does not exist in the type semantics table.";
+const std::string ScaleAndSubsystemEvaluator::ERR_INVALID_SCALE_AND_SUBSYSTEM_END   = ") specified in the logic statement does not exist in the multiscale architecture graph.";

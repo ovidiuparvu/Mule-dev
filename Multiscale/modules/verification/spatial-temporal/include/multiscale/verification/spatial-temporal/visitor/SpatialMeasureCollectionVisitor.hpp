@@ -3,7 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureCollectionAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/model/TimePoint.hpp"
-#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
+#include "multiscale/verification/spatial-temporal/model/MultiscaleArchitectureGraph.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/NumericEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/SubsetVisitor.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/TimePointEvaluator.hpp"
@@ -20,15 +20,18 @@ namespace multiscale {
 
             private:
 
-                TimePoint                   &timePoint;             /*!< The considered timepoint */
-                const TypeSemanticsTable    &typeSemanticsTable;    /*!< The type semantics table */
+                TimePoint
+                    &timePoint;                     /*!< The considered timepoint */
+                const MultiscaleArchitectureGraph
+                    &multiscaleArchitectureGraph;   /*!< The considered multiscale architecture graph */
 
 
             public:
 
                 SpatialMeasureCollectionVisitor(TimePoint &timePoint,
-                                                const TypeSemanticsTable &typeSemanticsTable)
-                                                : timePoint(timePoint), typeSemanticsTable(typeSemanticsTable) {}
+                                                const MultiscaleArchitectureGraph &multiscaleArchitectureGraph)
+                                                : timePoint(timePoint),
+                                                  multiscaleArchitectureGraph(multiscaleArchitectureGraph) {}
 
                 //! Overloading the "()" operator for the PrimarySpatialMeasureCollectionAttribute alternative
                 /*!
@@ -39,7 +42,10 @@ namespace multiscale {
                     // Create the subset timepoint corresponding to the given timepoint
                     TimePoint subsetTimePoint(
                         boost::apply_visitor(
-                            SubsetVisitor(timePoint, typeSemanticsTable),
+                            SubsetVisitor(
+                                timePoint,
+                                multiscaleArchitectureGraph
+                            ),
                             primarySpatialMeasureCollection.subset.subset
                         )
                     );
@@ -107,7 +113,7 @@ namespace multiscale {
             private:
 
                 //! Evaluate the given spatial measure collection
-                /*! The timepoint and type semantics table provided in the constructor are employed
+                /*! The timepoint and multiscale architecture graph provided in the constructor are employed
                  *  during the evaluation of the spatial measure collection.
                  *
                  * \param spatialMeasureCollection  The given spatial measure collection
@@ -118,7 +124,7 @@ namespace multiscale {
                     return (
                         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
                             timePoint,
-                            typeSemanticsTable,
+                            multiscaleArchitectureGraph,
                             spatialMeasureCollection
                         )
                     );

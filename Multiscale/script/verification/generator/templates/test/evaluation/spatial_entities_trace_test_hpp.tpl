@@ -806,11 +806,11 @@ TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(scaleAndSubsystem = 213.121) <= {B}]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, NumericStateVariableScaleAndSubsystemNotInTypeSemanticsTable) {
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableScaleAndSubsystemNotInMultiscaleArchitectureGraph) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({D}(scaleAndSubsystem = Organ.Liver) < 5.01) ^ ({D}(scaleAndSubsystem = Organ.Liver) > 4.99))]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, NumericStateVariableScaleAndSubsystemInTypeSemanticsTable) {
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableScaleAndSubsystemInMultiscaleArchitectureGraph) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({B}(scaleAndSubsystem = Organ.Kidney) < 3.01) ^ ({B}(scaleAndSubsystem = Organ.Kidney) > 2.99))]"));
 }
 
@@ -863,7 +863,7 @@ TEST_F(SpatialEntitiesTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, ScaleAndSubsystem) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, scaleAndSubsystem < Organ.Kidney))) >= 1]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, scaleAndSubsystem = Organ.Kidney))) = 0]"));
 }
 
 

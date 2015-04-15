@@ -66,12 +66,13 @@ namespace multiscale {
                 double a2FromPaper;                 /*!< The variable A2 (from the original paper) */
                 double b2FromPaper;                 /*!< The variable B2 (from the original paper) */
 
-                StatisticalModelCheckingResult modelCheckingResult; /*!< The result of the model checking task */
+                StatisticalModelCheckingResult
+                    modelCheckingResult;            /*!< The result of the model checking task */
 
             public:
 
                 StatisticalModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
-                                        const TypeSemanticsTable &typeSemanticsTable,
+                                        const MultiscaleArchitectureGraph &multiscaleArchitectureGraph,
                                         double typeIError, double typeIIError);
                 ~StatisticalModelChecker();
 

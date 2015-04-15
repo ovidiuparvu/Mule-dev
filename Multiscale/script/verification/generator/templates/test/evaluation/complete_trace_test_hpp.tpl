@@ -107,7 +107,7 @@ namespace multiscaletest {
         // Add spatial entities to each timepoint
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
 
-            // Add /*{{ spatial_entities[0].name }}*/s to the timepoint
+            // Add /*{{ spatial_entities[0].name }}*/s with scale and subsystem "Organ.Kidney" to the timepoint
             for (std::size_t j = ((((i + 1) % 4) == 0) ? (i - 1) : 0); j <= i; j++) {
                 std::shared_ptr<SpatialEntity> /*{{ spatial_entities[0].name }}*/ = std::make_shared</*{{ spatial_entities[0].name|first_to_upper }}*/>();
 
@@ -117,7 +117,7 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 2);
             /*{% endfor %}*/
-                /*{{ spatial_entities[0].name }}*/->setScaleAndSubsystem(ScaleAndSubsystem::DEFAULT_VALUE);
+                /*{{ spatial_entities[0].name }}*/->setScaleAndSubsystem(SCALE_AND_SUBSYSTEM_ORGAN_KIDNEY);
 
                 timePoints[i].addSpatialEntityAndType(/*{{ spatial_entities[0].name }}*/, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
             }
@@ -859,11 +859,11 @@ TEST_F(CompleteTraceTest, NumericStateVariableWrongScaleAndSubsystemLhsLargerVal
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(scaleAndSubsystem = 213.121) <= {B}]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemNotInTypeSemanticsTable) {
+TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemNotInMultiscaleArchitectureGraph) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({D}(scaleAndSubsystem = Organ.Liver) < 5.01) ^ ({D}(scaleAndSubsystem = Organ.Liver) > 4.99))]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemInTypeSemanticsTable) {
+TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemInMultiscaleArchitectureGraph) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({B}(scaleAndSubsystem = Organ.Kidney) < 3.01) ^ ({B}(scaleAndSubsystem = Organ.Kidney) > 2.99))]"));
 }
 
@@ -1362,7 +1362,7 @@ TEST_F(CompleteTraceTest, UnaryStatisticalSpatial) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, UnaryScaleAndSubsystemConstraint) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, scaleAndSubsystem < Organ.Kidney))) > 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, scaleAndSubsystem < Organism.Human))) > 0]"));
 }
 
 

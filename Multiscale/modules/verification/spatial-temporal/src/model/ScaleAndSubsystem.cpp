@@ -3,5 +3,5 @@
 using namespace multiscale::verification;
 
 
-// Constants definitions
+// Constants
 const std::string ScaleAndSubsystem::DEFAULT_VALUE = "";

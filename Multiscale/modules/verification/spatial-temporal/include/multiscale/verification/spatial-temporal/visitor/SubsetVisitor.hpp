@@ -15,13 +15,15 @@ namespace multiscale {
 
             private:
 
-                TimePoint                   &timePoint;             /*!< The initial timepoint */
-                const TypeSemanticsTable    &typeSemanticsTable;    /*!< The considered type semantics table */
+                TimePoint
+                    &timePoint;                     /*!< The initial timepoint */
+                const MultiscaleArchitectureGraph
+                    &multiscaleArchitectureGraph;   /*!< The considered multiscale architecture graph */
 
             public:
 
-                SubsetVisitor(TimePoint &timePoint, const TypeSemanticsTable &typeSemanticsTable)
-                              : timePoint(timePoint), typeSemanticsTable(typeSemanticsTable) {}
+                SubsetVisitor(TimePoint &timePoint, const MultiscaleArchitectureGraph &multiscaleArchitectureGraph)
+                              : timePoint(timePoint), multiscaleArchitectureGraph(multiscaleArchitectureGraph) {}
 
                 //! Overloading the "()" operator for the SubsetAttribute alternative
                 /*!
@@ -38,7 +40,10 @@ namespace multiscale {
                 TimePoint operator() (const SubsetSpecificAttribute &subset) const {
                     TimePoint subsetSpecificTimePoint(timePoint);
 
-                    setTimePointConsideredSpatialEntityType(subsetSpecificTimePoint, subset.subsetSpecificType);
+                    setTimePointConsideredSpatialEntityType(
+                        subsetSpecificTimePoint,
+                        subset.subsetSpecificType
+                    );
 
                     return subsetSpecificTimePoint;
                 }
@@ -50,10 +55,17 @@ namespace multiscale {
                 TimePoint operator() (const FilterSubsetAttribute &subset) const {
                     TimePoint filterSubsetTimePoint(timePoint);
 
-                    setTimePointConsideredSpatialEntityType(filterSubsetTimePoint,
-                                                            subset.subsetSpecific.subsetSpecificType);
+                    setTimePointConsideredSpatialEntityType(
+                        filterSubsetTimePoint,
+                        subset.subsetSpecific.subsetSpecificType
+                    );
 
-                    return filterTimePoint(filterSubsetTimePoint, subset.constraint);
+                    return (
+                        filterTimePoint(
+                            filterSubsetTimePoint,
+                            subset.constraint
+                        )
+                    );
                 }
 
                 //! Overloading the "()" operator for the SubsetSubsetOperationAttribute alternative
@@ -64,8 +76,13 @@ namespace multiscale {
                     TimePoint firstSubsetTimePoint(evaluate(subset.firstSubset, timePoint));
                     TimePoint secondSubsetTimePoint(evaluate(subset.secondSubset, timePoint));
 
-                    return evaluateSubsetOperation(subset.subsetOperation.subsetOperationType,
-                                                   firstSubsetTimePoint, secondSubsetTimePoint);
+                    return (
+                        evaluateSubsetOperation(
+                            subset.subsetOperation.subsetOperationType,
+                            firstSubsetTimePoint,
+                            secondSubsetTimePoint
+                        )
+                    );
                 }
 
 
@@ -79,7 +96,10 @@ namespace multiscale {
                 TimePoint evaluate(const SubsetAttributeType &subset, TimePoint &timePoint) const {
                     return (
                         boost::apply_visitor(
-                            SubsetVisitor(timePoint, typeSemanticsTable),
+                            SubsetVisitor(
+                                timePoint,
+                                multiscaleArchitectureGraph
+                            ),
                             subset
                         )
                     );
@@ -153,7 +173,11 @@ multiscale::verification::SubsetVisitor::filterTimePoint(TimePoint &timePoint,
                                                          const ConstraintAttributeType &constraint) const {
     return (
         boost::apply_visitor(
-            ConstraintVisitor(timePoint, timePoint, typeSemanticsTable),
+            ConstraintVisitor(
+                timePoint,
+                timePoint,
+                multiscaleArchitectureGraph
+            ),
             constraint
         )
     );

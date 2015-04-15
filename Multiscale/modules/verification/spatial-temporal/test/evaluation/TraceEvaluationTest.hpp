@@ -6,7 +6,7 @@
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/model/NumericStateVariableId.hpp"
 #include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
-#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
+#include "multiscale/verification/spatial-temporal/model/MultiscaleArchitectureGraph.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <limits>
@@ -48,8 +48,8 @@ namespace multiscaletest {
 
             mv::SpatialTemporalTrace
                 trace;                              /*!< The spatial temporal trace */
-            mv::TypeSemanticsTable
-                typeSemanticsTable;                 /*!< The type semantics table */
+            mv::MultiscaleArchitectureGraph
+                multiscaleArchitectureGraph;        /*!< The multiscale architecture graph */
 
             std::string query;                      /*!< The query to be checked */
 
@@ -84,12 +84,13 @@ namespace multiscaletest {
             */
            void InitialiseQuery(const std::string &query);
 
-           //! Initialise the type semantics table
-           void InitialiseTypeSemanticsTable();
+           //! Initialise the multiscale architecture graph
+           void InitialiseMultiscaleArchitectureGraph();
 
         protected:
 
            // Constants
+           static const std::string SCALE_AND_SUBSYSTEM_ORGANISM_HUMAN;
            static const std::string SCALE_AND_SUBSYSTEM_ORGAN_HEART;
            static const std::string SCALE_AND_SUBSYSTEM_ORGAN_KIDNEY;
            static const std::string SCALE_AND_SUBSYSTEM_ORGAN_LIVER;

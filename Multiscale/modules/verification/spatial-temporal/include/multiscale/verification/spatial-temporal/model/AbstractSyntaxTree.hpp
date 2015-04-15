@@ -3,7 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
-#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
+#include "multiscale/verification/spatial-temporal/model/MultiscaleArchitectureGraph.hpp"
 
 
 namespace multiscale {
@@ -39,13 +39,13 @@ namespace multiscale {
                 //! Get the value of the probability used in the probabilistic logical query
                 double getProbability();
 
-                //! Evaluate the abstract syntax tree considering the given trace and type semantics table
+                //! Evaluate the abstract syntax tree considering the given trace and multiscale architecture graph
                 /*!
-                 * \param spatialTemporalTrace  The given spatial temporal trace
-                 * \param typeSemanticsTable    The considered type semantics table
+                 * \param spatialTemporalTrace          The given spatial temporal trace
+                 * \param multiscaleArchitectureGraph   The considered multiscale architecture graph
                  */
                 bool evaluate(const SpatialTemporalTrace &spatialTemporalTrace,
-                              const TypeSemanticsTable &typeSemanticsTable);
+                              const MultiscaleArchitectureGraph &multiscaleArchitectureGraph);
 
             private:
 

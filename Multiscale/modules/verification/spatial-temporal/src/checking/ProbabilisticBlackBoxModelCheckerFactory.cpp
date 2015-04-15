@@ -10,10 +10,12 @@ ProbabilisticBlackBoxModelCheckerFactory::~ProbabilisticBlackBoxModelCheckerFact
 
 std::shared_ptr<ModelChecker>
 ProbabilisticBlackBoxModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree,
-                                                         const TypeSemanticsTable &typeSemanticsTable) {
+                                                         const MultiscaleArchitectureGraph
+                                                             &multiscaleArchitectureGraph) {
     return (
         std::make_shared<ProbabilisticBlackBoxModelChecker>(
-            abstractSyntaxTree, typeSemanticsTable
+            abstractSyntaxTree,
+            multiscaleArchitectureGraph
         )
     );
 }

@@ -29,47 +29,47 @@ namespace multiscale {
                     tracesFolderPath;                   /*!< The path to the folder containing traces */
 
                 unsigned int
-                    modelCheckerType;                   /*!< The type of the model checker */
+                    modelCheckerType;                       /*!< The type of the model checker */
 
                 unsigned long
-                    extraEvaluationTime;                /*!< The number of minutes for which the application waits
-                                                             for new traces to be produced */
+                    extraEvaluationTime;                    /*!< The number of minutes for which the application waits
+                                                                 for new traces to be produced */
                 std::string
-                    extraEvaluationProgramPath;         /*!< The path to the program which will be
-                                                             executed whenever more traces are required */
+                    extraEvaluationProgramPath;             /*!< The path to the program which will be
+                                                                 executed whenever more traces are required */
 
                 std::string
-                    typeSemanticsTableFilepath;         /*!< The path to the type semantics table */
+                    multiscaleArchitectureGraphFilepath;    /*!< The path to the multiscale architecture graph */
 
                 bool
-                    shouldVerboseDetailedResults;       /*!< The flag indicating if detailed results should
-                                                             be printed out */
+                    shouldVerboseDetailedResults;           /*!< The flag indicating if detailed results should
+                                                                 be printed out */
 
                 po::variables_map
-                    variablesMap;                       /*!< The map containing <a, v> pairs where a = command
-                                                             line argument and v = value */
+                    variablesMap;                           /*!< The map containing <a, v> pairs where a = command
+                                                                 line argument and v = value */
                 po::options_description
-                    allowedArguments;                   /*!< The configuration indicating which command line
-                                                             arguments are allowed */
+                    allowedArguments;                       /*!< The configuration indicating which command line
+                                                                 arguments are allowed */
                 po::options_description
-                    requiredArguments;                  /*!< The configuration indicating which command line
-                                                             arguments are allowed */
+                    requiredArguments;                      /*!< The configuration indicating which command line
+                                                                 arguments are allowed */
                 po::options_description
-                    optionalArguments;                  /*!< The configuration indicating which command line
-                                                             arguments are allowed */
+                    optionalArguments;                      /*!< The configuration indicating which command line
+                                                                 arguments are allowed */
                 po::options_description
-                    modelCheckerTypeSpecificArguments;  /*!< The configuration indicating which command line
-                                                             arguments are allowed */
+                    modelCheckerTypeSpecificArguments;      /*!< The configuration indicating which command line
+                                                                 arguments are allowed */
 
                 std::string
-                    modelCheckerTypeName;               /*!< The name of the model checker type */
+                    modelCheckerTypeName;                   /*!< The name of the model checker type */
                 std::string
-                    modelCheckerParameters;             /*!< The parameters specific to the model checker */
+                    modelCheckerParameters;                 /*!< The parameters specific to the model checker */
 
                 std::shared_ptr<ModelCheckerFactory>
-                    modelCheckerFactory;                /*!< The model checker */
+                    modelCheckerFactory;                    /*!< The model checker */
                 std::shared_ptr<ModelCheckingManager>
-                    modelCheckingManager;               /*!< The model checking task manager */
+                    modelCheckingManager;                   /*!< The model checking task manager */
 
             public:
 

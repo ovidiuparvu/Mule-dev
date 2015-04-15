@@ -737,11 +737,11 @@ TEST_F(EmptyTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{B}(scaleAndSubsystem = 213.121) <= {B}]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, NumericStateVariableScaleAndSubsystemNotInTypeSemanticsTable) {
+TEST_F(EmptyTraceTest, NumericStateVariableScaleAndSubsystemNotInMultiscaleArchitectureGraph) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [G [0, 11] (({D}(scaleAndSubsystem = Organ.Liver) < 5.01) ^ ({D}(scaleAndSubsystem = Organ.Liver) > 4.99))]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, NumericStateVariableScaleAndSubsystemInTypeSemanticsTable) {
+TEST_F(EmptyTraceTest, NumericStateVariableScaleAndSubsystemInMultiscaleArchitectureGraph) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [G [0, 11] (({B}(scaleAndSubsystem = Organ.Kidney) < 3.01) ^ ({B}(scaleAndSubsystem = Organ.Kidney) > 2.99))]"), SpatialTemporalException);
 }
 

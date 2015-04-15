@@ -13,7 +13,7 @@ double ProbabilisticLogicPropertyAttribute::getProbability() {
 }
 
 bool ProbabilisticLogicPropertyAttribute::evaluate(const SpatialTemporalTrace &trace,
-                                                   const TypeSemanticsTable &typeSemanticsTable) {
+                                                   const MultiscaleArchitectureGraph &multiscaleArchitectureGraph) {
     if (trace.length() == 0) {
         MS_throw(SpatialTemporalException, ERR_TRACE_LENGTH_ZERO);
     }
@@ -22,8 +22,16 @@ bool ProbabilisticLogicPropertyAttribute::evaluate(const SpatialTemporalTrace &t
     SpatialTemporalTrace traceCopy(trace);
 
     // Pass the copy of the spatial-temporal trace to the LogicPropertyVisitor
-    return boost::apply_visitor(LogicPropertyVisitor(traceCopy, typeSemanticsTable),
-                                logicProperty, evaluationLogicProperty);
+    return (
+        boost::apply_visitor(
+            LogicPropertyVisitor(
+                traceCopy,
+                multiscaleArchitectureGraph
+            ),
+            logicProperty,
+            evaluationLogicProperty
+        )
+    );
 }
 
 

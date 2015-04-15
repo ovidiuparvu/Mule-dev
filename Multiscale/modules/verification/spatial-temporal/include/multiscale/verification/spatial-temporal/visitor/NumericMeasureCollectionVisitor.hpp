@@ -16,15 +16,18 @@ namespace multiscale {
 
             private:
 
-                SpatialTemporalTrace       &trace;              /*!< The considered spatial temporal trace */
-                const TypeSemanticsTable   &typeSemanticsTable; /*!< The type semantics table */
+                SpatialTemporalTrace
+                    &trace;                         /*!< The considered spatial temporal trace */
+                const MultiscaleArchitectureGraph
+                    &multiscaleArchitectureGraph;   /*!< The considered multiscale architecture graph */
 
 
             public:
 
                 NumericMeasureCollectionVisitor(SpatialTemporalTrace &trace,
-                                                const TypeSemanticsTable &typeSemanticsTable)
-                                                : trace(trace), typeSemanticsTable(typeSemanticsTable) {}
+                                                const MultiscaleArchitectureGraph &multiscaleArchitectureGraph)
+                                                : trace(trace),
+                                                  multiscaleArchitectureGraph(multiscaleArchitectureGraph) {}
 
                 //! Overloading the "()" operator for the TemporalNumericCollectionAttribute alternative
                 /*!
@@ -46,11 +49,13 @@ namespace multiscale {
                  */
                 std::vector<double>
                 operator()(const TemporalNumericMeasureCollectionAttribute &temporalNumericMeasureCollection) const {
-                    return evaluateTemporalNumericMeasureCollection(
-                        trace,
-                        temporalNumericMeasureCollection.startTimepoint,
-                        temporalNumericMeasureCollection.endTimepoint,
-                        temporalNumericMeasureCollection.numericMeasure
+                    return (
+                        evaluateTemporalNumericMeasureCollection(
+                            trace,
+                            temporalNumericMeasureCollection.startTimepoint,
+                            temporalNumericMeasureCollection.endTimepoint,
+                            temporalNumericMeasureCollection.numericMeasure
+                        )
                     );
                 }
 
@@ -90,9 +95,11 @@ namespace multiscale {
                     );
 
                     // Evaluate the timeseries timeseries components
-                    return evaluateTimeseriesTimeseriesComponent(
-                        timeseriesTimeseriesComponent.timeseriesMeasure.timeseriesMeasure,
-                        values, timepoints, indices
+                    return (
+                        evaluateTimeseriesTimeseriesComponent(
+                            timeseriesTimeseriesComponent.timeseriesMeasure.timeseriesMeasure,
+                            values, timepoints, indices
+                        )
                     );
                 }
 
@@ -125,9 +132,11 @@ namespace multiscale {
                     );
 
                     // Evaluate the homogeneous homogeneous timeseries
-                    return evaluateHomogeneousHomogeneousTimeseries(
-                        homogeneousHomogeneousTimeseries.homogeneousTimeseriesMeasure.homogeneousTimeseriesMeasure,
-                        values, timepoints, indices
+                    return (
+                        evaluateHomogeneousHomogeneousTimeseries(
+                            homogeneousHomogeneousTimeseries.homogeneousTimeseriesMeasure.homogeneousTimeseriesMeasure,
+                            values, timepoints, indices
+                        )
                     );
                 }
 
@@ -436,7 +445,7 @@ multiscale::verification::NumericMeasureCollectionVisitor::operator()(
     return (
         NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
             trace,
-            typeSemanticsTable,
+            multiscaleArchitectureGraph,
             temporalNumericCollection
         )
     );
@@ -449,7 +458,7 @@ multiscale::verification::NumericMeasureCollectionVisitor::operator()(
     return (
         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
             trace.getTimePointReference(0),
-            typeSemanticsTable,
+            multiscaleArchitectureGraph,
             spatialMeasureCollection
         )
     );
@@ -463,7 +472,7 @@ multiscale::verification::NumericMeasureCollectionVisitor::operator()(
     std::vector<double> temporalNumericCollectionValues
         = NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
               trace,
-              typeSemanticsTable,
+              multiscaleArchitectureGraph,
               changeTemporalNumericCollection.temporalNumericCollection
           );
 
@@ -492,7 +501,10 @@ multiscale::verification::NumericMeasureCollectionVisitor::evaluateTemporalNumer
         // Add the evaluation result to the collection of numeric measure values
         numericMeasureValues.push_back(
             boost::apply_visitor(
-                NumericVisitor(trace.getTimePointReference(0), typeSemanticsTable),
+                NumericVisitor(
+                    trace.getTimePointReference(0),
+                    multiscaleArchitectureGraph
+                ),
                 numericMeasure
             )
         );

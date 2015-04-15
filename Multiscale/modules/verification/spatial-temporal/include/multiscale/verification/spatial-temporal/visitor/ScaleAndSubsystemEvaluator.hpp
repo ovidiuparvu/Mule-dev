@@ -15,11 +15,21 @@ namespace multiscale {
 
                 //! Check if the provided scale and subsystem exists and otherwise throw an exception
                 /*!
-                 * \param scaleAndSubsystem     The provided scale and subsystem
-                 * \param typeSemanticsTable    The type semantics table which stores all valid semantic types
+                 * \param scaleAndSubsystem             The provided scale and subsystem
+                 * \param multiscaleArchitectureGraph   The multiscale architecture graph which stores all valid
+                 *                                      scales and subsystems
                  */
-                static void validate(const std::string &scaleAndSubsystem,
-                                     const TypeSemanticsTable &typeSemanticsTable);
+                static void validateScaleAndSubsystem(const std::string &scaleAndSubsystem,
+                                                      const MultiscaleArchitectureGraph &multiscaleArchitectureGraph);
+
+                //! Check if the provided scales and subsystems are equal
+                /*! Precondition: The provided scales and subsystem are valid.
+                 *
+                 * \param lhsScaleAndSubsystem  The left hand side scale and subsystem
+                 * \param rhsScaleAndSubsystem  The right hand side scale and subsystem
+                 */
+                static bool areEqualScalesAndSubsystems(const std::string &lhsScaleAndSubsystem,
+                                                        const std::string &rhsScaleAndSubsystem);
 
             private:
 

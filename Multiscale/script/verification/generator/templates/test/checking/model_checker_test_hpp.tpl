@@ -31,9 +31,9 @@ namespace multiscaletest {
             std::vector<mv::SpatialTemporalTrace> 
                 traces;                         /*!< The collection of spatio-temporal traces */
 
-            TypeSemanticsTable
-                typeSemanticsTable;             /*!< The type semantics table mapping semantic criteria values to
-                                                     abstract natural numbers */
+            MultiscaleArchitectureGraph
+                multiscaleArchitectureGraph;    /*!< The multiscale architecture graph encoding the hierarchical 
+                                                     organization of the scales and subsystems */
             
             mv::AbstractSyntaxTree                
                 abstractSyntaxTree;             /*!< The abstract syntax tree corresponding to the logic property */
@@ -67,8 +67,8 @@ namespace multiscaletest {
            //! Initialise the collection of spatio-temporal traces
            void InitialiseSpatioTemporalTraces();
 
-           //! Initialise the type semantics table
-           void InitialiseTypeSemanticsTable();
+           //! Initialise the multiscale architecture graph
+           void InitialiseMultiscaleArchitectureGraph();
            
            //! Initialise the abstract syntax tree
            void InitialiseAbstractSyntaxTree();
@@ -107,7 +107,7 @@ namespace multiscaletest {
 
     void ModelCheckerTest::Initialise() {
         InitialiseSpatioTemporalTraces();
-        InitialiseTypeSemanticsTable();
+        InitialiseMultiscaleArchitectureGraph();
         InitialiseAbstractSyntaxTree();
         InitialiseModelChecker();
     }
@@ -129,7 +129,7 @@ namespace multiscaletest {
         InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 20, 30});
     }
 
-    void ModelCheckerTest::InitialiseTypeSemanticsTable() {
+    void ModelCheckerTest::InitialiseMultiscaleArchitectureGraph() {
         // Do nothing
     }
     

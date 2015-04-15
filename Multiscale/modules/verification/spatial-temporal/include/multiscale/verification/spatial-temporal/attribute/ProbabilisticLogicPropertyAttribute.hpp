@@ -4,7 +4,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/LogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
+#include "multiscale/verification/spatial-temporal/model/MultiscaleArchitectureGraph.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/LogicPropertyVisitor.hpp"
 
 #include "boost/fusion/include/adapt_struct.hpp"
@@ -35,13 +35,13 @@ namespace multiscale {
                 //! Get the probability
                 double getProbability();
 
-                //! Evaluate the truth value of the logic property considering the given trace and type semantics table
+                //! Evaluate the logic property considering the given trace and multiscale architecture graph
                 /*!
-                 * \param trace                 The considered trace (i.e. timeseries data)
-                 * \param typeSemanticsTable    The considered type semantics table
+                 * \param trace                         The considered trace (i.e. timeseries data)
+                 * \param multiscaleArchitectureGraph   The considered multiscale architecture graph
                  */
                 bool evaluate(const SpatialTemporalTrace &trace,
-                              const TypeSemanticsTable &typeSemanticsTable);
+                              const MultiscaleArchitectureGraph &multiscaleArchitectureGraph);
 
             private:
 

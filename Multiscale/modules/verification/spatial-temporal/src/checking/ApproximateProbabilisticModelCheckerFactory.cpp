@@ -12,10 +12,14 @@ ApproximateProbabilisticModelCheckerFactory::~ApproximateProbabilisticModelCheck
 
 std::shared_ptr<ModelChecker>
 ApproximateProbabilisticModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree,
-                                                            const TypeSemanticsTable &typeSemanticsTable) {
+                                                            const MultiscaleArchitectureGraph
+                                                                &multiscaleArchitectureGraph) {
     return (
         std::make_shared<ApproximateProbabilisticModelChecker>(
-            abstractSyntaxTree, typeSemanticsTable, delta, epsilon
+            abstractSyntaxTree,
+            multiscaleArchitectureGraph,
+            delta,
+            epsilon
         )
     );
 }

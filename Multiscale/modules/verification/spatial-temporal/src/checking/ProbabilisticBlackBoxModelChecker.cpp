@@ -10,10 +10,11 @@ using namespace multiscale::verification;
 
 
 ProbabilisticBlackBoxModelChecker::ProbabilisticBlackBoxModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
-                                                                     const TypeSemanticsTable &typeSemanticsTable)
+                                                                     const MultiscaleArchitectureGraph
+                                                                         &multiscaleArchitectureGraph)
                                                                      : ModelChecker(
                                                                            abstractSyntaxTree,
-                                                                           typeSemanticsTable
+                                                                           multiscaleArchitectureGraph
                                                                        ) {}
 
 ProbabilisticBlackBoxModelChecker::~ProbabilisticBlackBoxModelChecker() {}

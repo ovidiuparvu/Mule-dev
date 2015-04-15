@@ -109,7 +109,7 @@ namespace multiscaletest {
         // Add spatial entities to each timepoint
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
 
-            // Add clusters to the timepoint
+            // Add clusters with scale and subsystem "Organ.Kidney" to the timepoint
             for (std::size_t j = ((((i + 1) % 4) == 0) ? (i - 1) : 0); j <= i; j++) {
                 std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
 
@@ -126,7 +126,7 @@ namespace multiscaletest {
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 2);
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 2);
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 2);
-                cluster->setScaleAndSubsystem(ScaleAndSubsystem::DEFAULT_VALUE);
+                cluster->setScaleAndSubsystem(SCALE_AND_SUBSYSTEM_ORGAN_KIDNEY);
 
                 timePoints[i].addSpatialEntityAndType(cluster, SubsetSpecificType::Clusters);
             }
@@ -880,11 +880,11 @@ TEST_F(CompleteTraceTest, NumericStateVariableWrongScaleAndSubsystemLhsLargerVal
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(scaleAndSubsystem = 213.121) <= {B}]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemNotInTypeSemanticsTable) {
+TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemNotInMultiscaleArchitectureGraph) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({D}(scaleAndSubsystem = Organ.Liver) < 5.01) ^ ({D}(scaleAndSubsystem = Organ.Liver) > 4.99))]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemInTypeSemanticsTable) {
+TEST_F(CompleteTraceTest, NumericStateVariableScaleAndSubsystemInMultiscaleArchitectureGraph) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({B}(scaleAndSubsystem = Organ.Kidney) < 3.01) ^ ({B}(scaleAndSubsystem = Organ.Kidney) > 2.99))]"));
 }
 
@@ -1409,7 +1409,7 @@ TEST_F(CompleteTraceTest, UnaryStatisticalSpatial) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, UnaryScaleAndSubsystemConstraint) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(area(filter(clusters, scaleAndSubsystem < Organ.Kidney))) > 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(area(filter(clusters, scaleAndSubsystem < Organism.Human))) > 0]"));
 }
 
 

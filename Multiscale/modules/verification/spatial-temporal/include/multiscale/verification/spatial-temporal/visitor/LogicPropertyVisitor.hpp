@@ -25,21 +25,22 @@ namespace multiscale {
 
             private:
 
-                SpatialTemporalTrace        &trace;                     /*!< A reference to the spatial temporal
-                                                                             trace */
-                const TypeSemanticsTable    &typeSemanticsTable;        /*!< The type semantics table */
+                SpatialTemporalTrace
+                    &trace;                         /*!< A reference to the spatial temporal trace */
+                const MultiscaleArchitectureGraph
+                    &multiscaleArchitectureGraph;   /*!< The multiscale architecture graph */
 
-                LogicPropertyAttributeType  evaluationLogicProperty;    /*!< The logic property used only for
-                                                                             evaluation purposes */
+                LogicPropertyAttributeType
+                    evaluationLogicProperty;        /*!< The logic property used only for evaluation purposes */
 
-                bool precedingTruthValue;   /*!< The truth value of the preceding logic property */
+                bool precedingTruthValue;           /*!< The truth value of the preceding logic property */
 
             public:
 
                 LogicPropertyVisitor(SpatialTemporalTrace &trace,
-                                     const TypeSemanticsTable &typeSemanticsTable,
+                                     const MultiscaleArchitectureGraph &multiscaleArchitectureGraph,
                                      bool precedingTruthValue = true)
-                                     : trace(trace), typeSemanticsTable(typeSemanticsTable),
+                                     : trace(trace), multiscaleArchitectureGraph(multiscaleArchitectureGraph),
                                        precedingTruthValue(precedingTruthValue) {}
 
                 //! Overloading the "()" operator for the Nil alternative
@@ -202,13 +203,13 @@ namespace multiscale {
                                  const T &lhsLogicProperty) const {
                     std::vector<double> lhsTemporalNumericCollectionValues =
                         NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
-                            trace, typeSemanticsTable,
+                            trace, multiscaleArchitectureGraph,
                             primaryLogicProperty.lhsTemporalNumericCollection
                         );
 
                     std::vector<double> rhsTemporalNumericCollectionValues =
                         NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
-                            trace, typeSemanticsTable,
+                            trace, multiscaleArchitectureGraph,
                             primaryLogicProperty.rhsTemporalNumericCollection
                         );
 
@@ -669,7 +670,7 @@ namespace multiscale {
                               SpatialTemporalTrace &trace) const {
                     return (
                         boost::apply_visitor(
-                            LogicPropertyVisitor(trace, typeSemanticsTable),
+                            LogicPropertyVisitor(trace, multiscaleArchitectureGraph),
                             logicProperty,
                             evaluationLogicProperty
                         )
@@ -685,7 +686,7 @@ namespace multiscale {
                               SpatialTemporalTrace &trace) const {
                     return (
                         boost::apply_visitor(
-                            LogicPropertyVisitor(trace, typeSemanticsTable),
+                            LogicPropertyVisitor(trace, multiscaleArchitectureGraph),
                             primaryLogicProperty,
                             evaluationLogicProperty
                         )
@@ -714,8 +715,10 @@ namespace multiscale {
                         );
 
                         // Evaluate the logic property
-                        truthValue = boost::apply_visitor(LogicPropertyVisitor(trace, typeSemanticsTable, truthValue),
-                                                          nextLogicProperty, precedingEvaluationLogicProperty);
+                        truthValue = boost::apply_visitor(
+                                         LogicPropertyVisitor(trace, multiscaleArchitectureGraph, truthValue),
+                                         nextLogicProperty, precedingEvaluationLogicProperty
+                                     );
 
                         // Add the evaluated logic property to the preceding logic properties collection
                         precedingEvaluationLogicProperties.push_back(nextLogicProperty);
@@ -757,7 +760,7 @@ namespace multiscale {
 
                     // Evaluate the logic property
                     double evaluationResult = boost::apply_visitor(
-                                                  TemporalNumericVisitor(trace, typeSemanticsTable),
+                                                  TemporalNumericVisitor(trace, multiscaleArchitectureGraph),
                                                   temporalNumericMeasure
                                               );
 

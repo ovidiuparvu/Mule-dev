@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<multiscaleArchitectureGraph>
+	<vertices>
+	   <vertex id="Cell.EK"/>
+	   <vertex id="Cell.PK"/>
+	</vertices>
+	<edges>
+	</edges>
+</multiscaleArchitectureGraph>

@@ -113,9 +113,9 @@
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1536269867" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.1371263180" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
 								<option id="gnu.cpp.compiler.option.include.paths.1100361153" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/include}&quot;"/>
-									<listOptionValue builtIn="false" value="/usr/local/include/opencv"/>
 									<listOptionValue builtIn="false" value="/usr/local/include"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/opencv"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/analysis/spatial/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/visualisation/circular/include}&quot;"/>

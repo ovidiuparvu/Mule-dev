@@ -17,16 +17,19 @@ namespace multiscale {
 
             private:
 
-                TimePoint                   &timePoint;             /*!< The considered timepoint */
-                const SpatialEntity         &spatialEntity;         /*!< The considered spatial entity */
-                const TypeSemanticsTable    &typeSemanticsTable;    /*!< The considered type semantics table */
+                TimePoint
+                    &timePoint;                     /*!< The considered timepoint */
+                const SpatialEntity
+                    &spatialEntity;                 /*!< The considered spatial entity */
+                const MultiscaleArchitectureGraph
+                    &multiscaleArchitectureGraph;   /*!< The considered multiscale architecture graph */
 
             public:
 
                 FilterNumericVisitor(TimePoint &timePoint, const SpatialEntity &spatialEntity,
-                                     const TypeSemanticsTable &typeSemanticsTable)
+                                     const MultiscaleArchitectureGraph &multiscaleArchitectureGraph)
                                      : timePoint(timePoint), spatialEntity(spatialEntity),
-                                       typeSemanticsTable(typeSemanticsTable) {}
+                                       multiscaleArchitectureGraph(multiscaleArchitectureGraph) {}
 
                 //! Overloading the "()" operator for the FilterNumericMeasureAttribute alternative
                 /*!
@@ -49,7 +52,12 @@ namespace multiscale {
                  * \param spatialMeasure The spatial measure
                  */
                 double operator()(const SpatialMeasureAttribute &spatialMeasure) const {
-                    return SpatialMeasureEvaluator::evaluate(spatialEntity, spatialMeasure.spatialMeasureType);
+                    return (
+                        SpatialMeasureEvaluator::evaluate(
+                            spatialEntity,
+                            spatialMeasure.spatialMeasureType
+                        )
+                    );
                 }
 
                 //! Overloading the "()" operator for the UnaryNumericFilterAttribute alternative
@@ -59,8 +67,12 @@ namespace multiscale {
                 double operator()(const UnaryNumericFilterAttribute &unaryNumericFilter) const {
                     double filterNumericMeasure = evaluate(unaryNumericFilter.filterNumericMeasure);
 
-                    return NumericEvaluator::evaluate(unaryNumericFilter.unaryNumericMeasure.unaryNumericMeasureType,
-                                                      filterNumericMeasure);
+                    return (
+                        NumericEvaluator::evaluate(
+                            unaryNumericFilter.unaryNumericMeasure.unaryNumericMeasureType,
+                            filterNumericMeasure
+                        )
+                    );
                 }
 
                 //! Overloading the "()" operator for the BinaryNumericFilterAttribute alternative
@@ -71,8 +83,13 @@ namespace multiscale {
                     double firstFilterNumericMeasure    = evaluate(binaryNumericFilter.firstFilterNumericMeasure);
                     double secondFilterNumericMeasure   = evaluate(binaryNumericFilter.secondFilterNumericMeasure);
 
-                    return NumericEvaluator::evaluate(binaryNumericFilter.binaryNumericMeasure.binaryNumericMeasureType,
-                                                      firstFilterNumericMeasure, secondFilterNumericMeasure);
+                    return (
+                        NumericEvaluator::evaluate(
+                            binaryNumericFilter.binaryNumericMeasure.binaryNumericMeasureType,
+                            firstFilterNumericMeasure,
+                            secondFilterNumericMeasure
+                        )
+                    );
                 }
 
             private:
@@ -82,8 +99,16 @@ namespace multiscale {
                  * \param filterNumericMeasure  The given filter numeric measure
                  */
                 double evaluate(const FilterNumericMeasureAttributeType &filterNumericMeasure) const {
-                    return boost::apply_visitor(FilterNumericVisitor(timePoint, spatialEntity, typeSemanticsTable),
-                                                filterNumericMeasure);
+                    return (
+                        boost::apply_visitor(
+                            FilterNumericVisitor(
+                                timePoint,
+                                spatialEntity,
+                                multiscaleArchitectureGraph
+                            ),
+                            filterNumericMeasure
+                        )
+                    );
                 }
 
                 //! Evaluate the given primary numeric measure considering the timePoint field
@@ -93,7 +118,10 @@ namespace multiscale {
                 double evaluate(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
                     return (
                         boost::apply_visitor(
-                            NumericVisitor(timePoint, typeSemanticsTable),
+                            NumericVisitor(
+                                timePoint,
+                                multiscaleArchitectureGraph
+                            ),
                             primaryNumericMeasure
                         )
                     );

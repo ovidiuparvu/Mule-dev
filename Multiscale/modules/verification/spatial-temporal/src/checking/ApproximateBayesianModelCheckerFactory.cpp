@@ -13,10 +13,15 @@ ApproximateBayesianModelCheckerFactory::~ApproximateBayesianModelCheckerFactory(
 
 std::shared_ptr<ModelChecker>
 ApproximateBayesianModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree,
-                                                       const TypeSemanticsTable &typeSemanticsTable) {
+                                                       const MultiscaleArchitectureGraph
+                                                           &multiscaleArchitectureGraph) {
     return (
         std::make_shared<ApproximateBayesianModelChecker>(
-            abstractSyntaxTree, typeSemanticsTable, alpha, beta, varianceThreshold
+            abstractSyntaxTree,
+            multiscaleArchitectureGraph,
+            alpha,
+            beta,
+            varianceThreshold
         )
     );
 }

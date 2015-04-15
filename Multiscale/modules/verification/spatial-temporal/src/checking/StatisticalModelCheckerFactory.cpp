@@ -13,10 +13,13 @@ StatisticalModelCheckerFactory::~StatisticalModelCheckerFactory() {}
 
 std::shared_ptr<ModelChecker>
 StatisticalModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree,
-                                               const TypeSemanticsTable &typeSemanticsTable) {
+                                               const MultiscaleArchitectureGraph &multiscaleArchitectureGraph) {
     return (
         std::make_shared<StatisticalModelChecker>(
-            abstractSyntaxTree, typeSemanticsTable, typeIError, typeIIError
+            abstractSyntaxTree,
+            multiscaleArchitectureGraph,
+            typeIError,
+            typeIIError
         )
     );
 }

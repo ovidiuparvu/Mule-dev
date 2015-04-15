@@ -21,14 +21,16 @@ namespace multiscale {
 
             private:
 
-                TimePoint                  &timePoint;          /*!< The considered timepoint */
-                const TypeSemanticsTable   &typeSemanticsTable; /*!< The type semantics table */
+                TimePoint
+                    &timePoint;                     /*!< The considered timepoint */
+                const MultiscaleArchitectureGraph
+                    &multiscaleArchitectureGraph;   /*!< The considered multiscale architecture graph */
 
             public:
 
                 NumericVisitor(TimePoint &timePoint,
-                               const TypeSemanticsTable &typeSemanticsTable)
-                               : timePoint(timePoint), typeSemanticsTable(typeSemanticsTable) {}
+                               const MultiscaleArchitectureGraph &multiscaleArchitectureGraph)
+                               : timePoint(timePoint), multiscaleArchitectureGraph(multiscaleArchitectureGraph) {}
 
                 //! Overloading the "()" operator for the NumericMeasureAttribute alternative
                 /*!
@@ -68,7 +70,7 @@ namespace multiscale {
                         NumericStateVariableEvaluator::evaluate(
                             numericStateVariable,
                             timePoint,
-                            typeSemanticsTable
+                            multiscaleArchitectureGraph
                         )
                     );
                 }
@@ -93,7 +95,12 @@ namespace multiscale {
 
                     double numericMeasure = evaluate(unaryNumericNumericMeasure.numericMeasure);
 
-                    return NumericEvaluator::evaluate(unaryNumericMeasureType, numericMeasure);
+                    return (
+                        NumericEvaluator::evaluate(
+                            unaryNumericMeasureType,
+                            numericMeasure
+                        )
+                    );
                 }
 
                 //! Overloading the "()" operator for the BinaryNumericNumericAttribute alternative
@@ -108,9 +115,13 @@ namespace multiscale {
                     double firstNumericMeasure  = evaluate(binaryNumericNumericMeasure.firstNumericMeasure);
                     double secondNumericMeasure = evaluate(binaryNumericNumericMeasure.secondNumericMeasure);
 
-                    return NumericEvaluator::evaluate(binaryNumericMeasureType,
-                                                      firstNumericMeasure,
-                                                      secondNumericMeasure);
+                    return (
+                        NumericEvaluator::evaluate(
+                            binaryNumericMeasureType,
+                            firstNumericMeasure,
+                            secondNumericMeasure
+                        )
+                    );
                 }
 
                 //! Overloading the "()" operator for the UnaryStatisticalSpatialAttribute alternative
@@ -147,7 +158,10 @@ namespace multiscale {
                 evaluate(const NumericMeasureType &numericMeasure) const {
                     return (
                         boost::apply_visitor(
-                            NumericVisitor(timePoint, typeSemanticsTable),
+                            NumericVisitor(
+                                timePoint,
+                                multiscaleArchitectureGraph
+                            ),
                             numericMeasure
                         )
                     );
@@ -161,7 +175,10 @@ namespace multiscale {
                 evaluatePrimaryNumericMeasure(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
                     return (
                         boost::apply_visitor(
-                            NumericVisitor(timePoint, typeSemanticsTable),
+                            NumericVisitor(
+                                timePoint,
+                                multiscaleArchitectureGraph
+                            ),
                             primaryNumericMeasure
                         )
                     );
@@ -175,7 +192,10 @@ namespace multiscale {
                 evaluateNumericSpatialMeasure(const NumericSpatialMeasureType &numericSpatialMeasure) const {
                     return (
                         boost::apply_visitor(
-                            NumericVisitor(timePoint, typeSemanticsTable),
+                            NumericVisitor(
+                                timePoint,
+                                multiscaleArchitectureGraph
+                            ),
                             numericSpatialMeasure
                         )
                     );
@@ -201,13 +221,16 @@ multiscale::verification::NumericVisitor::operator()(const UnaryStatisticalSpati
                                                      &unaryStatisticalSpatialAttribute) const {
     std::vector<double> spatialMeasureValues =
         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-            timePoint, typeSemanticsTable,
+            timePoint,
+            multiscaleArchitectureGraph,
             unaryStatisticalSpatialAttribute.spatialMeasureCollection
         );
 
-    return NumericEvaluator::evaluate(
-        unaryStatisticalSpatialAttribute.unaryStatisticalMeasure.unaryStatisticalMeasureType,
-        spatialMeasureValues
+    return (
+        NumericEvaluator::evaluate(
+            unaryStatisticalSpatialAttribute.unaryStatisticalMeasure.unaryStatisticalMeasureType,
+            spatialMeasureValues
+        )
     );
 }
 
@@ -216,19 +239,23 @@ multiscale::verification::NumericVisitor::operator()(const BinaryStatisticalSpat
                                                      &binaryStatisticalSpatialAttribute) const {
     std::vector<double> firstSpatialMeasureValues =
         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-            timePoint, typeSemanticsTable,
+            timePoint,
+            multiscaleArchitectureGraph,
             binaryStatisticalSpatialAttribute.firstSpatialMeasureCollection
         );
     std::vector<double> secondSpatialMeasureValues =
         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-            timePoint, typeSemanticsTable,
+            timePoint,
+            multiscaleArchitectureGraph,
             binaryStatisticalSpatialAttribute.secondSpatialMeasureCollection
         );
 
-    return NumericEvaluator::evaluate(
-        binaryStatisticalSpatialAttribute.binaryStatisticalMeasure.binaryStatisticalMeasureType,
-        firstSpatialMeasureValues,
-        secondSpatialMeasureValues
+    return (
+        NumericEvaluator::evaluate(
+            binaryStatisticalSpatialAttribute.binaryStatisticalMeasure.binaryStatisticalMeasureType,
+            firstSpatialMeasureValues,
+            secondSpatialMeasureValues
+        )
     );
 }
 
@@ -237,15 +264,18 @@ multiscale::verification::NumericVisitor::operator()(const BinaryStatisticalQuan
                                                      &binaryStatisticalQuantileSpatialAttribute) const {
     std::vector<double> spatialMeasureValues =
         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-            timePoint, typeSemanticsTable,
+            timePoint,
+            multiscaleArchitectureGraph,
             binaryStatisticalQuantileSpatialAttribute.spatialMeasureCollection
         );
 
-    return NumericEvaluator::evaluate(
-        binaryStatisticalQuantileSpatialAttribute.binaryStatisticalQuantileMeasure.
-            binaryStatisticalQuantileMeasureType,
-        spatialMeasureValues,
-        binaryStatisticalQuantileSpatialAttribute.parameter
+    return (
+        NumericEvaluator::evaluate(
+            binaryStatisticalQuantileSpatialAttribute.binaryStatisticalQuantileMeasure.
+                binaryStatisticalQuantileMeasureType,
+            spatialMeasureValues,
+            binaryStatisticalQuantileSpatialAttribute.parameter
+        )
     );
 }
 

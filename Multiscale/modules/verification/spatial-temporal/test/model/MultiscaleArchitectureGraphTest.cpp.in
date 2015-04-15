@@ -1,0 +1,68 @@
+#include "multiscale/core/MultiscaleTest.hpp"
+#include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
+#include "multiscale/verification/spatial-temporal/model/MultiscaleArchitectureGraph.hpp"
+
+using namespace multiscale::verification;
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Tests
+//
+///////////////////////////////////////////////////////////////////////////////
+
+TEST(MultiscaleArchitectureGraph, InvalidMultiscaleArchitectureGraphDisconnected) {
+    MultiscaleArchitectureGraph multiscaleArchitectureGraph;
+
+    EXPECT_THROW(
+        multiscaleArchitectureGraph.readFromFile(
+            "${PROJECT_SOURCE_DIR}/data/test/verification/spatial-temporal/src/mule/multiscale_architecture_graph/multiscale_architecture_graph_invalid_disconnected.xml"
+        ),
+        SpatialTemporalException
+    );
+}
+
+TEST(MultiscaleArchitectureGraph, InvalidMultiscaleArchitectureGraphNoRoot) {
+    MultiscaleArchitectureGraph multiscaleArchitectureGraph;
+
+    EXPECT_THROW(
+        multiscaleArchitectureGraph.readFromFile(
+            "${PROJECT_SOURCE_DIR}/data/test/verification/spatial-temporal/src/mule/multiscale_architecture_graph/multiscale_architecture_graph_invalid_no_root.xml"
+        ),
+        SpatialTemporalException
+    );
+}
+
+TEST(MultiscaleArchitectureGraph, InvalidMultiscaleArchitectureGraphNonUniquePathToVertex) {
+    MultiscaleArchitectureGraph multiscaleArchitectureGraph;
+
+    EXPECT_THROW(
+        multiscaleArchitectureGraph.readFromFile(
+            "${PROJECT_SOURCE_DIR}/data/test/verification/spatial-temporal/src/mule/multiscale_architecture_graph/multiscale_architecture_graph_invalid_non_unique_path_to_vertex.xml"
+        ),
+        SpatialTemporalException
+    );
+}
+
+TEST(MultiscaleArchitectureGraph, ValidMultiscaleArchitectureGraph) {
+    MultiscaleArchitectureGraph multiscaleArchitectureGraph;
+
+    EXPECT_NO_THROW(
+        multiscaleArchitectureGraph.readFromFile(
+            "${PROJECT_SOURCE_DIR}/data/test/verification/spatial-temporal/src/mule/multiscale_architecture_graph/multiscale_architecture_graph_valid.xml"
+        )
+    );
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Main method
+//
+///////////////////////////////////////////////////////////////////////////////
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+
+    return RUN_ALL_TESTS();
+}

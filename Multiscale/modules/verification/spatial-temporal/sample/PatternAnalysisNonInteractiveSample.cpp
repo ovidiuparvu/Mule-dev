@@ -17,9 +17,9 @@ using namespace multiscale::verification;
 // Evaluate the abstract syntax tree considering the provided timeseries
 void evaluateAbstractSyntaxTree(AbstractSyntaxTree &abstractSyntaxTree,
                                 const SpatialTemporalTrace &timeseries) {
-    TypeSemanticsTable typeSemanticsTable;
+    MultiscaleArchitectureGraph multiscaleArchitectureGraph;
 
-    bool evaluationResult = abstractSyntaxTree.evaluate(timeseries, typeSemanticsTable);
+    bool evaluationResult = abstractSyntaxTree.evaluate(timeseries, multiscaleArchitectureGraph);
 
     std::cout << (evaluationResult ? "T" : "F") << std::endl;
 }

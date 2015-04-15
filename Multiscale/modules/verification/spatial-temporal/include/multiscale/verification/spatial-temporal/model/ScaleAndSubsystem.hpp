@@ -13,6 +13,7 @@ namespace multiscale {
 
             public:
 
+                // Constants
                 static const std::string DEFAULT_VALUE; /*!< The default scale and subsystem value used when no
                                                              explicit scale and subsystem is associated to a spatial
                                                              entity and/or numeric state variable */

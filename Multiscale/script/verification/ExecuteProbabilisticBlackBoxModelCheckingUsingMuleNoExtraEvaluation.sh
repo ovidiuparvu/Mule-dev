@@ -11,7 +11,7 @@
 # Check if the required number of parameters was provided
 if [[ $# -ne 5 ]];
 then
-    echo "Please run the script with the required parameters: $0 <path-to-mule> <input-folder-PBLMSTL> <input-folder-traces> <type-semantics-table> <output-folder>";
+    echo "Please run the script with the required parameters: $0 <path-to-mule> <input-folder-PBLMSTL> <input-folder-traces> <multiscale-architecture-graph> <output-folder>";
 
     exit 1; 
 fi
@@ -40,10 +40,10 @@ then
     exit 1;
 fi
 
-# Check if the given type semantics table path points to a regular file
+# Check if the given multiscale architecture graph path points to a regular file
 if [[ ! -f $4 ]];
 then
-    echo "The path for the type semantics table does not point to a regular file. Please change.";
+    echo "The path for the multiscale architecture graph does not point to a regular file. Please change.";
 
     exit 1;
 fi
@@ -55,7 +55,7 @@ NR_EXECUTIONS_PER_PBLMSTL_INPUT_FILE=500;
 muleExecutablePath=$1;
 pblmstlStatementsInputFolder=$2;
 multiscaleSpatioTemporalTracesFolder=$3;
-typeSemanticTable=$4;
+multiscaleArchitectureGraph=$4;
 outputFolder=$5;
 
 # Initialise the parameter values passed to the Mule model checker
@@ -94,7 +94,7 @@ do
         pblmstlStatementsNthResults="${pblmstlStatementsFolder}/${pblmstlStatementsFilenameWithoutExtension}_${i}.out";
 
         # Run the model checker
-        /usr/bin/time -f '%E' ${muleExecutablePath} --model-checker-type ${muleModelCheckerType} --logic-queries ${pblmstlStatementsFile} --spatial-temporal-traces ${muleSpatioTemporalTraces} --type-semantics-table ${typeSemanticTable} --extra-evaluation-time ${muleExtraEvaluationTime} ${muleTypeSpecificParameters} --verbose 1>${pblmstlStatementsNthResults} 2>&1;
+        /usr/bin/time -f '%E' ${muleExecutablePath} --model-checker-type ${muleModelCheckerType} --logic-queries ${pblmstlStatementsFile} --spatial-temporal-traces ${muleSpatioTemporalTraces} --multiscale-architecture-graph ${multiscaleArchitectureGraph} --extra-evaluation-time ${muleExtraEvaluationTime} ${muleTypeSpecificParameters} --verbose 1>${pblmstlStatementsNthResults} 2>&1;
 
         # Get the specific information of interest
         modelCheckerExecutionId=${i};

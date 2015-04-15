@@ -809,11 +809,11 @@ TEST_F(NumericStateVariableTraceTest, NumericStateVariableWrongTypeLhsLargerValu
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(scaleAndSubsystem = 213.121) <= {B}]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, NumericStateVariableScaleAndSubsystemNotInTypeSemanticsTable) {
+TEST_F(NumericStateVariableTraceTest, NumericStateVariableScaleAndSubsystemNotInMultiscaleArchitectureGraph) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] ({D}(scaleAndSubsystem = Organ.Liver) = 5)]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, NumericStateVariableScaleAndSubsystemInTypeSemanticsTable) {
+TEST_F(NumericStateVariableTraceTest, NumericStateVariableScaleAndSubsystemInMultiscaleArchitectureGraph) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] ({B}(scaleAndSubsystem = Organ.Kidney) = 3)]"));
 }
 

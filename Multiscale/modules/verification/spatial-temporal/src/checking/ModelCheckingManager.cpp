@@ -12,10 +12,14 @@ using namespace multiscale::verification;
 ModelCheckingManager::ModelCheckingManager(const std::string &logicPropertiesFilepath,
                                            const std::string &tracesFolderPath,
                                            unsigned long extraEvaluationTime,
-                                           const std::string &typeSemanticsTableFilepath)
+                                           const std::string &multiscaleArchitectureGraphFilepath)
                                            : parser(PARSER_EMPTY_LOGIC_PROPERTY),
                                              traceReader(tracesFolderPath) {
-    initialise(logicPropertiesFilepath, extraEvaluationTime, typeSemanticsTableFilepath);
+    initialise(
+        logicPropertiesFilepath,
+        extraEvaluationTime,
+        multiscaleArchitectureGraphFilepath
+    );
 }
 
 ModelCheckingManager::~ModelCheckingManager() {
@@ -39,11 +43,11 @@ void ModelCheckingManager::runModelCheckingTasks(const std::shared_ptr<ModelChec
 
 void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
                                       unsigned long extraEvaluationTime,
-                                      const std::string &typeSemanticsTableFilepath) {
+                                      const std::string &multiscaleArchitectureGraphFilepath) {
     this->shouldPrintDetailedEvaluation = false;
 
     initialiseExtraEvaluationTimeCounters(extraEvaluationTime);
-    initialiseTypeSemanticsTable(typeSemanticsTableFilepath);
+    initialiseMultiscaleArchitectureGraph(multiscaleArchitectureGraphFilepath);
     initialiseLogicProperties(logicPropertyFilepath);
 }
 
@@ -53,9 +57,11 @@ void ModelCheckingManager::initialiseExtraEvaluationTimeCounters(unsigned long e
     this->extraEvaluationStartTime      = std::chrono::system_clock::now();
 }
 
-void ModelCheckingManager::initialiseTypeSemanticsTable(const std::string &typeSemanticsTableFilepath) {
-    if (!typeSemanticsTableFilepath.empty()) {
-        typeSemanticsTable.readTableFromFile(typeSemanticsTableFilepath);
+void ModelCheckingManager::initialiseMultiscaleArchitectureGraph(
+    const std::string &multiscaleArchitectureGraphFilepath
+) {
+    if (!multiscaleArchitectureGraphFilepath.empty()) {
+        multiscaleArchitectureGraph.readFromFile(multiscaleArchitectureGraphFilepath);
     }
 }
 
@@ -137,7 +143,10 @@ void ModelCheckingManager::printParsingMessage(bool isParsingSuccessful) {
 void ModelCheckingManager::createModelCheckers(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
     for (const auto &abstractSyntaxTree : abstractSyntaxTrees) {
         modelCheckers.push_back(
-            modelCheckerFactory->createInstance(abstractSyntaxTree, typeSemanticsTable)
+            modelCheckerFactory->createInstance(
+                abstractSyntaxTree,
+                multiscaleArchitectureGraph
+            )
         );
     }
 }
@@ -190,7 +199,12 @@ void ModelCheckingManager::storeNewSpatialTemporalTracePath(const std::string &t
 
 void ModelCheckingManager::createNewEvaluationResults() {
     if (shouldPrintDetailedEvaluation) {
-        evaluationResults.push_back(std::vector<bool>(2 * modelCheckers.size(), false));
+        evaluationResults.push_back(
+            std::vector<bool>(
+                2 * modelCheckers.size(),
+                false
+            )
+        );
     }
 }
 
@@ -248,7 +262,9 @@ bool ModelCheckingManager::isEvaluationTimeRemaining() {
 
     extraEvaluationElapsedTime += elapsedSeconds.count();
 
-    return ((extraEvaluationElapsedTime / 60) < extraEvaluationTime);
+    return (
+        (extraEvaluationElapsedTime / 60) < extraEvaluationTime
+    );
 }
 
 bool ModelCheckingManager::areUnfinishedModelCheckingTasks() {

@@ -118,17 +118,17 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
 int main(int argc, char **argv) {
     std::string test;
     SpatialTemporalTrace trace;
-    TypeSemanticsTable typeSemanticsTable;
+    MultiscaleArchitectureGraph multiscaleArchitectureGraph;
     AbstractSyntaxTree result;
 
     initialiseTrace(trace);
 
     std::cout << "/////////////////////////////////////////////////////////\n\n";
-    std::cout << "\tA multidimensional multiscale logical query parser and evaluator...\n\n";
+    std::cout << "\tA multiscale multidimensional logic query parser and evaluator...\n\n";
     std::cout << "/////////////////////////////////////////////////////////\n\n";
 
     std::cout
-        << "Please enter a multidimensional multiscale logical query (or \"q\" to exit):" << std::endl
+        << "Please enter a multiscale multidimensional logic query (or \"q\" to exit):" << std::endl
         << std::endl;
 
 
@@ -144,7 +144,7 @@ int main(int argc, char **argv) {
                 std::cout << "-----------------------------------------------------" << std::endl;
                 std::cout << " Parsing succeeded"
                           << " and the AST evaluates to " 
-                          << (result.evaluate(trace, typeSemanticsTable) ? "true" : "false")
+                          << (result.evaluate(trace, multiscaleArchitectureGraph) ? "true" : "false")
                           << "!" << std::endl;
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             } else {

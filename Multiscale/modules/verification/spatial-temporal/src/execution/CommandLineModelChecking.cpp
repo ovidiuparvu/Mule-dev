@@ -387,7 +387,8 @@ void CommandLineModelChecking::initialiseOptionalArgumentsDependentClassMembers(
     }
 
     if (variablesMap.count(ARG_MULTISCALE_ARCHITECTURE_GRAPH_NAME_LONG)) {
-        typeSemanticsTableFilepath = variablesMap[ARG_MULTISCALE_ARCHITECTURE_GRAPH_NAME_LONG].as<std::string>();
+        multiscaleArchitectureGraphFilepath
+            = variablesMap[ARG_MULTISCALE_ARCHITECTURE_GRAPH_NAME_LONG].as<std::string>();
     }
 
     if (variablesMap.count(ARG_VERBOSE_NAME_LONG)) {
@@ -509,7 +510,7 @@ void CommandLineModelChecking::initialiseApproximateBayesianModelChecker() {
 void CommandLineModelChecking::initialiseModelCheckingManager() {
     modelCheckingManager = std::make_shared<ModelCheckingManager>(
                                logicQueriesFilepath, tracesFolderPath,
-                               extraEvaluationTime, typeSemanticsTableFilepath
+                               extraEvaluationTime, multiscaleArchitectureGraphFilepath
                            );
 
     modelCheckingManager->setExtraEvaluationProgramPath(extraEvaluationProgramPath);

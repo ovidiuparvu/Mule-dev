@@ -15,18 +15,21 @@ namespace multiscale {
 
                 //! Evaluate the given temporal numeric collection
                 /*!
-                 * \param trace                     The given spatial temporal trace
-                 * \param typeSemanticsTable        The given type semantics table
-                 * \param temporalNumericCollection The given temporal numeric collection
+                 * \param trace                         The given spatial temporal trace
+                 * \param multiscaleArchitectureGraph   The given multiscale architecture graph
+                 * \param temporalNumericCollection     The given temporal numeric collection
                  */
                 static std::vector<double>
                 evaluateTemporalNumericCollection(SpatialTemporalTrace &trace,
-                                                  const TypeSemanticsTable &typeSemanticsTable,
+                                                  const MultiscaleArchitectureGraph &multiscaleArchitectureGraph,
                                                   const TemporalNumericCollectionAttribute
                                                   &temporalNumericCollection) {
                     return (
                         boost::apply_visitor(
-                            NumericMeasureCollectionVisitor(trace, typeSemanticsTable),
+                            NumericMeasureCollectionVisitor(
+                                trace,
+                                multiscaleArchitectureGraph
+                            ),
                             temporalNumericCollection.temporalNumericCollection
                         )
                     );
@@ -34,13 +37,13 @@ namespace multiscale {
 
                 //! Evaluate the spatial measure collection considering the given timepoint
                 /*!
-                 * \param timePoint                 The given timepoint
-                 * \param typeSemanticsTable        The given type semantics table
-                 * \param spatialMeasureCollection  The considered spatial measure collection
+                 * \param timePoint                     The given timepoint
+                 * \param multiscaleArchitectureGraph   The given multiscale architecture graph
+                 * \param spatialMeasureCollection      The considered spatial measure collection
                  */
                 static std::vector<double>
                 evaluateSpatialMeasureCollection(TimePoint &timePoint,
-                                                 const TypeSemanticsTable &typeSemanticsTable,
+                                                 const MultiscaleArchitectureGraph &multiscaleArchitectureGraph,
                                                  const SpatialMeasureCollectionAttribute
                                                  &spatialMeasureCollection);
 
@@ -60,12 +63,15 @@ namespace multiscale {
 
 inline std::vector<double>
 multiscale::verification::NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-    TimePoint &timePoint, const TypeSemanticsTable &typeSemanticsTable,
+    TimePoint &timePoint, const MultiscaleArchitectureGraph &multiscaleArchitectureGraph,
     const SpatialMeasureCollectionAttribute &spatialMeasureCollection
 ) {
     return (
         boost::apply_visitor(
-            SpatialMeasureCollectionVisitor(timePoint, typeSemanticsTable),
+            SpatialMeasureCollectionVisitor(
+                timePoint,
+                multiscaleArchitectureGraph
+            ),
             spatialMeasureCollection.spatialMeasureCollection
         )
     );

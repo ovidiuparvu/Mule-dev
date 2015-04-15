@@ -10,7 +10,8 @@ AbstractSyntaxTree::AbstractSyntaxTree() {
 
 AbstractSyntaxTree::~AbstractSyntaxTree() {}
 
-void AbstractSyntaxTree::initialiseTree(const ProbabilisticLogicPropertyAttribute &probabilisticLogicPropertyAttribute) {
+void AbstractSyntaxTree::initialiseTree(const ProbabilisticLogicPropertyAttribute
+                                            &probabilisticLogicPropertyAttribute) {
     this->probabilisticLogicProperty = probabilisticLogicPropertyAttribute;
     this->isInitialised              = true;
 }
@@ -24,12 +25,17 @@ double AbstractSyntaxTree::getProbability() {
 }
 
 bool AbstractSyntaxTree::evaluate(const SpatialTemporalTrace &spatialTemporalTrace,
-                                  const TypeSemanticsTable &typeSemanticsTable) {
+                                  const MultiscaleArchitectureGraph &multiscaleArchitectureGraph) {
     if (!isInitialised) {
         MS_throw(UnexpectedBehaviourException, ERR_ABSTRACT_SYNTAX_TREE_NOT_INITIALISED);
     }
 
-    return probabilisticLogicProperty.evaluate(spatialTemporalTrace, typeSemanticsTable);
+    return (
+        probabilisticLogicProperty.evaluate(
+            spatialTemporalTrace,
+            multiscaleArchitectureGraph
+        )
+    );
 }
 
 

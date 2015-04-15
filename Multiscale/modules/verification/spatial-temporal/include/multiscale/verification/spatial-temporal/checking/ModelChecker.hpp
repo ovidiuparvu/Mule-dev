@@ -2,7 +2,7 @@
 #define MODELCHECKER_HPP
 
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
-#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
+#include "multiscale/verification/spatial-temporal/model/MultiscaleArchitectureGraph.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 
 
@@ -19,8 +19,9 @@ namespace multiscale {
                                                                  the logic property which this model checker
                                                                  instance evaluates */
 
-                TypeSemanticsTable typeSemanticsTable;      /*!< The type semantics table mapping semantic
-                                                                 criteria values to abstract natural numbers */
+                MultiscaleArchitectureGraph
+                    multiscaleArchitectureGraph;            /*!< The multiscale architecture graph encoding the
+                                                                 hierarchical organization of scales and subsystems */
 
                 unsigned int totalNumberOfEvaluations;      /*!< The total number of evaluations */
                 unsigned int totalNumberOfTrueEvaluations;  /*!< The total number of times the abstract
@@ -34,9 +35,9 @@ namespace multiscale {
             public:
 
                 ModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
-                             const TypeSemanticsTable &typeSemanticsTable)
+                             const MultiscaleArchitectureGraph &multiscaleArchitectureGraph)
                              : abstractSyntaxTree(abstractSyntaxTree),
-                               typeSemanticsTable(typeSemanticsTable),
+                               multiscaleArchitectureGraph(multiscaleArchitectureGraph),
                                totalNumberOfEvaluations(0),
                                totalNumberOfTrueEvaluations(0),
                                nullHypothesisPValue(1),

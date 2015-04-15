@@ -8,13 +8,14 @@ using namespace multiscale::verification;
 
 
 ApproximateProbabilisticModelChecker::ApproximateProbabilisticModelChecker(const AbstractSyntaxTree
-                                                                           &abstractSyntaxTree,
-                                                                           const TypeSemanticsTable
-                                                                           &typeSemanticsTable,
-                                                                           double delta, double epsilon)
+                                                                               &abstractSyntaxTree,
+                                                                           const MultiscaleArchitectureGraph
+                                                                               &multiscaleArchitectureGraph,
+                                                                           double delta,
+                                                                           double epsilon)
                                                                            : ModelChecker(
                                                                                  abstractSyntaxTree,
-                                                                                 typeSemanticsTable
+                                                                                 multiscaleArchitectureGraph
                                                                              ) {
     validateInput(delta, epsilon);
 

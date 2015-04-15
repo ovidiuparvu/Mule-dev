@@ -21,7 +21,10 @@ namespace multiscale {
 
         template <typename Iterator>
         ScaleAndSubsystemGrammar<Iterator>::ScaleAndSubsystemGrammar()
-            : ScaleAndSubsystemGrammar::base_type(scaleAndSubsystemRule, "scaleAndSubsystemRule") {
+        : ScaleAndSubsystemGrammar::base_type(
+            scaleAndSubsystemRule,
+            "scaleAndSubsystemRule"
+        ) {
             initialise();
         }
 

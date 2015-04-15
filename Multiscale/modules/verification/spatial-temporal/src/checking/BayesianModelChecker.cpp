@@ -13,9 +13,12 @@ using namespace multiscale::verification;
 
 
 BayesianModelChecker::BayesianModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
-                                           const TypeSemanticsTable &typeSemanticsTable,
+                                           const MultiscaleArchitectureGraph &multiscaleArchitectureGraph,
                                            double alpha, double beta, double bayesFactorThreshold)
-                                           : ModelChecker(abstractSyntaxTree, typeSemanticsTable) {
+                                           : ModelChecker(
+                                               abstractSyntaxTree,
+                                               multiscaleArchitectureGraph
+                                           ) {
     validateInput(alpha, beta, bayesFactorThreshold);
 
     this->alpha                 = alpha;
