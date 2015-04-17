@@ -46,9 +46,9 @@ namespace multiscale {
 
             protected:
 
-                //! Initialise the input file
+                //! Initialize the input file
                 /*!
-                 * Initialise the input file. Open an input file stream to the given input file path.
+                 * Initialize the input file. Open an input file stream to the given input file path.
                  *
                  * \param fin           An input stream for reading data from the input file
                  * \param inputFilePath The path to the input file

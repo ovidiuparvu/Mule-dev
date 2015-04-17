@@ -17,18 +17,6 @@
     
     <spatialMeasures>
         <spatialMeasure>
-            <name>area</name>
-            <description>The area of a spatial entity</description>
-            <minValue>0</minValue>
-            <maxValue>1E+37</maxValue>
-        </spatialMeasure>
-        <spatialMeasure>
-            <name>perimeter</name>
-            <description>The perimeter of a spatial entity</description>
-            <minValue>0</minValue>
-            <maxValue>1E+37</maxValue>
-        </spatialMeasure>
-        <spatialMeasure>
             <name>clusteredness</name>
             <description>The clusteredness of a spatial entity</description>
             <minValue>0</minValue>
@@ -41,10 +29,22 @@
             <maxValue>1</maxValue>
         </spatialMeasure>
         <spatialMeasure>
+            <name>area</name>
+            <description>The area of a spatial entity</description>
+            <minValue>0</minValue>
+            <maxValue>1E+6</maxValue>
+        </spatialMeasure>
+        <spatialMeasure>
+            <name>perimeter</name>
+            <description>The perimeter of a spatial entity</description>
+            <minValue>0</minValue>
+            <maxValue>1E+6</maxValue>
+        </spatialMeasure>
+        <spatialMeasure>
             <name>distanceFromOrigin</name>
             <description>The distance of a spatial entity from origin</description>
             <minValue>0</minValue>
-            <maxValue>1E+37</maxValue>
+            <maxValue>1E+6</maxValue>
         </spatialMeasure>
         <spatialMeasure>
             <name>angle</name>
@@ -74,13 +74,13 @@
             <name>centroidX</name>
             <description>The x coordinate of the spatial entity centroid</description>
             <minValue>0</minValue>
-            <maxValue>1E+37</maxValue>
+            <maxValue>1E+6</maxValue>
         </spatialMeasure>
         <spatialMeasure>
             <name>centroidY</name>
             <description>The y coordinate of the spatial entity centroid</description>
             <minValue>0</minValue>
-            <maxValue>1E+37</maxValue>
+            <maxValue>1E+6</maxValue>
         </spatialMeasure>
     </spatialMeasures>
 </spatialDescription>

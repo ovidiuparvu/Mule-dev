@@ -9,13 +9,13 @@ using namespace multiscale::verification;
 
 
 SpatialTemporalTrace::SpatialTemporalTrace() {
-    initialise();
+    initialize();
 }
 
 SpatialTemporalTrace::SpatialTemporalTrace(const SpatialTemporalTrace &trace)
                                           : beginIndex(trace.beginIndex), timePoints(trace.timePoints),
                                             lastTimePointValue(trace.lastTimePointValue),
-                                            isLastTimePointValueInitialised(trace.isLastTimePointValueInitialised) {}
+                                            isLastTimePointValueInitialized(trace.isLastTimePointValueInitialized) {}
 
 SpatialTemporalTrace::~SpatialTemporalTrace() {}
 
@@ -28,7 +28,7 @@ void SpatialTemporalTrace::addTimePoint(const TimePoint &timePoint) {
 }
 
 void SpatialTemporalTrace::clear() {
-    initialise();
+    initialize();
 }
 
 TimePoint SpatialTemporalTrace::getTimePoint(unsigned int index) const {
@@ -130,13 +130,13 @@ bool SpatialTemporalTrace::operator==(const SpatialTemporalTrace &rhsSpatialTemp
     }
 }
 
-void SpatialTemporalTrace::initialise() {
+void SpatialTemporalTrace::initialize() {
     beginIndex = 0;
 
     timePoints.clear();
 
     lastTimePointValue = 0;
-    isLastTimePointValueInitialised = false;
+    isLastTimePointValueInitialized = false;
 }
 
 void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint) {
@@ -156,7 +156,7 @@ void SpatialTemporalTrace::validateTimePointValue(const TimePoint &timePoint) {
 }
 
 void SpatialTemporalTrace::validateTimePointValue(unsigned long timePointValue) {
-    if (isLastTimePointValueInitialised) {
+    if (isLastTimePointValueInitialized) {
         if (timePointValue <= lastTimePointValue) {
             MS_throw_detailed(
                 SpatialTemporalException,
@@ -168,7 +168,7 @@ void SpatialTemporalTrace::validateTimePointValue(unsigned long timePointValue) 
             );
         }
     } else {
-        isLastTimePointValueInitialised = true;
+        isLastTimePointValueInitialized = true;
     }
 }
 

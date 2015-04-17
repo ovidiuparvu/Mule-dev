@@ -251,7 +251,7 @@ void
 MultiscaleArchitectureGraph::checkIfExistsPathFromRootToOtherVertices(long rootVertexIndex) const {
     std::vector<bool> visitedVertices(vertices.size(), false);
 
-    // Initialise vertices deque
+    // Initialize vertices deque
     std::deque<long> verticesDeque = {rootVertexIndex};
 
     // Visit all vertices reachable from the root vertex

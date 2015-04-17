@@ -123,34 +123,34 @@ namespace multiscale {
             private:
 
                 //! Initialisation function
-                void initialise();
+                void initialize();
 
-                //! Initialise the grammar
-                void initialiseGrammar();
+                //! Initialize the grammar
+                void initializeGrammar();
 
-                //! Initialise the logic properties rules
-                void initialiseLogicPropertiesRules();
+                //! Initialize the logic properties rules
+                void initializeLogicPropertiesRules();
 
-                //! Initialise the probabilistic logic property rule
-                void initialiseProbabilisticLogicPropertyRule();
+                //! Initialize the probabilistic logic property rule
+                void initializeProbabilisticLogicPropertyRule();
 
-                //! Initialise the logic property rule
-                void initialiseLogicPropertyRule();
+                //! Initialize the logic property rule
+                void initializeLogicPropertyRule();
 
-                //! Initialise the primary logic property rule
-                void initialisePrimaryLogicPropertyRule();
+                //! Initialize the primary logic property rule
+                void initializePrimaryLogicPropertyRule();
 
-                //! Initialise the composed logic property rule
-                void initialiseComposedLogicPropertyRule();
+                //! Initialize the composed logic property rule
+                void initializeComposedLogicPropertyRule();
 
-                //! Initialise the similarity measure rules
-                void initialiseSimilarityMeasureRules();
+                //! Initialize the similarity measure rules
+                void initializeSimilarityMeasureRules();
 
-                //! Initialise the comparator rules
-                void initialiseComparatorRules();
+                //! Initialize the comparator rules
+                void initializeComparatorRules();
 
-                //! Initialise debug support
-                void initialiseDebugSupport();
+                //! Initialize debug support
+                void initializeDebugSupport();
 
                 //! Assign names to the rules
                 void assignNamesToRules();
@@ -176,44 +176,44 @@ namespace multiscale {
                 //! Assign names to the comparator rules
                 void assignNamesToComparatorRules();
 
-                //! Initialise the debugging of rules
-                void initialiseRulesDebugging();
+                //! Initialize the debugging of rules
+                void initializeRulesDebugging();
 
-                //! Initialise the debugging of the logic properties rules
-                void initialiseLogicPropertiesRulesDebugging();
+                //! Initialize the debugging of the logic properties rules
+                void initializeLogicPropertiesRulesDebugging();
 
-                //! Initialise debugging for the probabilistic logic property rule
-                void initialiseProbabilisticLogicPropertyRuleDebugging();
+                //! Initialize debugging for the probabilistic logic property rule
+                void initializeProbabilisticLogicPropertyRuleDebugging();
 
-                //! Initialise debugging for the logic property rule
-                void initialiseLogicPropertyRuleDebugging();
+                //! Initialize debugging for the logic property rule
+                void initializeLogicPropertyRuleDebugging();
 
-                //! Initialise debugging for the primary logic property rule
-                void initialisePrimaryLogicPropertyRuleDebugging();
+                //! Initialize debugging for the primary logic property rule
+                void initializePrimaryLogicPropertyRuleDebugging();
 
-                //! Initialise debugging for the composed logic property rule
-                void initialiseComposedLogicPropertyRuleDebugging();
+                //! Initialize debugging for the composed logic property rule
+                void initializeComposedLogicPropertyRuleDebugging();
 
-                //! Initialise debugging for the similarity measure rule
-                void initialiseSimilarityMeasureRuleDebugging();
+                //! Initialize debugging for the similarity measure rule
+                void initializeSimilarityMeasureRuleDebugging();
 
-                //! Initialise debugging for the comparator rule
-                void initialiseComparatorRuleDebugging();
+                //! Initialize debugging for the comparator rule
+                void initializeComparatorRuleDebugging();
 
-                //! Initialise the error handling routines
-                void initialiseErrorHandlingSupport();
+                //! Initialize the error handling routines
+                void initializeErrorHandlingSupport();
 
-                //! Initialise the logic properties error handling support
-                void initialiseLogicPropertiesErrorHandlingSupport();
+                //! Initialize the logic properties error handling support
+                void initializeLogicPropertiesErrorHandlingSupport();
 
-                //! Initialise the probabilistic logic property error handling support
-                void initialiseProbabilisticLogicPropertyErrorHandlingSupport();
+                //! Initialize the probabilistic logic property error handling support
+                void initializeProbabilisticLogicPropertyErrorHandlingSupport();
 
-                //! Initialise the primary logic property error handling support
-                void initialisePrimaryLogicPropertyErrorHandlingSupport();
+                //! Initialize the primary logic property error handling support
+                void initializePrimaryLogicPropertyErrorHandlingSupport();
 
-                //! Initialise the compose logic property error handling support
-                void initialiseComposedLogicPropertyErrorHandlingSupport();
+                //! Initialize the compose logic property error handling support
+                void initializeComposedLogicPropertyErrorHandlingSupport();
 
         };
 

@@ -77,19 +77,19 @@ namespace multiscale {
 
             //! Initialisation function for the class
             /*!
-             * Initialise the polygon and other class' fields.
+             * Initialize the polygon and other class' fields.
              *
              * \param points                Set of points
              * \param minEnclosingTriangle  Minimum area triangle enclosing the given polygon
              */
-            void initialise(const std::vector<cv::Point2f> &points,
+            void initialize(const std::vector<cv::Point2f> &points,
                             std::vector<cv::Point2f> &minEnclosingTriangle);
 
-            //! Initialise polygon as the convex hull of the given set of points
+            //! Initialize polygon as the convex hull of the given set of points
             /*!
              * \param points Set of points
              */
-            void initialiseConvexPolygon(const std::vector<cv::Point2f> &points);
+            void initializeConvexPolygon(const std::vector<cv::Point2f> &points);
 
             //! Find the minimum area enclosing triangle for the given polygon
             /*!
@@ -108,7 +108,7 @@ namespace multiscale {
                                               std::vector<cv::Point2f> &minEnclosingTriangle);
 
             //! Initialisation of the algorithm variables
-            void initialiseAlgorithmVariables();
+            void initializeAlgorithmVariables();
 
             //! Find the minimum area enclosing triangle for the given polygon
             /*!

@@ -23,28 +23,28 @@ namespace multiscale {
         template <typename Iterator>
         TemporalNumericMeasureGrammar<Iterator>::TemporalNumericMeasureGrammar()
             : TemporalNumericMeasureGrammar::base_type(temporalNumericMeasureRule, "temporalNumericMeasureRule") {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
-            initialiseErrorHandlingSupport();
+        void TemporalNumericMeasureGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
+            initializeErrorHandlingSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseGrammar() {
-            initialiseTemporalNumericMeasureRule();
-            initialiseNumericStatisticalMeasureRule();
-            initialiseNumericMeasureCollectionRule();
+        void TemporalNumericMeasureGrammar<Iterator>::initializeGrammar() {
+            initializeTemporalNumericMeasureRule();
+            initializeNumericStatisticalMeasureRule();
+            initializeNumericMeasureCollectionRule();
         }
 
-        //! Initialise the temporal numeric measure rule
+        //! Initialize the temporal numeric measure rule
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseTemporalNumericMeasureRule() {
+        void TemporalNumericMeasureGrammar<Iterator>::initializeTemporalNumericMeasureRule() {
             temporalNumericMeasureRule
                 =   qi::double_
                 |   numericStateVariableRule
@@ -71,9 +71,9 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the numeric statistical measure rules
+        //! Initialize the numeric statistical measure rules
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseNumericStatisticalMeasureRule() {
+        void TemporalNumericMeasureGrammar<Iterator>::initializeNumericStatisticalMeasureRule() {
             numericStatisticalMeasureRule
                 =   unaryStatisticalNumericRule
                 |   binaryStatisticalNumericRule
@@ -108,21 +108,21 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the numeric measure collection rule
+        //! Initialize the numeric measure collection rule
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseNumericMeasureCollectionRule() {
+        void TemporalNumericMeasureGrammar<Iterator>::initializeNumericMeasureCollectionRule() {
             numericMeasureCollectionRule
                 =   temporalNumericCollectionRule
                 |   spatialMeasureCollectionRule;
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void TemporalNumericMeasureGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -156,47 +156,47 @@ namespace multiscale {
             numericMeasureCollectionRule.name("numericMeasureCollectionRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseRulesDebugging() {
-            initialiseTemporalNumericMeasureRuleDebugging();
-            initialiseNumericStatisticalMeasureRuleDebugging();
-            initialiseNumericMeasureCollectionRuleDebugging();
+        void TemporalNumericMeasureGrammar<Iterator>::initializeRulesDebugging() {
+            initializeTemporalNumericMeasureRuleDebugging();
+            initializeNumericStatisticalMeasureRuleDebugging();
+            initializeNumericMeasureCollectionRuleDebugging();
         }
 
-        //! Initialise debugging for the temporal numeric measure rule
+        //! Initialize debugging for the temporal numeric measure rule
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseTemporalNumericMeasureRuleDebugging() {
+        void TemporalNumericMeasureGrammar<Iterator>::initializeTemporalNumericMeasureRuleDebugging() {
             debug(temporalNumericMeasureRule);
             debug(unaryNumericTemporalRule);
             debug(binaryNumericTemporalRule);
         }
 
-        //! Initialise debugging for the numeric statistical measure rule
+        //! Initialize debugging for the numeric statistical measure rule
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseNumericStatisticalMeasureRuleDebugging() {
+        void TemporalNumericMeasureGrammar<Iterator>::initializeNumericStatisticalMeasureRuleDebugging() {
             debug(numericStatisticalMeasureRule);
             debug(unaryStatisticalNumericRule);
             debug(binaryStatisticalNumericRule);
             debug(binaryStatisticalQuantileNumericRule);
         }
 
-        //! Initialise debugging for the numeric measure collection rule
+        //! Initialize debugging for the numeric measure collection rule
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseNumericMeasureCollectionRuleDebugging() {
+        void TemporalNumericMeasureGrammar<Iterator>::initializeNumericMeasureCollectionRuleDebugging() {
             debug(numericMeasureCollectionRule);
         }
 
-        //! Initialise the error handling routines
+        //! Initialize the error handling routines
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseErrorHandlingSupport() {
-            initialiseTemporalNumericMeasureErrorHandlingSupport();
-            initialiseNumericStatisticalMeasureErrorHandlingSupport();
+        void TemporalNumericMeasureGrammar<Iterator>::initializeErrorHandlingSupport() {
+            initializeTemporalNumericMeasureErrorHandlingSupport();
+            initializeNumericStatisticalMeasureErrorHandlingSupport();
         }
 
-        //! Initialise the temporal numeric measure error handling support
+        //! Initialize the temporal numeric measure error handling support
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseTemporalNumericMeasureErrorHandlingSupport() {
+        void TemporalNumericMeasureGrammar<Iterator>::initializeTemporalNumericMeasureErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 temporalNumericMeasureRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
@@ -211,9 +211,9 @@ namespace multiscale {
             );
         }
 
-        //! Initialise the numeric statistical measure error handling support
+        //! Initialize the numeric statistical measure error handling support
         template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseNumericStatisticalMeasureErrorHandlingSupport() {
+        void TemporalNumericMeasureGrammar<Iterator>::initializeNumericStatisticalMeasureErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 unaryStatisticalNumericRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)

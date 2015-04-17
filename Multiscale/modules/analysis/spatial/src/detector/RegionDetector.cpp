@@ -120,7 +120,7 @@ void RegionDetector::setThresholdValue(int thresholdValue) {
     this->thresholdValue = thresholdValue;
 }
 
-void RegionDetector::initialiseDetectorSpecificFields() {
+void RegionDetector::initializeDetectorSpecificFields() {
     alpha = 750;
     beta = 0;
     blurKernelSize = 15;
@@ -130,7 +130,7 @@ void RegionDetector::initialiseDetectorSpecificFields() {
     thresholdValue = 100;
 }
 
-void RegionDetector::initialiseDetectorSpecificImageDependentFields() {}
+void RegionDetector::initializeDetectorSpecificImageDependentFields() {}
 
 void RegionDetector::createDetectorSpecificTrackbars() {
     cv::createTrackbar(TRACKBAR_ALPHA, WIN_OUTPUT_IMAGE, &alpha, ALPHA_MAX, nullptr, nullptr);
@@ -387,7 +387,7 @@ double RegionDetector::computeRegionDensity(const Polygon &polygon) {
 
 cv::Mat RegionDetector::createMaskForPolygon(const std::vector<cv::Point> &outerBorderPolygon,
                                              const std::vector<std::vector<cv::Point>> &innerBorderPolygons) {
-    // Create a blank mask where each pixel is initialised with zero intensity
+    // Create a blank mask where each pixel is initialized with zero intensity
     cv::Mat mask(cv::Mat::zeros(image.rows, image.cols, CV_8UC1));
 
     // Set the intensity of all pixels surrounded by the polygon outer border to maximum

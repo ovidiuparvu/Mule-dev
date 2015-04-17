@@ -113,7 +113,7 @@ namespace multiscale {
                 void validateTypesErrors(double typeIError, double typeIIError);
 
                 //! Initialisation of some of the class members
-                void initialise();
+                void initialize();
 
                 //! Compute the value of the indifference interval half considering the given probability
                 /*! indifferenceIntervalHalf = max(0, min(probability, 1 - probability) - eps)
@@ -132,12 +132,12 @@ namespace multiscale {
                 //! Update the result of the model checking task
                 void updateModelCheckingResult();
 
-                //! Update the result of the model checking task which was already initialised
+                //! Update the result of the model checking task which was already initialized
                 /*!
                  * The name and semantics of the local variables a1, b1, a2, b2, f, fPrime, n, d
                  * correspond to the name and semantics of the variables used in the original paper.
                  */
-                void updateInitialisedModelCheckingResult();
+                void updateInitializedModelCheckingResult();
 
                 //! Update the result of the model checking task considering the given values
                 /*!

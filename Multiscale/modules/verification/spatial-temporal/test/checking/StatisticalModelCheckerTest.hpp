@@ -38,8 +38,8 @@ namespace multiscaletest {
 
         private:
 
-            //! Initialise the model checker
-            void InitialiseModelChecker() override;
+            //! Initialize the model checker
+            void InitializeModelChecker() override;
 
     };
 
@@ -52,7 +52,7 @@ namespace multiscaletest {
         this->typeIIError = typeIIError;
     }
 
-    void StatisticalModelCheckerTest::InitialiseModelChecker() {
+    void StatisticalModelCheckerTest::InitializeModelChecker() {
         modelChecker = std::make_shared<mv::StatisticalModelChecker>(
                            abstractSyntaxTree, multiscaleArchitectureGraph,
                            typeIError, typeIIError

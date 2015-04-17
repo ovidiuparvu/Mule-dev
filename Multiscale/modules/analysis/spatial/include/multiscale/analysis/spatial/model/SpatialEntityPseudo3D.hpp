@@ -170,7 +170,7 @@ namespace multiscale {
             private:
 
                 //! Initialisation function for the class
-                void initialise();
+                void initialize();
 
             protected:
 

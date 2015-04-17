@@ -115,25 +115,25 @@ namespace multiscale {
             private:
 
                 //! Initialisation function
-                void initialise();
+                void initialize();
 
-                //! Initialise the grammar
-                void initialiseGrammar();
+                //! Initialize the grammar
+                void initializeGrammar();
 
-                //! Initialise the temporal numeric collection rule
-                void initialiseTemporalNumericCollectionRule();
+                //! Initialize the temporal numeric collection rule
+                void initializeTemporalNumericCollectionRule();
 
-                //! Initialise the timeseries measure rule
-                void initialiseTimeseriesMeasureRule();
+                //! Initialize the timeseries measure rule
+                void initializeTimeseriesMeasureRule();
 
-                //! Initialise the timeseries component rule
-                void initialiseTimeseriesComponentRule();
+                //! Initialize the timeseries component rule
+                void initializeTimeseriesComponentRule();
 
-                //! Initialise the numeric measure rule
-                void initialiseNumericMeasureRule();
+                //! Initialize the numeric measure rule
+                void initializeNumericMeasureRule();
 
-                //! Initialise debug support
-                void initialiseDebugSupport();
+                //! Initialize debug support
+                void initializeDebugSupport();
 
                 //! Assign names to the rules
                 void assignNamesToRules();
@@ -150,29 +150,29 @@ namespace multiscale {
                 //! Assign names to the numeric measure rules
                 void assignNamesToNumericMeasureRules();
 
-                //! Initialise the debugging of rules
-                void initialiseRulesDebugging();
+                //! Initialize the debugging of rules
+                void initializeRulesDebugging();
 
-                //! Initialise debugging for the temporal numeric collection rule
-                void initialiseTemporalNumericCollectionRuleDebugging();
+                //! Initialize debugging for the temporal numeric collection rule
+                void initializeTemporalNumericCollectionRuleDebugging();
 
-                //! Initialise debugging for the timeseries measure rule
-                void initialiseTimeseriesMeasureRuleDebugging();
+                //! Initialize debugging for the timeseries measure rule
+                void initializeTimeseriesMeasureRuleDebugging();
 
-                //! Initialise debugging for the timeseries component rule
-                void initialiseTimeseriesComponentRuleDebugging();
+                //! Initialize debugging for the timeseries component rule
+                void initializeTimeseriesComponentRuleDebugging();
 
-                //! Initialise debugging for the numeric measure rule
-                void initialiseNumericMeasureRuleDebugging();
+                //! Initialize debugging for the numeric measure rule
+                void initializeNumericMeasureRuleDebugging();
 
-                //! Initialise the error handling routines
-                void initialiseErrorHandlingSupport();
+                //! Initialize the error handling routines
+                void initializeErrorHandlingSupport();
 
-                //! Initialise the temporal numeric collection error handling support
-                void initialiseTemporalNumericCollectionErrorHandlingSupport();
+                //! Initialize the temporal numeric collection error handling support
+                void initializeTemporalNumericCollectionErrorHandlingSupport();
 
-                //! Initialise the numeric measure error handling support
-                void initialiseNumericMeasureErrorHandlingSupport();
+                //! Initialize the numeric measure error handling support
+                void initializeNumericMeasureErrorHandlingSupport();
 
         };
 

@@ -27,7 +27,7 @@ namespace multiscale {
                 AnnularSector ();
                 ~AnnularSector();
 
-                //! Initialise the members of the class
+                //! Initialize the members of the class
                 /*!
                  * \param startingRadius Starting radius
                  * \param endingRadius  Ending radius
@@ -35,7 +35,7 @@ namespace multiscale {
                  * \param endingAngle Ending angle
                  * \param concentration Concentration
                  */
-                void initialise(double startingRadius, double endingRadius,
+                void initialize(double startingRadius, double endingRadius,
                                 double startingAngle,  double endingAngle,
                                 double concentration);
 

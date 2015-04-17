@@ -126,11 +126,11 @@ namespace multiscale {
 
             private:
 
-                //! Initialise the vision members
-                void initialiseDetectorSpecificFields() override;
+                //! Initialize the vision members
+                void initializeDetectorSpecificFields() override;
 
                 //! Initialisation of the detector specific image dependent values
-                void initialiseDetectorSpecificImageDependentFields() override;
+                void initializeDetectorSpecificImageDependentFields() override;
 
                 //! Create the trackbars
                 void createDetectorSpecificTrackbars() override;

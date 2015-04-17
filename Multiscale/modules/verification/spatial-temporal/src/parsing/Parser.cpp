@@ -11,7 +11,7 @@ using namespace multiscale::verification;
 Parser::Parser(const std::string &logicalQuery) {
     this->logicalQuery = logicalQuery;
 
-    initialise();
+    initialize();
 }
 
 Parser::~Parser() {}
@@ -19,7 +19,7 @@ Parser::~Parser() {}
 void Parser::setLogicalQuery(const std::string &logicalQuery) {
     this->logicalQuery = logicalQuery;
 
-    initialise();
+    initialize();
 }
 
 bool Parser::parse(AbstractSyntaxTree &parseResult) {
@@ -54,7 +54,7 @@ bool Parser::parse(AbstractSyntaxTree &parseResult) {
     return isSuccessfulParse;
 }
 
-void Parser::initialise() {
+void Parser::initialize() {
     this->logicalQueryIterator = logicalQuery.begin();
     this->logicalQueryEnd = logicalQuery.end();
 }
@@ -64,7 +64,7 @@ bool Parser::parseLogicalQuery(AbstractSyntaxTree &parseResult) {
 
     bool isSuccesfulParse = parseLogicalQuery(probabilisticLogicProperty);
 
-    parseResult.initialiseTree(probabilisticLogicProperty);
+    parseResult.initializeTree(probabilisticLogicProperty);
 
     return isSuccesfulParse;
 }

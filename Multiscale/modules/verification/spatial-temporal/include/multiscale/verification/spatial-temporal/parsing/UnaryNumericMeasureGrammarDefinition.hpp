@@ -19,30 +19,30 @@ namespace multiscale {
                                               unaryNumericMeasureRule,
                                               "unaryNumericMeasureRule"
                                           ) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
+        void UnaryNumericMeasureGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialiseGrammar() {
+        void UnaryNumericMeasureGrammar<Iterator>::initializeGrammar() {
             unaryNumericMeasureRule
                 =   unaryNumericMeasureTypeParser;
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void UnaryNumericMeasureGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -51,9 +51,9 @@ namespace multiscale {
             unaryNumericMeasureRule.name("unaryNumericMeasureRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialiseRulesDebugging() {
+        void UnaryNumericMeasureGrammar<Iterator>::initializeRulesDebugging() {
             debug(unaryNumericMeasureRule);
         }
 

@@ -25,20 +25,20 @@ namespace multiscale {
             scaleAndSubsystemStringRule,
             "scaleAndSubsystemStringRule"
         ) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void ScaleAndSubsystemStringGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
-            initialiseErrorHandlingSupport();
+        void ScaleAndSubsystemStringGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
+            initializeErrorHandlingSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void ScaleAndSubsystemStringGrammar<Iterator>::initialiseGrammar() {
+        void ScaleAndSubsystemStringGrammar<Iterator>::initializeGrammar() {
             scaleAndSubsystemStringRule
                 =   qi::lexeme[
                         +( qi::char_(SCALE_AND_SUBSYSTEM_STRING_PATTERN) )
@@ -47,13 +47,13 @@ namespace multiscale {
                     ];
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void ScaleAndSubsystemStringGrammar<Iterator>::initialiseDebugSupport() {
+        void ScaleAndSubsystemStringGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -62,15 +62,15 @@ namespace multiscale {
             scaleAndSubsystemStringRule.name("scaleAndSubsystemStringRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void ScaleAndSubsystemStringGrammar<Iterator>::initialiseRulesDebugging() {
+        void ScaleAndSubsystemStringGrammar<Iterator>::initializeRulesDebugging() {
             debug(scaleAndSubsystemStringRule);
         }
 
-        //! Initialise the error handling routines
+        //! Initialize the error handling routines
         template <typename Iterator>
-        void ScaleAndSubsystemStringGrammar<Iterator>::initialiseErrorHandlingSupport() {
+        void ScaleAndSubsystemStringGrammar<Iterator>::initializeErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 scaleAndSubsystemStringRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)

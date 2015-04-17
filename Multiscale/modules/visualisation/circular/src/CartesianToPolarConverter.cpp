@@ -96,7 +96,7 @@ void CartesianToPolarConverter::transformToAnnularSectors() {
 
     // Tranform the cell of the grid to the annular sector corresponding
     // to the circle of radius 0
-    (annularSectors.at(0)).initialise(0.0, RADIUS_MIN, 0.0, 360.0, concentrations.at(0));
+    (annularSectors.at(0)).initialize(0.0, RADIUS_MIN, 0.0, 360.0, concentrations.at(0));
 
     // Define the constants
     double angle     = 360.0 / nrOfSectors;
@@ -114,7 +114,7 @@ void CartesianToPolarConverter::transformToAnnularSectors() {
                                  0, maxRadius, RADIUS_MIN, RADIUS_MAX, row + 1
                              );
 
-        (annularSectors.at(i)).initialise(
+        (annularSectors.at(i)).initialize(
             startRadius, endRadius, col * angle, (col + 1) * angle, concentrations.at(i)
         );
     }

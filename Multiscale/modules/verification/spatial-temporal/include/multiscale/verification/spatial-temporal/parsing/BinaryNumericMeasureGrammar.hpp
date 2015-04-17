@@ -41,19 +41,19 @@ namespace multiscale {
             private:
 
                 //! Initialisation function
-                void initialise();
+                void initialize();
 
-                //! Initialise the grammar
-                void initialiseGrammar();
+                //! Initialize the grammar
+                void initializeGrammar();
 
-                //! Initialise debug support
-                void initialiseDebugSupport();
+                //! Initialize debug support
+                void initializeDebugSupport();
 
                 //! Assign names to the rules
                 void assignNamesToRules();
 
-                //! Initialise the debugging of rules
-                void initialiseRulesDebugging();
+                //! Initialize the debugging of rules
+                void initializeRulesDebugging();
 
         };
 

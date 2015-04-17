@@ -19,30 +19,30 @@ namespace multiscale {
                                                binaryNumericMeasureRule,
                                                "binaryNumericMeasureRule"
                                            ) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void BinaryNumericMeasureGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
+        void BinaryNumericMeasureGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void BinaryNumericMeasureGrammar<Iterator>::initialiseGrammar() {
+        void BinaryNumericMeasureGrammar<Iterator>::initializeGrammar() {
             binaryNumericMeasureRule
                 =   binaryNumericMeasureTypeParser;
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void BinaryNumericMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void BinaryNumericMeasureGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -51,9 +51,9 @@ namespace multiscale {
             binaryNumericMeasureRule.name("binaryNumericMeasureRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void BinaryNumericMeasureGrammar<Iterator>::initialiseRulesDebugging() {
+        void BinaryNumericMeasureGrammar<Iterator>::initializeRulesDebugging() {
             debug(binaryNumericMeasureRule);
         }
 

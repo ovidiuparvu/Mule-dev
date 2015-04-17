@@ -32,15 +32,15 @@ then
     exit 1;
 fi
 
-# Initialise constants values
+# Initialize constants values
 NR_EXECUTIONS_PER_PBLSTL_INPUT_FILE=500;
 
-# Initialise command line arguments dependent variables
+# Initialize command line arguments dependent variables
 pblstlStatementsInputFolder=$1;
 spatioTemporalTracesFolder=$2;
 outputFolder=$3;
 
-# Initialise the parameter values passed to the Mudi model checker
+# Initialize the parameter values passed to the Mudi model checker
 mudiModelCheckerType=1;
 mudiSpatioTemporalTraces=${spatioTemporalTracesFolder};
 mudiExtraEvaluationTime=0;
@@ -59,7 +59,7 @@ do
     pblstlStatementsBasename=${pblstlStatementsFile##*/};
     pblstlStatementsFilenameWithoutExtension=${pblstlStatementsBasename%.in};
 
-    # Initialise pblstl statement filename dependent variables
+    # Initialize pblstl statement filename dependent variables
     pblstlStatementsFolder=${outputFolder}/${pblstlStatementsFilenameWithoutExtension};
     pblstlStatementsResults="${pblstlStatementsFolder}/${pblstlStatementsFilenameWithoutExtension}_results.out";
 
@@ -72,7 +72,7 @@ do
     # Run the model checker and record the results for this particular PBLSTL input file
     for i in `seq 1 1 ${NR_EXECUTIONS_PER_PBLSTL_INPUT_FILE}`;
     do
-        # Initialise the name of the result file corresponding to this particular execution
+        # Initialize the name of the result file corresponding to this particular execution
         pblstlStatementsNthResults="${pblstlStatementsFolder}/${pblstlStatementsFilenameWithoutExtension}_${i}.out";
 
         # Run the model checker

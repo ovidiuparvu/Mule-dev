@@ -42,7 +42,7 @@ namespace multiscale {
                 cv::Mat outputImage;                    /*!< Image for displaying the results */
 
                 bool detectMethodCalled;                /*!< Flag for indicating if the detect method was called */
-                bool detectorSpecificFieldsInitialised; /*!< Flag for indicating if the parameters were */
+                bool detectorSpecificFieldsInitialized; /*!< Flag for indicating if the parameters were */
 
                 cv::Point2f origin;                     /*!< The point representing the origin */
 
@@ -69,37 +69,37 @@ namespace multiscale {
                 /*!
                  * \param inputImage    The provided input image
                  */
-                void initialise(const cv::Mat &inputImage);
+                void initialize(const cv::Mat &inputImage);
 
-                //! Initialise the image field of the class
+                //! Initialize the image field of the class
                 /*!
                  * \param inputImage    The provided input image
                  */
-                void initialiseImage(const cv::Mat &inputImage);
+                void initializeImage(const cv::Mat &inputImage);
 
-                //! Initialise the image field of the class as a scaled copy of the given image
+                //! Initialize the image field of the class as a scaled copy of the given image
                 /*!
                  * \param inputImage    The provided input image
                  */
-                void initialiseScaledImage(const cv::Mat &inputImage);
+                void initializeScaledImage(const cv::Mat &inputImage);
 
                 //! Initialisation of the image dependent values
-                void initialiseImageDependentFields();
+                void initializeImageDependentFields();
 
                 // Initialisation function for the image origin
-                void initialiseImageOrigin();
+                void initializeImageOrigin();
 
                 //! Initialisation of the detector specific image dependent values
-                virtual void initialiseDetectorSpecificImageDependentFields() = 0;
+                virtual void initializeDetectorSpecificImageDependentFields() = 0;
 
                 //! Initialisation of the detector specific values in case they were not set
-                void initialiseDetectorSpecificFieldsIfNotSet();
+                void initializeDetectorSpecificFieldsIfNotSet();
 
                 //! Set the detector specific fields initialisation flag to true
                 void setDetectorSpecificFieldsInitialisationFlag(bool flag = true);
 
                 //! Initialisation of the detector specific values
-                virtual void initialiseDetectorSpecificFields() = 0;
+                virtual void initializeDetectorSpecificFields() = 0;
 
                 //! Check if the image is valid
                 /*!

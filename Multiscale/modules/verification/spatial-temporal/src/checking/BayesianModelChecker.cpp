@@ -25,7 +25,7 @@ BayesianModelChecker::BayesianModelChecker(const AbstractSyntaxTree &abstractSyn
     this->beta                  = beta;
     this->bayesFactorThreshold  = bayesFactorThreshold;
 
-    initialise();
+    initialize();
 }
 
 BayesianModelChecker::~BayesianModelChecker() {}
@@ -87,7 +87,7 @@ void BayesianModelChecker::validateBayesFactorThreshold(double bayesFactorThresh
     }
 }
 
-void BayesianModelChecker::initialise() {
+void BayesianModelChecker::initialize() {
     probability             = abstractSyntaxTree.getProbability();
     typeIErrorUpperBound    = 0;
 

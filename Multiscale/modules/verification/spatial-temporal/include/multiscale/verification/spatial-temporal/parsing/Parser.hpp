@@ -44,7 +44,7 @@ namespace multiscale {
             private:
 
                 //! Initialisation function
-                void initialise();
+                void initialize();
 
                 //! Parse the logical query and wrap the ProbabilisticLogicProperty into an AbstractSyntaxTree instance
                 /*!

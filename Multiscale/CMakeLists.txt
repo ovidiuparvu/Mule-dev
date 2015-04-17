@@ -260,12 +260,12 @@ UpdateProjectModifiedDate(
 
 
 #------------------------------------------------------------
-# Generate custom model checker
+# Prerequisites for generating a custom model checker 
 #------------------------------------------------------------
 
-# Generate custom model checker (if requested)
+# Check if the prerequisites for generating a custom model checker are met (if requested)
 if("${CMAKE_CUSTOM_MODEL_CHECKER}" STREQUAL "Generate")
-    GenerateCustomModelChecker()
+    ArePrerequisitesForGeneratingACustomModelCheckerMet()
 endif("${CMAKE_CUSTOM_MODEL_CHECKER}" STREQUAL "Generate")
 
 

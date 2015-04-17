@@ -16,7 +16,7 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 #------------------------------------------------------------
 # Generate source files considering the configuration file
 # config/verification/spatial-temporal/spatial_description.xml 
-# if any of them are missing
+# if any of the immediately below mentioned files are missing
 #------------------------------------------------------------
 
 set(CUSTOM_GENERATED_DEPENDENCY_FILES
@@ -33,6 +33,7 @@ set(CUSTOM_GENERATED_DEPENDENCY_FILES
     "${PROJECT_SOURCE_DIR}/modules/verification/spatial-temporal/test/evaluation/EmptyTraceTest.hpp"
     "${PROJECT_SOURCE_DIR}/modules/verification/spatial-temporal/test/evaluation/NumericStateVariableTraceTest.hpp"
     "${PROJECT_SOURCE_DIR}/modules/verification/spatial-temporal/test/evaluation/SpatialEntitiesTraceTest.hpp"
+    "${PROJECT_SOURCE_DIR}/modules/verification/spatial-temporal/test/evaluation/TimepointsSpatialEntitiesAttributesInitializer.hpp"
     "${PROJECT_SOURCE_DIR}/modules/verification/spatial-temporal/test/parsing/ParserTest.hpp"
 )
 
@@ -49,7 +50,8 @@ endforeach(DEPENDENT_FILE)
 #------------------------------------------------------------
 # Generate source files considering the configuration file
 # config/verification/spatial-temporal/spatial_description.xml 
-# if any of them have been updated since the last build
+# if any of the immediately below mentioned files have been 
+# updated since the last build
 #------------------------------------------------------------
 
 if("${CMAKE_CUSTOM_MODEL_CHECKER}" STREQUAL "Generate")
@@ -59,7 +61,7 @@ if("${CMAKE_CUSTOM_MODEL_CHECKER}" STREQUAL "Generate")
         ${PROJECT_SOURCE_DIR}/script/verification/generator/generator.py
     )
     
-    # Initialise the list of output and dependent files
+    # Initialize the list of output and dependent files
     set(CUSTOM_GENERATOR_OUTPUT_FILES
         "${PROJECT_SOURCE_DIR}/config/verification/spatial-temporal/schema/MSTML_L1V1.xsd"
     )
@@ -82,6 +84,7 @@ if("${CMAKE_CUSTOM_MODEL_CHECKER}" STREQUAL "Generate")
         "${PROJECT_SOURCE_DIR}/script/verification/generator/templates/test/evaluation/empty_trace_test_hpp.tpl"
         "${PROJECT_SOURCE_DIR}/script/verification/generator/templates/test/evaluation/numeric_state_variable_trace_test_hpp.tpl"
         "${PROJECT_SOURCE_DIR}/script/verification/generator/templates/test/evaluation/spatial_entities_trace_test_hpp.tpl"
+        "${PROJECT_SOURCE_DIR}/script/verification/generator/templates/test/evaluation/timepoints_spatial_entities_attributes_initializer_hpp.tpl"
         "${PROJECT_SOURCE_DIR}/script/verification/generator/templates/test/parsing/parser_test_hpp.tpl"
     )
     
@@ -466,6 +469,7 @@ AddUnitTest(MultiscaleArchitectureGraphTest "${MULTISCALE_ARCHITECTURE_GRAPH_TES
 set(PARSER_EVALUATION_TEST_SRC
     "${CORE_MODEL_CHECKER_SRC}"
 
+    test/evaluation/NonEmptyTraceEvaluationTest.cpp
     test/evaluation/ParserEvaluationTest.cpp
     test/evaluation/TraceEvaluationTest.cpp
 )

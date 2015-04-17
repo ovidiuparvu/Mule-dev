@@ -16,7 +16,7 @@ MatFactory::~MatFactory() {}
 cv::Mat MatFactory::createFromTextFile(const std::string &inputFilePath) {
     std::ifstream fin;
 
-    // Initialise the input file stream and read the number of rows, cols
+    // Initialize the input file stream and read the number of rows, cols
     // and the simulation time from the input file
     initInputFile(fin, inputFilePath);
 

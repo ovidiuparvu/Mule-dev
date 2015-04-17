@@ -15,7 +15,7 @@ then
     exit 1;
 fi
 
-# Initialise the variables
+# Initialize the variables
 simulationInputFile=$1;
 simulationGridHeight=$2;
 simulationGridWidth=$3;

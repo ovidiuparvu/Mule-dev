@@ -37,6 +37,9 @@ WRN_AUTO_GENERATED_FILE = [
 "* USE THE PYTHON GENERATOR SCRIPTS FOR ANY MODIFICATIONS.",
 "*"
 ]
+
+# The number of time points to be included in each unit test
+UNIT_TESTS_NR_OF_TIMEPOINTS = 12
   
 PROJECT_ROOT_FOLDER = "${PROJECT_SOURCE_DIR}"
 MODEL_CHECKING_FOLDER = PROJECT_ROOT_FOLDER + str(
@@ -60,12 +63,15 @@ TEMPLATES_FOLDER_PATH = PROJECT_ROOT_FOLDER + str(
 
 TAG_WRN_AUTO_GENERATED_FILE = "auto_generated_warning"
 
+TAG_UNIT_TESTS_NR_OF_TIMEPOINTS = "nr_of_timepoints"
+
 TAG_SPATIAL_ENTITIES = "spatial_entities"
 TAG_SPATIAL_MEASURES = "spatial_measures"
 TAG_SPATIAL_ENTITY_NAME = "spatial_entity_name"
 
 TAG_SPATIAL_ENTITY_NAME_FIXED_WIDTH = "#spatial_entity_fixed_width"
 TAG_SPATIAL_MEASURE_NAME_FIXED_WIDTH = "#spatial_measure_fixed_width"
+TAG_SPATIAL_ENTITY_AND_MEASURE_NAME_FIXED_WIDTH = "#spatial_entity_and_measure_fixed_width"
 
 TAG_FILTER_FIRST_TO_UPPER = "first_to_upper"
 
@@ -114,6 +120,16 @@ TEMPLATE_PREPROCESSING_IO = [
         ), 
         1, 
         1
+    ),
+    (
+        TEMPLATES_FOLDER_PATH + str(
+            "/test/evaluation/timepoints_spatial_entities_attributes_initializer_hpp.tpl.in"
+        ),
+        TEMPLATES_FOLDER_PATH + str(
+            "/test/evaluation/timepoints_spatial_entities_attributes_initializer_hpp.tpl"
+        ),
+        10,
+        20
     )
 ]
 
@@ -183,6 +199,11 @@ SOURCE_FILE_GENERATING_IO = {
             "/evaluation/EmptyTraceTest.hpp"
         )
     ,
+    "test/evaluation/non_empty_trace_evaluation_test_cpp.tpl" :
+        MODEL_CHECKING_TEST_FOLDER + str(
+            "/evaluation/NonEmptyTraceEvaluationTest.cpp"
+        )
+    ,
     "test/evaluation/numeric_state_variable_trace_test_hpp.tpl" :
         MODEL_CHECKING_TEST_FOLDER + str(
             "/evaluation/NumericStateVariableTraceTest.hpp"
@@ -191,6 +212,11 @@ SOURCE_FILE_GENERATING_IO = {
     "test/evaluation/spatial_entities_trace_test_hpp.tpl" :
         MODEL_CHECKING_TEST_FOLDER + str(
             "/evaluation/SpatialEntitiesTraceTest.hpp"
+        )
+    ,
+    "test/evaluation/timepoints_spatial_entities_attributes_initializer_hpp.tpl" :
+        MODEL_CHECKING_TEST_FOLDER + str(
+            "/evaluation/TimepointsSpatialEntitiesAttributesInitializer.hpp"
         )
     ,
     "test/parsing/parser_test_hpp.tpl" :
@@ -238,7 +264,7 @@ def generate_derived_spatial_entity_file(environment, template_path,
     # Load and get a reference to the template
     template = environment.get_template(template_path)
     
-    # Initialise output_path
+    # Initialize output_path
     output_path = output_folder + first_to_upper(spatial_entity_name) + str(
         EXT_HEADER_FILE
     )
@@ -247,8 +273,9 @@ def generate_derived_spatial_entity_file(environment, template_path,
     with open(output_path, "w+") as output_file:
         output_file.write(
             template.render({
-                TAG_SPATIAL_ENTITY_NAME : spatial_entity_name,
-                TAG_WRN_AUTO_GENERATED_FILE : WRN_AUTO_GENERATED_FILE
+                TAG_WRN_AUTO_GENERATED_FILE : WRN_AUTO_GENERATED_FILE,
+                TAG_UNIT_TESTS_NR_OF_TIMEPOINTS : UNIT_TESTS_NR_OF_TIMEPOINTS,
+                TAG_SPATIAL_ENTITY_NAME : spatial_entity_name
             })
         )
 
@@ -281,9 +308,10 @@ def generate_spatial_entities_and_measures_dependent_file(environment,
     with open(output_path, "w+") as output_file:
         output_file.write(
             template.render({
+                TAG_WRN_AUTO_GENERATED_FILE : WRN_AUTO_GENERATED_FILE,
+                TAG_UNIT_TESTS_NR_OF_TIMEPOINTS : UNIT_TESTS_NR_OF_TIMEPOINTS,
                 TAG_SPATIAL_ENTITIES : spatial_entities, 
-                TAG_SPATIAL_MEASURES : spatial_measures,
-                TAG_WRN_AUTO_GENERATED_FILE : WRN_AUTO_GENERATED_FILE
+                TAG_SPATIAL_MEASURES : spatial_measures
             })
         )
 
@@ -333,6 +361,10 @@ def preprocess_template_file(input_file_path, output_file_path,
         ),
         min_spatial_measure_width
     ) + FIXED_WIDTH_PADDING
+    spatial_entity_and_measure_fixed_width = (
+        spatial_entity_fixed_width +
+        spatial_measure_fixed_width
+    )
     
     # Create the replace dictionary
     replace_dictionary = {
@@ -341,6 +373,9 @@ def preprocess_template_file(input_file_path, output_file_path,
         , 
         TAG_SPATIAL_MEASURE_NAME_FIXED_WIDTH : 
             str(spatial_measure_fixed_width)
+        ,
+        TAG_SPATIAL_ENTITY_AND_MEASURE_NAME_FIXED_WIDTH :
+            str(spatial_entity_and_measure_fixed_width)
     }
     
     # Create the replacement regular expression

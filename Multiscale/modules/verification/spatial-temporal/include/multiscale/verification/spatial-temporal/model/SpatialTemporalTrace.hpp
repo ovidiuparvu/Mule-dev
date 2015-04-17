@@ -22,7 +22,7 @@ namespace multiscale {
                 std::vector<TimePoint>      timePoints;         /*!< The array of time points */
                 unsigned long               lastTimePointValue; /*!< The value of the last added timepoint */
 
-                bool isLastTimePointValueInitialised;  /*!< Flag to indicate if the last time point value was initialised */
+                bool isLastTimePointValueInitialized;  /*!< Flag to indicate if the last time point value was initialized */
 
             public:
 
@@ -36,7 +36,7 @@ namespace multiscale {
                  */
                 void addTimePoint(const TimePoint &timePoint);
 
-                //! Clear all the stored timepoints and reinitialise
+                //! Clear all the stored timepoints and reinitialize
                 void clear();
 
                 //! Get the time point at the given index in the array
@@ -109,8 +109,8 @@ namespace multiscale {
 
             private:
 
-                //! Initialise the member fields
-                void initialise();
+                //! Initialize the member fields
+                void initialize();
 
                 //! Update the last timepoint value
                 /*!
@@ -119,7 +119,7 @@ namespace multiscale {
                 void updateLastTimePointValue(TimePoint &timePoint);
 
                 //! Check if the provided time point value is greater than the last time point value
-                /*! The timepoint is considered to be uninitialised if the value is equal to the
+                /*! The timepoint is considered to be uninitialized if the value is equal to the
                  *  maximum value which can be represented as an unsigned long.
                  *  Otherwise if the timepoint value is less or equal to the lastTimePointValue
                  *  then an exception is thrown.
@@ -129,7 +129,7 @@ namespace multiscale {
                 void validateTimePointValue(const TimePoint &timePoint);
 
                 //! Check if the provided time point value is greater than the last time point value
-                /*! The timepoint is considered to be uninitialised if the value is equal to the
+                /*! The timepoint is considered to be uninitialized if the value is equal to the
                  *  maximum value which can be represented as an unsigned long.
                  *  Otherwise if the timepoint value is less or equal to the lastTimePointValue
                  *  then an exception is thrown.

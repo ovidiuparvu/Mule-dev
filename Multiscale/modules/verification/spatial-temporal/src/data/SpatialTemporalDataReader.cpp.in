@@ -15,7 +15,7 @@ namespace pt = boost::property_tree;
 
 
 SpatialTemporalDataReader::SpatialTemporalDataReader(const std::string &folderPath) {
-    initialise(folderPath);
+    initialize(folderPath);
 }
 
 SpatialTemporalDataReader::~SpatialTemporalDataReader() {
@@ -52,16 +52,16 @@ SpatialTemporalDataReader::getNextSpatialTemporalTrace(std::string &tracePath) {
 }
 
 void
-SpatialTemporalDataReader::initialise(const std::string &folderPath) {
+SpatialTemporalDataReader::initialize(const std::string &folderPath) {
     validateFolderPath(folderPath);
 
     this->folderPath = folderPath;
 
-    initialise();
+    initialize();
 }
 
 void
-SpatialTemporalDataReader::initialise() {
+SpatialTemporalDataReader::initialize() {
     clearInputFilesSets();
     updateInputFilesSets();
 }

@@ -38,8 +38,8 @@ namespace multiscaletest {
 
         private:
 
-            //! Initialise the model checker
-            void InitialiseModelChecker() override;
+            //! Initialize the model checker
+            void InitializeModelChecker() override;
 
     };
 
@@ -52,7 +52,7 @@ namespace multiscaletest {
         this->epsilon = epsilon;
     }
 
-    void ApproximateProbabilisticModelCheckerTest::InitialiseModelChecker() {
+    void ApproximateProbabilisticModelCheckerTest::InitializeModelChecker() {
         modelChecker = std::make_shared<mv::ApproximateProbabilisticModelChecker>(
                            abstractSyntaxTree, multiscaleArchitectureGraph, delta, epsilon
                        );

@@ -38,7 +38,7 @@ double MinEnclosingTriangleFinder::find(const std::vector<cv::Point2f> &points,
 
 double MinEnclosingTriangleFinder::findMinTriangle(const std::vector<cv::Point2f> &points,
                                                    std::vector<cv::Point2f> &minEnclosingTriangle) {
-    initialise(points, minEnclosingTriangle);
+    initialize(points, minEnclosingTriangle);
 
     if (polygon.size() > 3) {
         return findMinEnclosingTriangle(polygon, minEnclosingTriangle);
@@ -47,15 +47,15 @@ double MinEnclosingTriangleFinder::findMinTriangle(const std::vector<cv::Point2f
     }
 }
 
-void MinEnclosingTriangleFinder::initialise(const std::vector<cv::Point2f> &points,
+void MinEnclosingTriangleFinder::initialize(const std::vector<cv::Point2f> &points,
                                             std::vector<cv::Point2f> &minEnclosingTriangle) {
     // Clear all points previously stored in the std::vector
     minEnclosingTriangle.clear();
 
-    initialiseConvexPolygon(points);
+    initializeConvexPolygon(points);
 }
 
-void MinEnclosingTriangleFinder::initialiseConvexPolygon(const std::vector<cv::Point2f> &points) {
+void MinEnclosingTriangleFinder::initializeConvexPolygon(const std::vector<cv::Point2f> &points) {
     polygon = Geometry2D::computeConvexHull(points, CONVEX_HULL_CLOCKWISE);
 }
 
@@ -63,7 +63,7 @@ double MinEnclosingTriangleFinder::findMinEnclosingTriangle(const std::vector<cv
                                                             std::vector<cv::Point2f> &minEnclosingTriangle) {
     double minEnclosingTriangleArea = std::numeric_limits<double>::max();
 
-    initialiseAlgorithmVariables();
+    initializeAlgorithmVariables();
 
     findMinEnclosingTriangle(minEnclosingTriangle, minEnclosingTriangleArea);
 
@@ -87,7 +87,7 @@ double MinEnclosingTriangleFinder::returnMinEnclosingTriangle(const std::vector<
     );
 }
 
-void MinEnclosingTriangleFinder::initialiseAlgorithmVariables() {
+void MinEnclosingTriangleFinder::initializeAlgorithmVariables() {
     nrOfPoints = polygon.size();
 
     a = 1;

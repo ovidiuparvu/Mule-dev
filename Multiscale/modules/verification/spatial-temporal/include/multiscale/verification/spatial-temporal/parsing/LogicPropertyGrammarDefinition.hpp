@@ -29,37 +29,37 @@ namespace multiscale {
                                         probabilisticLogicPropertyRule,
                                         "probabilisticLogicPropertyRule"
                                     ) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
-            initialiseErrorHandlingSupport();
+        void LogicPropertyGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
+            initializeErrorHandlingSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseGrammar() {
-            initialiseLogicPropertiesRules();
-            initialiseSimilarityMeasureRules();
-            initialiseComparatorRules();
+        void LogicPropertyGrammar<Iterator>::initializeGrammar() {
+            initializeLogicPropertiesRules();
+            initializeSimilarityMeasureRules();
+            initializeComparatorRules();
         }
 
-        //! Initialise the logic properties rules
+        //! Initialize the logic properties rules
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseLogicPropertiesRules() {
-            initialiseProbabilisticLogicPropertyRule();
-            initialiseLogicPropertyRule();
-            initialisePrimaryLogicPropertyRule();
-            initialiseComposedLogicPropertyRule();
+        void LogicPropertyGrammar<Iterator>::initializeLogicPropertiesRules() {
+            initializeProbabilisticLogicPropertyRule();
+            initializeLogicPropertyRule();
+            initializePrimaryLogicPropertyRule();
+            initializeComposedLogicPropertyRule();
         }
 
-        //! Initialise the probabilistic logic property rule
+        //! Initialize the probabilistic logic property rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseProbabilisticLogicPropertyRule() {
+        void LogicPropertyGrammar<Iterator>::initializeProbabilisticLogicPropertyRule() {
             probabilisticLogicPropertyRule
                 =   'P'
                     > (
@@ -75,9 +75,9 @@ namespace multiscale {
                     > qi::double_ [qi::_pass = (qi::_1 >= 0) && (qi::_1 <= 1)];
         }
 
-        //! Initialise the logic property rule
+        //! Initialize the logic property rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseLogicPropertyRule() {
+        void LogicPropertyGrammar<Iterator>::initializeLogicPropertyRule() {
             logicPropertyRule
                 =   primaryLogicPropertyRule
                     >>  *(
@@ -89,9 +89,9 @@ namespace multiscale {
                         );
         }
 
-        //! Initialise the primary logic property rule
+        //! Initialize the primary logic property rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialisePrimaryLogicPropertyRule() {
+        void LogicPropertyGrammar<Iterator>::initializePrimaryLogicPropertyRule() {
             primaryLogicPropertyRule
                 =   temporalNumericComparisonRule
                 |   changeTemporalNumericMeasureRule
@@ -172,9 +172,9 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the composed logic property rule
+        //! Initialize the composed logic property rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseComposedLogicPropertyRule() {
+        void LogicPropertyGrammar<Iterator>::initializeComposedLogicPropertyRule() {
             andLogicPropertyRule
                 =   ('^' > logicPropertyRule);
 
@@ -201,27 +201,27 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the similarity measure rules
+        //! Initialize the similarity measure rules
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseSimilarityMeasureRules() {
+        void LogicPropertyGrammar<Iterator>::initializeSimilarityMeasureRules() {
             similarityMeasureRule
                 =   similarityMeasureTypeParser;
         }
 
-        //! Initialise the comparator rules
+        //! Initialize the comparator rules
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseComparatorRules() {
+        void LogicPropertyGrammar<Iterator>::initializeComparatorRules() {
             probabilisticLogicPropertyComparatorRule
                 =   comparatorNonEqualTypeParser;
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseDebugSupport() {
+        void LogicPropertyGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -289,39 +289,39 @@ namespace multiscale {
             probabilisticLogicPropertyComparatorRule.name("probabilisticLogicPropertyComparatorRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseRulesDebugging() {
-            initialiseLogicPropertiesRulesDebugging();
-            initialiseSimilarityMeasureRuleDebugging();
-            initialiseComparatorRuleDebugging();
+        void LogicPropertyGrammar<Iterator>::initializeRulesDebugging() {
+            initializeLogicPropertiesRulesDebugging();
+            initializeSimilarityMeasureRuleDebugging();
+            initializeComparatorRuleDebugging();
         }
 
-        //! Initialise the debugging of the logic properties rules
+        //! Initialize the debugging of the logic properties rules
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseLogicPropertiesRulesDebugging() {
-            initialiseProbabilisticLogicPropertyRuleDebugging();
-            initialiseLogicPropertyRuleDebugging();
-            initialisePrimaryLogicPropertyRuleDebugging();
-            initialiseComposedLogicPropertyRuleDebugging();
+        void LogicPropertyGrammar<Iterator>::initializeLogicPropertiesRulesDebugging() {
+            initializeProbabilisticLogicPropertyRuleDebugging();
+            initializeLogicPropertyRuleDebugging();
+            initializePrimaryLogicPropertyRuleDebugging();
+            initializeComposedLogicPropertyRuleDebugging();
         }
 
-        //! Initialise debugging for the probabilistic logic property rule
+        //! Initialize debugging for the probabilistic logic property rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseProbabilisticLogicPropertyRuleDebugging() {
+        void LogicPropertyGrammar<Iterator>::initializeProbabilisticLogicPropertyRuleDebugging() {
             debug(probabilisticLogicPropertyRule);
             debug(probabilityRule);
         }
 
-        //! Initialise debugging for the logic property rule
+        //! Initialize debugging for the logic property rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseLogicPropertyRuleDebugging() {
+        void LogicPropertyGrammar<Iterator>::initializeLogicPropertyRuleDebugging() {
             debug(logicPropertyRule);
         }
 
-        //! Initialise debugging for the primary logic property rule
+        //! Initialize debugging for the primary logic property rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialisePrimaryLogicPropertyRuleDebugging() {
+        void LogicPropertyGrammar<Iterator>::initializePrimaryLogicPropertyRuleDebugging() {
             debug(primaryLogicPropertyRule);
             debug(temporalNumericComparisonRule);
             debug(changeTemporalNumericMeasureRule);
@@ -332,9 +332,9 @@ namespace multiscale {
             debug(nextKLogicPropertyRule);
         }
 
-        //! Initialise debugging for the composed logic property rule
+        //! Initialize debugging for the composed logic property rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseComposedLogicPropertyRuleDebugging() {
+        void LogicPropertyGrammar<Iterator>::initializeComposedLogicPropertyRuleDebugging() {
             debug(andLogicPropertyRule);
             debug(orLogicPropertyRule);
             debug(implicationLogicPropertyRule);
@@ -342,35 +342,35 @@ namespace multiscale {
             debug(untilLogicPropertyRule);
         }
 
-        //! Initialise debugging for the similarity measure rule
+        //! Initialize debugging for the similarity measure rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseSimilarityMeasureRuleDebugging() {
+        void LogicPropertyGrammar<Iterator>::initializeSimilarityMeasureRuleDebugging() {
             debug(similarityMeasureRule);
         }
 
-        //! Initialise debugging for the comparator rule
+        //! Initialize debugging for the comparator rule
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseComparatorRuleDebugging() {
+        void LogicPropertyGrammar<Iterator>::initializeComparatorRuleDebugging() {
             debug(probabilisticLogicPropertyComparatorRule);
         }
 
-        //! Initialise the error handling routines
+        //! Initialize the error handling routines
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseErrorHandlingSupport() {
-            initialiseLogicPropertiesErrorHandlingSupport();
+        void LogicPropertyGrammar<Iterator>::initializeErrorHandlingSupport() {
+            initializeLogicPropertiesErrorHandlingSupport();
         }
 
-        //! Initialise the logic properties error handling support
+        //! Initialize the logic properties error handling support
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseLogicPropertiesErrorHandlingSupport() {
-            initialiseProbabilisticLogicPropertyErrorHandlingSupport();
-            initialisePrimaryLogicPropertyErrorHandlingSupport();
-            initialiseComposedLogicPropertyErrorHandlingSupport();
+        void LogicPropertyGrammar<Iterator>::initializeLogicPropertiesErrorHandlingSupport() {
+            initializeProbabilisticLogicPropertyErrorHandlingSupport();
+            initializePrimaryLogicPropertyErrorHandlingSupport();
+            initializeComposedLogicPropertyErrorHandlingSupport();
         }
 
-        //! Initialise the probabilistic logic property error handling support
+        //! Initialize the probabilistic logic property error handling support
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseProbabilisticLogicPropertyErrorHandlingSupport() {
+        void LogicPropertyGrammar<Iterator>::initializeProbabilisticLogicPropertyErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 probabilisticLogicPropertyRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
@@ -381,9 +381,9 @@ namespace multiscale {
             );
         }
 
-        //! Initialise the primary logic property error handling support
+        //! Initialize the primary logic property error handling support
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialisePrimaryLogicPropertyErrorHandlingSupport() {
+        void LogicPropertyGrammar<Iterator>::initializePrimaryLogicPropertyErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 primaryLogicPropertyRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
@@ -418,9 +418,9 @@ namespace multiscale {
             );
         }
 
-        //! Initialise the compose logic property error handling support
+        //! Initialize the compose logic property error handling support
         template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseComposedLogicPropertyErrorHandlingSupport() {
+        void LogicPropertyGrammar<Iterator>::initializeComposedLogicPropertyErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 andLogicPropertyRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)

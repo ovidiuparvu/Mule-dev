@@ -21,7 +21,7 @@ SimulationClusterDetector::SimulationClusterDetector(
 
 SimulationClusterDetector::~SimulationClusterDetector() {}
 
-void SimulationClusterDetector::initialiseDetectorSpecificImageDependentFields() {
+void SimulationClusterDetector::initializeDetectorSpecificImageDependentFields() {
     this->entityHeight = Numeric::division(
                              static_cast<double>(image.rows),
                              static_cast<double>(height)
@@ -31,10 +31,10 @@ void SimulationClusterDetector::initialiseDetectorSpecificImageDependentFields()
                             static_cast<double>(width)
                         );
 
-    initialiseThresholdedImage();
+    initializeThresholdedImage();
 }
 
-void SimulationClusterDetector::initialiseThresholdedImage() {
+void SimulationClusterDetector::initializeThresholdedImage() {
     cv::threshold(image, thresholdedImage, THRESHOLD, THRESHOLD_MAX, cv::THRESH_BINARY);
 }
 

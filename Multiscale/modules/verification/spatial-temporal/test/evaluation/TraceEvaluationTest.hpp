@@ -24,36 +24,14 @@ namespace multiscaletest {
 
         protected:
 
-            std::size_t nrOfTimePoints;             /*!< The number of timepoints in the trace */
-
-            NumericStateVariableId
-                aNumericStateVariableId;            /*!< The id of the numeric state variable "A" (no type) */
-            NumericStateVariableId
-                bNumericStateVariableId;            /*!< The id of the numeric state variable "B" (no type) */
-            NumericStateVariableId
-                aWithTypeNumericStateVariableId;    /*!< The id of the numeric state variable "A" (with type) */
-            NumericStateVariableId
-                bWithTypeNumericStateVariableId;    /*!< The id of the numeric state variable "B" (with type) */
-            NumericStateVariableId
-                cNumericStateVariableId;            /*!< The id of the numeric state variable "C" */
-            NumericStateVariableId
-                dNumericStateVariableId;            /*!< The id of the numeric state variable "D" */
-
-            double aMinValue;                       /*!< The minimum value of numeric state variable "A" */
-            double aMaxValue;                       /*!< The maximum value of numeric state variable "A" */
-            double bConstantValue;                  /*!< The constant value of numeric state variable "B" */
-            double cMinValue;                       /*!< The minimum value of numeric state variable "C" */
-            double cMaxValue;                       /*!< The maximum value of numeric state variable "C" */
-            double dConstantValue;                  /*!< The constant value of numeric state variable "D" */
-
             mv::SpatialTemporalTrace
-                trace;                              /*!< The spatial temporal trace */
+                trace;                          /*!< The spatial temporal trace */
             mv::MultiscaleArchitectureGraph
-                multiscaleArchitectureGraph;        /*!< The multiscale architecture graph */
+                multiscaleArchitectureGraph;    /*!< The multiscale architecture graph */
 
-            std::string query;                      /*!< The query to be checked */
+            std::string query;                  /*!< The query to be checked */
 
-            bool evaluationResult;                  /*!< The result of the evaluation */
+            bool evaluationResult;              /*!< The result of the evaluation */
 
         public:
 
@@ -73,27 +51,19 @@ namespace multiscaletest {
            //! Validate the results of the test
            virtual void ValidateTestResults() override;
 
-           //! Initialise the trace
-           virtual void InitialiseTrace() = 0;
-
         private:
 
-           //! Initialise the query
+           //! Initialize the query
            /*!
             * \param query  The given query
             */
-           void InitialiseQuery(const std::string &query);
+           void InitializeQuery(const std::string &query);
 
-           //! Initialise the multiscale architecture graph
-           void InitialiseMultiscaleArchitectureGraph();
+           //! Initialize the multiscale architecture graph
+           virtual void InitializeMultiscaleArchitectureGraph() = 0;
 
-        protected:
-
-           // Constants
-           static const std::string SCALE_AND_SUBSYSTEM_ORGANISM_HUMAN;
-           static const std::string SCALE_AND_SUBSYSTEM_ORGAN_HEART;
-           static const std::string SCALE_AND_SUBSYSTEM_ORGAN_KIDNEY;
-           static const std::string SCALE_AND_SUBSYSTEM_ORGAN_LIVER;
+           //! Initialize the trace
+           virtual void InitializeTrace() = 0;
 
     };
 

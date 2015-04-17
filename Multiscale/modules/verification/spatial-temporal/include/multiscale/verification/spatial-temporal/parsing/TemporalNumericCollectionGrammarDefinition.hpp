@@ -34,29 +34,29 @@ namespace multiscale {
                                             spatialMeasureCollectionGrammar.get()
                                         );
 
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
-            initialiseErrorHandlingSupport();
+        void TemporalNumericCollectionGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
+            initializeErrorHandlingSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseGrammar() {
-            initialiseTemporalNumericCollectionRule();
-            initialiseTimeseriesMeasureRule();
-            initialiseTimeseriesComponentRule();
-            initialiseNumericMeasureRule();
+        void TemporalNumericCollectionGrammar<Iterator>::initializeGrammar() {
+            initializeTemporalNumericCollectionRule();
+            initializeTimeseriesMeasureRule();
+            initializeTimeseriesComponentRule();
+            initializeNumericMeasureRule();
         }
 
-        //! Initialise the temporal numeric collection rule
+        //! Initialize the temporal numeric collection rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseTemporalNumericCollectionRule() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTemporalNumericCollectionRule() {
             temporalNumericCollectionRule
                 =   temporalNumericMeasureCollectionRule
                 |   changeTemporalNumericCollectionRule
@@ -102,9 +102,9 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the timeseries measure rule
+        //! Initialize the timeseries measure rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseTimeseriesMeasureRule() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeseriesMeasureRule() {
             timeseriesMeasureRule
                 =   timeseriesMeasureTypeParser;
 
@@ -112,9 +112,9 @@ namespace multiscale {
                 =   homogeneousTimeseriesMeasureTypeParser;
         }
 
-        //! Initialise the timeseries component rule
+        //! Initialize the timeseries component rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseTimeseriesComponentRule() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeseriesComponentRule() {
             timeseriesComponentRule
                 =   heterogeneousTimeseriesComponentRule
                 |   homogeneousTimeseriesComponentRule;
@@ -126,9 +126,9 @@ namespace multiscale {
                 =   homogeneousTimeseriesComponentTypeParser;
         }
 
-        //! Initialise the numeric measure rule
+        //! Initialize the numeric measure rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseNumericMeasureRule() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeNumericMeasureRule() {
             numericMeasureRule
                 =   (*primaryNumericMeasureRule)
                 |   unaryNumericNumericRule
@@ -153,13 +153,13 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseDebugSupport() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -205,18 +205,18 @@ namespace multiscale {
         }
 
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseRulesDebugging() {
-            initialiseTemporalNumericCollectionRuleDebugging();
-            initialiseTimeseriesMeasureRuleDebugging();
-            initialiseTimeseriesComponentRuleDebugging();
-            initialiseNumericMeasureRuleDebugging();
+        void TemporalNumericCollectionGrammar<Iterator>::initializeRulesDebugging() {
+            initializeTemporalNumericCollectionRuleDebugging();
+            initializeTimeseriesMeasureRuleDebugging();
+            initializeTimeseriesComponentRuleDebugging();
+            initializeNumericMeasureRuleDebugging();
         }
 
-        //! Initialise debugging for the temporal numeric collection rule
+        //! Initialize debugging for the temporal numeric collection rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseTemporalNumericCollectionRuleDebugging() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTemporalNumericCollectionRuleDebugging() {
             debug(temporalNumericCollectionRule);
             debug(temporalNumericMeasureCollectionRule);
             debug(changeTemporalNumericCollectionRule);
@@ -224,39 +224,39 @@ namespace multiscale {
             debug(homogeneousHomogeneousTimeseriesRule);
         }
 
-        //! Initialise debugging for the timeseries measures rule
+        //! Initialize debugging for the timeseries measures rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseTimeseriesMeasureRuleDebugging() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeseriesMeasureRuleDebugging() {
             debug(timeseriesMeasureRule);
             debug(homogeneousTimeseriesMeasureRule);
         }
 
-        //! Initialise debugging for the timeseries component rule
+        //! Initialize debugging for the timeseries component rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseTimeseriesComponentRuleDebugging() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeseriesComponentRuleDebugging() {
             debug(timeseriesComponentRule);
             debug(homogeneousTimeseriesComponentRule);
             debug(heterogeneousTimeseriesComponentRule);
         }
 
-        //! Initialise debugging for the numeric measure rule
+        //! Initialize debugging for the numeric measure rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseNumericMeasureRuleDebugging() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeNumericMeasureRuleDebugging() {
             debug(numericMeasureRule);
             debug(unaryNumericNumericRule);
             debug(binaryNumericNumericRule);
         }
 
-        //! Initialise the error handling routines
+        //! Initialize the error handling routines
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseErrorHandlingSupport() {
-            initialiseTemporalNumericCollectionErrorHandlingSupport();
-            initialiseNumericMeasureErrorHandlingSupport();
+        void TemporalNumericCollectionGrammar<Iterator>::initializeErrorHandlingSupport() {
+            initializeTemporalNumericCollectionErrorHandlingSupport();
+            initializeNumericMeasureErrorHandlingSupport();
         }
 
-        //! Initialise the temporal numeric collection error handling support
+        //! Initialize the temporal numeric collection error handling support
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseTemporalNumericCollectionErrorHandlingSupport() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTemporalNumericCollectionErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 temporalNumericCollectionRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
@@ -275,9 +275,9 @@ namespace multiscale {
             );
         }
 
-        //! Initialise the numeric measure error handling support
+        //! Initialize the numeric measure error handling support
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initialiseNumericMeasureErrorHandlingSupport() {
+        void TemporalNumericCollectionGrammar<Iterator>::initializeNumericMeasureErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 unaryNumericNumericRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)

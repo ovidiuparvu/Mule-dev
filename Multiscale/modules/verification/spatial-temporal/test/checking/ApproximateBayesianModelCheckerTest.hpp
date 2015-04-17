@@ -47,8 +47,8 @@ namespace multiscaletest {
 
         private:
 
-            //! Initialise the model checker
-            void InitialiseModelChecker() override;
+            //! Initialize the model checker
+            void InitializeModelChecker() override;
 
     };
 
@@ -65,7 +65,7 @@ namespace multiscaletest {
         this->varianceThreshold = varianceThreshold;
     }
 
-    void ApproximateBayesianModelCheckerTest::InitialiseModelChecker() {
+    void ApproximateBayesianModelCheckerTest::InitializeModelChecker() {
         modelChecker = std::make_shared<mv::ApproximateBayesianModelChecker>(
                            abstractSyntaxTree, multiscaleArchitectureGraph,
                            alphaParamForBetaPrior, betaParamForBetaPrior, varianceThreshold

@@ -24,7 +24,7 @@ ApproximateBayesianModelChecker::ApproximateBayesianModelChecker(const AbstractS
     this->beta                  = beta;
     this->varianceThreshold     = varianceThreshold;
 
-    initialise();
+    initialize();
 }
 
 ApproximateBayesianModelChecker::~ApproximateBayesianModelChecker() {}
@@ -86,7 +86,7 @@ void ApproximateBayesianModelChecker::validateVarianceThreshold(double varianceT
     }
 }
 
-void ApproximateBayesianModelChecker::initialise() {
+void ApproximateBayesianModelChecker::initialize() {
     probability = abstractSyntaxTree.getProbability();
 
     mean        = 0;

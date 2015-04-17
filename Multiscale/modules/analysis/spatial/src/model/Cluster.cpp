@@ -9,7 +9,7 @@ using namespace multiscale::analysis;
 
 
 Cluster::Cluster() {
-    initialise();
+    initialize();
 }
 
 Cluster::~Cluster() {}
@@ -69,7 +69,7 @@ void Cluster::setOriginDependentMembers(double distanceFromOrigin, double angleW
     this->angle = angleWrtOrigin;
 }
 
-void Cluster::initialise() {
+void Cluster::initialize() {
     this->clusterednessDegree = 0;
     this->density = 0;
 

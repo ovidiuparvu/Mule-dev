@@ -15,7 +15,7 @@ ModelCheckingManager::ModelCheckingManager(const std::string &logicPropertiesFil
                                            const std::string &multiscaleArchitectureGraphFilepath)
                                            : parser(PARSER_EMPTY_LOGIC_PROPERTY),
                                              traceReader(tracesFolderPath) {
-    initialise(
+    initialize(
         logicPropertiesFilepath,
         extraEvaluationTime,
         multiscaleArchitectureGraphFilepath
@@ -41,23 +41,23 @@ void ModelCheckingManager::runModelCheckingTasks(const std::shared_ptr<ModelChec
     runModelCheckingAndOutputResults(modelCheckerFactory);
 }
 
-void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
+void ModelCheckingManager::initialize(const std::string &logicPropertyFilepath,
                                       unsigned long extraEvaluationTime,
                                       const std::string &multiscaleArchitectureGraphFilepath) {
     this->shouldPrintDetailedEvaluation = false;
 
-    initialiseExtraEvaluationTimeCounters(extraEvaluationTime);
-    initialiseMultiscaleArchitectureGraph(multiscaleArchitectureGraphFilepath);
-    initialiseLogicProperties(logicPropertyFilepath);
+    initializeExtraEvaluationTimeCounters(extraEvaluationTime);
+    initializeMultiscaleArchitectureGraph(multiscaleArchitectureGraphFilepath);
+    initializeLogicProperties(logicPropertyFilepath);
 }
 
-void ModelCheckingManager::initialiseExtraEvaluationTimeCounters(unsigned long extraEvaluationTime) {
+void ModelCheckingManager::initializeExtraEvaluationTimeCounters(unsigned long extraEvaluationTime) {
     this->extraEvaluationTime           = extraEvaluationTime;
     this->extraEvaluationElapsedTime    = 0;
     this->extraEvaluationStartTime      = std::chrono::system_clock::now();
 }
 
-void ModelCheckingManager::initialiseMultiscaleArchitectureGraph(
+void ModelCheckingManager::initializeMultiscaleArchitectureGraph(
     const std::string &multiscaleArchitectureGraphFilepath
 ) {
     if (!multiscaleArchitectureGraphFilepath.empty()) {
@@ -65,7 +65,7 @@ void ModelCheckingManager::initialiseMultiscaleArchitectureGraph(
     }
 }
 
-void ModelCheckingManager::initialiseLogicProperties(const std::string &logicPropertiesFilepath) {
+void ModelCheckingManager::initializeLogicProperties(const std::string &logicPropertiesFilepath) {
     logicProperties = logicPropertyReader.readLogicPropertiesFromFile(logicPropertiesFilepath);
 }
 

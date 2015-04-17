@@ -19,8 +19,8 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-// Initialise the provided trace
-void initialiseTrace(SpatialTemporalTrace &trace) {
+// Initialize the provided trace
+void initializeTrace(SpatialTemporalTrace &trace) {
     // Variables initialisation
     std::size_t nrOfTimePoints = 12;
 
@@ -35,7 +35,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
     double /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MinValue = 1;
     double /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MaxValue = -1;
 
-    // Initialise timepoints
+    // Initialize timepoints
     trace.clear();
 
     std::vector<TimePoint> timePoints;
@@ -55,7 +55,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
         }
     }
 
-    // Initialise the aMaxValue field
+    // Initialize the aMaxValue field
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
         aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariableValue(aNumericStateVariableId));
     }
@@ -107,7 +107,7 @@ int main(int argc, char **argv) {
     MultiscaleArchitectureGraph multiscaleArchitectureGraph;
     AbstractSyntaxTree result;
 
-    initialiseTrace(trace);
+    initializeTrace(trace);
 
     std::cout << "/////////////////////////////////////////////////////////\n\n";
     std::cout << "\tA multiscale multidimensional logic query parser and evaluator...\n\n";

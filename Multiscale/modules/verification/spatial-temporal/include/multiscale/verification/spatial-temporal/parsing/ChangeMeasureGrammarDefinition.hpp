@@ -23,19 +23,19 @@ namespace multiscale {
         template <typename Iterator>
         ChangeMeasureGrammar<Iterator>::ChangeMeasureGrammar()
             : ChangeMeasureGrammar::base_type(changeMeasureRule, "changeMeasureRule") {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void ChangeMeasureGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
+        void ChangeMeasureGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void ChangeMeasureGrammar<Iterator>::initialiseGrammar() {
+        void ChangeMeasureGrammar<Iterator>::initializeGrammar() {
             // In order to be a successful parse the change measure
             // should be followed by a "(". The "(" character is not
             // explicitly consumed i.e. the "&" predicate is used for
@@ -49,13 +49,13 @@ namespace multiscale {
                     >> &qi::lit('(');
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void ChangeMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void ChangeMeasureGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -64,9 +64,9 @@ namespace multiscale {
             changeMeasureRule.name("changeMeasureRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void ChangeMeasureGrammar<Iterator>::initialiseRulesDebugging() {
+        void ChangeMeasureGrammar<Iterator>::initializeRulesDebugging() {
             debug(changeMeasureRule);
         }
 

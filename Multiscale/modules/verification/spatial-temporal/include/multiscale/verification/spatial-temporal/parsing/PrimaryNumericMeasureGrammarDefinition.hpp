@@ -24,36 +24,36 @@ namespace multiscale {
             SpatialMeasureCollectionGrammar<Iterator> *spatialMeasureCollectionGrammar)
             : PrimaryNumericMeasureGrammar::base_type(primaryNumericMeasureRule, "primaryNumericMeasureRule"),
               spatialMeasureCollectionRule(spatialMeasureCollectionGrammar) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
-            initialiseErrorHandlingSupport();
+        void PrimaryNumericMeasureGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
+            initializeErrorHandlingSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialiseGrammar() {
-            initialisePrimaryNumericMeasureRule();
-            initialiseNumericSpatialMeasureRule();
+        void PrimaryNumericMeasureGrammar<Iterator>::initializeGrammar() {
+            initializePrimaryNumericMeasureRule();
+            initializeNumericSpatialMeasureRule();
         }
 
-        //! Initialise the primary numeric measure rule
+        //! Initialize the primary numeric measure rule
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialisePrimaryNumericMeasureRule() {
+        void PrimaryNumericMeasureGrammar<Iterator>::initializePrimaryNumericMeasureRule() {
             primaryNumericMeasureRule
                 =   numericSpatialMeasureRule
                 |   qi::double_
                 |   numericStateVariableRule;
         }
 
-        //! Initialise the numeric spatial measure rule
+        //! Initialize the numeric spatial measure rule
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialiseNumericSpatialMeasureRule() {
+        void PrimaryNumericMeasureGrammar<Iterator>::initializeNumericSpatialMeasureRule() {
             numericSpatialMeasureRule
                 =   unaryStatisticalSpatialRule
                 |   binaryStatisticalSpatialRule
@@ -88,13 +88,13 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void PrimaryNumericMeasureGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -119,37 +119,37 @@ namespace multiscale {
             binaryStatisticalQuantileSpatialRule.name("binaryStatisticalQuantileSpatialRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialiseRulesDebugging() {
-            initialisePrimaryNumericMeasureRuleDebugging();
-            initialiseNumericSpatialMeasureRuleDebugging();
+        void PrimaryNumericMeasureGrammar<Iterator>::initializeRulesDebugging() {
+            initializePrimaryNumericMeasureRuleDebugging();
+            initializeNumericSpatialMeasureRuleDebugging();
         }
 
-        //! Initialise debugging for the primary numeric measure rule
+        //! Initialize debugging for the primary numeric measure rule
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialisePrimaryNumericMeasureRuleDebugging() {
+        void PrimaryNumericMeasureGrammar<Iterator>::initializePrimaryNumericMeasureRuleDebugging() {
             debug(primaryNumericMeasureRule);
         }
 
-        //! Initialise debugging for the numeric spatial measure rule
+        //! Initialize debugging for the numeric spatial measure rule
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialiseNumericSpatialMeasureRuleDebugging() {
+        void PrimaryNumericMeasureGrammar<Iterator>::initializeNumericSpatialMeasureRuleDebugging() {
             debug(numericSpatialMeasureRule);
             debug(unaryStatisticalSpatialRule);
             debug(binaryStatisticalSpatialRule);
             debug(binaryStatisticalQuantileSpatialRule);
         }
 
-        //! Initialise the error handling routines
+        //! Initialize the error handling routines
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialiseErrorHandlingSupport() {
-            initialiseNumericSpatialMeasureErrorHandlingSupport();
+        void PrimaryNumericMeasureGrammar<Iterator>::initializeErrorHandlingSupport() {
+            initializeNumericSpatialMeasureErrorHandlingSupport();
         }
 
-        //! Initialise the numeric spatial measure error handling support
+        //! Initialize the numeric spatial measure error handling support
         template <typename Iterator>
-        void PrimaryNumericMeasureGrammar<Iterator>::initialiseNumericSpatialMeasureErrorHandlingSupport() {
+        void PrimaryNumericMeasureGrammar<Iterator>::initializeNumericSpatialMeasureErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 unaryStatisticalSpatialRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)

@@ -40,7 +40,7 @@ void printInvalidCommandLineArguments() {
     std::cout << "Run the program with the argument \"--help\" for more information." << std::endl;
 }
 
-// Initialise the command line arguments configuration
+// Initialize the command line arguments configuration
 po::options_description initCommandLineArgumentsConfig() {
     // Provide a title for the usage options description
     po::options_description usageDescription("Usage");
@@ -70,7 +70,7 @@ CmdLineArgsValidationResult areValidParameters(std::string &mstmlSubfilesFolderP
                                                std::string &timepointsValuesFilePath,
                                                std::string &mstmlOutputFilePath,
                                                int argc, char** argv) {
-    // Initialise the command line arguments configuration
+    // Initialize the command line arguments configuration
     po::options_description usageDescription = initCommandLineArgumentsConfig();
 
     // Parse the command line arguments
@@ -116,7 +116,7 @@ void mergeMSTMLSubfiles(int argc, char **argv) {
     std::string timepointsValuesFilePath;
     std::string mstmlOutputFilePath;
 
-    // Check if the command line arguments are valid and initialise the provided strings accordingly
+    // Check if the command line arguments are valid and initialize the provided strings accordingly
     CmdLineArgsValidationResult cmdLineArgsValidationResult
         = areValidParameters(
               mstmlSubfilesFolderPath, timepointsValuesFilePath, mstmlOutputFilePath,

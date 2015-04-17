@@ -18,7 +18,7 @@
 
 namespace mv = multiscale::verification;
 
-const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > 20)]";
+const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/)]";
 
 
 namespace multiscaletest {
@@ -56,36 +56,36 @@ namespace multiscaletest {
            //! Validate the results of the test
            virtual void ValidateTestResults() override;
 
-           //! Initialise the model checker
-           virtual void InitialiseModelChecker() = 0;
+           //! Initialize the model checker
+           virtual void InitializeModelChecker() = 0;
 
         private:
 
            //! Initialisation function
-           void Initialise();
+           void Initialize();
 
-           //! Initialise the collection of spatio-temporal traces
-           void InitialiseSpatioTemporalTraces();
+           //! Initialize the collection of spatio-temporal traces
+           void InitializeSpatioTemporalTraces();
 
-           //! Initialise the multiscale architecture graph
-           void InitialiseMultiscaleArchitectureGraph();
+           //! Initialize the multiscale architecture graph
+           void InitializeMultiscaleArchitectureGraph();
            
-           //! Initialise the abstract syntax tree
-           void InitialiseAbstractSyntaxTree();
+           //! Initialize the abstract syntax tree
+           void InitializeAbstractSyntaxTree();
 
-           //! Initialise the collection of spatio-temporal traces with the given spatial entity /*{{ spatial_measures[0].name }}*/ values
+           //! Initialize the collection of spatio-temporal traces with the given spatial entity /*{{ spatial_measures[0].name }}*/ values
            /*!
             * The assumption is that each timepoint contains only one spatial entity of the same type.
             * Therefore each /*{{ spatial_measures[0].name }}*/ value corresponds to a different timepoint and spatial entity.
             *
             * \param /*{{ spatial_measures[0].name }}*/Values The collection of /*{{ spatial_measures[0].name }}*/ values
             */
-           void InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(const std::vector<double> /*{{ spatial_measures[0].name }}*/Values);
+           void InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(const std::vector<double> /*{{ spatial_measures[0].name }}*/Values);
 
     };
 
     bool ModelCheckerTest::RunModelCheckingTest() {
-        Initialise();
+        Initialize();
 
         RunTest();
         ValidateTestResults();
@@ -105,41 +105,41 @@ namespace multiscaletest {
 
     void ModelCheckerTest::ValidateTestResults() {}
 
-    void ModelCheckerTest::Initialise() {
-        InitialiseSpatioTemporalTraces();
-        InitialiseMultiscaleArchitectureGraph();
-        InitialiseAbstractSyntaxTree();
-        InitialiseModelChecker();
+    void ModelCheckerTest::Initialize() {
+        InitializeSpatioTemporalTraces();
+        InitializeMultiscaleArchitectureGraph();
+        InitializeAbstractSyntaxTree();
+        InitializeModelChecker();
     }
 
-    void ModelCheckerTest::InitialiseSpatioTemporalTraces() {
+    void ModelCheckerTest::InitializeSpatioTemporalTraces() {
         traces.clear();
 
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 30});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{30, 20, 10});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 10});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{30, 20, 30});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{20, 20, 20});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 20});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{30, 20, 20});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{20, 20, 30});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{20, 20, 10});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 20, 10});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{30, 20, 20, 30});
-        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 20, 30});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 6 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 2 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 2 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 6 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 6 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 6 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 2 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 2 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 6 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 2 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 2 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 6 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 6 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 6 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 2 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 2 }}*/});
+        InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{/*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 6 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 3 }}*/, /*{{ spatial_measures[0].min_value|float + (spatial_measures[0].max_value|float - spatial_measures[0].min_value|float) / 2 }}*/});
     }
 
-    void ModelCheckerTest::InitialiseMultiscaleArchitectureGraph() {
+    void ModelCheckerTest::InitializeMultiscaleArchitectureGraph() {
         // Do nothing
     }
     
-    void ModelCheckerTest::InitialiseAbstractSyntaxTree() {
+    void ModelCheckerTest::InitializeAbstractSyntaxTree() {
         mv::Parser parser(INPUT_LOGIC_PROPERTY);
 
         parser.parse(abstractSyntaxTree);
     }
 
-    void ModelCheckerTest::InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(const std::vector<double> /*{{ spatial_measures[0].name }}*/Values) {
+    void ModelCheckerTest::InitializeSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(const std::vector<double> /*{{ spatial_measures[0].name }}*/Values) {
         mv::SpatialTemporalTrace                            trace;
         mv::TimePoint                                       timePoint;
         std::list<std::shared_ptr<SpatialEntity>>::iterator iterator;

@@ -22,20 +22,20 @@ namespace multiscale {
         template <typename Iterator>
         NumericStateVariableGrammar<Iterator>::NumericStateVariableGrammar()
             : NumericStateVariableGrammar::base_type(numericStateVariableRule, "numericStateVariableRule") {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void NumericStateVariableGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
-            initialiseErrorHandlingSupport();
+        void NumericStateVariableGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
+            initializeErrorHandlingSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void NumericStateVariableGrammar<Iterator>::initialiseGrammar() {
+        void NumericStateVariableGrammar<Iterator>::initializeGrammar() {
             numericStateVariableRule
                 =   stateVariableRule
                     > -(stateVariableScaleAndSubsystemRule);
@@ -56,13 +56,13 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void NumericStateVariableGrammar<Iterator>::initialiseDebugSupport() {
+        void NumericStateVariableGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -74,18 +74,18 @@ namespace multiscale {
             stateVariableScaleAndSubsystemRule  .name("stateVariableScaleAndSubsystemRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void NumericStateVariableGrammar<Iterator>::initialiseRulesDebugging() {
+        void NumericStateVariableGrammar<Iterator>::initializeRulesDebugging() {
             debug(numericStateVariableRule);
             debug(stateVariableRule);
             debug(stateVariableNameRule);
             debug(stateVariableScaleAndSubsystemRule);
         }
 
-        //! Initialise the error handling routines
+        //! Initialize the error handling routines
         template <typename Iterator>
-        void NumericStateVariableGrammar<Iterator>::initialiseErrorHandlingSupport() {
+        void NumericStateVariableGrammar<Iterator>::initializeErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 stateVariableNameRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)

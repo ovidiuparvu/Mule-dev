@@ -1,6 +1,6 @@
-# Function used to initialise the grids of cells, CDK1, Plk1 and APC corresponding
+# Function used to initialize the grids of cells, CDK1, Plk1 and APC corresponding
 # to the current timepoint index
-function initialiseGridsForTimepointIndex(timepointIndex, gridOfCells, gridOfCDK1, gridOfPlk1, gridOfAPC,    i, j) {
+function initializeGridsForTimepointIndex(timepointIndex, gridOfCells, gridOfCDK1, gridOfPlk1, gridOfAPC,    i, j) {
     for (i = 0; i <= DISCRETISED_SPACE_RESOLUTION; i++) {
         for (j = 0; j <= DISCRETISED_SPACE_RESOLUTION; j++) {
             gridOfCells[timepointIndex, i, j] = 0;
@@ -29,7 +29,7 @@ function normalizeCoordinateValue(coordinateValue, maxCoordinateValue) {
 
 # Create header line considering the given prefix
 function createHeaderLine(prefix,    i, headerLine) {
-    # Initialise the header line
+    # Initialize the header line
     headerLine = "";
 
     # Create the header line
@@ -45,7 +45,7 @@ function createHeaderLine(prefix,    i, headerLine) {
 
 # Create contents line considering the given matrix and timepoint index
 function createContentsLine(matrixOfValues, timepointIndex,    i, j) {
-    # Initialise the contents line
+    # Initialize the contents line
     contentsLine = "";
 
     # Create the contents line
@@ -66,18 +66,18 @@ function createContentsLine(matrixOfValues, timepointIndex,    i, j) {
 
 # Commands executed before going through each line of the file
 BEGIN {
-    # Initialise the field separator
+    # Initialize the field separator
     FS="\t";
     
-    # Initialise the timepoint index with the first possible value "0"
+    # Initialize the timepoint index with the first possible value "0"
     lastTimepointIndex = 0;
 } 
 
 # Commands executed when the first field is "Time"
 ($1 == "Time") {
-    # Initialise the grid of cells, CDK1, Plk1 and APC corresponding to the 
+    # Initialize the grid of cells, CDK1, Plk1 and APC corresponding to the 
     # current timepoint index
-    initialiseGridsForTimepointIndex(lastTimepointIndex, gridOfCells, gridOfCDK1, gridOfPlk1, gridOfAPC);
+    initializeGridsForTimepointIndex(lastTimepointIndex, gridOfCells, gridOfCDK1, gridOfPlk1, gridOfAPC);
 } 
 
 # Commands executed when the line is empty
@@ -85,9 +85,9 @@ BEGIN {
     # Increment the value of timepoint index 
     lastTimepointIndex++;
 
-    # Initialise the grid of cells, CDK1, Plk1 and APC corresponding to the 
+    # Initialize the grid of cells, CDK1, Plk1 and APC corresponding to the 
     # current timepoint index
-    initialiseGridsForTimepointIndex(lastTimepointIndex, gridOfCells, gridOfCDK1, gridOfPlk1, gridOfAPC);
+    initializeGridsForTimepointIndex(lastTimepointIndex, gridOfCells, gridOfCDK1, gridOfPlk1, gridOfAPC);
 }
 
 # Commands executed when the line is not empty and the first field is not "Time"

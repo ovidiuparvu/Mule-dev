@@ -19,30 +19,30 @@ namespace multiscale {
                                                            binaryStatisticalQuantileMeasureRule,
                                                            "binaryStatisticalQuantileMeasureRule"
                                                        ) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void BinaryStatisticalQuantileMeasureGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
+        void BinaryStatisticalQuantileMeasureGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void BinaryStatisticalQuantileMeasureGrammar<Iterator>::initialiseGrammar() {
+        void BinaryStatisticalQuantileMeasureGrammar<Iterator>::initializeGrammar() {
             binaryStatisticalQuantileMeasureRule
                 =   binaryStatisticalQuantileMeasureTypeParser;
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void BinaryStatisticalQuantileMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void BinaryStatisticalQuantileMeasureGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -51,9 +51,9 @@ namespace multiscale {
             binaryStatisticalQuantileMeasureRule.name("binaryStatisticalQuantileMeasureRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void BinaryStatisticalQuantileMeasureGrammar<Iterator>::initialiseRulesDebugging() {
+        void BinaryStatisticalQuantileMeasureGrammar<Iterator>::initializeRulesDebugging() {
             debug(binaryStatisticalQuantileMeasureRule);
         }
 

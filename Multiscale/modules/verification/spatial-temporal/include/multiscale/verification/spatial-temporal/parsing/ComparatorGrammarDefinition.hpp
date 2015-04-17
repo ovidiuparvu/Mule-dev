@@ -23,30 +23,30 @@ namespace multiscale {
         template <typename Iterator>
         ComparatorGrammar<Iterator>::ComparatorGrammar()
             : ComparatorGrammar::base_type(comparatorRule, "comparatorRule") {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void ComparatorGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
+        void ComparatorGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void ComparatorGrammar<Iterator>::initialiseGrammar() {
+        void ComparatorGrammar<Iterator>::initializeGrammar() {
             comparatorRule
                 =   comparatorTypeParser;
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void ComparatorGrammar<Iterator>::initialiseDebugSupport() {
+        void ComparatorGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -55,9 +55,9 @@ namespace multiscale {
             comparatorRule.name("comparatorRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void ComparatorGrammar<Iterator>::initialiseRulesDebugging() {
+        void ComparatorGrammar<Iterator>::initializeRulesDebugging() {
             debug(comparatorRule);
         }
 

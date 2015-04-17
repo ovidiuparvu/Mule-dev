@@ -34,11 +34,11 @@ namespace multiscale {
 
             private:
 
-                //! Initialise the image dependent values
-                void initialiseDetectorSpecificImageDependentFields() override;
+                //! Initialize the image dependent values
+                void initializeDetectorSpecificImageDependentFields() override;
 
-                //! Initialise the thresholdedImage field
-                void initialiseThresholdedImage();
+                //! Initialize the thresholdedImage field
+                void initializeThresholdedImage();
 
                 //! Detect the entities in the image
                 /*! Detect the entities in the image, compute their centre point and degree of pile up

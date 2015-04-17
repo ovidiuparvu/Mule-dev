@@ -26,11 +26,11 @@ namespace multiscale {
 
         private:
 
-            //! Initialise the vectors of digits
-            void initialise();
+            //! Initialize the vectors of digits
+            void initialize();
 
-            //! Check if there is a next number when in initialised state
-            bool hasNextInitialised();
+            //! Check if there is a next number when in initialized state
+            bool hasNextInitialized();
 
             //! Reset the digits of the current number to the initial value
             void resetCurrentNumber();

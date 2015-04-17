@@ -44,14 +44,14 @@ namespace multiscale {
 
             private:
 
-                //! Initialise the input file stream over the given input file
+                //! Initialize the input file stream over the given input file
                 /*!
                  * \param fin Input file stream
                  */
                 void initInputFile(std::ifstream &fin);
 
 
-                //! Initialise the output file with the given index and simulation time
+                //! Initialize the output file with the given index and simulation time
                 /*!
                  * \param fout Output file stream
                  * \param index Index of the output file
@@ -59,7 +59,7 @@ namespace multiscale {
                  */
                 void initOutputFile(std::ofstream &fout, unsigned int index, double &simulationTime);
 
-                //! Initialise the iterators considering the given number iterator type
+                //! Initialize the iterators considering the given number iterator type
                 /*!
                  * \param numberIteratorType The type of the number iterator
                  */

@@ -4,7 +4,7 @@ using namespace multiscale;
 
 
 StandardNumberIterator::StandardNumberIterator(unsigned int upperBound) : NumberIterator(upperBound) {
-    initialise();
+    initialize();
     reset();
 }
 
@@ -14,9 +14,9 @@ unsigned int StandardNumberIterator::number() {
     return currentNumber;
 }
 
-void StandardNumberIterator::initialise() {}
+void StandardNumberIterator::initialize() {}
 
-bool StandardNumberIterator::hasNextInitialised() {
+bool StandardNumberIterator::hasNextInitialized() {
     if (currentNumber == upperBound) {
         return false;
     } else {

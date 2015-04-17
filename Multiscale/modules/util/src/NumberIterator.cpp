@@ -12,21 +12,21 @@ void NumberIterator::init(unsigned int upperBound) {
 }
 
 bool NumberIterator::hasNext() {
-    if (!isInitialised) {
-        return hasNextNotInitialised();
+    if (!isInitialized) {
+        return hasNextNotInitialized();
     } else {
-        return hasNextInitialised();
+        return hasNextInitialized();
     }
 }
 
 void NumberIterator::reset() {
     resetCurrentNumber();
 
-    this->isInitialised = false;
+    this->isInitialized = false;
 }
 
-bool NumberIterator::hasNextNotInitialised() {
-    this->isInitialised = true;
+bool NumberIterator::hasNextNotInitialized() {
+    this->isInitialized = true;
 
     return true;
 }

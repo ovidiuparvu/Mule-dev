@@ -101,8 +101,8 @@ namespace multiscale {
 
             private:
 
-                //! Initialise the model checking manager
-                /*! Initialise the model checking manager considering the given logic properties input file and
+                //! Initialize the model checking manager
+                /*! Initialize the model checking manager considering the given logic properties input file and
                  *  extra evaluation time, and print the introduction message
                  *
                  * \param logicPropertiesFilepath               The path to the logic properties input file
@@ -110,29 +110,29 @@ namespace multiscale {
                  *                                              logic properties
                  * \param multiscaleArchitectureGraphFilepath   The path to the multiscale architecture graph
                  */
-                void initialise(const std::string &logicPropertiesFilepath,
+                void initialize(const std::string &logicPropertiesFilepath,
                                 unsigned long extraEvaluationTime,
                                 const std::string &multiscaleArchitectureGraphFilepath);
 
-                //! Initialise the extra evaluation time counters
+                //! Initialize the extra evaluation time counters
                 /*!
                  * \param extraEvaluationTime   The number of extra minutes allocated for evaluating
                  *                              logic properties
                  */
-                void initialiseExtraEvaluationTimeCounters(unsigned long extraEvaluationTime);
+                void initializeExtraEvaluationTimeCounters(unsigned long extraEvaluationTime);
 
-                //! Initialise the multiscale architecture graph
+                //! Initialize the multiscale architecture graph
                 /*!
                  * \param multiscaleArchitectureGraphFilepath   The path to the multiscale architecture graph
                  *                                              input file
                  */
-                void initialiseMultiscaleArchitectureGraph(const std::string &multiscaleArchitectureGraphFilepath);
+                void initializeMultiscaleArchitectureGraph(const std::string &multiscaleArchitectureGraphFilepath);
 
-                //! Initialise the logic properties using the provided input file
+                //! Initialize the logic properties using the provided input file
                 /*!
                  * \param logicPropertiesFilepath The path to the logic properties input file
                  */
-                void initialiseLogicProperties(const std::string &logicPropertiesFilepath);
+                void initializeLogicProperties(const std::string &logicPropertiesFilepath);
 
                 //! Run the model checking tasks and output the results
                 /*!

@@ -52,7 +52,7 @@ namespace multiscale {
             private:
 
                 //! Initialisation function
-                void initialise();
+                void initialize();
 
                 //! Read timepoints' values
                 void readTimepointsValues();

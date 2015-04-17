@@ -23,11 +23,11 @@ namespace multiscale {
 
         private:
 
-            //! Initialise the value of the current number
-            void initialise();
+            //! Initialize the value of the current number
+            void initialize();
 
-            //! Check if there is a next number when in initialised state
-            bool hasNextInitialised();
+            //! Check if there is a next number when in initialized state
+            bool hasNextInitialized();
 
             //! Reset the current number to the initial value
             void resetCurrentNumber();

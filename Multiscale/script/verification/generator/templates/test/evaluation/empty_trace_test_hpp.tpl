@@ -19,14 +19,22 @@ namespace multiscaletest {
     class EmptyTraceTest : public TraceEvaluationTest {
 
         private:
-
-           //! Initialise the trace
-           virtual void InitialiseTrace() override;
-
+    
+            //! Initialize the multiscale architecture graph
+            virtual void InitializeMultiscaleArchitectureGraph() override;
+    
+            //! Initialize the trace
+            virtual void InitializeTrace() override;
+    
     };
-
-    void EmptyTraceTest::InitialiseTrace() {
-        // Empty trace
+    
+    
+    void EmptyTraceTest::InitializeMultiscaleArchitectureGraph() {
+        // Do nothing
+    }
+    
+    void EmptyTraceTest::InitializeTrace() {
+        // Do nothing
     }
 
 };

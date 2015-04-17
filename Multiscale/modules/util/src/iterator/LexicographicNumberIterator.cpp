@@ -4,7 +4,7 @@ using namespace multiscale;
 
 
 LexicographicNumberIterator::LexicographicNumberIterator(unsigned int upperBound) : NumberIterator(upperBound) {
-    initialise();
+    initialize();
     reset();
 }
 
@@ -17,13 +17,13 @@ unsigned int LexicographicNumberIterator::number() {
     return digitsToNumber(currentNumberDigits);
 }
 
-void LexicographicNumberIterator::initialise() {
+void LexicographicNumberIterator::initialize() {
     numberToDigits(upperBound, upperBoundDigits);
 
     currentNumberDigits.reserve(upperBoundDigits.size());
 }
 
-bool LexicographicNumberIterator::hasNextInitialised() {
+bool LexicographicNumberIterator::hasNextInitialized() {
     unsigned char lastDigit = currentNumberDigits.back();
 
     if (((lastDigit + 1) <= 9) && (!isLargerThanUpperBound(lastDigit + 1))) {

@@ -53,7 +53,7 @@ namespace multiscaletest {
            //! Test the scenario when the output vector is not empty
            bool TestMorePointsAndNonEmptyTriangle();
 
-           //! Test the scenario when randomly initialised vectors of input points are provided
+           //! Test the scenario when randomly initialized vectors of input points are provided
            bool TestRandomPoints();
 
         protected:

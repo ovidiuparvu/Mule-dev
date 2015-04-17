@@ -57,7 +57,7 @@ do
     # Get the current date and time
     date=`date +"%F-%T"`;
 
-    # Initialise the simulation dependent variables
+    # Initialize the simulation dependent variables
     name="${CASE_STUDY_TITLE}_${date}";
     simulationLogOutputPath="${OUT_SIMULATION_LOG}/${name}.out";
     processedSimulationOutputPath="${OUT_SIMULATION_PROCESSED}/${name}.csv";

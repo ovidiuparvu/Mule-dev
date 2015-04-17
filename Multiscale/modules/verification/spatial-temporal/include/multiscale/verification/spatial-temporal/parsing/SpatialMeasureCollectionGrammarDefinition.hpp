@@ -29,29 +29,29 @@ namespace multiscale {
               primaryNumericMeasureRule(
                   std::make_shared<PrimaryNumericMeasureGrammar<Iterator>>(this)
               ) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
-            initialiseErrorHandlingSupport();
+        void SpatialMeasureCollectionGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
+            initializeErrorHandlingSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseGrammar() {
-            initialiseSpatialMeasureCollectionRule();
-            initialiseSpatialMeasureRule();
-            initialiseSubsetRule();
-            initialiseConstraintsRules();
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeGrammar() {
+            initializeSpatialMeasureCollectionRule();
+            initializeSpatialMeasureRule();
+            initializeSubsetRule();
+            initializeConstraintsRules();
         }
 
-        //! Initialise the spatial measure collection rule
+        //! Initialize the spatial measure collection rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseSpatialMeasureCollectionRule() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeSpatialMeasureCollectionRule() {
             spatialMeasureCollectionRule
                 =   primarySpatialMeasureCollectionRule
                 |   unaryNumericSpatialMeasureCollectionRule
@@ -84,16 +84,16 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the spatial measure rule
+        //! Initialize the spatial measure rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseSpatialMeasureRule() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeSpatialMeasureRule() {
             spatialMeasureRule
                 =   spatialMeasureTypeParser;
         }
 
-        //! Initialise the subset rule
+        //! Initialize the subset rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseSubsetRule() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeSubsetRule() {
             subsetRule
                 =   subsetSpecificRule
                 |   filterSubsetRule
@@ -123,18 +123,18 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the constraints rules
+        //! Initialize the constraints rules
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseConstraintsRules() {
-            initialiseConstraintRule();
-            initialisePrimaryConstraintRule();
-            initialiseFilterNumericMeasureRule();
-            initialiseComposedConstraintRule();
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeConstraintsRules() {
+            initializeConstraintRule();
+            initializePrimaryConstraintRule();
+            initializeFilterNumericMeasureRule();
+            initializeComposedConstraintRule();
         }
 
-        //! Initialise the constraint rule
+        //! Initialize the constraint rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseConstraintRule() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeConstraintRule() {
             constraintRule
                 =   primaryConstraintRule
                     >> *(
@@ -145,9 +145,9 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the primary constraint rule
+        //! Initialize the primary constraint rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialisePrimaryConstraintRule() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializePrimaryConstraintRule() {
             primaryConstraintRule
                 =   notConstraintRule
                 |   unaryScaleAndSubsystemConstraintRule
@@ -168,9 +168,9 @@ namespace multiscale {
                     > filterNumericMeasureRule;
         }
 
-        //! Initialise the filter numeric measure rule
+        //! Initialize the filter numeric measure rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseFilterNumericMeasureRule() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeFilterNumericMeasureRule() {
             filterNumericMeasureRule
                 =   (*primaryNumericMeasureRule)
                 |   spatialMeasureRule
@@ -196,9 +196,9 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the composed constraint rule
+        //! Initialize the composed constraint rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseComposedConstraintRule() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeComposedConstraintRule() {
             andConstraintRule
                 =   ('^' > constraintRule);
 
@@ -212,13 +212,13 @@ namespace multiscale {
                 =   ("<=>" > constraintRule);
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseDebugSupport() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -295,91 +295,91 @@ namespace multiscale {
             equivalenceConstraintRule   .name("equivalenceConstraintRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseRulesDebugging() {
-            initialiseSpatialMeasureCollectionRuleDebugging();
-            initialiseSpatialMeasureRuleDebugging();
-            initialiseSubsetRuleDebugging();
-            initialiseConstraintsRulesDebugging();
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeRulesDebugging() {
+            initializeSpatialMeasureCollectionRuleDebugging();
+            initializeSpatialMeasureRuleDebugging();
+            initializeSubsetRuleDebugging();
+            initializeConstraintsRulesDebugging();
         }
 
-        //! Initialise debugging for the spatial measure collection rule
+        //! Initialize debugging for the spatial measure collection rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseSpatialMeasureCollectionRuleDebugging() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeSpatialMeasureCollectionRuleDebugging() {
             debug(spatialMeasureCollectionRule);
             debug(primarySpatialMeasureCollectionRule);
             debug(unaryNumericSpatialMeasureCollectionRule);
             debug(binaryNumericSpatialMeasureCollectionRule);
         }
 
-        //! Initialise debugging for the spatial measure rule
+        //! Initialize debugging for the spatial measure rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseSpatialMeasureRuleDebugging() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeSpatialMeasureRuleDebugging() {
             debug(spatialMeasureRule);
         }
 
-        //! Initialise debugging for the subset rules
+        //! Initialize debugging for the subset rules
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseSubsetRuleDebugging() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeSubsetRuleDebugging() {
             debug(subsetRule);
             debug(subsetSpecificRule);
             debug(filterSubsetRule);
             debug(subsetSubsetOperationRule);
         }
 
-        //! Initialise the debugging of the constraints rules
+        //! Initialize the debugging of the constraints rules
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseConstraintsRulesDebugging() {
-            initialiseConstraintRuleDebugging();
-            initialisePrimaryConstraintRuleDebugging();
-            initialiseFilterNumericMeasureRuleDebugging();
-            initialiseComposedConstraintRuleDebugging();
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeConstraintsRulesDebugging() {
+            initializeConstraintRuleDebugging();
+            initializePrimaryConstraintRuleDebugging();
+            initializeFilterNumericMeasureRuleDebugging();
+            initializeComposedConstraintRuleDebugging();
         }
 
-        //! Initialise debugging for the constraint rule
+        //! Initialize debugging for the constraint rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseConstraintRuleDebugging() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeConstraintRuleDebugging() {
             debug(constraintRule);
         }
 
-        //! Initialise debugging for the primary constraint rules
+        //! Initialize debugging for the primary constraint rules
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialisePrimaryConstraintRuleDebugging() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializePrimaryConstraintRuleDebugging() {
             debug(primaryConstraintRule);
             debug(notConstraintRule);
             debug(unaryScaleAndSubsystemConstraintRule);
             debug(unarySpatialConstraintRule);
         }
 
-        //! Initialise debugging for the filter numeric measure rules
+        //! Initialize debugging for the filter numeric measure rules
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseFilterNumericMeasureRuleDebugging() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeFilterNumericMeasureRuleDebugging() {
             debug(filterNumericMeasureRule);
             debug(unaryNumericFilterRule);
             debug(binaryNumericFilterRule);
         }
 
-        //! Initialise debugging for the composed constraint rule
+        //! Initialize debugging for the composed constraint rule
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseComposedConstraintRuleDebugging() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeComposedConstraintRuleDebugging() {
             debug(andConstraintRule);
             debug(orConstraintRule);
             debug(implicationConstraintRule);
             debug(equivalenceConstraintRule);
         }
 
-        //! Initialise the error handling routines
+        //! Initialize the error handling routines
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseErrorHandlingSupport() {
-            initialiseSpatialMeasureCollectionErrorHandlingSupport();
-            initialiseSubsetErrorHandlingSupport();
-            initialiseConstraintsErrorHandlingSupport();
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeErrorHandlingSupport() {
+            initializeSpatialMeasureCollectionErrorHandlingSupport();
+            initializeSubsetErrorHandlingSupport();
+            initializeConstraintsErrorHandlingSupport();
         }
 
-        //! Initialise the spatial measure collection error handling support
+        //! Initialize the spatial measure collection error handling support
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseSpatialMeasureCollectionErrorHandlingSupport() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeSpatialMeasureCollectionErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 primarySpatialMeasureCollectionRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
@@ -394,9 +394,9 @@ namespace multiscale {
             );
         }
 
-        //! Initialise the subset error handling support
+        //! Initialize the subset error handling support
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseSubsetErrorHandlingSupport() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeSubsetErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 filterSubsetRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
@@ -407,17 +407,17 @@ namespace multiscale {
             );
         }
 
-        //! Initialise the constraints error handling support
+        //! Initialize the constraints error handling support
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseConstraintsErrorHandlingSupport() {
-            initialisePrimaryConstraintErrorHandlingSupport();
-            initialiseFilterNumericMeasureErrorHandlingSupport();
-            initialiseComposedConstraintErrorHandlingSupport();
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeConstraintsErrorHandlingSupport() {
+            initializePrimaryConstraintErrorHandlingSupport();
+            initializeFilterNumericMeasureErrorHandlingSupport();
+            initializeComposedConstraintErrorHandlingSupport();
         }
 
-        //! Initialise the primary constraint error handling support
+        //! Initialize the primary constraint error handling support
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialisePrimaryConstraintErrorHandlingSupport() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializePrimaryConstraintErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 primaryConstraintRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
@@ -436,9 +436,9 @@ namespace multiscale {
             );
         }
 
-        //! Initialise the filter numeric measure error handling support
+        //! Initialize the filter numeric measure error handling support
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseFilterNumericMeasureErrorHandlingSupport() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeFilterNumericMeasureErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 filterNumericMeasureRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
@@ -453,9 +453,9 @@ namespace multiscale {
             );
         }
 
-        //! Initialise the composed constraint error handling support
+        //! Initialize the composed constraint error handling support
         template <typename Iterator>
-        void SpatialMeasureCollectionGrammar<Iterator>::initialiseComposedConstraintErrorHandlingSupport() {
+        void SpatialMeasureCollectionGrammar<Iterator>::initializeComposedConstraintErrorHandlingSupport() {
             qi::on_error<qi::fail>(
                 andConstraintRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)

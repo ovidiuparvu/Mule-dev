@@ -41,10 +41,10 @@
                     <xs:selector xpath="spatialEntity"/>
                     <xs:field xpath="@spatialType"/>
                     <xs:field xpath="@scaleAndSubsystem"/>
-                    <xs:field xpath="area"/>
-                    <xs:field xpath="perimeter"/>
                     <xs:field xpath="clusteredness"/>
                     <xs:field xpath="density"/>
+                    <xs:field xpath="area"/>
+                    <xs:field xpath="perimeter"/>
                     <xs:field xpath="distanceFromOrigin"/>
                     <xs:field xpath="angle"/>
                     <xs:field xpath="triangleMeasure"/>
@@ -68,10 +68,10 @@
 
     <xs:complexType name="SpatialEntityType">
         <xs:all>
-            <xs:element name="area" type="AreaType"/>
-            <xs:element name="perimeter" type="PerimeterType"/>
             <xs:element name="clusteredness" type="ClusterednessType"/>
             <xs:element name="density" type="DensityType"/>
+            <xs:element name="area" type="AreaType"/>
+            <xs:element name="perimeter" type="PerimeterType"/>
             <xs:element name="distanceFromOrigin" type="DistanceFromOriginType"/>
             <xs:element name="angle" type="AngleType"/>
             <xs:element name="triangleMeasure" type="TriangleMeasureType"/>
@@ -102,20 +102,6 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="AreaType">
-        <xs:restriction base="xs:double">
-            <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="1E+37"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="PerimeterType">
-        <xs:restriction base="xs:double">
-            <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="1E+37"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
     <xs:simpleType name="ClusterednessType">
         <xs:restriction base="xs:double">
             <xs:minInclusive value="0"/>
@@ -130,10 +116,24 @@
         </xs:restriction>
     </xs:simpleType>
     
+    <xs:simpleType name="AreaType">
+        <xs:restriction base="xs:double">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1E+6"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="PerimeterType">
+        <xs:restriction base="xs:double">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1E+6"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
     <xs:simpleType name="DistanceFromOriginType">
         <xs:restriction base="xs:double">
             <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="1E+37"/>
+            <xs:maxInclusive value="1E+6"/>
         </xs:restriction>
     </xs:simpleType>
     
@@ -168,14 +168,14 @@
     <xs:simpleType name="CentroidXType">
         <xs:restriction base="xs:double">
             <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="1E+37"/>
+            <xs:maxInclusive value="1E+6"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="CentroidYType">
         <xs:restriction base="xs:double">
             <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="1E+37"/>
+            <xs:maxInclusive value="1E+6"/>
         </xs:restriction>
     </xs:simpleType>
     

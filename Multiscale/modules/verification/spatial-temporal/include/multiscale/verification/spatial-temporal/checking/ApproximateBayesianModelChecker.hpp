@@ -133,7 +133,7 @@ namespace multiscale {
                 void validateVarianceThreshold(double varianceThreshold);
 
                 //! Initialisation of some of the class members
-                void initialise();
+                void initialize();
 
                 //! Update the result of the model checking task
                 void updateModelCheckingResult();

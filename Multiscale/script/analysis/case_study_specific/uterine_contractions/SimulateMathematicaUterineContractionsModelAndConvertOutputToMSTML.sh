@@ -610,7 +610,7 @@ function GenerateTemporaryMSTMLSubfiles() {
         
         if [[ ${stateVariableType} == "Cluster" ]];
         then
-            # Initialise relevant local variables
+            # Initialize relevant local variables
             local startColumn=$(echo ${mstmlSubfileSpecification} | cut -d" " -f2);
             local stopColumn=$(echo ${mstmlSubfileSpecification} | cut -d" " -f3);
             local simulationGridHeight=$(echo ${mstmlSubfileSpecification} | cut -d" " -f4);
@@ -749,7 +749,7 @@ do
     # Get the current date and time
     date=$(date +"%F-%T");
 
-    # Initialise the simulation dependent variables
+    # Initialize the simulation dependent variables
     fullModelSimulationName="${CASE_STUDY_TITLE}_${date}";
     simulationLogOutputPath="${OUT_SIMULATION_LOG_FOLDER}/${fullModelSimulationName}.out";
     processedSimulationOutputPath="${OUT_SIMULATION_PROCESSED_FOLDER}/${fullModelSimulationName}.csv";

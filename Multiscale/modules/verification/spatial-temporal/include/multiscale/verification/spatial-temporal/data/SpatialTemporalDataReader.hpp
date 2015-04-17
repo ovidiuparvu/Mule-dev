@@ -51,14 +51,14 @@ namespace multiscale {
 
             private:
 
-                //! Initialise the sets for storing processed and unprocessed input files
+                //! Initialize the sets for storing processed and unprocessed input files
                 /*!
                  * \param folderPath    Path to the input folder
                  */
-                void initialise(const std::string &folderPath);
+                void initialize(const std::string &folderPath);
 
-                //! Initialise the sets for storing processed and unprocessed input files
-                void initialise();
+                //! Initialize the sets for storing processed and unprocessed input files
+                void initialize();
 
                 //! Clear the contents of the sets of processed and unprocessed input files
                 void clearInputFilesSets();
@@ -164,21 +164,21 @@ namespace multiscale {
                                                 std::shared_ptr<SpatialEntity> &spatialEntity,
                                                 SubsetSpecificType &spatialEntityType);
 
-                //! Initialise the spatial entity scale and subsystem using the given spatialEntityTree
+                //! Initialize the spatial entity scale and subsystem using the given spatialEntityTree
                 /*!
                  * If the value of the scale and subsystem is not provided in the spatialEntityTree
                  * the default empty string "" is used instead.
                  *
                  * \param spatialEntityTree The spatial entity tree
-                 * \param spatialEntity     The spatial entity to be initialised
+                 * \param spatialEntity     The spatial entity to be initialized
                  */
                 void setSpatialEntityScaleAndSubsystem(const pt::ptree &spatialEntityTree,
                                                        const std::shared_ptr<SpatialEntity> &spatialEntity);
 
-                //! Initialise the spatial entity measure values using the given spatialEntityTree
+                //! Initialize the spatial entity measure values using the given spatialEntityTree
                 /*!
                  * \param spatialEntityTree The spatial entity tree
-                 * \param spatialEntity     The spatial entity to be initialised
+                 * \param spatialEntity     The spatial entity to be initialized
                  */
                 void setSpatialEntityMeasureValues(const pt::ptree &spatialEntityTree,
                                                    const std::shared_ptr<SpatialEntity> &spatialEntity);

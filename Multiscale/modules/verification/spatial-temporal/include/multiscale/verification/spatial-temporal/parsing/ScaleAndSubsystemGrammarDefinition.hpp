@@ -25,31 +25,31 @@ namespace multiscale {
             scaleAndSubsystemRule,
             "scaleAndSubsystemRule"
         ) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void ScaleAndSubsystemGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
-            initialiseErrorHandlingSupport();
+        void ScaleAndSubsystemGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
+            initializeErrorHandlingSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void ScaleAndSubsystemGrammar<Iterator>::initialiseGrammar() {
+        void ScaleAndSubsystemGrammar<Iterator>::initializeGrammar() {
             scaleAndSubsystemRule
                 =   scaleAndSubsystemStringRule;
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void ScaleAndSubsystemGrammar<Iterator>::initialiseDebugSupport() {
+        void ScaleAndSubsystemGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -58,15 +58,15 @@ namespace multiscale {
             scaleAndSubsystemRule.name("scaleAndSubsystemRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void ScaleAndSubsystemGrammar<Iterator>::initialiseRulesDebugging() {
+        void ScaleAndSubsystemGrammar<Iterator>::initializeRulesDebugging() {
             debug(scaleAndSubsystemRule);
         }
 
-        //! Initialise the error handling routines
+        //! Initialize the error handling routines
         template <typename Iterator>
-        void ScaleAndSubsystemGrammar<Iterator>::initialiseErrorHandlingSupport() {
+        void ScaleAndSubsystemGrammar<Iterator>::initializeErrorHandlingSupport() {
             // Do nothing
         }
 

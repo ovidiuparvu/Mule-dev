@@ -47,7 +47,7 @@ using namespace multiscale::visualisation;
 namespace po = boost::program_options;
 
 
-// Initialise the arguments configuration
+// Initialize the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description &usageDescription, int argc, char** argv) {
     usageDescription.add_options()("help,h", "display help message\n")
                                   ("input-file,i", po::value<std::string>(), "provide the path to the input file\n")

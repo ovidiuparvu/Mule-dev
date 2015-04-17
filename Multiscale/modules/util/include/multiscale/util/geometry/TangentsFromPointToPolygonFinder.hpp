@@ -43,7 +43,7 @@ namespace multiscale {
             TangentsFromPointToPolygonFinder(const std::vector<cv::Point_<PolygonPointsType>> &polygon,
                                              const cv::Point_<ReferencePointType> &referencePoint)
                                              : referencePoint(referencePoint) {
-                initialise(polygon);
+                initialize(polygon);
             }
 
             //! Compute the two polygon points through which the left, respectively right tangents pass
@@ -69,9 +69,9 @@ namespace multiscale {
             void
             computeTangentsPointsForConvexPolygon(cv::Point_<PolygonPointsType> &leftMostTangentPoint,
                                                   cv::Point_<PolygonPointsType> &rightMostTangentPoint) {
-                initialiseAlgorithmVariables();
+                initializeAlgorithmVariables();
 
-                computeTangentsPointsWithInitialisedAlgorithmVariables(
+                computeTangentsPointsWithInitializedAlgorithmVariables(
                     leftMostTangentPoint, rightMostTangentPoint
                 );
             }
@@ -83,9 +83,9 @@ namespace multiscale {
              * \param polygon   The polygon for which the tangents will be computed
              */
             void
-            initialise(const std::vector<cv::Point_<PolygonPointsType>> &polygon) {
-                initialisePolygon(polygon);
-                initialiseAlgorithmVariables();
+            initialize(const std::vector<cv::Point_<PolygonPointsType>> &polygon) {
+                initializePolygon(polygon);
+                initializeAlgorithmVariables();
             }
 
             //! Initialisation of the polygon
@@ -95,7 +95,7 @@ namespace multiscale {
              * \param polygon   The polygon for which the tangents will be computed
              */
             void
-            initialisePolygon(const std::vector<cv::Point_<PolygonPointsType>> &polygon) {
+            initializePolygon(const std::vector<cv::Point_<PolygonPointsType>> &polygon) {
                 if (Geometry2D::isConvexPolygon(polygon)) {
                     this->polygon = polygon;
                 } else {
@@ -105,8 +105,8 @@ namespace multiscale {
                 nrOfPolygonPoints = polygon.size();
             }
 
-            //! Initialise the variables employed by the tangent points finding algorithm
-            void initialiseAlgorithmVariables() {
+            //! Initialize the variables employed by the tangent points finding algorithm
+            void initializeAlgorithmVariables() {
                 a = 0;
                 b = nrOfPolygonPoints;
                 c = 0;
@@ -116,13 +116,13 @@ namespace multiscale {
                 isEdgeCDown = false;
             }
 
-            //! Compute the two tangent points assuming the algorithm variables were initialised
+            //! Compute the two tangent points assuming the algorithm variables were initialized
             /*!
              * \param leftMostTangentPoint  The polygon point through which the left tangent passes
              * \param rightMostTangentPoint The polygon point through which the right tangent passes
              */
             void
-            computeTangentsPointsWithInitialisedAlgorithmVariables(cv::Point_<PolygonPointsType>
+            computeTangentsPointsWithInitializedAlgorithmVariables(cv::Point_<PolygonPointsType>
                                                                    &leftMostTangentPoint,
                                                                    cv::Point_<PolygonPointsType>
                                                                    &rightMostTangentPoint) {
@@ -165,7 +165,7 @@ namespace multiscale {
              */
             cv::Point_<PolygonPointsType>
             computeLeftMostTangentPoint() {
-                initialiseAlgorithmVariables();
+                initializeAlgorithmVariables();
 
                 if (isFirstPolygonPointTheLeftMostTangentPoint()) {
                     return polygon[0];
@@ -179,7 +179,7 @@ namespace multiscale {
              */
             cv::Point_<PolygonPointsType>
             computeRightMostTangentPoint() {
-                initialiseAlgorithmVariables();
+                initializeAlgorithmVariables();
 
                 if (isFirstPolygonPointTheRightMostTangentPoint()) {
                     return polygon[0];

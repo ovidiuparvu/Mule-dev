@@ -14,7 +14,7 @@ Detector::Detector(bool isDebugMode)
     this->avgClusterednessDegree = 0.0;
 
     this->detectMethodCalled = false;
-    this->detectorSpecificFieldsInitialised = false;
+    this->detectorSpecificFieldsInitialized = false;
 }
 
 Detector::~Detector() {
@@ -28,7 +28,7 @@ void Detector::detect(const cv::Mat &inputImage) {
     }
 
     // Initialisation based on the provided image
-    initialise(inputImage);
+    initialize(inputImage);
 
     // Run the detection function
     detect();
@@ -44,38 +44,38 @@ void Detector::outputResults(const std::string &outputFilepath) {
     }
 }
 
-void Detector::initialise(const cv::Mat &inputImage) {
-    initialiseImage(inputImage);
-    initialiseImageDependentFields();
-    initialiseDetectorSpecificFieldsIfNotSet();
+void Detector::initialize(const cv::Mat &inputImage) {
+    initializeImage(inputImage);
+    initializeImageDependentFields();
+    initializeDetectorSpecificFieldsIfNotSet();
 }
 
-void Detector::initialiseImage(const cv::Mat &inputImage) {
+void Detector::initializeImage(const cv::Mat &inputImage) {
     inputImage.copyTo(image);
 }
 
-void Detector::initialiseImageDependentFields() {
-    initialiseImageOrigin();
-    initialiseDetectorSpecificImageDependentFields();
+void Detector::initializeImageDependentFields() {
+    initializeImageOrigin();
+    initializeDetectorSpecificImageDependentFields();
 }
 
-void Detector::initialiseImageOrigin() {
+void Detector::initializeImageOrigin() {
     float originX = static_cast<float>(image.rows - 1) / 2.0;
     float originY = static_cast<float>(image.cols - 1) / 2.0;
 
     origin = cv::Point2f(originX, originY);
 }
 
-void Detector::initialiseDetectorSpecificFieldsIfNotSet() {
-    if (!detectorSpecificFieldsInitialised) {
-        initialiseDetectorSpecificFields();
+void Detector::initializeDetectorSpecificFieldsIfNotSet() {
+    if (!detectorSpecificFieldsInitialized) {
+        initializeDetectorSpecificFields();
 
-        detectorSpecificFieldsInitialised = true;
+        detectorSpecificFieldsInitialized = true;
     }
 }
 
 void Detector::setDetectorSpecificFieldsInitialisationFlag(bool flag) {
-    detectorSpecificFieldsInitialised = flag;
+    detectorSpecificFieldsInitialized = flag;
 }
 
 bool Detector::isValidInputImage(const cv::Mat &inputImage) {

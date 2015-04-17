@@ -17,13 +17,13 @@ using namespace multiscale::verification;
 void runModelCheckingTask(int argc, char **argv) {
     CommandLineModelChecking modelChecking;
 
-    modelChecking.initialise(argc, argv);
+    modelChecking.initialize(argc, argv);
     modelChecking.execute();
 }
 
 // Main function
 int main(int argc, char** argv) {
-    // Initialise the random number generator
+    // Initialize the random number generator
     std::srand(static_cast<unsigned>(std::time(0)));
 
     try {

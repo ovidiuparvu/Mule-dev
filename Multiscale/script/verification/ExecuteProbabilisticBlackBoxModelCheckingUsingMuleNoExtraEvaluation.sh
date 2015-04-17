@@ -48,17 +48,17 @@ then
     exit 1;
 fi
 
-# Initialise constants values
+# Initialize constants values
 NR_EXECUTIONS_PER_PBLMSTL_INPUT_FILE=500;
 
-# Initialise command line arguments dependent variables
+# Initialize command line arguments dependent variables
 muleExecutablePath=$1;
 pblmstlStatementsInputFolder=$2;
 multiscaleSpatioTemporalTracesFolder=$3;
 multiscaleArchitectureGraph=$4;
 outputFolder=$5;
 
-# Initialise the parameter values passed to the Mule model checker
+# Initialize the parameter values passed to the Mule model checker
 muleModelCheckerType=0;
 muleSpatioTemporalTraces=${multiscaleSpatioTemporalTracesFolder};
 muleExtraEvaluationTime=0;
@@ -77,7 +77,7 @@ do
     pblmstlStatementsBasename=${pblmstlStatementsFile##*/};
     pblmstlStatementsFilenameWithoutExtension=${pblmstlStatementsBasename%.in};
 
-    # Initialise PBLSTML statement filename dependent variables
+    # Initialize PBLSTML statement filename dependent variables
     pblmstlStatementsFolder="${outputFolder}/${pblmstlStatementsFilenameWithoutExtension}";
     pblmstlStatementsResults="${pblmstlStatementsFolder}/${pblmstlStatementsFilenameWithoutExtension}_results.out";
 
@@ -90,7 +90,7 @@ do
     # Run the model checker and record the results for the considered PBLMSTL input file
     for i in `seq 1 1 ${NR_EXECUTIONS_PER_PBLMSTL_INPUT_FILE}`;
     do
-        # Initialise the name of the result file corresponding to this particular execution
+        # Initialize the name of the result file corresponding to this particular execution
         pblmstlStatementsNthResults="${pblmstlStatementsFolder}/${pblmstlStatementsFilenameWithoutExtension}_${i}.out";
 
         # Run the model checker

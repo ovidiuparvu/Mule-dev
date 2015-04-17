@@ -1,7 +1,7 @@
-# Generate a custom model checker according to the given configuration file
+# Check if the prerequisites for generating a custom model checker according to the given configuration file are met
 
-function(GenerateCustomModelChecker)
-    message(AUTHOR_WARNING "Generating custom model checker corresponding to the spatial_description configuration file. All unit tests have been generated accordingly.")
+function(ArePrerequisitesForGeneratingACustomModelCheckerMet)
+    message(AUTHOR_WARNING "Checking if the prerequisites for generating a custom model checker corresponding to the spatial_description configuration file are met.")
 
     # Check if the python interpreter is available for use
     find_package(PythonInterp REQUIRED)
@@ -26,4 +26,4 @@ function(GenerateCustomModelChecker)
             message(FATAL_ERROR "Please install the required python libraries: ${PYTHON_DEPENDENT_LIBS}.")  
         endif(NOT "${PYTHON_DEPENDENT_LIBS_RESULT}" STREQUAL "0")
     endif()
-endfunction(GenerateCustomModelChecker)
+endfunction(ArePrerequisitesForGeneratingACustomModelCheckerMet)

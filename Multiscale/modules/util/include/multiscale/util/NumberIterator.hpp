@@ -8,7 +8,7 @@ namespace multiscale {
 
         protected:
 
-            bool         isInitialised; /*!< Flag for checking if the iterator was initialised */
+            bool         isInitialized; /*!< Flag for checking if the iterator was initialized */
             unsigned int upperBound;    /*!< Upper bound of the iterator */
 
         public:
@@ -16,7 +16,7 @@ namespace multiscale {
             NumberIterator(unsigned int upperBound);
             virtual ~NumberIterator() {};
 
-            //! Initialise the iterator considering the given upper bound
+            //! Initialize the iterator considering the given upper bound
             /*!
              *  \param upperBound The upper bound
              */
@@ -29,7 +29,7 @@ namespace multiscale {
             virtual unsigned int number() = 0;
 
             //! Reset the iterator
-            /*! Reset the iterator such that it is not initialised
+            /*! Reset the iterator such that it is not initialized
              *  and the value of the current number is reset to its
              *  initial value
              */
@@ -38,13 +38,13 @@ namespace multiscale {
         private:
 
             //! Initialisation of the members of the class
-            virtual void initialise() = 0;
+            virtual void initialize() = 0;
 
-            //! Check if there is a next number when in initialised state
-            virtual bool hasNextInitialised() = 0;
+            //! Check if there is a next number when in initialized state
+            virtual bool hasNextInitialized() = 0;
 
-            //! Check if there is a next number when in not initialised state
-            bool hasNextNotInitialised();
+            //! Check if there is a next number when in not initialized state
+            bool hasNextNotInitialized();
 
             //! Reset the current number to its initial value
             virtual void resetCurrentNumber() = 0;

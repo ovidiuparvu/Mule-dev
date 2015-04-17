@@ -16,7 +16,7 @@ then
     exit 1;
 fi
 
-# Initialise variables
+# Initialize variables
 nrOfProcessedFiles=0;
 
 averageModelSimulationExecutionTime=0;

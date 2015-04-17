@@ -16,13 +16,13 @@ namespace multiscaletest {
 
         private:
 
-            //! Initialise the model checker
-            void InitialiseModelChecker() override;
+            //! Initialize the model checker
+            void InitializeModelChecker() override;
 
     };
 
 
-    void ProbabilisticBlackBoxModelCheckerTest::InitialiseModelChecker() {
+    void ProbabilisticBlackBoxModelCheckerTest::InitializeModelChecker() {
         modelChecker = std::make_shared<mv::ProbabilisticBlackBoxModelChecker>(
                            abstractSyntaxTree, multiscaleArchitectureGraph
                        );

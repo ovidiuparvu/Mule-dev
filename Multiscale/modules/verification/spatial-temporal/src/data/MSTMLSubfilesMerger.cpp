@@ -15,7 +15,7 @@ MSTMLSubfilesMerger::MSTMLSubfilesMerger(const std::string &mstmlSubfilesFolderP
                                          const std::string &timepointsValuesFilePath)
                                          : timepointsValuesFilePath(timepointsValuesFilePath),
                                            traceReader(mstmlSubfilesFolderPath) {
-    initialise();
+    initialize();
 }
 
 MSTMLSubfilesMerger::~MSTMLSubfilesMerger() {}
@@ -45,7 +45,7 @@ void MSTMLSubfilesMerger::outputResultingMSTMLFile(const std::string &mstmlFileO
     }
 }
 
-void MSTMLSubfilesMerger::initialise() {
+void MSTMLSubfilesMerger::initialize() {
     readTimepointsValues();
 }
 

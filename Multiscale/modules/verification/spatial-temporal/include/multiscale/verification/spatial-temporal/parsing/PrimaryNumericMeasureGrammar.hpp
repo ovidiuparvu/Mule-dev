@@ -98,19 +98,19 @@ namespace multiscale {
             private:
 
                 //! Initialisation function
-                void initialise();
+                void initialize();
 
-                //! Initialise the grammar
-                void initialiseGrammar();
+                //! Initialize the grammar
+                void initializeGrammar();
 
-                //! Initialise the primary numeric measure rule
-                void initialisePrimaryNumericMeasureRule();
+                //! Initialize the primary numeric measure rule
+                void initializePrimaryNumericMeasureRule();
 
-                //! Initialise the numeric spatial measure rule
-                void initialiseNumericSpatialMeasureRule();
+                //! Initialize the numeric spatial measure rule
+                void initializeNumericSpatialMeasureRule();
 
-                //! Initialise debug support
-                void initialiseDebugSupport();
+                //! Initialize debug support
+                void initializeDebugSupport();
 
                 //! Assign names to the rules
                 void assignNamesToRules();
@@ -121,20 +121,20 @@ namespace multiscale {
                 //! Assign names to the numeric spatial measure rules
                 void assignNamesToNumericSpatialMeasureRules();
 
-                //! Initialise the debugging of rules
-                void initialiseRulesDebugging();
+                //! Initialize the debugging of rules
+                void initializeRulesDebugging();
 
-                //! Initialise debugging for the primary numeric measure rule
-                void initialisePrimaryNumericMeasureRuleDebugging();
+                //! Initialize debugging for the primary numeric measure rule
+                void initializePrimaryNumericMeasureRuleDebugging();
 
-                //! Initialise debugging for the numeric spatial measure rule
-                void initialiseNumericSpatialMeasureRuleDebugging();
+                //! Initialize debugging for the numeric spatial measure rule
+                void initializeNumericSpatialMeasureRuleDebugging();
 
-                //! Initialise the error handling routines
-                void initialiseErrorHandlingSupport();
+                //! Initialize the error handling routines
+                void initializeErrorHandlingSupport();
 
-                //! Initialise the numeric spatial measure error handling support
-                void initialiseNumericSpatialMeasureErrorHandlingSupport();
+                //! Initialize the numeric spatial measure error handling support
+                void initializeNumericSpatialMeasureErrorHandlingSupport();
 
         };
 

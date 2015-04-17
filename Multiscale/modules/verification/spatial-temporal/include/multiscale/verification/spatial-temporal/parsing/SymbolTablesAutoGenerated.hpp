@@ -29,10 +29,10 @@ namespace multiscale {
 
             SpatialMeasureTypeParser() {
                 add
-                    ("area"                , SpatialMeasureType::Area)
-                    ("perimeter"           , SpatialMeasureType::Perimeter)
                     ("clusteredness"       , SpatialMeasureType::Clusteredness)
                     ("density"             , SpatialMeasureType::Density)
+                    ("area"                , SpatialMeasureType::Area)
+                    ("perimeter"           , SpatialMeasureType::Perimeter)
                     ("distanceFromOrigin"  , SpatialMeasureType::DistanceFromOrigin)
                     ("angle"               , SpatialMeasureType::Angle)
                     ("triangleMeasure"     , SpatialMeasureType::TriangleMeasure)

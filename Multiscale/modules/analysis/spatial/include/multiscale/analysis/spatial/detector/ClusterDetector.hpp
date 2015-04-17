@@ -60,8 +60,8 @@ namespace multiscale {
 
             protected:
 
-                //! Initialise clustering values
-                void initialiseDetectorSpecificFields() override;
+                //! Initialize clustering values
+                void initializeDetectorSpecificFields() override;
 
                 //! Create the trackbars
                 void createDetectorSpecificTrackbars() override;

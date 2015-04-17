@@ -100,22 +100,22 @@ namespace multiscale {
             private:
 
                 //! Initialisation function
-                void initialise();
+                void initialize();
 
-                //! Initialise the grammar
-                void initialiseGrammar();
+                //! Initialize the grammar
+                void initializeGrammar();
 
-                //! Initialise the temporal numeric measure rule
-                void initialiseTemporalNumericMeasureRule();
+                //! Initialize the temporal numeric measure rule
+                void initializeTemporalNumericMeasureRule();
 
-                //! Initialise the numeric statistical measure rules
-                void initialiseNumericStatisticalMeasureRule();
+                //! Initialize the numeric statistical measure rules
+                void initializeNumericStatisticalMeasureRule();
 
-                //! Initialise the numeric measure collection rule
-                void initialiseNumericMeasureCollectionRule();
+                //! Initialize the numeric measure collection rule
+                void initializeNumericMeasureCollectionRule();
 
-                //! Initialise debug support
-                void initialiseDebugSupport();
+                //! Initialize debug support
+                void initializeDebugSupport();
 
                 //! Assign names to the rules
                 void assignNamesToRules();
@@ -129,26 +129,26 @@ namespace multiscale {
                 //! Assign names to the numeric measure collection rules
                 void assignNamesToNumericMeasureCollectionRules();
 
-                //! Initialise the debugging of rules
-                void initialiseRulesDebugging();
+                //! Initialize the debugging of rules
+                void initializeRulesDebugging();
 
-                //! Initialise debugging for the temporal numeric measure rule
-                void initialiseTemporalNumericMeasureRuleDebugging();
+                //! Initialize debugging for the temporal numeric measure rule
+                void initializeTemporalNumericMeasureRuleDebugging();
 
-                //! Initialise debugging for the numeric statistical measure rule
-                void initialiseNumericStatisticalMeasureRuleDebugging();
+                //! Initialize debugging for the numeric statistical measure rule
+                void initializeNumericStatisticalMeasureRuleDebugging();
 
-                //! Initialise debugging for the numeric measure collection rule
-                void initialiseNumericMeasureCollectionRuleDebugging();
+                //! Initialize debugging for the numeric measure collection rule
+                void initializeNumericMeasureCollectionRuleDebugging();
 
-                //! Initialise the error handling routines
-                void initialiseErrorHandlingSupport();
+                //! Initialize the error handling routines
+                void initializeErrorHandlingSupport();
 
-                //! Initialise the temporal numeric measure error handling support
-                void initialiseTemporalNumericMeasureErrorHandlingSupport();
+                //! Initialize the temporal numeric measure error handling support
+                void initializeTemporalNumericMeasureErrorHandlingSupport();
 
-                //! Initialise the numeric statistical measure error handling support
-                void initialiseNumericStatisticalMeasureErrorHandlingSupport();
+                //! Initialize the numeric statistical measure error handling support
+                void initializeNumericStatisticalMeasureErrorHandlingSupport();
 
         };
 

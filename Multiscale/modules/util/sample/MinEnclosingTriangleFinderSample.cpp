@@ -168,7 +168,7 @@ void runMinEnclosingTriangleFinder(const std::vector<cv::Point2f> &points) {
 void runMinEnclosingTriangleFinderUsingRandomPolygons() {
     char key = 0;
 
-    // Initialise the seed - milliseconds is enough as this program is not to be run in parallel
+    // Initialize the seed - milliseconds is enough as this program is not to be run in parallel
     srand(time(0));
 
     while (key != KEY_ESC) {

@@ -56,7 +56,7 @@ void ClusterDetector::setMinPoints(int minPoints) {
     this->minPoints = minPoints;
 }
 
-void ClusterDetector::initialiseDetectorSpecificFields() {
+void ClusterDetector::initializeDetectorSpecificFields() {
     eps = 1200;
     minPoints = 2;
 }

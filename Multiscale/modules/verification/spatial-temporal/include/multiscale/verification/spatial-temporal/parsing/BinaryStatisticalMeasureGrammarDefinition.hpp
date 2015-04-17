@@ -19,30 +19,30 @@ namespace multiscale {
                                                    binaryStatisticalMeasureRule,
                                                    "binaryStatisticalMeasureRule"
                                                ) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void BinaryStatisticalMeasureGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
+        void BinaryStatisticalMeasureGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void BinaryStatisticalMeasureGrammar<Iterator>::initialiseGrammar() {
+        void BinaryStatisticalMeasureGrammar<Iterator>::initializeGrammar() {
             binaryStatisticalMeasureRule
                 =   binaryStatisticalMeasureTypeParser;
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void BinaryStatisticalMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void BinaryStatisticalMeasureGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -51,9 +51,9 @@ namespace multiscale {
             binaryStatisticalMeasureRule.name("binaryStatisticalMeasureRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void BinaryStatisticalMeasureGrammar<Iterator>::initialiseRulesDebugging() {
+        void BinaryStatisticalMeasureGrammar<Iterator>::initializeRulesDebugging() {
             debug(binaryStatisticalMeasureRule);
         }
 

@@ -19,19 +19,19 @@ using namespace multiscale::verification::spatialmeasure;
 double
 multiscale::verification::spatialmeasure::getMinValidSpatialMeasureValue(const SpatialMeasureType &spatialMeasureType) {
     switch (spatialMeasureType) {
-        case SpatialMeasureType::Area:
-            return 0;
-            break;
-            
-        case SpatialMeasureType::Perimeter:
-            return 0;
-            break;
-            
         case SpatialMeasureType::Clusteredness:
             return 0;
             break;
             
         case SpatialMeasureType::Density:
+            return 0;
+            break;
+            
+        case SpatialMeasureType::Area:
+            return 0;
+            break;
+            
+        case SpatialMeasureType::Perimeter:
             return 0;
             break;
             
@@ -74,14 +74,6 @@ multiscale::verification::spatialmeasure::getMinValidSpatialMeasureValue(const S
 double
 multiscale::verification::spatialmeasure::getMaxValidSpatialMeasureValue(const SpatialMeasureType &spatialMeasureType) {
     switch (spatialMeasureType) {
-        case SpatialMeasureType::Area:
-            return 1E+37;
-            break;
-            
-        case SpatialMeasureType::Perimeter:
-            return 1E+37;
-            break;
-            
         case SpatialMeasureType::Clusteredness:
             return 1;
             break;
@@ -90,8 +82,16 @@ multiscale::verification::spatialmeasure::getMaxValidSpatialMeasureValue(const S
             return 1;
             break;
             
+        case SpatialMeasureType::Area:
+            return 1E+6;
+            break;
+            
+        case SpatialMeasureType::Perimeter:
+            return 1E+6;
+            break;
+            
         case SpatialMeasureType::DistanceFromOrigin:
-            return 1E+37;
+            return 1E+6;
             break;
             
         case SpatialMeasureType::Angle:
@@ -111,11 +111,11 @@ multiscale::verification::spatialmeasure::getMaxValidSpatialMeasureValue(const S
             break;
             
         case SpatialMeasureType::CentroidX:
-            return 1E+37;
+            return 1E+6;
             break;
             
         case SpatialMeasureType::CentroidY:
-            return 1E+37;
+            return 1E+6;
             break;
             
         default:
@@ -129,17 +129,17 @@ multiscale::verification::spatialmeasure::getMaxValidSpatialMeasureValue(const S
 std::string
 multiscale::verification::spatialmeasure::toString(const SpatialMeasureType &spatialMeasureType) {
     switch (spatialMeasureType) {
-        case SpatialMeasureType::Area:
-            return "area";
-            
-        case SpatialMeasureType::Perimeter:
-            return "perimeter";
-            
         case SpatialMeasureType::Clusteredness:
             return "clusteredness";
             
         case SpatialMeasureType::Density:
             return "density";
+            
+        case SpatialMeasureType::Area:
+            return "area";
+            
+        case SpatialMeasureType::Perimeter:
+            return "perimeter";
             
         case SpatialMeasureType::DistanceFromOrigin:
             return "distanceFromOrigin";
@@ -174,16 +174,16 @@ std::string
 multiscale::verification::spatialmeasure::toString(const std::size_t &spatialMeasureTypeIndex) {
     switch (spatialMeasureTypeIndex) {
         case 0:
-            return "area";
-            
-        case 1:
-            return "perimeter";
-            
-        case 2:
             return "clusteredness";
             
-        case 3:
+        case 1:
             return "density";
+            
+        case 2:
+            return "area";
+            
+        case 3:
+            return "perimeter";
             
         case 4:
             return "distanceFromOrigin";
@@ -218,20 +218,20 @@ multiscale::verification::spatialmeasure::toString(const std::size_t &spatialMea
 std::ostream&
 multiscale::verification::operator<<(std::ostream& out, const SpatialMeasureType &spatialMeasureType) {
     switch (spatialMeasureType) {
-        case SpatialMeasureType::Area:
-            out << "area";
-            break;
-            
-        case SpatialMeasureType::Perimeter:
-            out << "perimeter";
-            break;
-            
         case SpatialMeasureType::Clusteredness:
             out << "clusteredness";
             break;
             
         case SpatialMeasureType::Density:
             out << "density";
+            break;
+            
+        case SpatialMeasureType::Area:
+            out << "area";
+            break;
+            
+        case SpatialMeasureType::Perimeter:
+            out << "perimeter";
             break;
             
         case SpatialMeasureType::DistanceFromOrigin:

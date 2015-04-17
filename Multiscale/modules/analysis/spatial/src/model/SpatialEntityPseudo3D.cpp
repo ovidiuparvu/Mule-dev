@@ -6,7 +6,7 @@ using namespace multiscale::analysis;
 
 
 SpatialEntityPseudo3D::SpatialEntityPseudo3D() {
-    initialise();
+    initialize();
 }
 
 SpatialEntityPseudo3D::~SpatialEntityPseudo3D() {}
@@ -202,7 +202,7 @@ std::string SpatialEntityPseudo3D::fieldValuesToString() {
     return strStream.str();
 }
 
-void SpatialEntityPseudo3D::initialise() {
+void SpatialEntityPseudo3D::initialize() {
     area = 0;
     perimeter = 0;
 

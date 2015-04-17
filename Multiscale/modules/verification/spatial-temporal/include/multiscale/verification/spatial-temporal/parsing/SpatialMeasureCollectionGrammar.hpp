@@ -141,37 +141,37 @@ namespace multiscale {
             private:
 
                 //! Initialisation function
-                void initialise();
+                void initialize();
 
-                //! Initialise the grammar
-                void initialiseGrammar();
+                //! Initialize the grammar
+                void initializeGrammar();
 
-                //! Initialise the spatial measure collection rule
-                void initialiseSpatialMeasureCollectionRule();
+                //! Initialize the spatial measure collection rule
+                void initializeSpatialMeasureCollectionRule();
 
-                //! Initialise the spatial measure rule
-                void initialiseSpatialMeasureRule();
+                //! Initialize the spatial measure rule
+                void initializeSpatialMeasureRule();
 
-                //! Initialise the subset rule
-                void initialiseSubsetRule();
+                //! Initialize the subset rule
+                void initializeSubsetRule();
 
-                //! Initialise the constraints rules
-                void initialiseConstraintsRules();
+                //! Initialize the constraints rules
+                void initializeConstraintsRules();
 
-                //! Initialise the constraint rule
-                void initialiseConstraintRule();
+                //! Initialize the constraint rule
+                void initializeConstraintRule();
 
-                //! Initialise the primary constraint rule
-                void initialisePrimaryConstraintRule();
+                //! Initialize the primary constraint rule
+                void initializePrimaryConstraintRule();
 
-                //! Initialise the filter numeric measure rule
-                void initialiseFilterNumericMeasureRule();
+                //! Initialize the filter numeric measure rule
+                void initializeFilterNumericMeasureRule();
 
-                //! Initialise the composed constraint rule
-                void initialiseComposedConstraintRule();
+                //! Initialize the composed constraint rule
+                void initializeComposedConstraintRule();
 
-                //! Initialise debug support
-                void initialiseDebugSupport();
+                //! Initialize debug support
+                void initializeDebugSupport();
 
                 //! Assign names to the rules
                 void assignNamesToRules();
@@ -203,53 +203,53 @@ namespace multiscale {
                 //! Assign names to the spatial measure rules
                 void assignNamesToSpatialMeasureRules();
 
-                //! Initialise the debugging of rules
-                void initialiseRulesDebugging();
+                //! Initialize the debugging of rules
+                void initializeRulesDebugging();
 
-                //! Initialise debugging for the spatial measure collection rule
-                void initialiseSpatialMeasureCollectionRuleDebugging();
+                //! Initialize debugging for the spatial measure collection rule
+                void initializeSpatialMeasureCollectionRuleDebugging();
 
-                //! Initialise debugging for the numeric spatial measure rule
-                void initialiseSpatialMeasureRuleDebugging();
+                //! Initialize debugging for the numeric spatial measure rule
+                void initializeSpatialMeasureRuleDebugging();
 
-                //! Initialise debugging for the subset rules
-                void initialiseSubsetRuleDebugging();
+                //! Initialize debugging for the subset rules
+                void initializeSubsetRuleDebugging();
 
-                //! Initialise the debugging of the constraints rules
-                void initialiseConstraintsRulesDebugging();
+                //! Initialize the debugging of the constraints rules
+                void initializeConstraintsRulesDebugging();
 
-                //! Initialise debugging for the constraint rule
-                void initialiseConstraintRuleDebugging();
+                //! Initialize debugging for the constraint rule
+                void initializeConstraintRuleDebugging();
 
-                //! Initialise debugging for the primary constraint rules
-                void initialisePrimaryConstraintRuleDebugging();
+                //! Initialize debugging for the primary constraint rules
+                void initializePrimaryConstraintRuleDebugging();
 
-                //! Initialise debugging for the filter numeric measure rules
-                void initialiseFilterNumericMeasureRuleDebugging();
+                //! Initialize debugging for the filter numeric measure rules
+                void initializeFilterNumericMeasureRuleDebugging();
 
-                //! Initialise debugging for the composed constraint rule
-                void initialiseComposedConstraintRuleDebugging();
+                //! Initialize debugging for the composed constraint rule
+                void initializeComposedConstraintRuleDebugging();
 
-                //! Initialise the error handling routines
-                void initialiseErrorHandlingSupport();
+                //! Initialize the error handling routines
+                void initializeErrorHandlingSupport();
 
-                //! Initialise the numeric measure collection error handling support
-                void initialiseSpatialMeasureCollectionErrorHandlingSupport();
+                //! Initialize the numeric measure collection error handling support
+                void initializeSpatialMeasureCollectionErrorHandlingSupport();
 
-                //! Initialise the subset error handling support
-                void initialiseSubsetErrorHandlingSupport();
+                //! Initialize the subset error handling support
+                void initializeSubsetErrorHandlingSupport();
 
-                //! Initialise the constraints error handling support
-                void initialiseConstraintsErrorHandlingSupport();
+                //! Initialize the constraints error handling support
+                void initializeConstraintsErrorHandlingSupport();
 
-                //! Initialise the primary constraint error handling support
-                void initialisePrimaryConstraintErrorHandlingSupport();
+                //! Initialize the primary constraint error handling support
+                void initializePrimaryConstraintErrorHandlingSupport();
 
-                //! Initialise the filter numeric measure error handling support
-                void initialiseFilterNumericMeasureErrorHandlingSupport();
+                //! Initialize the filter numeric measure error handling support
+                void initializeFilterNumericMeasureErrorHandlingSupport();
 
-                //! Initialise the composed constraint error handling support
-                void initialiseComposedConstraintErrorHandlingSupport();
+                //! Initialize the composed constraint error handling support
+                void initializeComposedConstraintErrorHandlingSupport();
 
         };
 

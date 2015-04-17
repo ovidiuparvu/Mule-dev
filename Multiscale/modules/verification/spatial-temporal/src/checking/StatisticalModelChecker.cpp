@@ -24,7 +24,7 @@ StatisticalModelChecker::StatisticalModelChecker(const AbstractSyntaxTree &abstr
 
     this->minTypesError = std::min(typeIError, typeIIError);
 
-    initialise();
+    initialize();
 }
 
 StatisticalModelChecker::~StatisticalModelChecker() {}
@@ -66,7 +66,7 @@ void StatisticalModelChecker::validateTypesErrors(double typeIError, double type
     }
 }
 
-void StatisticalModelChecker::initialise() {
+void StatisticalModelChecker::initialize() {
     probability              = abstractSyntaxTree.getProbability();
     indifferenceIntervalHalf = computeIndifferenceIntervalHalf(probability);
 
@@ -94,11 +94,11 @@ void StatisticalModelChecker::updateModelCheckingResult() {
     modelCheckingResult = StatisticalModelCheckingResult::UNDECIDED;
 
     while (modelCheckingResult == StatisticalModelCheckingResult::UNDECIDED) {
-        updateInitialisedModelCheckingResult();
+        updateInitializedModelCheckingResult();
     }
 }
 
-void StatisticalModelChecker::updateInitialisedModelCheckingResult() {
+void StatisticalModelChecker::updateInitializedModelCheckingResult() {
     double f        = computeFValue();
     double fPrime   = computeFPrimeValue();
 

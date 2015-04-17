@@ -130,7 +130,7 @@ namespace multiscale {
                      */
                     void fatalError(const SAXParseException& ex) override;
 
-                    //! Reinitialise the error handler
+                    //! Reinitialize the error handler
                     void resetErrors() override;
 
                 private:

@@ -18,7 +18,7 @@ AnnularSector::AnnularSector() {
 
 AnnularSector::~AnnularSector() {}
 
-void AnnularSector::initialise(double startingRadius, double endingRadius, double startingAngle,
+void AnnularSector::initialize(double startingRadius, double endingRadius, double startingAngle,
                                double endingAngle,    double concentration) {
     this->startingRadius = startingRadius;
     this->endingRadius   = endingRadius;

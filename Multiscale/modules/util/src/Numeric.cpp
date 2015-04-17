@@ -419,10 +419,11 @@ double Numeric::mode(const std::vector<double> &numbers, unsigned int nrOfValues
 }
 
 double Numeric::computeMode(const std::vector<double> &values, unsigned int nrOfValues) {
-    unsigned int index = 0;
-    double modeValue = std::numeric_limits<double>::min();
-    double countValue = 0;
-    int maxCount = 0;
+    double modeValue = 0;
+
+    unsigned int index      = 0;
+    unsigned int countValue = 0;
+    unsigned int maxCount   = 0;
 
     while (index < nrOfValues) {
         countValue = 1;

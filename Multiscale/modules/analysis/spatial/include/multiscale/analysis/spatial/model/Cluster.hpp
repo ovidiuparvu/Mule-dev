@@ -59,7 +59,7 @@ namespace multiscale {
             private:
 
                 //! Initialisation function for the class
-                void initialise();
+                void initialize();
 
                 //! Get the collection of entities' centres
                 std::vector<cv::Point2f> getEntitiesCentrePoints();

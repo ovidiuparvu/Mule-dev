@@ -76,12 +76,12 @@ namespace multiscale {
                 CommandLineModelChecking();
                 ~CommandLineModelChecking();
 
-                //! Initialise the class with the given command line arguments
+                //! Initialize the class with the given command line arguments
                 /*!
                  * \param argc  The number of provided command line arguments
                  * \param argv  The collection of command line arguments
                  */
-                void initialise(int argc, char **argv);
+                void initialize(int argc, char **argv);
 
                 //! Execute the model checking task
                 void execute();
@@ -95,29 +95,29 @@ namespace multiscale {
                  */
                 bool areValidArguments(int argc, char **argv);
 
-                //! Initialise the configuration of allowed command line arguments
-                void initialiseAllowedArgumentsConfiguration();
+                //! Initialize the configuration of allowed command line arguments
+                void initializeAllowedArgumentsConfiguration();
 
-                //! Initialise the configuration of required command line arguments
-                void initialiseRequiredArgumentsConfiguration();
+                //! Initialize the configuration of required command line arguments
+                void initializeRequiredArgumentsConfiguration();
 
-                //! Initialise the configuration of optional command line arguments
-                void initialiseOptionalArgumentsConfiguration();
+                //! Initialize the configuration of optional command line arguments
+                void initializeOptionalArgumentsConfiguration();
 
-                //! Initialise the configuration of model checker type specific command line arguments
-                void initialiseModelCheckerTypeSpecificArgumentsConfiguration();
+                //! Initialize the configuration of model checker type specific command line arguments
+                void initializeModelCheckerTypeSpecificArgumentsConfiguration();
 
-                //! Initialise the configuration of the statistical model checker command line arguments
-                po::options_description initialiseStatisticalModelCheckerArgumentsConfiguration();
+                //! Initialize the configuration of the statistical model checker command line arguments
+                po::options_description initializeStatisticalModelCheckerArgumentsConfiguration();
 
-                //! Initialise the configuration of the approximate probabilistic model checker command line arguments
-                po::options_description initialiseApproximateProbabilisticModelCheckerArgumentsConfiguration();
+                //! Initialize the configuration of the approximate probabilistic model checker command line arguments
+                po::options_description initializeApproximateProbabilisticModelCheckerArgumentsConfiguration();
 
-                //! Initialise the configuration of the Bayesian model checker command line arguments
-                po::options_description initialiseBayesianModelCheckerArgumentsConfiguration();
+                //! Initialize the configuration of the Bayesian model checker command line arguments
+                po::options_description initializeBayesianModelCheckerArgumentsConfiguration();
 
-                //! Initialise the configuration of the approximate Bayesian model checker command line arguments
-                po::options_description initialiseApproximateBayesianModelCheckerArgumentsConfiguration();
+                //! Initialize the configuration of the approximate Bayesian model checker command line arguments
+                po::options_description initializeApproximateBayesianModelCheckerArgumentsConfiguration();
 
                 //! Check if the provided command line arguments are valid
                 /*!
@@ -253,38 +253,38 @@ namespace multiscale {
                  */
                 void removeApproximateBayesianModelCheckingArguments(po::variables_map &variablesMap);
 
-                //! Initialise the class members using the command line arguments
-                void initialiseClassMembers();
+                //! Initialize the class members using the command line arguments
+                void initializeClassMembers();
 
-                //! Initialise the class members dependent on required command line arguments
-                void initialiseRequiredArgumentsDependentClassMembers();
+                //! Initialize the class members dependent on required command line arguments
+                void initializeRequiredArgumentsDependentClassMembers();
 
-                //! Initialise the class members dependent on optional command line arguments
-                void initialiseOptionalArgumentsDependentClassMembers();
+                //! Initialize the class members dependent on optional command line arguments
+                void initializeOptionalArgumentsDependentClassMembers();
 
-                //! Initialise the class members dependent on the model checker type
-                void initialiseModelCheckerTypeDependentClassMembers();
+                //! Initialize the class members dependent on the model checker type
+                void initializeModelCheckerTypeDependentClassMembers();
 
-                //! Initialise the model checker
-                void initialiseModelChecker();
+                //! Initialize the model checker
+                void initializeModelChecker();
 
-                //! Initialise the probabilistic black box model checker
-                void initialiseProbabilisticBlackBoxModelChecker();
+                //! Initialize the probabilistic black box model checker
+                void initializeProbabilisticBlackBoxModelChecker();
 
-                //! Initialise the statistical model checker
-                void initialiseStatisticalModelChecker();
+                //! Initialize the statistical model checker
+                void initializeStatisticalModelChecker();
 
-                //! Initialise the approximate probabilistic model checker
-                void initialiseApproximateProbabilisticModelChecker();
+                //! Initialize the approximate probabilistic model checker
+                void initializeApproximateProbabilisticModelChecker();
 
-                //! Initialise the Bayesian model checker
-                void initialiseBayesianModelChecker();
+                //! Initialize the Bayesian model checker
+                void initializeBayesianModelChecker();
 
-                //! Initialise the approximate Bayesian model checker
-                void initialiseApproximateBayesianModelChecker();
+                //! Initialize the approximate Bayesian model checker
+                void initializeApproximateBayesianModelChecker();
 
-                //! Initialise the model checking manager
-                void initialiseModelCheckingManager();
+                //! Initialize the model checking manager
+                void initializeModelCheckingManager();
 
                 //! Print the model checking initialisation message
                 void printModelCheckingInitialisationMessage();

@@ -7,7 +7,7 @@
 /*{% endfor %}*/
  *****************************************************************************/
 
-#include "TraceEvaluationTest.hpp"
+#include "TimepointsNumericValuesInitializer.hpp"
 
 using namespace multiscale;
 using namespace multiscaletest;
@@ -16,91 +16,20 @@ using namespace multiscaletest;
 namespace multiscaletest {
 
     //! Class for testing evaluation of numeric state variable-only traces
-    class NumericStateVariableTraceTest : public TraceEvaluationTest {
+    class NumericStateVariableTraceTest : public NonEmptyTraceEvaluationTest {
 
-        protected:
-            
-            double /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MinValue;  /*!< The minimum /*{{ spatial_measures[0].name }}*/ value for the /*{{ spatial_entities[0].name }}*/ spatial entity type */
-            
         private:
 
-           //! Initialise the trace
-           virtual void InitialiseTrace() override;
+            //! Add values to timepoints
+            virtual void AddValuesToTimepoints() override;
 
     };
 
-    void NumericStateVariableTraceTest::InitialiseTrace() {
-        // Initialise protected class fields
-        nrOfTimePoints = 12;
-        
-        /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MinValue = 1;
-        
-        // Initialise timepoints
-        trace.clear();
 
-        std::vector<TimePoint> timePoints;
+    void NumericStateVariableTraceTest::AddValuesToTimepoints() {
+        TimepointsNumericValuesInitializer numericValuesInitializer;
 
-        // Add timepoints to the trace
-        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            timePoints.push_back(TimePoint(i));
-        }
-
-        // Add a numeric state variable "A" (without type) to the collection of timepoints
-        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            if (i % 4 == 0) {
-                timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue);
-            } else {
-                timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue + i);
-            }
-        }
-        
-        // Add a numeric state variable "A" (with type) to the collection of timepoints
-        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            if (i % 4 == 0) {
-                timePoints[i].addNumericStateVariable(aWithTypeNumericStateVariableId, aMinValue);
-            } else {
-                timePoints[i].addNumericStateVariable(aWithTypeNumericStateVariableId, aMinValue + i);
-            }
-        }
-
-        // Initialise the aMaxValue field considering numeric state variable "A" (without type)
-        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariableValue(aNumericStateVariableId));
-        }
-        
-        // Add a numeric state variable "B" (without type) to the collection of timepoints
-        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            timePoints[i].addNumericStateVariable(bNumericStateVariableId, bConstantValue);
-        }
-        
-        // Add a numeric state variable "B" (with type) to the collection of timepoints
-        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            timePoints[i].addNumericStateVariable(bWithTypeNumericStateVariableId, bConstantValue);
-        }
-
-        // Add a numeric state variable "C" to the collection of timepoints
-        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            if (i % 4 == 0) {
-                timePoints[i].addNumericStateVariable(cNumericStateVariableId, cMaxValue);
-            } else {
-                timePoints[i].addNumericStateVariable(cNumericStateVariableId, nrOfTimePoints - i);
-            }
-        }
-
-        // Initialise the cMinValue field
-        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            cMinValue = std::min(cMinValue, timePoints[i].getNumericStateVariableValue(cNumericStateVariableId));
-        }
-        
-        // Add a numeric state variable "D" (with type) to the collection of timepoints
-        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            timePoints[i].addNumericStateVariable(dNumericStateVariableId, dConstantValue);
-        }
-
-        // Add all timepoints to the trace
-        for (TimePoint &timePoint : timePoints) {
-            trace.addTimePoint(timePoint);
-        }
+        numericValuesInitializer.addValuesOfNumericStateVariablesToTimepoints(timePoints);
     }
 
 };
@@ -939,7 +868,7 @@ TEST_F(NumericStateVariableTraceTest, SpatialMeasureCollection) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, Subset) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) <= subtract({B}, subtract({B}, " + StringManipulator::toString<double>(bConstantValue) + "))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) <= subtract({B}, subtract({B}, 3))]"));
 }
 
 

@@ -19,30 +19,30 @@ namespace multiscale {
                                                   unaryStatisticalMeasureRule,
                                                   "unaryStatisticalMeasureRule"
                                               ) {
-            initialise();
+            initialize();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void UnaryStatisticalMeasureGrammar<Iterator>::initialise() {
-            initialiseGrammar();
-            initialiseDebugSupport();
+        void UnaryStatisticalMeasureGrammar<Iterator>::initialize() {
+            initializeGrammar();
+            initializeDebugSupport();
         }
 
-        //! Initialise the grammar
+        //! Initialize the grammar
         template <typename Iterator>
-        void UnaryStatisticalMeasureGrammar<Iterator>::initialiseGrammar() {
+        void UnaryStatisticalMeasureGrammar<Iterator>::initializeGrammar() {
             unaryStatisticalMeasureRule
                 =   unaryStatisticalMeasureTypeParser;
         }
 
-        //! Initialise debug support
+        //! Initialize debug support
         template <typename Iterator>
-        void UnaryStatisticalMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void UnaryStatisticalMeasureGrammar<Iterator>::initializeDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
-            // initialiseRulesDebugging();
+            // initializeRulesDebugging();
         }
 
         //! Assign names to the rules
@@ -51,9 +51,9 @@ namespace multiscale {
             unaryStatisticalMeasureRule.name("unaryStatisticalMeasureRule");
         }
 
-        //! Initialise the debugging of rules
+        //! Initialize the debugging of rules
         template <typename Iterator>
-        void UnaryStatisticalMeasureGrammar<Iterator>::initialiseRulesDebugging() {
+        void UnaryStatisticalMeasureGrammar<Iterator>::initializeRulesDebugging() {
             debug(unaryStatisticalMeasureRule);
         }
 
