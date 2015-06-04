@@ -31,19 +31,19 @@ int main(int argc, char **argv) {
         try {
             if (parser.parse(result)) {
                 std::cout << "-----------------------------------------------------" << std::endl;
-                std::cout << " Parsing succeeded"
+                std::cout << " Parsing succeeded";
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             } else {
                 std::cout << "-----------------------------------------------------" << std::endl;
                 std::cout << " Parsing failed!" << std::endl;
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             }
-        } catch(const exception &e) {
+        } catch(const std::exception &e) {
             ExceptionHandler::printDetailedErrorMessage(e);
 
             return EXEC_ERR_CODE;
         } catch(...) {
-            cerr << "Exception of unknown type!" << std::endl;
+            std::cerr << "Exception of unknown type!" << std::endl;
         }
     }
 

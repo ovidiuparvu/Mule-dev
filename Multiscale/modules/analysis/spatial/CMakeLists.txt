@@ -17,6 +17,29 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 #------------------------------------------------------------
 
 
+# Set the detectors core source files
+set (CORE_DETECTORS_SOURCE_FILES
+    src/detector/ClusterDetector.cpp
+    src/detector/Detector.cpp
+    src/detector/RegionDetector.cpp
+    src/detector/SimulationClusterDetector.cpp
+    
+    src/factory/CircularMatFactory.cpp
+    src/factory/MatFactory.cpp
+    src/factory/RectangularMatFactory.cpp
+    
+    src/model/Cluster.cpp
+    src/model/Entity.cpp
+    src/model/Region.cpp
+    src/model/SpatialEntityPseudo3D.cpp
+    
+    src/util/Silhouette.cpp
+    src/util/SpatialMeasureCalculator.cpp
+)
+
+add_library(detectors_core STATIC ${CORE_DETECTORS_SOURCE_FILES})
+
+
 # CircularDetectRegions
 
 # Set the path to the configuration file
@@ -26,20 +49,13 @@ configure_file(
 )
 
 set(CIRCULAR_DETECT_REGIONS_SRC
-    src/detector/Detector.cpp
-    src/detector/RegionDetector.cpp
-    src/factory/CircularMatFactory.cpp
-    src/factory/MatFactory.cpp
-    src/model/Region.cpp
-    src/model/SpatialEntityPseudo3D.cpp
-    src/util/SpatialMeasureCalculator.cpp
-    
     src/CircularDetectRegions.cpp 
 )
 
 AddExecutableInstallTarget(CircularDetectRegions "${CIRCULAR_DETECT_REGIONS_SRC}")
 AddDebugPostfix(CircularDetectRegions)
 
+target_link_libraries(CircularDetectRegions detectors_core)
 target_link_libraries(CircularDetectRegions util)
 target_link_libraries(CircularDetectRegions ${OpenCV_LIBRARIES})
 target_link_libraries(CircularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
@@ -48,15 +64,13 @@ target_link_libraries(CircularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
 # CircularMatFactorySample
 
 set(CIRCULAR_MAT_FACTORY_SAMPLE_SRC
-    src/factory/CircularMatFactory.cpp
-    src/factory/MatFactory.cpp
-    
     sample/CircularMatFactorySample.cpp
 )
 
 add_executable(CircularMatFactorySample ${CIRCULAR_MAT_FACTORY_SAMPLE_SRC})
 AddSample(CircularMatFactorySample)
 
+target_link_libraries(CircularMatFactorySample detectors_core)
 target_link_libraries(CircularMatFactorySample util)
 target_link_libraries(CircularMatFactorySample ${OpenCV_LIBRARIES})
 target_link_libraries(CircularMatFactorySample gtest gtest_main)
@@ -65,21 +79,11 @@ target_link_libraries(CircularMatFactorySample gtest gtest_main)
 # ClusterDetectorTest
 
 set(CLUSTER_DETECTOR_TEST_SRC
-    src/detector/ClusterDetector.cpp
-    src/detector/Detector.cpp
-    src/detector/SimulationClusterDetector.cpp
-    src/factory/MatFactory.cpp
-    src/factory/RectangularMatFactory.cpp 
-    src/model/Cluster.cpp
-    src/model/Entity.cpp
-    src/model/SpatialEntityPseudo3D.cpp
-    src/util/Silhouette.cpp
-    src/util/SpatialMeasureCalculator.cpp
-    
     test/ClusterDetectorTest.cpp
 )
 
 set(CLUSTER_DETECTOR_TEST_LINK_LIBS
+    detectors_core
     util
     ${OpenCV_LIBRARIES}
     gtest 
@@ -108,18 +112,11 @@ AddUnitTest(DBSCANTest "${DBSCAN_TEST_SRC}" "${DBSCAN_TEST_LINK_LIBS}")
 # RegionDetectorTest
 
 set(REGION_DETECTOR_TEST_SRC
-    src/detector/Detector.cpp
-    src/detector/RegionDetector.cpp
-    src/factory/MatFactory.cpp 
-    src/factory/RectangularMatFactory.cpp
-    src/model/Region.cpp
-    src/model/SpatialEntityPseudo3D.cpp
-    src/util/SpatialMeasureCalculator.cpp
-    
     test/RegionDetectorTest.cpp
 )
 
 set(REGION_DETECTOR_TEST_LINK_LIBS
+    detectors_core
     util
     ${OpenCV_LIBRARIES}
     gtest 
@@ -152,20 +149,13 @@ configure_file(
 )
 
 set(RECTANGULAR_DETECT_REGIONS_SRC
-    src/detector/Detector.cpp
-    src/detector/RegionDetector.cpp
-    src/factory/MatFactory.cpp 
-    src/factory/RectangularMatFactory.cpp
-    src/model/Region.cpp
-    src/model/SpatialEntityPseudo3D.cpp
-    src/util/SpatialMeasureCalculator.cpp
-    
     src/RectangularDetectRegions.cpp
 )
 
 AddExecutableInstallTarget(RectangularDetectRegions "${RECTANGULAR_DETECT_REGIONS_SRC}")
 AddDebugPostfix(RectangularDetectRegions)
 
+target_link_libraries(RectangularDetectRegions detectors_core)
 target_link_libraries(RectangularDetectRegions util)
 target_link_libraries(RectangularDetectRegions ${OpenCV_LIBRARIES})
 target_link_libraries(RectangularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
@@ -174,15 +164,13 @@ target_link_libraries(RectangularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
 # RectangularMatFactorySample
 
 set(RECTANGULAR_MAT_FACTORY_SAMPLE_SRC
-    src/factory/MatFactory.cpp
-    src/factory/RectangularMatFactory.cpp
-    
     sample/RectangularMatFactorySample.cpp
 )
 
 add_executable(RectangularMatFactorySample ${RECTANGULAR_MAT_FACTORY_SAMPLE_SRC})
 AddSample(RectangularMatFactorySample)
 
+target_link_libraries(RectangularMatFactorySample detectors_core)
 target_link_libraries(RectangularMatFactorySample util)
 target_link_libraries(RectangularMatFactorySample ${OpenCV_LIBRARIES})
 target_link_libraries(RectangularMatFactorySample gtest gtest_main)
@@ -197,23 +185,13 @@ configure_file(
 )
 
 set(SIMULATION_DETECT_CLUSTERS_SRC
-    src/detector/ClusterDetector.cpp
-    src/detector/Detector.cpp
-    src/detector/SimulationClusterDetector.cpp
-    src/factory/MatFactory.cpp
-    src/factory/RectangularMatFactory.cpp 
-    src/model/Cluster.cpp
-    src/model/Entity.cpp
-    src/model/SpatialEntityPseudo3D.cpp
-    src/util/Silhouette.cpp
-    src/util/SpatialMeasureCalculator.cpp
-    
     src/SimulationDetectClusters.cpp
 )
 
 AddExecutableInstallTarget(SimulationDetectClusters "${SIMULATION_DETECT_CLUSTERS_SRC}")
 AddDebugPostfix(SimulationDetectClusters)
 
+target_link_libraries(SimulationDetectClusters detectors_core)
 target_link_libraries(SimulationDetectClusters util)
 target_link_libraries(SimulationDetectClusters ${OpenCV_LIBRARIES})
 target_link_libraries(SimulationDetectClusters ${Boost_PROGRAM_OPTIONS_LIBRARY})
