@@ -7,6 +7,41 @@ set(PACKAGE_PROJECT_DIR "mule")
 
 
 #------------------------------------------------------------
+# Operating system independent configurations
+#------------------------------------------------------------
+
+# OpenCV library
+find_library(OPENCV_CVCORE_LIBRARY
+    NAMES opencv_core
+    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} 
+    DOC "Location of the opencv_core lib"
+)
+
+find_library(OPENCV_IMGPROC_LIBRARY
+    NAMES opencv_imgproc
+    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} 
+    DOC "Location of the opencv_imgproc lib"
+)  
+
+find_library(OPENCV_HIGHGUI_LIBRARY
+    NAMES opencv_highgui
+    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} 
+    DOC "Location of the opencv_highgui lib"
+)
+    
+install(
+    FILES 
+    ${OPENCV_CVCORE_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH}
+    ${OPENCV_IMGPROC_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH} 
+    ${OPENCV_HIGHGUI_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH}
+    DESTINATION lib
+)
+
+# Xerces C library
+install(FILES ${XERCESC_LIBRARY} DESTINATION lib)
+
+
+#------------------------------------------------------------
 # Operating system dependent configurations
 #------------------------------------------------------------
 
@@ -14,6 +49,9 @@ if(UNIX)
     # Install application icon
     install(FILES "${PROJECT_SOURCE_DIR}/cmake/package/desktop/Mule.desktop" DESTINATION /usr/share/applications)
     install(FILES "${PROJECT_SOURCE_DIR}/cmake/package/ico/Mule.png" DESTINATION /usr/share/icons)
+
+    # Add postinst script to debian package
+    set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${PROJECT_SOURCE_DIR}/cmake/package/postinstall/postinst")
 
     set(CPACK_GENERATOR "DEB")
 
@@ -23,7 +61,6 @@ if(UNIX)
     set(CPACK_DEBIAN_PACKAGE_SECTION "Science")
     
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
-    set(CPACK_DEBIAN_PACKAGE_DEPENDS "${CPACK_DEBIAN_PACKAGE_DEPENDS} libxerces-c3.1")
     
     set(CPACK_PACKAGING_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 elseif(WIN32)
@@ -69,8 +106,8 @@ endif(UNIX)
 
 set(CPACK_PACKAGE_NAME "${PACKAGE_PROJECT_NAME}")
 
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PACKAGE_PROJECT_NAME} - multiscale multidimensional meta-model checking")
-set(CPACK_PACKAGE_DESCRIPTION "${PACKAGE_PROJECT_NAME} is a multiscale multidimensional pseudo-3D spatio-temporal meta-model checker employed for the formal validation of computational models")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PACKAGE_PROJECT_NAME} - multiscale multidimensional meta model checking")
+set(CPACK_PACKAGE_DESCRIPTION "${PACKAGE_PROJECT_NAME} is a multiscale multidimensional spatio-temporal meta model checker employed for the formal validation of computational models")
 
 set(CPACK_PACKAGE_FILE_NAME "${PACKAGE_PROJECT_NAME}")
 set(CPACK_PACKAGE_INSTALL_DIRECTORY "${PACKAGE_PROJECT_NAME}")
