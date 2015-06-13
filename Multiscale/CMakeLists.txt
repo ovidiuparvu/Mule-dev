@@ -159,7 +159,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(PROJECT_BUILD_TYPE "#define PROJECT_BUILD_TYPE_DEBUG")
 else(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(PROJECT_BUILD_TYPE "")
-endif()
+endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
 
 
 #------------------------------------------------------------

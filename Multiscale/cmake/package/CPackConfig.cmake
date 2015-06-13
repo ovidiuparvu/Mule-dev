@@ -11,30 +11,34 @@ set(PACKAGE_PROJECT_DIR "mule")
 #------------------------------------------------------------
 
 # OpenCV library
+if(EXISTS "$ENV{OPENCV_DIR}")
+    set(OPENCV_POSSIBLE_LIBRARY_PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} "$ENV{OPENCV_DIR}/lib")
+endif(EXISTS "$ENV{OPENCV_DIR}")
+
+if(EXISTS "$ENV{OPENCV_ROOT}")
+    set(OPENCV_POSSIBLE_LIBRARY_PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} "$ENV{OPENCV_ROOT}/lib")
+endif(EXISTS "$ENV{OPENCV_ROOT}")
+
+if(EXISTS "$ENV{OPENCV}")
+    set(OPENCV_POSSIBLE_LIBRARY_PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} "$ENV{OPENCV}")
+endif(EXISTS "$ENV{OPENCV}")
+
 find_library(OPENCV_CVCORE_LIBRARY
     NAMES opencv_core
-    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} 
-    DOC "Location of the opencv_core lib"
+    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS}
+    DOC "Path to the opencv_core lib"
 )
 
 find_library(OPENCV_IMGPROC_LIBRARY
     NAMES opencv_imgproc
-    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} 
-    DOC "Location of the opencv_imgproc lib"
+    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS}
+    DOC "Path to the opencv_imgproc lib"
 )  
 
 find_library(OPENCV_HIGHGUI_LIBRARY
     NAMES opencv_highgui
-    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} 
-    DOC "Location of the opencv_highgui lib"
-)
-    
-install(
-    FILES 
-    ${OPENCV_CVCORE_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH}
-    ${OPENCV_IMGPROC_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH} 
-    ${OPENCV_HIGHGUI_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH}
-    DESTINATION lib
+    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS}
+    DOC "Path to the opencv_highgui lib"
 )
 
 # Xerces C library
@@ -49,6 +53,11 @@ if(UNIX)
     # Install application icon
     install(FILES "${PROJECT_SOURCE_DIR}/cmake/package/desktop/Mule.desktop" DESTINATION /usr/share/applications)
     install(FILES "${PROJECT_SOURCE_DIR}/cmake/package/ico/Mule.png" DESTINATION /usr/share/icons)
+
+    # Update OpenCV library paths
+    set(OPENCV_CVCORE_LIBRARY ${OPENCV_CVCORE_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH})
+    set(OPENCV_IMGPROC_LIBRARY ${OPENCV_IMGPROC_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH}) 
+    set(OPENCV_HIGHGUI_LIBRARY ${OPENCV_HIGHGUI_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH})
 
     # Add postinst script to debian package
     set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${PROJECT_SOURCE_DIR}/cmake/package/postinstall/postinst")
@@ -98,6 +107,12 @@ elseif(WIN32)
     set(CPACK_NSIS_URL_INFO_ABOUT "http://mule.modelchecking.org")
     set(CPACK_NSIS_CONTACT "ovidiu.parvu@gmail.com")
 endif(UNIX)
+
+# Install OpenCV library
+install(
+    FILES ${OPENCV_CVCORE_LIBRARY} ${OPENCV_IMGPROC_LIBRARY} ${OPENCV_HIGHGUI_LIBRARY}
+    DESTINATION lib
+)
 
 
 #------------------------------------------------------------
