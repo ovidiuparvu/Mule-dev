@@ -10,39 +10,29 @@ set(PACKAGE_PROJECT_DIR "mule")
 # Operating system independent configurations
 #------------------------------------------------------------
 
-# OpenCV library
-if(EXISTS "$ENV{OPENCV_DIR}")
-    set(OPENCV_POSSIBLE_LIBRARY_PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} "$ENV{OPENCV_DIR}/lib")
-endif(EXISTS "$ENV{OPENCV_DIR}")
+# Set OpenCV possible library paths variable
+if(NOT "$ENV{OPENCV_DIR}" STREQUAL "")
+    set(OPENCV_POSSIBLE_LIBRARY_PATHS 
+        "${OPENCV_POSSIBLE_LIBRARY_PATHS}" 
+        "$ENV{OPENCV_DIR}" 
+        "$ENV{OPENCV_DIR}/lib"
+    )
+endif(NOT "$ENV{OPENCV_DIR}" STREQUAL "")
 
-if(EXISTS "$ENV{OPENCV_ROOT}")
-    set(OPENCV_POSSIBLE_LIBRARY_PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} "$ENV{OPENCV_ROOT}/lib")
-endif(EXISTS "$ENV{OPENCV_ROOT}")
+if(NOT "$ENV{OPENCV_ROOT}" STREQUAL "")
+    set(OPENCV_POSSIBLE_LIBRARY_PATHS 
+        "${OPENCV_POSSIBLE_LIBRARY_PATHS}" 
+        "$ENV{OPENCV_ROOT}"
+        "$ENV{OPENCV_ROOT}/lib"
+    )
+endif(NOT "$ENV{OPENCV_ROOT}" STREQUAL "")
 
-if(EXISTS "$ENV{OPENCV}")
-    set(OPENCV_POSSIBLE_LIBRARY_PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} "$ENV{OPENCV}")
-endif(EXISTS "$ENV{OPENCV}")
-
-find_library(OPENCV_CVCORE_LIBRARY
-    NAMES opencv_core
-    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS}
-    DOC "Path to the opencv_core lib"
-)
-
-find_library(OPENCV_IMGPROC_LIBRARY
-    NAMES opencv_imgproc
-    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS}
-    DOC "Path to the opencv_imgproc lib"
-)  
-
-find_library(OPENCV_HIGHGUI_LIBRARY
-    NAMES opencv_highgui
-    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS}
-    DOC "Path to the opencv_highgui lib"
-)
-
-# Xerces C library
-install(FILES ${XERCESC_LIBRARY} DESTINATION lib)
+if(NOT "$ENV{OPENCV}" STREQUAL "")
+    set(OPENCV_POSSIBLE_LIBRARY_PATHS 
+        "${OPENCV_POSSIBLE_LIBRARY_PATHS}" 
+        "$ENV{OPENCV}"
+    )
+endif(NOT "$ENV{OPENCV}" STREQUAL "")
 
 
 #------------------------------------------------------------
@@ -50,18 +40,27 @@ install(FILES ${XERCESC_LIBRARY} DESTINATION lib)
 #------------------------------------------------------------
 
 if(UNIX)
+	# Set the CMake OS dependant find library prefixes and suffixes
+	set(CMAKE_FIND_LIBRARY_PREFIXES "lib")
+	set(CMAKE_FIND_LIBRARY_SUFFIXES ".so", ".a")
+	
+	# Update OpenCV possible library paths variable
+    set(OPENCV_POSSIBLE_LIBRARY_PATHS
+        "/usr/local/lib"
+        "/usr/lib"
+    )
+	
+	# Set OpenCV library name suffix
+    set(OPENCV_LIBRARY_NAME_SUFFIX "")
+	
     # Install application icon
     install(FILES "${PROJECT_SOURCE_DIR}/cmake/package/desktop/Mule.desktop" DESTINATION /usr/share/applications)
     install(FILES "${PROJECT_SOURCE_DIR}/cmake/package/ico/Mule.png" DESTINATION /usr/share/icons)
 
-    # Update OpenCV library paths
-    set(OPENCV_CVCORE_LIBRARY ${OPENCV_CVCORE_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH})
-    set(OPENCV_IMGPROC_LIBRARY ${OPENCV_IMGPROC_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH}) 
-    set(OPENCV_HIGHGUI_LIBRARY ${OPENCV_HIGHGUI_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH})
-
     # Add postinst script to debian package
     set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${PROJECT_SOURCE_DIR}/cmake/package/postinstall/postinst")
 
+	# CPack specific configurations
     set(CPACK_GENERATOR "DEB")
 
     set(CPACK_SYSTEM_NAME "Linux-${CPACK_SYSTEM_NAME}")
@@ -73,9 +72,23 @@ if(UNIX)
     
     set(CPACK_PACKAGING_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 elseif(WIN32)
+	# Set the CMake OS dependant find library prefixes and suffixes
+	set(CMAKE_FIND_LIBRARY_PREFIXES "" "lib")
+	set(CMAKE_FIND_LIBRARY_SUFFIXES ".dll", ".lib")
+	
+	# Update OpenCV possible library paths variable
+    set(OPENCV_POSSIBLE_LIBRARY_PATHS
+        "$ENV{ProgramFiles}/OpenCV/lib"
+        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Intel(R) Open Source Computer Vision Library_is1;Inno Setup: App Path]/lib"
+    )
+	
+	# Set OpenCV library name suffix
+    set(OPENCV_LIBRARY_NAME_SUFFIX "${OpenCV_VERSION_MAJOR}${OpenCV_VERSION_MINOR}${OpenCV_VERSION_PATCH}")
+	
     # Install application icon
     install(FILES "${PROJECT_SOURCE_DIR}/cmake/package/ico\\\\Mule.ico" DESTINATION ico)
-
+	
+	# CPack specific configurations
     set(CPACK_GENERATOR "NSIS")
     
     set(CPACK_NSIS_MUI_ICON "${PROJECT_SOURCE_DIR}/cmake/package/ico\\\\Mule.ico")
@@ -108,11 +121,54 @@ elseif(WIN32)
     set(CPACK_NSIS_CONTACT "ovidiu.parvu@gmail.com")
 endif(UNIX)
 
-# Install OpenCV library
-install(
-    FILES ${OPENCV_CVCORE_LIBRARY} ${OPENCV_IMGPROC_LIBRARY} ${OPENCV_HIGHGUI_LIBRARY}
-    DESTINATION lib
+# Find OpenCV libraries
+find_library(OPENCV_CVCORE_LIBRARY
+    NAMES opencv_core${OPENCV_LIBRARY_NAME_SUFFIX}
+    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} ENV PATH
+    DOC "Path to the opencv_core library"
 )
+
+find_library(OPENCV_IMGPROC_LIBRARY
+    NAMES opencv_imgproc${OPENCV_LIBRARY_NAME_SUFFIX}
+    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} ENV PATH
+    DOC "Path to the opencv_imgproc library"
+)  
+
+find_library(OPENCV_HIGHGUI_LIBRARY
+    NAMES opencv_highgui${OPENCV_LIBRARY_NAME_SUFFIX}
+    PATHS ${OPENCV_POSSIBLE_LIBRARY_PATHS} ENV PATH
+    DOC "Path to the opencv_highgui library"
+)
+
+# Install dependent libraries
+if (UNIX)
+	# OpenCV library
+	install(
+		FILES 
+		${OPENCV_CVCORE_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH} 
+		${OPENCV_IMGPROC_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH} 
+		${OPENCV_HIGHGUI_LIBRARY}.${OpenCV_VERSION_MAJOR}.${OpenCV_VERSION_MINOR}.${OpenCV_VERSION_PATCH}
+		DESTINATION lib
+	)
+	
+	# Xerces C library
+	install(
+		FILES ${XERCESC_LIBRARY} 
+		DESTINATION lib
+	)
+elseif (WIN32)
+	# OpenCV library
+	install(
+		FILES ${OPENCV_CVCORE_LIBRARY} ${OPENCV_IMGPROC_LIBRARY} ${OPENCV_HIGHGUI_LIBRARY}
+		DESTINATION bin
+	)
+	
+	# Xerces C library
+	install(
+		FILES ${XERCESC_LIBRARY} 
+		DESTINATION bin
+	)
+endif(UNIX)
 
 
 #------------------------------------------------------------
