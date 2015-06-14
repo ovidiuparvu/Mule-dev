@@ -50,9 +50,16 @@ std::string StringManipulator::replace(const std::string &initialString, const s
 std::vector<std::string> StringManipulator::split(const std::string &initialString,
                                                   const std::string &delimiter) {
     std::vector<std::string> tokens;
+
     std::string initialStringCopy = initialString;
 
-    return boost::split(tokens, initialStringCopy, boost::is_any_of(delimiter));
+    return (
+        boost::split(
+            tokens,
+            initialStringCopy,
+            boost::is_any_of(delimiter)
+        )
+    );
 }
 
 std::string StringManipulator::trimRight(std::string &inputString) {

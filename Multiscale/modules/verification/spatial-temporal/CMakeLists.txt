@@ -267,6 +267,20 @@ AddSample(MultiscaleArchitectureGraphDataReaderSample)
 target_link_libraries(MultiscaleArchitectureGraphDataReaderSample util)
 
 
+# NumericCsvModelCheckerSample
+
+set(NUMERIC_CSV_MODEL_CHECKER_SAMPLE_SRC
+    src/data/TemporalDataReader.cpp
+    
+    sample/NumericCsvModelCheckerSample.cpp 
+)
+
+add_executable(NumericCsvModelCheckerSample ${NUMERIC_CSV_MODEL_CHECKER_SAMPLE_SRC})
+AddSample(NumericCsvModelCheckerSample)
+
+target_link_libraries(NumericCsvModelCheckerSample model_checker_core)
+
+
 # ParserSample
 
 set(PARSER_SAMPLE_SRC

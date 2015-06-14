@@ -161,7 +161,7 @@ void TemporalDataReader::addNumericStateVariablesToTimePoint(const std::vector<s
 // Constants
 const std::string TemporalDataReader::INPUT_FILE_EXTENSION = ".csv";
 
-const std::string TemporalDataReader::INPUT_FILE_DELIMITER = ",";
+const std::string TemporalDataReader::INPUT_FILE_DELIMITER = ",; \t";
 
 const std::string TemporalDataReader::ERR_INVALID_INPUT_FILE_PATH_BEGIN = "The provided input file path (";
 const std::string TemporalDataReader::ERR_INVALID_INPUT_FILE_PATH_END   = ") does not point to a file with the required extension. Please change.";
