@@ -88,6 +88,9 @@ fi
 
 # Constants definition
 
+INFO_TAG="[ INFO     ]";
+RESULT_TAG="[ RESULT   ]";
+
 NUMERIC_STATE_VARIABLE_PLACEHOLDER="{{VAR}}";
 
 NUMERIC_CSV_MODEL_CHECKER_SAMPLE_EXECUTABLE="/home/ovidiu/Repositories/git/multiscale/Multiscale/bin/sample/NumericCsvModelCheckerSample";
@@ -153,7 +156,22 @@ fi
 ###############################################################################
 
 # Run the numeric state variable scanning procedure and store the results
-IFS=$'\n' && modelCheckingResults=($(${NUMERIC_CSV_MODEL_CHECKER_SAMPLE_EXECUTABLE} ${timeSeriesDataInputFile} ${logicPropertiesOutputFile} | egrep -o "^[TF]")) && IFS=$'\n\t';
+modelCheckingResults=$(${NUMERIC_CSV_MODEL_CHECKER_SAMPLE_EXECUTABLE} ${timeSeriesDataInputFile} ${logicPropertiesOutputFile} 2>&1);
+
+if [[ ${modelCheckingResults} =~ WARNING|error ]];
+then
+    # Inform the user that a warning or error message was issued
+    echo "An error/warning message (included in the output below) was printed by the model checker. Therefore the numeric state variable scanning procedure has stopped."
+    echo "";
+
+    # Print the model checking warning/error message to the console
+    echo "${modelCheckingResults}";
+
+    exit 1;
+else
+    # Store only the true/false results
+    IFS=$'\n' && modelCheckingResults=($(echo "${modelCheckingResults}" | egrep -o "^[TF]")) && IFS=$'\n\t'; 
+fi
 
 
 ###############################################################################
@@ -164,45 +182,37 @@ IFS=$'\n' && modelCheckingResults=($(${NUMERIC_CSV_MODEL_CHECKER_SAMPLE_EXECUTAB
 currentModelCheckingResultIndex=0;
 
 # Output general information about the numeric state variable scanning procedure
-echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
-echo "+                                                                              ";
-echo "+ Results for the numeric state variable scanning procedure                    ";
-echo "+                                                                              ";
-echo "+ Logic properties templates input file: ${logicPropertiesTemplatesInputFile}  ";
-echo "+ Numeric state variables input file: ${numericStateVariablesInputFile}        ";
-echo "+ Time series data input file: ${timeSeriesDataInputFile}                      ";
-echo "+ Logic properties output file: ${logicPropertiesOutputFile}                   ";
-echo "+                                                                              ";
-echo "+ Model checker executable path: ${NUMERIC_CSV_MODEL_CHECKER_SAMPLE_EXECUTABLE}";
-echo "+                                                                              ";
+echo "${INFO_TAG} Results for the numeric state variable scanning procedure";
+echo "${INFO_TAG}";
+echo "${INFO_TAG} Logic properties templates input file: ${logicPropertiesTemplatesInputFile}";
+echo "${INFO_TAG} Numeric state variables input file:    ${numericStateVariablesInputFile}";
+echo "${INFO_TAG} Time series data input file:           ${timeSeriesDataInputFile}";
+echo "${INFO_TAG} Logic properties output file:          ${logicPropertiesOutputFile}";
+echo "${INFO_TAG}";
+echo "${INFO_TAG} Model checker executable path: ${NUMERIC_CSV_MODEL_CHECKER_SAMPLE_EXECUTABLE}";
+echo "${INFO_TAG}";
 
 # Output the considered numeric state variables
-echo -n "+ Considered numeric state variables:";
+echo -n "${INFO_TAG} Considered numeric state variables:";
 
 for numericStateVariable in ${numericStateVariablesArray[@]};
 do
     echo -n " ${numericStateVariable}";
 done
 
-# Start a new line
+# Start new line and leave it blank
 echo "";
-
-# Output the end of the general information section
-echo "+                                                                              ";
-echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
-
-# Output blank line
 echo "";
 
 # Output the results for each logic property 
 for logicPropertyTemplate in ${logicPropertyTemplates[@]};
 do
     # Output logic property template
-    echo -n "Logic property:                    "; 
+    echo -n "${RESULT_TAG} Logic property:                 "; 
     echo "${logicPropertyTemplate}";
 
     # Output message indicating for which numeric state variables the logic property evaluated true
-    echo -n "Numeric state variables that hold: ";
+    echo -n "${RESULT_TAG} Numeric state variables (true): ";
 
     # Output numeric state variables for which logic property holds
     for numericStateVariable in ${numericStateVariablesArray[@]};
