@@ -10,9 +10,9 @@
 #include <bitset>
 #include <limits>
 #include <list>
-#include <map>
 #include <memory>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 
@@ -42,7 +42,7 @@ namespace multiscale {
                                                          corresponds to the i-th SubsetSpecificType
                                                          enumeration value */
 
-                std::map<NumericStateVariableId, double>
+                std::unordered_map<NumericStateVariableId, double>
                     numericStateVariables;          /*!< The associative map for storing numeric state variables */
 
                 std::bitset<NR_SUBSET_SPECIFIC_TYPES>
@@ -248,19 +248,19 @@ namespace multiscale {
                 double getNumericStateVariableValue(const NumericStateVariableId &id) const;
 
                 //! Get the begin iterator for the collection of numeric state variables
-                std::map<NumericStateVariableId, double>::iterator
+                std::unordered_map<NumericStateVariableId, double>::iterator
                 getNumericStateVariablesBeginIterator();
 
                 //! Get the begin iterator for the collection of numeric state variables
-                std::map<NumericStateVariableId, double>::const_iterator
+                std::unordered_map<NumericStateVariableId, double>::const_iterator
                 getNumericStateVariablesBeginIterator() const;
 
                 //! Get the end iterator for the collection of numeric state variables
-                std::map<NumericStateVariableId, double>::iterator
+                std::unordered_map<NumericStateVariableId, double>::iterator
                 getNumericStateVariablesEndIterator();
 
                 //! Get the end iterator for the collection of numeric state variables
-                std::map<NumericStateVariableId, double>::const_iterator
+                std::unordered_map<NumericStateVariableId, double>::const_iterator
                 getNumericStateVariablesEndIterator() const;
 
                 //! Compute the difference of this timepoint and the given timepoint (spatial entities only)

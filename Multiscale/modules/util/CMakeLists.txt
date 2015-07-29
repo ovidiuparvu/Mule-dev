@@ -21,6 +21,7 @@ set(LIB_SRC
     src/OperatingSystem.cpp
     src/RGBColourGenerator.cpp
     src/StringManipulator.cpp
+    src/Timer.cpp
     src/XmlValidator.cpp
 
     src/statistics/BetaDistribution.cpp
@@ -172,6 +173,18 @@ add_executable(TangentsFromPointToPolygonSample ${TANGENTS_FROM_POINT_TO_POLYGON
 AddSample(TangentsFromPointToPolygonSample)
 
 target_link_libraries(TangentsFromPointToPolygonSample util)
+
+
+# TimerSample
+
+set(TIMER_SAMPLE_SRC
+    sample/TimerSample.cpp
+)
+
+add_executable(TimerSample ${TIMER_SAMPLE_SRC})
+AddSample(TimerSample)
+
+target_link_libraries(TimerSample util)
 
 
 # XmlValidatorSample

@@ -4,6 +4,7 @@
 #include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
 #include "multiscale/verification/spatial-temporal/model/StateVariable.hpp"
 
+#include <functional>
 #include <string>
 
 
@@ -41,6 +42,13 @@ namespace multiscale {
                  */
                 bool operator<(const NumericStateVariableId &rhs) const;
 
+                //! Overload the == operator
+                /*!
+                 * \param rhs   The right hand side numeric state variable identity
+                 *              in the expression (lhs == rhs)
+                 */
+                bool operator==(const NumericStateVariableId &rhs) const;
+
                 //! Return the string representation of the numeric state variable identity
                 std::string toString() const;
 
@@ -55,5 +63,35 @@ namespace multiscale {
     };
 
 };
+
+
+namespace std {
+
+    // Structure defining hash function for the NumericStateVariableId type
+    template<>
+    class hash<multiscale::verification::NumericStateVariableId> {
+
+        public:
+
+            // Overload the () operator
+            /*!
+             * \param numericStateVariableId    The numeric state variable id for which the
+             *                                  hash value is computed
+             */
+            size_t operator()(
+                const multiscale::verification::NumericStateVariableId &numericStateVariableId
+            ) const noexcept {
+                return (
+                    std::hash<std::string>()(
+                        numericStateVariableId.getName() +
+                        numericStateVariableId.getScaleAndSubsystem()
+                    )
+                );
+            }
+
+    };
+
+};
+
 
 #endif

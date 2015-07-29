@@ -35,6 +35,18 @@ bool NumericStateVariableId::operator<(const NumericStateVariableId &rhs) const 
     return false;
 }
 
+bool NumericStateVariableId::operator==(const NumericStateVariableId &rhs) const {
+    if (this->name.compare(rhs.name) == 0) {
+        return (
+            this->scaleAndSubsystem.compare(
+                rhs.scaleAndSubsystem
+            )  == 0
+        );
+    }
+
+    return false;
+}
+
 std::string NumericStateVariableId::toString() const {
     return (
         OUTPUT_STRING_BEGIN +

@@ -6,6 +6,7 @@
 
 namespace multiscaletest {
 
+    //! Class for defining a multiscale unit test
     class MultiscaleTest : public ::testing::Test {
 
         protected:

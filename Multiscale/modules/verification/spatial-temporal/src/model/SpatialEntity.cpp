@@ -9,7 +9,7 @@ using namespace multiscale::verification::spatialmeasure;
 
 
 SpatialEntity::SpatialEntity() {
-    scaleAndSubsystem         = ScaleAndSubsystem::DEFAULT_VALUE;
+    scaleAndSubsystem    = ScaleAndSubsystem::DEFAULT_VALUE;
     spatialMeasureValues = std::vector<double>(NR_SPATIAL_MEASURE_TYPES, 0);
 }
 

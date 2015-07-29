@@ -11,8 +11,8 @@ void ScaleAndSubsystemEvaluator::validateScaleAndSubsystem(const std::string &sc
                                                                &multiscaleArchitectureGraph) {
     // If the scale and subsystem exists in the multiscale architecture graph
     // or has the default value
-    if ((multiscaleArchitectureGraph.existsScaleAndSubsystem(scaleAndSubsystem)) ||
-        (scaleAndSubsystem.compare(ScaleAndSubsystem::DEFAULT_VALUE) == 0)) {
+    if ((scaleAndSubsystem.compare(ScaleAndSubsystem::DEFAULT_VALUE) == 0) ||
+        (multiscaleArchitectureGraph.existsScaleAndSubsystem(scaleAndSubsystem))) {
         // Do nothing
     } else {
         MS_throw(

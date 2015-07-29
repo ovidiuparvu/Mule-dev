@@ -195,6 +195,7 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wfloat-equal -Wmissing-include-dirs")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmessage-length=0")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Ofast")
     
     if("${CMAKE_BUILD_FOR_PROFILING}" STREQUAL "Yes")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg")

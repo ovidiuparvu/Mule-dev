@@ -20,7 +20,7 @@
 # Instantiate the logic property template
 function InstantiateLogicPropertyTemplate() {
     # Instantiate template for each numeric state variable
-    for numericStateVariable in ${numericStateVariablesArray[@]};
+    for numericStateVariable in "${numericStateVariablesArray[@]}";
     do
         echo "${currentLogicPropertyTemplate}" | sed "s/${NUMERIC_STATE_VARIABLE_PLACEHOLDER}/{${numericStateVariable}}/g";
     done
@@ -112,6 +112,9 @@ currentLogicPropertyTemplate="";
 # Step 2: Logic property template instantiation
 ###############################################################################
 
+# Inform the user about the next step
+echo "Creating instances of the logic property template(s)...";
+
 # Read the numeric state variables from the provided input file
 
 IFS=$'\n' && numericStateVariablesArray=($(<${numericStateVariablesInputFile})) && IFS=$'\t\n';
@@ -155,6 +158,9 @@ fi
 # Step 3: Numeric state variable scanning
 ###############################################################################
 
+# Inform the user about the next step
+echo "Running the model checker...";
+
 # Run the numeric state variable scanning procedure and store the results
 modelCheckingResults=$(${NUMERIC_CSV_MODEL_CHECKER_SAMPLE_EXECUTABLE} ${timeSeriesDataInputFile} ${logicPropertiesOutputFile} 2>&1);
 
@@ -178,10 +184,14 @@ fi
 # Step 4: Output the obtained results
 ###############################################################################
 
+# Inform the user about the next step
+echo "Outputting the results...";
+
 # Create an index for recording the current model checking result index
 currentModelCheckingResultIndex=0;
 
 # Output general information about the numeric state variable scanning procedure
+echo ""
 echo "${INFO_TAG} Results for the numeric state variable scanning procedure";
 echo "${INFO_TAG}";
 echo "${INFO_TAG} Logic properties templates input file: ${logicPropertiesTemplatesInputFile}";

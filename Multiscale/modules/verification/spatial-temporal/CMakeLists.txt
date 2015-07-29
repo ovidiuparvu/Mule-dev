@@ -430,6 +430,32 @@ set(MSTML_SUBFILES_MERGER_LINK_LIBS
 AddUnitTest(MSTMLSubfilesMergerTest "${MSTML_SUBFILES_MERGER_SRC}" "${MSTML_SUBFILES_MERGER_LINK_LIBS}")
 
 
+# MulePerformanceTest
+
+# Set the path to the test data
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/test/performance/NumericStateVariablesPerformanceTest.hpp.in
+    ${CMAKE_CURRENT_SOURCE_DIR}/test/performance/NumericStateVariablesPerformanceTest.hpp
+)
+
+set(MULE_PERFORMANCE_TEST_SRC
+    src/data/TemporalDataReader.cpp
+    
+    test/performance/ModelCheckingPerformanceTest.cpp
+    test/performance/NumericCsvModelCheckingPerformanceTest.cpp
+
+    test/performance/MulePerformanceTest.cpp   
+)
+
+set(MULE_PERFORMANCE_TEST_LIBS
+    model_checker_core
+    gtest
+    gtest_main
+)
+
+AddUnitTest(MulePerformanceTest "${MULE_PERFORMANCE_TEST_SRC}" "${MULE_PERFORMANCE_TEST_LIBS}")
+
+
 # MultiscaleArchitectureGraphTest
 
 # Set the path to the test data

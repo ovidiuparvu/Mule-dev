@@ -1,7 +1,6 @@
 #include "multiscale/core/Multiscale.hpp"
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
-#include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/data/LogicPropertyDataReader.hpp"
 #include "multiscale/verification/spatial-temporal/data/TemporalDataReader.hpp"

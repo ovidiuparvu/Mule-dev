@@ -25,9 +25,10 @@ namespace multiscale {
                                        const TimePoint &timePoint,
                                        const MultiscaleArchitectureGraph &multiscaleArchitectureGraph) {
                     // Obtain the scale and subsystem
-                    std::string scaleAndSubsystem = numericStateVariable.scaleAndSubsystem.get_value_or(
-                                                        ScaleAndSubsystemAttribute()
-                                                    ).scaleAndSubsystem;
+                    const std::string &scaleAndSubsystem =
+                        numericStateVariable.scaleAndSubsystem.get_value_or(
+                            ScaleAndSubsystemAttribute()
+                        ).scaleAndSubsystem;
 
                     // Validate the scale and subsystem
                     ScaleAndSubsystemEvaluator::validateScaleAndSubsystem(
@@ -55,14 +56,14 @@ namespace multiscale {
                  */
                 static double evaluate(const std::string &name, const std::string &scaleAndSubsystem,
                                        const TimePoint &timePoint) {
-                    // Construct the numeric state variable identity considering its name, and scale and subsystem
-                    NumericStateVariableId numericStateVariableId(
-                        name, scaleAndSubsystem
-                    );
-
                     // Return the value of the numeric state variable
                     return (
-                        timePoint.getNumericStateVariableValue(numericStateVariableId)
+                        timePoint.getNumericStateVariableValue(
+                            NumericStateVariableId(
+                                name,
+                                scaleAndSubsystem
+                            )
+                        )
                     );
                 }
 
