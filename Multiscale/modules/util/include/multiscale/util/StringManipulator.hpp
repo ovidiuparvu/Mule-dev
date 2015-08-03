@@ -48,9 +48,10 @@ namespace multiscale {
             //! Split the given std::string into a std::vector of strings considering the given delimiter
             /*!
              * \param initialString Initial string
-             * \param delimiter Delimiter
+             * \param delimiter     Delimiter
              */
-            static std::vector<std::string> split(const std::string &initialString, const std::string &delimiter);
+            static std::vector<std::string> split(const std::string &initialString,
+                                                  const std::string &delimiter);
 
             //! Remove the trailing "new line" characters from the end of the string
             /*!
@@ -112,6 +113,24 @@ namespace multiscale {
             static const std::string ERR_INVALID_CONVERSION_END;
 
     };
+
+
+    // Explicit template specializations
+    template <>
+    unsigned long StringManipulator::convert(const std::string &inputString);
+
+    template <>
+    long StringManipulator::convert(const std::string &inputString);
+
+    template <>
+    int StringManipulator::convert(const std::string &inputString);
+
+    template <>
+    float StringManipulator::convert(const std::string &inputString);
+
+    template <>
+    double StringManipulator::convert(const std::string &inputString);
+
 
 };
 

@@ -27,12 +27,13 @@ namespace multiscale {
             public:
 
                 SpatialTemporalTrace();
+                SpatialTemporalTrace(std::size_t nrOfTimePoints);
                 SpatialTemporalTrace(const SpatialTemporalTrace &trace);
                 ~SpatialTemporalTrace();
 
-                //! Add a time point to the array
+                //! Add a time point to the trace
                 /*!
-                 * \param timePoint Time point added to the array
+                 * \param timePoint Time point added to the trace
                  */
                 void addTimePoint(const TimePoint &timePoint);
 

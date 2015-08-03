@@ -55,8 +55,8 @@ namespace multiscale {
                  */
                 double
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
-                    // Retrieve a reference to the current timepoint in the trace
-                    const TimePoint &currentTimePoint = trace.getTimePointReference(0);
+                    // Retrieve a reference to the current time point in the trace
+                    TimePoint &currentTimePoint = trace.getTimePointReference(0);
 
                     // Return the value of the numeric state variable
                     return (

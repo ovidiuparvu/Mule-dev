@@ -32,7 +32,7 @@ NumericCsvModelCheckingPerformanceTest::RunTest() {
         = logicPropertiesReader.readLogicPropertiesFromFile(logicPropertiesInputFilePath);
 
     SpatialTemporalTrace timeSeries
-        = timeseriesReader.readTimeseriesFromFile(timeSeriesInputFilePath);
+        = timeseriesReader.readTimeSeriesFromFile(timeSeriesInputFilePath);
 
     EvaluateLogicProperties(logicProperties, timeSeries);
 }
@@ -43,7 +43,7 @@ NumericCsvModelCheckingPerformanceTest::ValidateTestResults() {}
 void
 NumericCsvModelCheckingPerformanceTest::EvaluateLogicProperties(
     const std::vector<std::string> &logicProperties,
-    const SpatialTemporalTrace &timeSeries
+    SpatialTemporalTrace &timeSeries
 ) {
     AbstractSyntaxTree abstractSyntaxTree;
     MultiscaleArchitectureGraph multiscaleArchitectureGraph;

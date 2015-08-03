@@ -21,6 +21,9 @@ namespace multiscale {
     const int EXEC_SUCCESS_CODE = 0;
     const int EXEC_ERR_CODE     = 1;
 
+    // Delimiters
+    const std::string LINE_DELIMITER = "\n";
+
     // Error related definitions
     const std::string ERR_MSG = "An error occurred: ";
 

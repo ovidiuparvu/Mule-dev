@@ -12,6 +12,13 @@ SpatialTemporalTrace::SpatialTemporalTrace() {
     initialize();
 }
 
+SpatialTemporalTrace::SpatialTemporalTrace(std::size_t nrOfTimePoints) {
+    initialize();
+
+    // Reserve enough memory to hold at least nrOfTimePoints time points
+    timePoints.reserve(nrOfTimePoints);
+}
+
 SpatialTemporalTrace::SpatialTemporalTrace(const SpatialTemporalTrace &trace)
                                           : beginIndex(trace.beginIndex), timePoints(trace.timePoints),
                                             lastTimePointValue(trace.lastTimePointValue),

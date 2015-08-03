@@ -27,11 +27,16 @@ namespace multiscale {
 
             private:
 
-                std::string                 filePath;               /*!< The path to the input file */
+                std::string
+                    filePath;                   /*!< The path to the input file */
 
-                std::vector<std::string>    observableVariables;    /*!< The names of the observable variables */
+                std::vector<std::string>
+                    observableVariables;        /*!< The names of the observable variables */
+                std::vector<NumericStateVariableId>
+                    numericStateVariableIds;    /*!< The ids of the numeric state variables */
 
-                unsigned long               currentLineNumber;      /*!< The current input file line number */
+                unsigned long
+                    currentLineNumber;          /*!< The current input file line number */
 
             public:
 
@@ -41,26 +46,32 @@ namespace multiscale {
                 /*!
                  * \param filePath  The input file path
                  */
-                SpatialTemporalTrace readTimeseriesFromFile(const std::string &filePath);
+                SpatialTemporalTrace readTimeSeriesFromFile(const std::string &filePath);
 
             private:
 
-                //! Read the data from the valid input file and construct a spatial temporal trace
-                SpatialTemporalTrace readFromValidInputFile();
-
-                //! Read the data from the valid opened input file and construct a spatial temporal trace
+                //! Read the data from the input file and use it to construct a spatial temporal trace
                 /*!
-                 * \param fin   The input file stream opened for the given input file
-                 * \param trace The spatial temporal trace created using the data from the input file
+                 * \param inputFile The input file represented as a collection of lines
                  */
-                void readFromValidOpenedInputFile(std::ifstream &fin, SpatialTemporalTrace &trace);
+                SpatialTemporalTrace readTimeSeriesFromFile(const std::vector<std::string> &inputFile);
+
+                //! Check if the input file is valid i.e. it contains at least one line
+                /*! If the input file does not contain at least one line, then it does not contain a header line,
+                 *  and an exception is thrown.
+                 *
+                 * \param inputFile     The input file represented as a collection of lines
+                 */
+                bool isValidInputFile(const std::vector<std::string> &inputFile);
 
                 //! Read the header row from the input file
                 /*!
-                 * \param fin   The input file stream opened for the given input file
-                 * \param trace The spatial temporal trace created using the data from the input file
+                 * \param inputFile The input file represented as a collection of lines
                  */
-                void readInputFileHeader(std::ifstream &fin, SpatialTemporalTrace &trace);
+                void readInputFileHeader(const std::vector<std::string> &inputFile);
+
+                //! Create numeric state variable ids from the observable variables
+                void createNumericStateVariableIdsFromObservableVariables();
 
                 //! Validate the observable variables
                 /*!
@@ -70,10 +81,18 @@ namespace multiscale {
 
                 //! Read the contents (excluding header row) from the input file
                 /*!
-                 * \param fin   The input file stream opened for the given input file
+                 * \param inputFile The input file represented as a collection of lines
+                 * \param trace     The spatial temporal trace created using the data from the input file
+                 */
+                void readInputFileContents(const std::vector<std::string> &inputFile,
+                                           SpatialTemporalTrace &trace);
+
+                //! Check if the provided line is valid and, if yes, process the values it contains
+                /*!
+                 * \param line  The considered line
                  * \param trace The spatial temporal trace created using the data from the input file
                  */
-                void readInputFileContents(std::ifstream &fin, SpatialTemporalTrace &trace);
+                void processLine(const std::string &line, SpatialTemporalTrace &trace);
 
                 //! Check if the provided line tokens are valid and, if yes, add them to the trace
                 /*!
@@ -112,11 +131,8 @@ namespace multiscale {
 
                 static const std::string INPUT_FILE_DELIMITER;
 
-                static const std::string ERR_INVALID_INPUT_FILE_PATH_BEGIN;
-                static const std::string ERR_INVALID_INPUT_FILE_PATH_END;
-
-                static const std::string ERR_OPEN_INPUT_FILE_BEGIN;
-                static const std::string ERR_OPEN_INPUT_FILE_END;
+                static const std::string ERR_INPUT_FILE_EMPTY_BEGIN;
+                static const std::string ERR_INPUT_FILE_EMPTY_END;
 
                 static const std::string ERR_INVALID_NR_OBSERVABLE_VARIABLES_BEGIN;
                 static const std::string ERR_INVALID_NR_OBSERVABLE_VARIABLES_END;

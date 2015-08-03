@@ -49,7 +49,7 @@ namespace multiscale {
                 /*!
                  * \param trace The given spatial temporal trace
                  */
-                bool evaluate(const SpatialTemporalTrace &trace);
+                bool evaluate(SpatialTemporalTrace &trace);
 
                 //! Check if more traces are accepted for evaluating the logic property
                 virtual bool acceptsMoreTraces() = 0;

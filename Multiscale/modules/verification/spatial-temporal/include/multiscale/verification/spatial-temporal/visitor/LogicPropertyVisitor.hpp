@@ -62,7 +62,12 @@ namespace multiscale {
                 bool operator() (const LogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
                     bool firstLogicPropertyTruthValue = evaluate(logicProperty.firstLogicProperty, trace);
 
-                    return evaluateNextLogicProperties(logicProperty, firstLogicPropertyTruthValue);
+                    return (
+                        evaluateNextLogicProperties(
+                            logicProperty,
+                            firstLogicPropertyTruthValue
+                        )
+                    );
                 }
 
                 //! Overloading the "()" operator for the OrLogicPropertyAttribute alternative
@@ -324,9 +329,13 @@ namespace multiscale {
                                                    trace
                                                );
 
-                    return ComparatorEvaluator::evaluate(lhsNumericMeasure,
-                                                         comparisonAttribute.comparator.comparatorType,
-                                                         rhsNumericMeasure);
+                    return (
+                        ComparatorEvaluator::evaluate(
+                            lhsNumericMeasure,
+                            comparisonAttribute.comparator.comparatorType,
+                            rhsNumericMeasure
+                        )
+                    );
                 }
 
                 //! Evaluate the given ChangeTemporalNumericMeasureAttribute
@@ -756,7 +765,9 @@ namespace multiscale {
                     trace.storeSubTraceBeginIndex();
 
                     // Advance the trace begin index with the value kValue
-                    trace.advanceTraceBeginIndex(timePointIndex);
+                    if (timePointIndex != 0) {
+                        trace.advanceTraceBeginIndex(timePointIndex);
+                    }
 
                     // Evaluate the logic property
                     double evaluationResult = boost::apply_visitor(

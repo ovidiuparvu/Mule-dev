@@ -40,7 +40,7 @@ namespace multiscale {
                  * \param trace                         The considered trace (i.e. timeseries data)
                  * \param multiscaleArchitectureGraph   The considered multiscale architecture graph
                  */
-                bool evaluate(const SpatialTemporalTrace &trace,
+                bool evaluate(SpatialTemporalTrace &trace,
                               const MultiscaleArchitectureGraph &multiscaleArchitectureGraph);
 
             private:

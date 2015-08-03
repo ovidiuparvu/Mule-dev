@@ -214,7 +214,7 @@ namespace multiscale {
                  *                              truth value was not determined yet and needs to be evaluated
                  *                              considering more spatial temporal traces
                  */
-                void runModelCheckersForTrace(const SpatialTemporalTrace &trace,
+                void runModelCheckersForTrace(SpatialTemporalTrace &trace,
                                               bool &continueEvaluation);
 
                 //! Run the model checker for the given trace
@@ -223,7 +223,7 @@ namespace multiscale {
                  * \param trace             The given spatial-temporal trace
                  */
                 void runModelCheckerForTrace(const std::size_t &modelCheckerIndex,
-                                             const SpatialTemporalTrace &trace);
+                                             SpatialTemporalTrace &trace);
 
                 //! Update the evaluation results for the given model checker index and result
                 /*!

@@ -42,7 +42,7 @@ namespace multiscaletest {
              * \param timeSeries        The time series data against which the logic properties are evaluated
              */
             void EvaluateLogicProperties(const std::vector<std::string> &logicProperties,
-                                         const multiscale::verification::SpatialTemporalTrace &timeSeries);
+                                         multiscale::verification::SpatialTemporalTrace &timeSeries);
 
     };
 

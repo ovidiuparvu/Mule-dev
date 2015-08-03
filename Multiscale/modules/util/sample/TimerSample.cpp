@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
     double executionTime = Timer::stop();
 
     std::cout << number1 << " - " << number2 << " = " << result
-              << " (Execution time: " << executionTime << " seconds)." << std::endl;
+              << " (Execution time: " << executionTime << " nanoseconds)." << std::endl;
 
     return EXEC_SUCCESS_CODE;
 }

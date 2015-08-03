@@ -20,7 +20,7 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for representing a timepoint
+        //! Class for representing a time point
         class TimePoint {
 
             private:

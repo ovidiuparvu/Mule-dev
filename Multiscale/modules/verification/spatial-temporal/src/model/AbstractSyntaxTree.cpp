@@ -11,7 +11,7 @@ AbstractSyntaxTree::AbstractSyntaxTree() {
 AbstractSyntaxTree::~AbstractSyntaxTree() {}
 
 void AbstractSyntaxTree::initializeTree(const ProbabilisticLogicPropertyAttribute
-                                            &probabilisticLogicPropertyAttribute) {
+                                        &probabilisticLogicPropertyAttribute) {
     this->probabilisticLogicProperty = probabilisticLogicPropertyAttribute;
     this->isInitialized              = true;
 }
@@ -24,10 +24,10 @@ double AbstractSyntaxTree::getProbability() {
     return probabilisticLogicProperty.getProbability();
 }
 
-bool AbstractSyntaxTree::evaluate(const SpatialTemporalTrace &spatialTemporalTrace,
+bool AbstractSyntaxTree::evaluate(SpatialTemporalTrace &spatialTemporalTrace,
                                   const MultiscaleArchitectureGraph &multiscaleArchitectureGraph) {
     if (!isInitialized) {
-        MS_throw(UnexpectedBehaviourException, ERR_ABSTRACT_SYNTAX_TREE_NOT_InitializeD);
+        MS_throw(UnexpectedBehaviourException, ERR_ABSTRACT_SYNTAX_TREE_NOT_INITIALIZED);
     }
 
     return (
@@ -40,4 +40,4 @@ bool AbstractSyntaxTree::evaluate(const SpatialTemporalTrace &spatialTemporalTra
 
 
 // Constants
-const std::string AbstractSyntaxTree::ERR_ABSTRACT_SYNTAX_TREE_NOT_InitializeD = "The abstract syntax tree was not initialized before evaluation. Call the method initializeTree(...) before calling the method evaluate(...).";
+const std::string AbstractSyntaxTree::ERR_ABSTRACT_SYNTAX_TREE_NOT_INITIALIZED = "The abstract syntax tree was not initialized before evaluation. Please call the method initializeTree(...) before calling the method evaluate(...).";

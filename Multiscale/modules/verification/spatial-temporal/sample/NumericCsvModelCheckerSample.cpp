@@ -7,7 +7,7 @@
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
-#include <iostream>
+#include <cstdio>
 
 using namespace multiscale;
 using namespace multiscale::verification;
@@ -16,20 +16,19 @@ using namespace multiscale::verification;
 // Evaluate the abstract syntax tree considering the provided time series data
 void evaluateAbstractSyntaxTree(AbstractSyntaxTree &abstractSyntaxTree,
                                 const std::string &logicProperty,
-                                const SpatialTemporalTrace &timeseries) {
+                                SpatialTemporalTrace &timeseries) {
     MultiscaleArchitectureGraph multiscaleArchitectureGraph;
 
     // Evaluate abstract syntax tree considering the provided time series data
     bool evaluationResult = abstractSyntaxTree.evaluate(timeseries, multiscaleArchitectureGraph);
 
     // Output the result of the evaluation and the corresponding logic property
-    std::cout << (evaluationResult ? "T" : "F") << " ::: "
-              << logicProperty;
+    printf("%c ::: %s", (evaluationResult ? 'T' : 'F') , logicProperty.c_str());
 }
 
 // Evaluate logic properties considering the provided time series data
 int evaluateLogicProperties(const std::vector<std::string> &logicProperties,
-                            const SpatialTemporalTrace &timeseries) {
+                            SpatialTemporalTrace &timeseries) {
     AbstractSyntaxTree abstractSyntaxTree;
 
     for (const std::string &logicProperty : logicProperties) {
@@ -56,7 +55,7 @@ int evaluateLogicProperties(const std::string &timeseriesInputFilePath,
         = logicPropertiesReader.readLogicPropertiesFromFile(logicPropertiesInputFilePath);
 
     SpatialTemporalTrace timeseries
-        = timeseriesReader.readTimeseriesFromFile(timeseriesInputFilePath);
+        = timeseriesReader.readTimeSeriesFromFile(timeseriesInputFilePath);
 
     return evaluateLogicProperties(logicProperties, timeseries);
 }
@@ -64,9 +63,7 @@ int evaluateLogicProperties(const std::string &timeseriesInputFilePath,
 // Main program
 int main(int argc, char **argv) {
     if (argc != 3) {
-        std::cerr << "Usage: NumericCsvModelCheckerSample "
-                  << "<timeseries-csv-input-file> <logic-properties-input-file>"
-                  << std::endl;
+        printf("Usage: NumericCsvModelCheckerSample <timeseries-csv-input-file> <logic-properties-input-file>.\n");
 
         return EXEC_ERR_CODE;
     }
@@ -76,7 +73,7 @@ int main(int argc, char **argv) {
     } catch(const std::exception &e) {
         ExceptionHandler::printDetailedErrorMessage(e);
     } catch(...) {
-        std::cerr << "Exception of unknown type!" << std::endl;
+        printf("Exception of unknown type!\n");
     }
 
     return EXEC_ERR_CODE;

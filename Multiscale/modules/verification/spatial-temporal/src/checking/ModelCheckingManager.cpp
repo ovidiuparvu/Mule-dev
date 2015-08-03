@@ -208,7 +208,7 @@ void ModelCheckingManager::createNewEvaluationResults() {
     }
 }
 
-void ModelCheckingManager::runModelCheckersForTrace(const SpatialTemporalTrace &trace,
+void ModelCheckingManager::runModelCheckersForTrace(SpatialTemporalTrace &trace,
                                                     bool &continueEvaluation) {
     continueEvaluation = false;
     auto nrOfModelCheckers = modelCheckers.size();
@@ -223,7 +223,7 @@ void ModelCheckingManager::runModelCheckersForTrace(const SpatialTemporalTrace &
 }
 
 void ModelCheckingManager::runModelCheckerForTrace(const std::size_t &modelCheckerIndex,
-                                                   const SpatialTemporalTrace &trace) {
+                                                   SpatialTemporalTrace &trace) {
     // Update the model checker status and evaluate the trace
     bool evaluationResult = modelCheckers[modelCheckerIndex]->evaluate(trace);
 

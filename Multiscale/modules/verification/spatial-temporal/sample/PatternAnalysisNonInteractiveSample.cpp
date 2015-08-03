@@ -16,7 +16,7 @@ using namespace multiscale::verification;
 
 // Evaluate the abstract syntax tree considering the provided timeseries
 void evaluateAbstractSyntaxTree(AbstractSyntaxTree &abstractSyntaxTree,
-                                const SpatialTemporalTrace &timeseries) {
+                                SpatialTemporalTrace &timeseries) {
     MultiscaleArchitectureGraph multiscaleArchitectureGraph;
 
     bool evaluationResult = abstractSyntaxTree.evaluate(timeseries, multiscaleArchitectureGraph);
@@ -26,7 +26,7 @@ void evaluateAbstractSyntaxTree(AbstractSyntaxTree &abstractSyntaxTree,
 
 // Analyse patterns considering the provided logic properties and timeseries
 int analysePatterns(const std::vector<std::string> &logicProperties,
-                    const SpatialTemporalTrace &timeseries) {
+                    SpatialTemporalTrace &timeseries) {
     AbstractSyntaxTree result;
 
     for (const std::string &logicProperty : logicProperties) {
@@ -53,7 +53,7 @@ int analysePatterns(const std::string &timeseriesInputFilePath,
         = logicPropertiesReader.readLogicPropertiesFromFile(logicPropertiesInputFilePath);
 
     SpatialTemporalTrace timeseries
-        = timeseriesReader.readTimeseriesFromFile(timeseriesInputFilePath);
+        = timeseriesReader.readTimeSeriesFromFile(timeseriesInputFilePath);
 
     return analysePatterns(logicProperties, timeseries);
 }

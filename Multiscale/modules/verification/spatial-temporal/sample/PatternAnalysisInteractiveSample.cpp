@@ -18,7 +18,7 @@ int analysePatterns(const std::string &inputFilePath) {
     AbstractSyntaxTree result;
     TemporalDataReader reader;
 
-    SpatialTemporalTrace trace = reader.readTimeseriesFromFile(inputFilePath);
+    SpatialTemporalTrace trace = reader.readTimeSeriesFromFile(inputFilePath);
     MultiscaleArchitectureGraph multiscaleArchitectureGraph;
 
     std::cout << "/////////////////////////////////////////////////////////\n\n";

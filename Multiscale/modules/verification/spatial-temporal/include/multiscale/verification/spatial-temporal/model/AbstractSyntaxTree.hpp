@@ -44,13 +44,13 @@ namespace multiscale {
                  * \param spatialTemporalTrace          The given spatial temporal trace
                  * \param multiscaleArchitectureGraph   The considered multiscale architecture graph
                  */
-                bool evaluate(const SpatialTemporalTrace &spatialTemporalTrace,
+                bool evaluate(SpatialTemporalTrace &spatialTemporalTrace,
                               const MultiscaleArchitectureGraph &multiscaleArchitectureGraph);
 
             private:
 
                 // Constants
-                static const std::string ERR_ABSTRACT_SYNTAX_TREE_NOT_InitializeD;
+                static const std::string ERR_ABSTRACT_SYNTAX_TREE_NOT_INITIALIZED;
 
         };
 

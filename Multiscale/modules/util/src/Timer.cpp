@@ -6,26 +6,19 @@ using namespace multiscale;
 
 
 // Define class member fields
-std::chrono::high_resolution_clock::time_point multiscale::Timer::startTimepoint;
-std::chrono::high_resolution_clock::time_point multiscale::Timer::stopTimepoint;
-
-bool multiscale::Timer::isStartedFlag = false;
+std::vector<std::chrono::high_resolution_clock::time_point> multiscale::Timer::startTimePoints;
 
 
 // Define class member functions
 void Timer::start() {
-    if (isStartedFlag) {
-        MS_throw(
-            AlgorithmException,
-            ERR_TIMER_ALREADY_STARTED
-        );
-    }
+    startTimePoints.push_back(
+        std::chrono::high_resolution_clock::now()
+    );
 
-    startTimer();
 }
 
 double Timer::stop() {
-    if (!isStartedFlag) {
+    if (startTimePoints.empty()) {
         MS_throw(
             AlgorithmException,
             ERR_TIMER_STOP_WHEN_NOT_STARTED
@@ -35,25 +28,19 @@ double Timer::stop() {
     return stopTimer();
 }
 
-void Timer::startTimer() {
-    startTimepoint = std::chrono::high_resolution_clock::now();
-
-    isStartedFlag = true;
-}
-
 double Timer::stopTimer() {
-    stopTimepoint = std::chrono::high_resolution_clock::now();
+    std::chrono::high_resolution_clock::time_point stopTimePoint
+        = std::chrono::high_resolution_clock::now();
+    std::chrono::high_resolution_clock::time_point startTimePoint
+        = startTimePoints.back();
 
-    isStartedFlag = false;
+    startTimePoints.pop_back();
 
-    std::chrono::duration<double> duration = (stopTimepoint - startTimepoint);
+    std::chrono::duration<double, std::nano> duration = (stopTimePoint - startTimePoint);
 
-    return (
-        duration.count()
-    );
+    return (duration.count());
 }
 
 
 // Constants
-const std::string multiscale::Timer::ERR_TIMER_ALREADY_STARTED          = "You cannot start a timer which was previously started and not stopped. Please change.";
 const std::string multiscale::Timer::ERR_TIMER_STOP_WHEN_NOT_STARTED    = "You cannot stop a timer which was not previously started. Please change.";

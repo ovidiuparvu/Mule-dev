@@ -5,7 +5,7 @@
 using namespace multiscale::verification;
 
 
-bool ModelChecker::evaluate(const SpatialTemporalTrace &trace) {
+bool ModelChecker::evaluate(SpatialTemporalTrace &trace) {
     bool evaluationResult = abstractSyntaxTree.evaluate(trace, multiscaleArchitectureGraph);
 
     updateModelChecker(evaluationResult);

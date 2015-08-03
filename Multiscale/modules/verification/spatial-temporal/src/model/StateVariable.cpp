@@ -5,6 +5,9 @@ using namespace multiscale::verification;
 
 StateVariable::StateVariable() {}
 
+StateVariable::StateVariable(const std::string &scaleAndSubsystem)
+    : scaleAndSubsystem(scaleAndSubsystem) {}
+
 StateVariable::~StateVariable() {}
 
 std::string StateVariable::getScaleAndSubsystem() const {

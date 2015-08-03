@@ -1,6 +1,6 @@
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/exception/MultiscaleException.hpp"
-#include "multiscale/util/Filesystem.hpp"
+#include "multiscale/util/FileReader.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/data/TemporalDataReader.hpp"
 
@@ -10,63 +10,48 @@ using namespace multiscale::verification;
 
 TemporalDataReader::TemporalDataReader() : currentLineNumber(0) {}
 
-SpatialTemporalTrace TemporalDataReader::readTimeseriesFromFile(const std::string &filePath) {
-    if (Filesystem::isValidFilePath(filePath, INPUT_FILE_EXTENSION)) {
-        this->filePath = filePath;
-        this->currentLineNumber = 0;
+SpatialTemporalTrace TemporalDataReader::readTimeSeriesFromFile(const std::string &filePath) {
+    this->filePath = filePath;
 
-        return readFromValidInputFile();
-    } else {
-        MS_throw(
-            InvalidInputException,
-            ERR_INVALID_INPUT_FILE_PATH_BEGIN +
-            filePath +
-            ERR_INVALID_INPUT_FILE_PATH_END
-        );
-    }
+    // Read the file contents and represent it as a collection of lines
+    std::vector<std::string> inputFile = FileReader::readFileLineByLine(filePath, INPUT_FILE_EXTENSION);
 
-    // Line added to avoid "control reaches end of non-void function" warnings
-    return SpatialTemporalTrace();
+    return readTimeSeriesFromFile(inputFile);
 }
 
-SpatialTemporalTrace TemporalDataReader::readFromValidInputFile() {
-    SpatialTemporalTrace trace;
+SpatialTemporalTrace TemporalDataReader::readTimeSeriesFromFile(const std::vector<std::string> &inputFile) {
+    SpatialTemporalTrace trace(inputFile.size());
 
-    std::ifstream fin(filePath, std::ifstream::in);
-
-    readFromValidOpenedInputFile(fin, trace);
-
-    fin.close();
+    if (isValidInputFile(inputFile)) {
+        readInputFileHeader(inputFile);
+        readInputFileContents(inputFile, trace);
+    }
 
     return trace;
 }
 
-void TemporalDataReader::readFromValidOpenedInputFile(std::ifstream &fin, SpatialTemporalTrace &trace) {
-    if (fin.is_open()) {
-        readInputFileHeader(fin, trace);
-        readInputFileContents(fin, trace);
-    } else {
+bool TemporalDataReader::isValidInputFile(const std::vector<std::string> &inputFile) {
+    if (inputFile.empty()) {
         MS_throw(
             InvalidInputException,
-            ERR_OPEN_INPUT_FILE_BEGIN +
+            ERR_INPUT_FILE_EMPTY_BEGIN +
             filePath +
-            ERR_OPEN_INPUT_FILE_END
+            ERR_INPUT_FILE_EMPTY_END
         );
     }
+
+    return true;
 }
 
-void TemporalDataReader::readInputFileHeader(std::ifstream &fin, SpatialTemporalTrace &trace) {
-    std::string headerRow;
-
-    getline(fin, headerRow);
-
+void TemporalDataReader::readInputFileHeader(const std::vector<std::string> &inputFile) {
     // Advance the current line number
-    currentLineNumber++;
+    ++currentLineNumber;
 
     // The first observable variable is always time
-    observableVariables = StringManipulator::split(headerRow, INPUT_FILE_DELIMITER);
+    observableVariables = StringManipulator::split(inputFile[0], INPUT_FILE_DELIMITER);
 
     validateObservableVariables();
+    createNumericStateVariableIdsFromObservableVariables();
 }
 
 void TemporalDataReader::validateObservableVariables() {
@@ -81,7 +66,7 @@ void TemporalDataReader::validateObservableVariables() {
     }
 
     // Check if all observable variable names are non-empty
-    for (auto name : observableVariables) {
+    for (const std::string &name : observableVariables) {
         if (name.empty()) {
             MS_throw(
                 InvalidInputException,
@@ -91,23 +76,40 @@ void TemporalDataReader::validateObservableVariables() {
     }
 }
 
-void TemporalDataReader::readInputFileContents(std::ifstream &fin, SpatialTemporalTrace &trace) {
-    std::string              line;
-    std::vector<std::string> lineValues;
+void TemporalDataReader::createNumericStateVariableIdsFromObservableVariables() {
+    numericStateVariableIds.reserve(observableVariables.size());
 
-    while (!fin.eof()) {
-        getline(fin, line);
-
-        // Consider processing the line only if it has content
-        if (!line.empty()) {
-            // Advance the current line number
-            currentLineNumber++;
-
-            lineValues = StringManipulator::split(line, INPUT_FILE_DELIMITER);
-
-            processLineTokens(lineValues, trace);
-        }
+    for (const std::string &name : observableVariables) {
+        numericStateVariableIds.push_back(
+            NumericStateVariableId(name)
+        );
     }
+}
+
+void TemporalDataReader::readInputFileContents(const std::vector<std::string> &inputFile,
+                                               SpatialTemporalTrace &trace) {
+    std::size_t nrOfLines = inputFile.size();
+
+    // Process the lines of the input file (excluding the first header line)
+    for (std::size_t i = 1; i < (nrOfLines - 1); ++i) {
+        processLine(inputFile[i], trace);
+    }
+
+    // If the last line is non-empty process it
+    if (!inputFile[nrOfLines - 1].empty()) {
+        processLine(inputFile[nrOfLines - 1], trace);
+    }
+}
+
+void TemporalDataReader::processLine(const std::string &line, SpatialTemporalTrace &trace) {
+    // Advance the current line number
+    ++currentLineNumber;
+
+    // Split the line into multiple values
+    std::vector<std::string> lineValues = StringManipulator::split(line, INPUT_FILE_DELIMITER);
+
+    // Process the values
+    processLineTokens(lineValues, trace);
 }
 
 void TemporalDataReader::processLineTokens(const std::vector<std::string> &lineValues,
@@ -151,7 +153,7 @@ void TemporalDataReader::addNumericStateVariablesToTimePoint(const std::vector<s
         double observableVariableValue = StringManipulator::convert<double>(lineTokens[i]);
 
         timePoint.addNumericStateVariable(
-            NumericStateVariableId(observableVariables[i]),
+            numericStateVariableIds[i],
             observableVariableValue
         );
     }
@@ -163,11 +165,8 @@ const std::string TemporalDataReader::INPUT_FILE_EXTENSION = ".csv";
 
 const std::string TemporalDataReader::INPUT_FILE_DELIMITER = ",; \t";
 
-const std::string TemporalDataReader::ERR_INVALID_INPUT_FILE_PATH_BEGIN = "The provided input file path (";
-const std::string TemporalDataReader::ERR_INVALID_INPUT_FILE_PATH_END   = ") does not point to a file with the required extension. Please change.";
-
-const std::string TemporalDataReader::ERR_OPEN_INPUT_FILE_BEGIN = "The provided input file (";
-const std::string TemporalDataReader::ERR_OPEN_INPUT_FILE_END   = ") could not be opened. Please make sure it is available and not currently used by another process.";
+const std::string TemporalDataReader::ERR_INPUT_FILE_EMPTY_BEGIN    = "The spatio-temporal trace could not be created because the provided input file (";
+const std::string TemporalDataReader::ERR_INPUT_FILE_EMPTY_END      = ") is empty. Please change.";
 
 const std::string TemporalDataReader::ERR_INVALID_NR_OBSERVABLE_VARIABLES_BEGIN = "The number of observable variables (";
 const std::string TemporalDataReader::ERR_INVALID_NR_OBSERVABLE_VARIABLES_END   = ") should be greater or equal to two. Please change.";

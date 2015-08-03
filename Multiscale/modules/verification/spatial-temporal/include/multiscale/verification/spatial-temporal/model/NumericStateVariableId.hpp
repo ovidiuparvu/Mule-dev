@@ -83,8 +83,7 @@ namespace std {
             ) const noexcept {
                 return (
                     std::hash<std::string>()(
-                        numericStateVariableId.getName() +
-                        numericStateVariableId.getScaleAndSubsystem()
+                        numericStateVariableId.getName()
                     )
                 );
             }

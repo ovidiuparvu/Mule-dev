@@ -5,6 +5,8 @@
 #include "multiscale/verification/spatial-temporal/attribute/NumericStateVariableAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/ScaleAndSubsystemEvaluator.hpp"
 
+#include <iostream>
+
 
 namespace multiscale {
 
@@ -25,10 +27,11 @@ namespace multiscale {
                                        const TimePoint &timePoint,
                                        const MultiscaleArchitectureGraph &multiscaleArchitectureGraph) {
                     // Obtain the scale and subsystem
-                    const std::string &scaleAndSubsystem =
+                    std::string scaleAndSubsystem(
                         numericStateVariable.scaleAndSubsystem.get_value_or(
                             ScaleAndSubsystemAttribute()
-                        ).scaleAndSubsystem;
+                        ).scaleAndSubsystem
+                    );
 
                     // Validate the scale and subsystem
                     ScaleAndSubsystemEvaluator::validateScaleAndSubsystem(
@@ -54,7 +57,8 @@ namespace multiscale {
                  * \param scaleAndSubsystem The scale and subsystem associated with the numeric state variable
                  * \param timePoint         The given timepoint
                  */
-                static double evaluate(const std::string &name, const std::string &scaleAndSubsystem,
+                static double evaluate(const std::string &name,
+                                       const std::string &scaleAndSubsystem,
                                        const TimePoint &timePoint) {
                     // Return the value of the numeric state variable
                     return (

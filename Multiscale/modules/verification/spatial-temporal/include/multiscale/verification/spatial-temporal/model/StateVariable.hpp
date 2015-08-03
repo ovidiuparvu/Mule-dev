@@ -18,6 +18,7 @@ namespace multiscale {
             public:
 
                 StateVariable();
+                StateVariable(const std::string &scaleAndSubsystem);
                 ~StateVariable();
 
                 //! Get the scale and subsystem of the state variable
