@@ -18,7 +18,7 @@ TEST_F(NumericCsvModelCheckingPerformanceTest, ManyNumericStateVariablesWithMedi
             "${PROJECT_SOURCE_DIR}/data/test/verification/spatial-temporal/performance/medium_length_numeric_state_variable_names/logic_statements.in",
             "${PROJECT_SOURCE_DIR}/data/test/verification/spatial-temporal/performance/medium_length_numeric_state_variable_names/time_series.csv"
         ),
-        5000000000
+        10000000000
     );
 }
 

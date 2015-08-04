@@ -18,7 +18,7 @@ TEST_F(NumericCsvModelCheckingPerformanceTest, ManyNumericStateVariablesWithMedi
             "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/performance/medium_length_numeric_state_variable_names/logic_statements.in",
             "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/performance/medium_length_numeric_state_variable_names/time_series.csv"
         ),
-        5000000000
+        10000000000
     );
 }
 

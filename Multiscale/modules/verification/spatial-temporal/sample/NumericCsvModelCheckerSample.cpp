@@ -13,51 +13,62 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-// Evaluate the abstract syntax tree considering the provided time series data
-void evaluateAbstractSyntaxTree(AbstractSyntaxTree &abstractSyntaxTree,
-                                const std::string &logicProperty,
-                                SpatialTemporalTrace &timeseries) {
-    MultiscaleArchitectureGraph multiscaleArchitectureGraph;
+// Print the evaluation results
+void printEvaluationResults(const std::vector<std::string> &logicProperties,
+                            const std::vector<bool> &evaluationResults) {
+    std::size_t nrOfLogicProperties = logicProperties.size();
 
-    // Evaluate abstract syntax tree considering the provided time series data
-    bool evaluationResult = abstractSyntaxTree.evaluate(timeseries, multiscaleArchitectureGraph);
-
-    // Output the result of the evaluation and the corresponding logic property
-    printf("%c ::: %s", (evaluationResult ? 'T' : 'F') , logicProperty.c_str());
+    // Print the evaluation result for each logic property
+    for (std::size_t i = 0; i < nrOfLogicProperties; ++i) {
+        printf("%c ::: %s", (evaluationResults[i] ? 'T' : 'F'), logicProperties[i].c_str());
+    }
 }
 
 // Evaluate logic properties considering the provided time series data
-int evaluateLogicProperties(const std::vector<std::string> &logicProperties,
-                            SpatialTemporalTrace &timeseries) {
-    AbstractSyntaxTree abstractSyntaxTree;
+void evaluateLogicProperties(const std::vector<std::string> &logicProperties,
+                             SpatialTemporalTrace &timeseries,
+                             std::vector<bool> &evaluationResults) {
+    AbstractSyntaxTree          abstractSyntaxTree;
+    MultiscaleArchitectureGraph multiscaleArchitectureGraph;
 
-    for (const std::string &logicProperty : logicProperties) {
+    std::size_t nrOfLogicProperties = logicProperties.size();
+
+    for (std::size_t i = 0; i < nrOfLogicProperties; ++i) {
         // Create a new parser for the provided logic property
-        Parser parser(logicProperty);
+        Parser parser(logicProperties[i]);
 
         // Parse the logic property and create the corresponding abstract syntax tree
         parser.parse(abstractSyntaxTree);
 
         // Evaluate the abstract syntax tree considering the provided time series data
-        evaluateAbstractSyntaxTree(abstractSyntaxTree, logicProperty, timeseries);
+        evaluationResults[i] = abstractSyntaxTree.evaluate(timeseries, multiscaleArchitectureGraph);
     }
-
-    return EXEC_SUCCESS_CODE;
 }
 
 // Evaluate logic properties considering the provided time series data
 int evaluateLogicProperties(const std::string &timeseriesInputFilePath,
                             const std::string &logicPropertiesInputFilePath) {
-    TemporalDataReader timeseriesReader;
+    TemporalDataReader      timeseriesReader;
     LogicPropertyDataReader logicPropertiesReader;
 
+    // Read the logic properties from the given file
     std::vector<std::string> logicProperties
         = logicPropertiesReader.readLogicPropertiesFromFile(logicPropertiesInputFilePath);
 
+    // Read the time series data from the given file
     SpatialTemporalTrace timeseries
         = timeseriesReader.readTimeSeriesFromFile(timeseriesInputFilePath);
 
-    return evaluateLogicProperties(logicProperties, timeseries);
+    // Define a vector for storing the result of evaluating logic properties against time series data
+    std::vector<bool> evaluationResults(logicProperties.size());
+
+    // Evaluate the logic properties
+    evaluateLogicProperties(logicProperties, timeseries, evaluationResults);
+
+    // Print the evaluation results
+    printEvaluationResults(logicProperties, evaluationResults);
+
+    return EXEC_SUCCESS_CODE;
 }
 
 // Main program
