@@ -25,15 +25,15 @@ namespace multiscale {
 
             private:
 
-                unsigned long value;   /*!< The value of the timepoint within a simulation/experiment */
+                unsigned long value;   /*!< The value of the time point within a simulation/experiment */
 
                 /*
-                 * TODO: Update Timepoint class if no longer validating input XML files
+                 * TODO: Update TimePoint class if no longer validating input XML files
                  *
-                 *  WARNING: The Timepoint class contains as a member a list of spatial entities
+                 *  WARNING: The TimePoint class contains as a member a list of spatial entities
                  *           because the uniqueness of the spatial entities is determined using XML
                  *           input file validation. If this validation is no longer used then replace the list
-                 *           in the Timepoint class with a set in order to ensure the uniqueness of
+                 *           in the TimePoint class with a set in order to ensure the uniqueness of
                  *           the spatial entities.
                  */
                 std::vector<std::list<std::shared_ptr<SpatialEntity>>>
@@ -58,12 +58,12 @@ namespace multiscale {
                 TimePoint(const TimePoint &timePoint);
                 ~TimePoint();
 
-                //! Get the value of the timepoint
+                //! Get the value of the time point
                 unsigned long getValue() const;
 
-                //! Set the value of the timepoint
+                //! Set the value of the time point
                 /*!
-                 * \param value The value of the timepoint
+                 * \param value The value of the time point
                  */
                 void setValue(unsigned long value);
 
@@ -99,8 +99,8 @@ namespace multiscale {
                 void addSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                       const SubsetSpecificType &spatialEntityType);
 
-                //! Add a spatial entity and its corresponding type to the timepoint
-                /*! The spatial entity is added to the timepoint and the corresponding spatial entity type flag is set
+                //! Add a spatial entity and its corresponding type to the time point
+                /*! The spatial entity is added to the time point and the corresponding spatial entity type flag is set
                  *  to true in the collection of considered spatial entity types.
                  *
                  * \param spatialEntity         The spatial entity
@@ -132,7 +132,7 @@ namespace multiscale {
                  */
                 bool containsNumericStateVariable(const NumericStateVariableId &id) const;
 
-                //! Check if an identical valued spatial entity is already contained by the timepoint
+                //! Check if an identical valued spatial entity is already contained by the time point
                 /*!
                  * \param spatialEntity     The considered spatial entity
                  * \param spatialEntityType The type of the spatial entity
@@ -140,7 +140,7 @@ namespace multiscale {
                 bool containsSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                            const SubsetSpecificType &spatialEntityType);
 
-                //! Check if an identical valued spatial entity is already contained by the timepoint
+                //! Check if an identical valued spatial entity is already contained by the time point
                 /*!
                  * \param spatialEntity             The considered spatial entity
                  * \param spatialEntityTypeIndex    The index of the spatial entity type
@@ -148,7 +148,7 @@ namespace multiscale {
                 bool containsSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                            const std::size_t &spatialEntityTypeIndex);
 
-                //! Check if an identical valued spatial entity is already contained by the timepoint
+                //! Check if an identical valued spatial entity is already contained by the time point
                 /*!
                  * \param spatialEntity     The considered spatial entity
                  * \param spatialEntityType The type of the spatial entity
@@ -156,7 +156,7 @@ namespace multiscale {
                 bool containsSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                            const SubsetSpecificType &spatialEntityType) const;
 
-                //! Check if an identical valued spatial entity is already contained by the timepoint
+                //! Check if an identical valued spatial entity is already contained by the time point
                 /*!
                  * \param spatialEntity             The considered spatial entity
                  * \param spatialEntityTypeIndex    The index of the spatial entity type
@@ -263,45 +263,45 @@ namespace multiscale {
                 std::unordered_map<NumericStateVariableId, double>::const_iterator
                 getNumericStateVariablesEndIterator() const;
 
-                //! Compute the difference of this timepoint and the given timepoint (spatial entities only)
-                /*! Compute the difference of this timepoint and the given timepoint by taking into account
+                //! Compute the difference of this time point and the given time point (spatial entities only)
+                /*! Compute the difference of this time point and the given time point by taking into account
                  *  the value of consideredSpatialEntityType
                  *
-                 *  Spatial entities belonging to the first and not to the second timepoint will be
-                 *  included in the resulting timepoint.
+                 *  Spatial entities belonging to the first and not to the second time point will be
+                 *  included in the resulting time point.
                  *
-                 *  The consideredSpatialEntityType of the resulting timepoint will be the consideredSpatialEntityType
-                 *  of this timepoint.
+                 *  The consideredSpatialEntityType of the resulting time point will be the consideredSpatialEntityType
+                 *  of this time point.
                  *
-                 * \param timePoint The given timepoint
+                 * \param timePoint The given time point
                  */
                 void timePointDifference(const TimePoint &timePoint);
 
-                //! Compute the intersection of this timepoint and the given timepoint (spatial entities only)
-                /*! Compute the intersection of this timepoint and the given timepoint by taking into account
+                //! Compute the intersection of this time point and the given time point (spatial entities only)
+                /*! Compute the intersection of this time point and the given time point by taking into account
                  *  the value of consideredSpatialEntityType
                  *
-                 *  Spatial entities belonging both to the first and the second timepoint will be
-                 *  included in the resulting timepoint.
+                 *  Spatial entities belonging both to the first and the second time point will be
+                 *  included in the resulting time point.
                  *
-                 *  The consideredSpatialEntityType of the resulting timepoint will be the intersection of the
-                 *  timepoints' consideredSpatialEntityTypes.
+                 *  The consideredSpatialEntityType of the resulting time point will be the intersection of the
+                 *  time points' consideredSpatialEntityTypes.
                  *
-                 * \param timePoint The given timepoint
+                 * \param timePoint The given time point
                  */
                 void timePointIntersection(const TimePoint &timePoint);
 
-                //! Compute the union of this timepoint and the given timepoint (spatial entities only)
-                /*! Compute the union of this timepoint and the given timepoint by taking into account
+                //! Compute the union of this time point and the given time point (spatial entities only)
+                /*! Compute the union of this time point and the given time point by taking into account
                  *  the value of consideredSpatialEntityType.
                  *
-                 *  Spatial entities belonging either to the first or the second timepoint will be
-                 *  included in the resulting timepoint.
+                 *  Spatial entities belonging either to the first or the second time point will be
+                 *  included in the resulting time point.
                  *
-                 *  The consideredSpatialEntityType of the resulting timepoint will be the union of the
-                 *  timepoints' consideredSpatialEntityTypes.
+                 *  The consideredSpatialEntityType of the resulting time point will be the union of the
+                 *  time points' consideredSpatialEntityTypes.
                  *
-                 * \param timePoint The given timepoint
+                 * \param timePoint The given time point
                  */
                 void timePointUnion(const TimePoint &timePoint);
 
@@ -314,37 +314,39 @@ namespace multiscale {
                 removeSpatialEntity(std::list<std::shared_ptr<SpatialEntity>>::iterator &position,
                                     const SubsetSpecificType &spatialEntityType);
 
-                //! Check if two timepoints (this instance and the provided one) are equal
+                //! Check if two time points (this instance and the provided one) are equal
                 /*!
-                 * \param rhsTimepoint  The provided timepoint against which this timepoint is compared
+                 * \param rhsTimepoint  The provided time point against which this time point is compared
                  */
                 bool operator==(const TimePoint &rhsTimepoint);
 
-                //! Check if two timepoints (this instance and the provided one) are different (i.e. not equal)
+                //! Check if two time points (this instance and the provided one) are different (i.e. not equal)
                 /*!
-                 * \param rhsTimepoint  The provided timepoint against which this timepoint is compared
+                 * \param rhsTimepoint  The provided time point against which this time point is compared
                  */
                 bool operator!=(const TimePoint &rhsTimepoint);
 
             private:
 
-                //! Compute the given set operation of this timepoint and the given timepoint considering the given set operation type
-                /*!
-                 * \param timePoint         The given timepoint
+                //! Compute the given set operation of this time point and the given time point
+                /*! Compute the given set operation of this time point and the given time point considering the given
+                 *  set operation type.
+                 *
+                 * \param timePoint         The given time point
                  * \param setOperationType  The considered set operation type
                  */
                 void timePointSetOperation(const TimePoint &timePoint, const SubsetOperationType &setOperationType);
 
-                //! Apply the set operation to the collection of spatial entities from this and the given timepoint
+                //! Apply the set operation to the collection of spatial entities from this and the given time point
                 /*!
-                 * \param timePoint         The given timepoint
+                 * \param timePoint         The given time point
                  * \param setOperationType  The considered set operation type
                  */
                 void updateSpatialEntities(const TimePoint &timePoint, const SubsetOperationType &setOperationType);
 
-                //! Compute the given set operation on the set of spatial entities of the given type from this and the provided timepoint
+                //! Compute the given set operation on the set of spatial entities of the given type from this and the provided time point
                 /*!
-                 * \param timePoint                 The given timepoint
+                 * \param timePoint                 The given time point
                  * \param setOperationType          The considered set operation type
                  * \param spatialEntityTypeIndex    The considered spatial entity type index
                  */
@@ -352,9 +354,9 @@ namespace multiscale {
                 spatialEntitiesSetOperation(const TimePoint &timePoint, const SubsetOperationType &setOperationType,
                                             const SubsetSpecificType &spatialEntityTypeIndex);
 
-                //! Update the considered spatial entity type of this timepoint considering the given setOperationType and consideredSpatialEntityTypes
+                //! Update the considered spatial entity type of this time point considering the given setOperationType and consideredSpatialEntityTypes
                 /*
-                 * The i-th considered spatial entity type of this timepoint is updated depending on the given
+                 * The i-th considered spatial entity type of this time point is updated depending on the given
                  * setOperationType as follows:
                  *     - Difference:    consideredSpatialEntityType(thisTimePoint) = consideredSpatialEntityType(thisTimePoint)
                  *     - Intersection:  consideredSpatialEntityType(thisTimePoint) = consideredSpatialEntityType(thisTimePoint) AND
@@ -368,23 +370,23 @@ namespace multiscale {
                 void updateConsideredSpatialEntityTypes(const std::bitset<NR_SUBSET_SPECIFIC_TYPES> &consideredSpatialEntityTypes,
                                                         const SubsetOperationType &setOperationType);
 
-                /*! Check if this and the provided timepoint contain the same numeric state variables
+                /*! Check if this and the provided time point contain the same numeric state variables
                  *
-                 * \param rhsTimepoint  The timepoint against which this timepoint's numeric state variables
+                 * \param rhsTimepoint  The time point against which this timepoint's numeric state variables
                  *                      are compared
                  */
                 bool areEqualNumericStateVariables(const TimePoint &rhsTimepoint);
 
-                //! Check if this and the provided timepoint contain the same spatial entities
+                //! Check if this and the provided time point contain the same spatial entities
                 /*!
-                 * \param rhsTimepoint  The timepoint against which this timepoint's numeric state variables
+                 * \param rhsTimepoint  The time point against which this timepoint's numeric state variables
                  *                      are compared
                  */
                 bool areEqualSpatialEntities(const TimePoint &rhsTimepoint);
 
-                //! Check if this and the provided timepoint contain the same spatial entities of the given type
+                //! Check if this and the provided time point contain the same spatial entities of the given type
                 /*!
-                 * \param rhsTimepoint              The timepoint against which this timepoint's numeric state
+                 * \param rhsTimepoint              The time point against which this timepoint's numeric state
                  *                                  variables are compared
                  * \param spatialEntityTypeIndex    The index of the considered spatial entity type
                  */

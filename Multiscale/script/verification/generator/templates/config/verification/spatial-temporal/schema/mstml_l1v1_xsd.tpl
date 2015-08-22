@@ -13,7 +13,7 @@
     <xs:annotation>
         <xs:documentation xml:lang="en">
             Multiscale Spatial Temporal Markup Language description.
-            Copyright 2014 Ovidiu Parvu. 
+            Copyright 2015 Ovidiu Parvu. 
         </xs:documentation>
     </xs:annotation>
 
@@ -52,7 +52,7 @@
             <xs:element minOccurs="0" maxOccurs="unbounded" name="numericStateVariable" type="NumericStateVariableType"/>
         </xs:sequence>
         
-        <xs:attribute name="value" type="xs:nonNegativeInteger"/>
+        <xs:attribute name="value" type="NonNegativeDoubleType"/>
     </xs:complexType>
 
     <xs:complexType name="SpatialEntityType">
@@ -77,6 +77,12 @@
     
     <!-- User-defined simple types -->
 
+    <xs:simpleType name="NonNegativeDoubleType">
+        <xs:restriction base="xs:double">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
     <xs:simpleType name="ScaleAndSubsystemType">
         <xs:restriction base="xs:string">
             <xs:pattern value="[0-9a-zA-Z]+\.[0-9a-zA-Z]+"/>
