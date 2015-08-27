@@ -42,7 +42,7 @@ namespace multiscale {
              * \param inputFileStream   The considered input file stream
              */
             static std::vector<std::string> readStreamContentsAndSplitLines(const std::string &filePath,
-                                                                            std::ifstream &inputStream);
+                                                                            std::ifstream &inputFileStream);
 
             //! Read the open input file stream contents and split the contents in lines
             /*!
@@ -50,15 +50,16 @@ namespace multiscale {
              * \param inputFileStream   The considered input file stream
              */
             static std::vector<std::string> readOpenStreamContentsAndSplitLines(const std::string &filePath,
-                                                                                std::ifstream &inputStream);
+                                                                                std::ifstream &inputFileStream);
 
             //! Read the open input file stream contents
             /*!
              * \param filePath          The path to the input file
              * \param inputFileStream   The considered input file stream
+             * \param buffer            The buffer in which data from the input file stream is temporarily stored
              */
             static std::string readOpenStreamContents(const std::string &filePath,
-                                                      std::ifstream &inputStream,
+                                                      std::ifstream &inputFileStream,
                                                       char *buffer);
 
             //! Read up to BUFFER_SIZE characters from the provided input file stream

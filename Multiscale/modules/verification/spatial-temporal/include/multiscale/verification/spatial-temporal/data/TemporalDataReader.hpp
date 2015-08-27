@@ -11,7 +11,7 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for reading (non-spatial) timeseries data from a .csv file
+        //! Class for reading (non-spatial) time series data from a .csv file
         /*!
          * The format of the .csv input files is:
          *     Time,Observable 1,Observable 2, ..., Observable n
@@ -20,7 +20,7 @@ namespace multiscale {
          *     ...
          *     Tm, O1m, O2m, ..., Onm
          * where the first line contains the name of the observable variables (e.g. species)
-         * and the subsequent lines the values of these variables for a given timepoint
+         * and the subsequent lines the values of these variables for a given time point
          * (Ti, 1 <= i <= m)
          */
         class TemporalDataReader {
@@ -101,7 +101,7 @@ namespace multiscale {
                  */
                 void processLineTokens(const std::vector<std::string> &lineTokens, SpatialTemporalTrace &trace);
 
-                //! Create a new timepoint in the trace from the given tokens
+                //! Create a new time point in the trace from the given tokens
                 /*!
                  * \param lineTokens   The given line tokens
                  * \param trace        The spatial temporal trace created using the data from the input file
@@ -109,18 +109,18 @@ namespace multiscale {
                 void createTimePointFromTokens(const std::vector<std::string> &lineTokens,
                                                SpatialTemporalTrace &trace);
 
-                //! Set the value of the given timepoint considering the first token
+                //! Set the value of the given time point considering the first token
                 /*!
                  * \param lineTokens   The given line tokens
-                 * \param timePoint    The provided timepoint
+                 * \param timePoint    The provided time point
                  */
                 void setTimePointValue(const std::vector<std::string> &lineTokens,
                                        TimePoint &timePoint);
 
-                //! Add the numeric state variable values to the timepoint
+                //! Add the numeric state variable values to the time point
                 /*!
                  * \param lineTokens   The given line tokens
-                 * \param timePoint    The provided timepoint
+                 * \param timePoint    The provided time point
                  */
                 void addNumericStateVariablesToTimePoint(const std::vector<std::string> &lineTokens,
                                                          TimePoint &timePoint);

@@ -11,6 +11,7 @@
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
+#include <boost/spirit/include/qi_real.hpp>
 
 #include <string>
 
@@ -115,6 +116,11 @@ namespace multiscale {
                 ComparatorNonEqualTypeParser
                     comparatorNonEqualTypeParser;       /*!< The comparator type parser which does not accept
                                                              the "=" symbol */
+
+                // Define an unsigned real number parser
+
+                qi::real_parser<double, qi::ureal_policies<double>>
+                    unsignedRealParser;                 /*!< The unsigned real number parser */
 
             public:
 

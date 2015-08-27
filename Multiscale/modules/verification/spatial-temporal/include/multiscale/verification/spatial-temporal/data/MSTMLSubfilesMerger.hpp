@@ -15,15 +15,15 @@ namespace multiscale {
             private:
 
                 std::string
-                    timepointsValuesFilePath;   /*!< The path to the file containing the considered
-                                                     timepoints' values */
+                    timePointsValuesFilePath;   /*!< The path to the file containing the considered
+                                                     time points' values */
 
                 SpatialTemporalDataReader
                     traceReader;                /*!< The reader used to input spatial temporal traces from
                                                      the MSTML subfiles */
 
-                std::vector<unsigned long>
-                    timepointsValues;           /*!< The considered timepoints' values */
+                std::vector<double>
+                    timePointsValues;           /*!< The considered time points' values */
 
                 SpatialTemporalTrace
                     resultingTrace;             /*!< The trace obtained after merging all subtraces
@@ -32,17 +32,17 @@ namespace multiscale {
             public:
 
                 MSTMLSubfilesMerger(const std::string &mstmlSubfilesFolderPath,
-                                    const std::string &timepointsValuesFilePath);
+                                    const std::string &timePointsValuesFilePath);
                 ~MSTMLSubfilesMerger();
 
-                //! Merge the MSTML sufiles from the provided folder considering the given timepoints values
+                //! Merge the MSTML sufiles from the provided folder considering the given time points values
                 void mergeMSTMLSubfiles();
 
                 //! Get the resulting merged spatial temporal trace
                 SpatialTemporalTrace getResultingMergedTrace();
 
                 //! Output the resulting MSTML file to the file having the provided output path
-                /*! If the number of timepoints in the trace is greater than zero output the trace
+                /*! If the number of time points in the trace is greater than zero output the trace
                  *  to an xml file. Otherwise throw an exception.
                  *
                  * \param mstmlFileOutputPath   The path to the resulting (merged) MSTML file
@@ -54,27 +54,27 @@ namespace multiscale {
                 //! Initialisation function
                 void initialize();
 
-                //! Read timepoints' values
-                void readTimepointsValues();
+                //! Read time points' values
+                void readTimePointsValues();
 
-                //! Read timepoints' values from the provided input stream
-                /*! The format of the timepoints values input file is:
+                //! Read time points' values from the provided input stream
+                /*! The format of the time points values input file is:
                  *  Line (L) 1: Header (usually "Time")
-                 *  L2:         Timepoint value 1
-                 *  L3:         Timepoint value 2
+                 *  L2:         Time point value 1
+                 *  L3:         Time point value 2
                  *  ...         ...
-                 *  Ln:         Timepoint value n-1
+                 *  Ln:         Time point value n-1
                  *
-                 * \param fin   Input stream of timepoints' values
+                 * \param fin   Input stream of time points' values
                  */
-                void readTimepointsValuesFromStream(std::ifstream &fin);
+                void readTimePointsValuesFromStream(std::ifstream &fin);
 
-                //! Convert the provided string to a timepoint value (i.e. unsigned long)
-                /*! If the provided string cannot be converted to an unsigned long an error is thrown.
+                //! Convert the provided string to a time point value (i.e. double)
+                /*! If the provided string cannot be converted to a double an error is thrown.
                  *
-                 * \param timepointValueAsString    The timepoint value represented as a string
+                 * \param timePointValueAsString    The time point value represented as a string
                  */
-                unsigned long convertToTimepointValue(const std::string &timepointValueAsString);
+                double convertToTimePointValue(const std::string &timePointValueAsString);
 
                 //! Add the subtraces corresponding to the MSTML subfiles to the resulting trace
                 void addSubtracesToResultingTrace();
@@ -89,9 +89,9 @@ namespace multiscale {
 
                 //! Validate the provided subtrace
                 /*! A subtrace is valid if:
-                 *      1. The number of timepoints it contains is equal to the number
-                 *         of timepoint values read from the provided timepointsValuesFilePath file;
-                 *      2. The timepoints values of the subtrace match the timepoints values in the
+                 *      1. The number of time points it contains is equal to the number
+                 *         of time point values read from the provided timePointsValuesFilePath file;
+                 *      2. The time points values of the subtrace match the time points values in the
                  *         resulting trace.
                  *
                  * \param subtrace          The provided spatial temporal subtrace
@@ -100,31 +100,31 @@ namespace multiscale {
                 void validateSubtrace(const SpatialTemporalTrace &subtrace,
                                       const std::string &subtraceFilepath);
 
-                //! Check if the provided subtrace contains the correct number of timepoints
-                /*! A subtrace is valid if the number of timepoints it contains is equal to the number
-                 *  of timepoint values read from the provided timepointsValuesFilePath file;
+                //! Check if the provided subtrace contains the correct number of time points
+                /*! A subtrace is valid if the number of time points it contains is equal to the number
+                 *  of time point values read from the provided timePointsValuesFilePath file;
                  *
                  * \param subtrace          The provided spatial temporal subtrace
                  * \param subtraceFilepath  The path to the file containing the subtrace related information
                  */
-                void validateSubtraceNumberOfTimepoints(const SpatialTemporalTrace &subtrace,
+                void validateSubtraceNumberOfTimePoints(const SpatialTemporalTrace &subtrace,
                                                         const std::string &subtraceFilepath);
 
-                //! Check if the provided subtrace timepoints values are valid
-                /*! A subtrace is valid if the timepoints values of the subtrace match the
-                 * timepoints values in the resulting trace
+                //! Check if the provided subtrace time points values are valid
+                /*! A subtrace is valid if the time points values of the subtrace match the
+                 * time points values in the resulting trace
                  *
                  * \param subtrace          The provided spatial temporal subtrace
                  * \param subtraceFilepath  The path to the file containing the subtrace related information
                  */
-                void validateSubtraceTimepointsValues(const SpatialTemporalTrace &subtrace,
+                void validateSubtraceTimePointsValues(const SpatialTemporalTrace &subtrace,
                                                       const std::string &subtraceFilepath);
 
-                //! Check if there are any mismatching timepoint values in the provided and resulting trace
+                //! Check if there are any mismatching time point values in the provided and resulting trace
                 /*!
                  * \param subtrace  The provided spatial temporal subtrace
                  */
-                bool areMismatchingTimepointValues(const SpatialTemporalTrace &subtrace);
+                bool areMismatchingTimePointValues(const SpatialTemporalTrace &subtrace);
 
                 //! Add the state variables from the provided to the resulting trace
                 /*!
@@ -150,73 +150,73 @@ namespace multiscale {
                 void addSubtraceStateVariablesToNonEmptyResultingTrace(const SpatialTemporalTrace &subtrace,
                                                                        const std::string &subtraceFilepath);
 
-                //! Add numeric state variables from the provided subtrace to the resulting trace timepoint
+                //! Add numeric state variables from the provided subtrace to the resulting trace time point
                 /*!
-                 * \param subtraceTimepoint         The provided subtrace timepoint
-                 * \param resultingTraceTimepoint   The resulting trace timepoint
+                 * \param subtraceTimePoint         The provided subtrace time point
+                 * \param resultingTraceTimePoint   The resulting trace time point
                  * \param subtraceFilepath          The path to the file containing the subtrace related information
                  */
-                void addNumericStateVariablesToResultingTraceTimepoint(const TimePoint &subtraceTimepoint,
-                                                                       TimePoint &resultingTraceTimepoint,
+                void addNumericStateVariablesToResultingTraceTimePoint(const TimePoint &subtraceTimePoint,
+                                                                       TimePoint &resultingTraceTimePoint,
                                                                        const std::string &subtraceFilepath);
 
-                //! Add numeric state variable to timepoint
-                /*! If an equal value numeric state variable already exists in the timepoint throw an exception.
+                //! Add numeric state variable to time point
+                /*! If an equal value numeric state variable already exists in the time point throw an exception.
                  *
                  * \param numericStateVariableId    The id of the numeric state variable
                  * \param numericStateVariableValue The value of the numeric state variable
-                 * \param timepoint                 The timepoint to which the numeric state variable is added
+                 * \param timePoint                 The time point to which the numeric state variable is added
                  * \param subtraceFilepath          The path to the subtrace to which the numeric state variable
                  *                                  belongs
                  */
-                void addNumericStateVariableToTimepoint(const NumericStateVariableId &numericStateVariableId,
+                void addNumericStateVariableToTimePoint(const NumericStateVariableId &numericStateVariableId,
                                                         double numericStateVariableValue,
-                                                        TimePoint &timepoint,
+                                                        TimePoint &timePoint,
                                                         const std::string &subtraceFilepath);
 
-                //! Add spatial entities from the provided subtrace to the resulting trace timepoint
+                //! Add spatial entities from the provided subtrace to the resulting trace time point
                 /*!
-                 * \param subtraceTimepoint         The provided subtrace timepoint
-                 * \param resultingTraceTimepoint   The resulting trace timepoint
+                 * \param subtraceTimePoint         The provided subtrace time point
+                 * \param resultingTraceTimePoint   The resulting trace time point
                  * \param subtraceFilepath          The path to the file containing the subtrace related information
                  */
-                void addSpatialEntitiesToResultingTraceTimepoint(const TimePoint &subtraceTimepoint,
-                                                                 TimePoint &resultingTraceTimepoint,
+                void addSpatialEntitiesToResultingTraceTimePoint(const TimePoint &subtraceTimePoint,
+                                                                 TimePoint &resultingTraceTimePoint,
                                                                  const std::string &subtraceFilepath);
 
-                //! Add spatial entities of the given type from the provided subtrace to the resulting trace timepoint
+                //! Add spatial entities of the given type from the provided subtrace to the resulting trace time point
                 /*!
                  * \param spatialEntityType         The considered spatial entity type
-                 * \param subtraceTimepoint         The provided subtrace timepoint
-                 * \param resultingTraceTimepoint   The resulting trace timepoint
+                 * \param subtraceTimePoint         The provided subtrace time point
+                 * \param resultingTraceTimePoint   The resulting trace time point
                  * \param subtraceFilepath          The path to the file containing the subtrace related information
                  */
-                void addSpatialEntitiesToResultingTraceTimepoint(const SubsetSpecificType &spatialEntityType,
-                                                                 const TimePoint &subtraceTimepoint,
-                                                                 TimePoint &resultingTraceTimepoint,
+                void addSpatialEntitiesToResultingTraceTimePoint(const SubsetSpecificType &spatialEntityType,
+                                                                 const TimePoint &subtraceTimePoint,
+                                                                 TimePoint &resultingTraceTimePoint,
                                                                  const std::string &subtraceFilepath);
 
-                //! Add spatial entity to timepoint
-                /*! If an equal value spatial entity already exists in the timepoint throw an exception.
+                //! Add spatial entity to time point
+                /*! If an equal value spatial entity already exists in the time point throw an exception.
                  *
                  * \param spatialEntity     The considered spatial entity
                  * \param spatialEntityType The considered spatial entity type
-                 * \param timepoint         The timepoint to which the spatial entity is added
+                 * \param timePoint         The time point to which the spatial entity is added
                  * \param subtraceFilepath  The path to the subtrace to which the spatial entity belongs
                  */
-                void addSpatialEntityToTimepoint(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                void addSpatialEntityToTimePoint(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                                  const SubsetSpecificType &spatialEntityType,
-                                                 TimePoint &timepoint,
+                                                 TimePoint &timePoint,
                                                  const std::string &subtraceFilepath);
 
-                //! Replace the resulting trace timepoints values with the timepoints values read from file
-                /*! If the number of timepoints in the timepoints values input file and the resulting trace
+                //! Replace the resulting trace time points values with the time points values read from file
+                /*! If the number of time points in the time points values input file and the resulting trace
                  *  differ throw an exception.
                  */
-                void updateResultingTraceTimepointsValues();
+                void updateResultingTraceTimePointsValues();
 
-                //! Check if the number of timepoints is equal in the resulting trace and the timepoints values file
-                void validateNumberOfTimepointsInResultingTrace();
+                //! Check if the number of time points is equal in the resulting trace and the time points values file
+                void validateNumberOfTimePointsInResultingTrace();
 
 
                 // Constants

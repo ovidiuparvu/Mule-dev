@@ -37,7 +37,7 @@ namespace multiscale {
 
                 //! Evaluate the logic property considering the given trace and multiscale architecture graph
                 /*!
-                 * \param trace                         The considered trace (i.e. timeseries data)
+                 * \param trace                         The considered trace (i.e. time series data)
                  * \param multiscaleArchitectureGraph   The considered multiscale architecture graph
                  */
                 bool evaluate(SpatialTemporalTrace &trace,

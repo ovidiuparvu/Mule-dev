@@ -15,7 +15,7 @@ namespace multiscale {
 
             public:
 
-                unsigned long               nrOfTimepointsAhead;    /*!< The number of timepoints ahead "K" */
+                unsigned long               nrOfTimePointsAhead;    /*!< The number of time points ahead "K" */
                 LogicPropertyAttributeType  logicProperty;          /*!< The logic property following the
                                                                          "next" operator */
 
@@ -28,7 +28,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NextKLogicPropertyAttribute,
-    (unsigned long, nrOfTimepointsAhead)
+    (unsigned long, nrOfTimePointsAhead)
     (multiscale::verification::LogicPropertyAttributeType, logicProperty)
 )
 

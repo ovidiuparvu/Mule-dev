@@ -21,7 +21,7 @@ namespace multiscale {
             private:
 
                 TimePoint
-                    &timePoint;                     /*!< The considered timepoint */
+                    &timePoint;                     /*!< The considered time point */
                 const MultiscaleArchitectureGraph
                     &multiscaleArchitectureGraph;   /*!< The considered multiscale architecture graph */
 
@@ -39,7 +39,7 @@ namespace multiscale {
                  */
                 std::vector<double>
                 operator()(const PrimarySpatialMeasureCollectionAttribute &primarySpatialMeasureCollection) const {
-                    // Create the subset timepoint corresponding to the given timepoint
+                    // Create the subset time point corresponding to the given time point
                     TimePoint subsetTimePoint(
                         boost::apply_visitor(
                             SubsetVisitor(
@@ -51,7 +51,7 @@ namespace multiscale {
                     );
 
                     // Compute the spatial measure values corresponding to the above created
-                    // subset timepoint
+                    // subset time point
                     std::vector<double> spatialMeasureValues =
                         TimePointEvaluator::getSpatialMeasureValues(
                             subsetTimePoint,
@@ -113,7 +113,7 @@ namespace multiscale {
             private:
 
                 //! Evaluate the given spatial measure collection
-                /*! The timepoint and multiscale architecture graph provided in the constructor are employed
+                /*! The time point and multiscale architecture graph provided in the constructor are employed
                  *  during the evaluation of the spatial measure collection.
                  *
                  * \param spatialMeasureCollection  The given spatial measure collection

@@ -39,18 +39,18 @@ void initializeTrace(SpatialTemporalTrace &trace) {
     /*{% endfor %}*/
 /*{% endfor %}*/
 
-    // Initialize timepoints
+    // Initialize time points
     trace.clear();
 
     std::vector<TimePoint> timePoints;
 
-    // Add timepoints containing the numeric state variable "B" to the collection of timepoints
+    // Add time points containing the numeric state variable "B" to the collection of time points
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
         timePoints.push_back(TimePoint(i));
         timePoints[i].addNumericStateVariable(bNumericStateVariableId, bConstantValue);
     }
 
-    // Add a second numeric state variable to the collection of timepoints
+    // Add a second numeric state variable to the collection of time points
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
         if (i % 4 == 0) {
             timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue);
@@ -64,10 +64,10 @@ void initializeTrace(SpatialTemporalTrace &trace) {
         aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariableValue(aNumericStateVariableId));
     }
 
-    // Add spatial entities to each timepoint
+    // Add spatial entities to each time point
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
 
-        // Add /*{{ spatial_entities[0].name }}*/s to the timepoint
+        // Add /*{{ spatial_entities[0].name }}*/s to the time point
         for (std::size_t j = ((((i + 1) % 4) == 0) ? (i - 1) : 0); j <= i; j++) {
             std::shared_ptr<SpatialEntity> /*{{ spatial_entities[0].name }}*/ = std::make_shared</*{{ spatial_entities[0].name|first_to_upper }}*/>();
 
@@ -81,7 +81,7 @@ void initializeTrace(SpatialTemporalTrace &trace) {
         }
 
     /*{% for spatial_entity in spatial_entities[1:] %}*/
-        // Add /*{{ spatial_entity.name }}*/s to the timepoint
+        // Add /*{{ spatial_entity.name }}*/s to the time point
         for (std::size_t k = 0; k <= i; k++) {
             std::shared_ptr<SpatialEntity> /*{{ spatial_entity.name }}*/ = std::make_shared</*{{ spatial_entity.name|first_to_upper }}*/>();
 
@@ -96,7 +96,7 @@ void initializeTrace(SpatialTemporalTrace &trace) {
     /*{% endfor %}*/
     }
 
-    // Add all timepoints to the trace
+    // Add all time points to the trace
     for (TimePoint &timePoint : timePoints) {
         trace.addTimePoint(timePoint);
     }

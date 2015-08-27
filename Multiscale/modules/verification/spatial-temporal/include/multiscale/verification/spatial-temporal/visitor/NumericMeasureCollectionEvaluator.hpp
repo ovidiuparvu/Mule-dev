@@ -35,9 +35,9 @@ namespace multiscale {
                     );
                 }
 
-                //! Evaluate the spatial measure collection considering the given timepoint
+                //! Evaluate the spatial measure collection considering the given time point
                 /*!
-                 * \param timePoint                     The given timepoint
+                 * \param timePoint                     The given time point
                  * \param multiscaleArchitectureGraph   The given multiscale architecture graph
                  * \param spatialMeasureCollection      The considered spatial measure collection
                  */

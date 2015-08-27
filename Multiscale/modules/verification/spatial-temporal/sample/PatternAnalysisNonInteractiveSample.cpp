@@ -14,19 +14,19 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-// Evaluate the abstract syntax tree considering the provided timeseries
+// Evaluate the abstract syntax tree considering the provided time series
 void evaluateAbstractSyntaxTree(AbstractSyntaxTree &abstractSyntaxTree,
-                                SpatialTemporalTrace &timeseries) {
+                                SpatialTemporalTrace &timeSeries) {
     MultiscaleArchitectureGraph multiscaleArchitectureGraph;
 
-    bool evaluationResult = abstractSyntaxTree.evaluate(timeseries, multiscaleArchitectureGraph);
+    bool evaluationResult = abstractSyntaxTree.evaluate(timeSeries, multiscaleArchitectureGraph);
 
     std::cout << (evaluationResult ? "T" : "F") << std::endl;
 }
 
-// Analyse patterns considering the provided logic properties and timeseries
+// Analyse patterns considering the provided logic properties and time series
 int analysePatterns(const std::vector<std::string> &logicProperties,
-                    SpatialTemporalTrace &timeseries) {
+                    SpatialTemporalTrace &timeSeries) {
     AbstractSyntaxTree result;
 
     for (const std::string &logicProperty : logicProperties) {
@@ -36,33 +36,33 @@ int analysePatterns(const std::vector<std::string> &logicProperties,
         // Parse the logic property and create the corresponding abstract syntax tree
         parser.parse(result);
 
-        // Evaluate the abstract syntax tree considering the provided timeseries
-        evaluateAbstractSyntaxTree(result, timeseries);
+        // Evaluate the abstract syntax tree considering the provided timeSeries
+        evaluateAbstractSyntaxTree(result, timeSeries);
     }
 
     return EXEC_SUCCESS_CODE;
 }
 
-// Analyse patterns considering timeseries data and logic properties provided in the input files
-int analysePatterns(const std::string &timeseriesInputFilePath,
+// Analyse patterns considering time series data and logic properties provided in the input files
+int analysePatterns(const std::string &timeSeriesInputFilePath,
                     const std::string &logicPropertiesInputFilePath) {
-    TemporalDataReader timeseriesReader;
+    TemporalDataReader timeSeriesReader;
     LogicPropertyDataReader logicPropertiesReader;
 
     std::vector<std::string> logicProperties
         = logicPropertiesReader.readLogicPropertiesFromFile(logicPropertiesInputFilePath);
 
-    SpatialTemporalTrace timeseries
-        = timeseriesReader.readTimeSeriesFromFile(timeseriesInputFilePath);
+    SpatialTemporalTrace timeSeries
+        = timeSeriesReader.readTimeSeriesFromFile(timeSeriesInputFilePath);
 
-    return analysePatterns(logicProperties, timeseries);
+    return analysePatterns(logicProperties, timeSeries);
 }
 
 // Main program
 int main(int argc, char **argv) {
     if (argc != 3) {
         std::cerr << "Usage: PatternAnalysisNonInteractiveSample "
-                  << "<timeseries-input-file> <logic-properties-input-file>"
+                  << "<time-series-input-file> <logic-properties-input-file>"
                   << std::endl;
 
         return EXEC_ERR_CODE;

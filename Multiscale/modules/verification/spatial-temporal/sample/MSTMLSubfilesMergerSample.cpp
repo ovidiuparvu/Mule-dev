@@ -1,7 +1,7 @@
 /**
  * This program is used for merging MSTML subfiles from a folder into a single MSTML file.
  *
- * Author: Ovidiu Parvu
+ * Author: Ovidiu Pârvu
  * Date created: 12.11.2014
  * Date modified: 12.11.2014
  */
@@ -48,7 +48,7 @@ po::options_description initCommandLineArgumentsConfig() {
     // Configure which command line arguments are optional and/or required
     usageDescription.add_options()("help,h", "display help message\n")
                                   ("mstml-subfiles-folder,m"    , po::value<std::string>(), "provide the path to the MSTML subfiles folder\n")
-                                  ("timepoints-values-file,t"   , po::value<std::string>(), "provide the path to the timepoints values input file\n")
+                                  ("timepoints-values-file,t"   , po::value<std::string>(), "provide the path to the time points values input file\n")
                                   ("mstml-output-file,o"        , po::value<std::string>(), "provide the path to the MSTML output file\n");
 
     return usageDescription;
@@ -67,7 +67,7 @@ po::variables_map parseCommandLineArguments(int argc, char **argv,
 
 // Check if the provided command line arguments are valid
 CmdLineArgsValidationResult areValidParameters(std::string &mstmlSubfilesFolderPath,
-                                               std::string &timepointsValuesFilePath,
+                                               std::string &timePointsValuesFilePath,
                                                std::string &mstmlOutputFilePath,
                                                int argc, char** argv) {
     // Initialize the command line arguments configuration
@@ -90,7 +90,7 @@ CmdLineArgsValidationResult areValidParameters(std::string &mstmlSubfilesFolderP
         (variablesMap.count("mstml-output-file"))
     ) {
         mstmlSubfilesFolderPath     = variablesMap["mstml-subfiles-folder"].as<std::string>();
-        timepointsValuesFilePath    = variablesMap["timepoints-values-file"].as<std::string>();
+        timePointsValuesFilePath    = variablesMap["timepoints-values-file"].as<std::string>();
         mstmlOutputFilePath         = variablesMap["mstml-output-file"].as<std::string>();
 
         return CmdLineArgsValidationResult::Valid;
@@ -102,9 +102,9 @@ CmdLineArgsValidationResult areValidParameters(std::string &mstmlSubfilesFolderP
 
 // Merge the MSTML subfiles considering the provided paths
 void mergeMSTMLSubfiles(const std::string &mstmlSubfilesFolderPath,
-                        const std::string &timepointsValuesFilePath,
+                        const std::string &timePointsValuesFilePath,
                         const std::string &mstmlOutputFilePath) {
-    MSTMLSubfilesMerger mstmlSubfilesMerger(mstmlSubfilesFolderPath, timepointsValuesFilePath);
+    MSTMLSubfilesMerger mstmlSubfilesMerger(mstmlSubfilesFolderPath, timePointsValuesFilePath);
 
     mstmlSubfilesMerger.mergeMSTMLSubfiles();
     mstmlSubfilesMerger.outputResultingMSTMLFile(mstmlOutputFilePath);
@@ -113,13 +113,13 @@ void mergeMSTMLSubfiles(const std::string &mstmlSubfilesFolderPath,
 // Merge the MSTML subfiles considering the provided command line arguments
 void mergeMSTMLSubfiles(int argc, char **argv) {
     std::string mstmlSubfilesFolderPath;
-    std::string timepointsValuesFilePath;
+    std::string timePointsValuesFilePath;
     std::string mstmlOutputFilePath;
 
     // Check if the command line arguments are valid and initialize the provided strings accordingly
     CmdLineArgsValidationResult cmdLineArgsValidationResult
         = areValidParameters(
-              mstmlSubfilesFolderPath, timepointsValuesFilePath, mstmlOutputFilePath,
+              mstmlSubfilesFolderPath, timePointsValuesFilePath, mstmlOutputFilePath,
               argc, argv
           );
 
@@ -130,7 +130,7 @@ void mergeMSTMLSubfiles(int argc, char **argv) {
             break;
 
         case CmdLineArgsValidationResult::Valid:
-            mergeMSTMLSubfiles(mstmlSubfilesFolderPath, timepointsValuesFilePath, mstmlOutputFilePath);
+            mergeMSTMLSubfiles(mstmlSubfilesFolderPath, timePointsValuesFilePath, mstmlOutputFilePath);
             break;
 
         default:

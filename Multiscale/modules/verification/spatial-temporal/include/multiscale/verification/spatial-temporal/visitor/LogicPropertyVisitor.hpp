@@ -147,7 +147,7 @@ namespace multiscale {
                 bool operator() (const UntilLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
                     try {
                         return (
-                            evaluateTemporalLogicPropertyWithStartEndTimepoints(
+                            evaluateTemporalLogicPropertyWithStartEndTimePoints(
                                 logicProperty,
                                 lhsLogicProperty
                             )
@@ -249,7 +249,7 @@ namespace multiscale {
                                  const T &lhsLogicProperty) const {
                     try {
                         return (
-                            evaluateTemporalLogicPropertyWithStartEndTimepoints(
+                            evaluateTemporalLogicPropertyWithStartEndTimePoints(
                                 primaryLogicProperty,
                                 lhsLogicProperty
                             )
@@ -269,7 +269,7 @@ namespace multiscale {
                                  const T &lhsLogicProperty) const {
                     try {
                         return (
-                            evaluateTemporalLogicPropertyWithStartEndTimepoints(
+                            evaluateTemporalLogicPropertyWithStartEndTimePoints(
                                 primaryLogicProperty,
                                 lhsLogicProperty
                             )
@@ -363,28 +363,28 @@ namespace multiscale {
                  */
                 double evaluateChangeLhsTemporalNumericMeasure(const ChangeTemporalNumericMeasureAttribute
                                                                &changeAttribute) const {
-                    // Compute the value of the temporal numeric measure considering the current and next timepoint
-                    double lhsTemporalNumericMeasureFirstTimepoint = evaluateTemporalNumericMeasure(
-                                                                         changeAttribute.lhsTemporalNumericMeasure,
-                                                                         trace,
-                                                                         0
-                                                                     );
-                    double lhsTemporalNumericMeasureSecondTimepoint = evaluateTemporalNumericMeasure(
+                    // Compute the value of the temporal numeric measure considering the current and next time point
+                    double lhsTemporalNumericMeasureFirstTimePoint  = evaluateTemporalNumericMeasure(
+                                                                          changeAttribute.lhsTemporalNumericMeasure,
+                                                                          trace,
+                                                                          0
+                                                                      );
+                    double lhsTemporalNumericMeasureSecondTimePoint = evaluateTemporalNumericMeasure(
                                                                           changeAttribute.lhsTemporalNumericMeasure,
                                                                           trace,
                                                                           1
                                                                       );
 
-                    // Compute the time values corresponding to the current and next timepoint
-                    unsigned long timeValueFirstTimepoint  = trace.getTimePointReference(0).getValue();
-                    unsigned long timeValueSecondTimepoint = trace.getTimePointReference(1).getValue();
+                    // Compute the time values corresponding to the current and next time point
+                    double timeValueFirstTimePoint  = trace.getTimePointReference(0).getValue();
+                    double timeValueSecondTimePoint = trace.getTimePointReference(1).getValue();
 
                     // Compute the change measure value
                     return ChangeMeasureEvaluator::evaluate(changeAttribute.changeMeasure.changeMeasureType,
-                                                            lhsTemporalNumericMeasureFirstTimepoint,
-                                                            lhsTemporalNumericMeasureSecondTimepoint,
-                                                            timeValueFirstTimepoint,
-                                                            timeValueSecondTimepoint);
+                                                            lhsTemporalNumericMeasureFirstTimePoint,
+                                                            lhsTemporalNumericMeasureSecondTimePoint,
+                                                            timeValueFirstTimePoint,
+                                                            timeValueSecondTimePoint);
                 }
 
                 //! Evaluate the given SimilarityTemporalNumericCollectionAttribute
@@ -500,7 +500,7 @@ namespace multiscale {
                     return 0.0;
                 }
 
-                //! Evaluate the given temporal logic property having start and end timepoints
+                //! Evaluate the given temporal logic property having start and end time points
                 /*! The considered temporal logic properties correspond to the Future, Global and Until
                  *  temporal operators.
                  *
@@ -509,44 +509,44 @@ namespace multiscale {
                  * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T, typename U>
-                bool evaluateTemporalLogicPropertyWithStartEndTimepoints(const T &temporalLogicProperty,
+                bool evaluateTemporalLogicPropertyWithStartEndTimePoints(const T &temporalLogicProperty,
                                                                          const U &lhsLogicProperty) const {
-                    unsigned long startTime = temporalLogicProperty.startTimepoint;
-                    unsigned long endTime   = temporalLogicProperty.endTimepoint;
-
-                    // Store the current begin timepoint index
+                    // Store the current begin time point index
                     trace.storeSubTraceBeginIndex();
 
                     // Evaluate the temporal logic property considering the provided start
-                    // and end timepoints
+                    // and end time points
                     bool evaluationResult
-                        = evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
-                              temporalLogicProperty, lhsLogicProperty, startTime, endTime
+                        = evaluateTemporalLogicPropertyWithStartAndEndTimePoints(
+                              temporalLogicProperty,
+                              lhsLogicProperty,
+                              temporalLogicProperty.startTimePoint,
+                              temporalLogicProperty.endTimePoint
                           );
 
-                    // Restore the starting timepoint index to the immediately above stored value
+                    // Restore the starting time point index to the immediately above stored value
                     trace.restoreSubTraceBeginIndex();
 
                     return evaluationResult;
                 }
 
-                //! Evaluate the given temporal logic property having start and end timepoints
+                //! Evaluate the given temporal logic property having start and end time points
                 /*! The considered temporal logic property corresponds to the Until temporal operator.
                  *
                  * \param temporalLogicProperty The given temporal logic property (corresponding to
                  *                              the Until temporal operator)
                  * \param lhsLogicProperty      The left hand side logic property
-                 * \param startTime             The considered start timepoint
-                 * \param endTime               The considered end timepoint
+                 * \param startTime             The considered start time point
+                 * \param endTime               The considered end time point
                  */
                 template <typename U>
-                bool evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
+                bool evaluateTemporalLogicPropertyWithStartAndEndTimePoints(
                     const UntilLogicPropertyAttribute &temporalLogicProperty, const U &lhsLogicProperty,
-                    unsigned long startTime, unsigned long endTime
+                    double startTime, double endTime
                 ) const {
-                    // Increment the considered starting timepoint index for the given time interval
-                    for (unsigned long i = startTime; i <= endTime; i = trace.nextTimePointValue()) {
-                        trace.setSubTraceWithTimepointsValuesGreaterOrEqualTo(i);
+                    // Increment the considered starting time point index for the given time interval
+                    for (double i = startTime; Numeric::lessOrEqual(i, endTime); i = trace.nextTimePointValue()) {
+                        trace.setSubTraceWithTimePointsValuesGreaterOrEqualTo(i);
 
                         // If the right hand side logic substatement of the until logic property
                         // evaluates to true then return true
@@ -559,65 +559,65 @@ namespace multiscale {
                         }
                     }
 
-                    // If no timepoint was found for which the Until logic property holds
+                    // If no time point was found for which the Until logic property holds
                     // then return false
                     return false;
                 }
 
-                //! Evaluate the given temporal logic property having start and end timepoints
+                //! Evaluate the given temporal logic property having start and end time points
                 /*! The considered temporal logic property corresponds to the Future temporal operator.
                  *
                  * \param temporalLogicProperty The given temporal logic property (corresponding to
                  *                              the Future temporal operator)
                  * \param lhsLogicProperty      The left hand side logic property
-                 * \param startTime             The considered start timepoint
-                 * \param endTime               The considered end timepoint
+                 * \param startTime             The considered start time point
+                 * \param endTime               The considered end time point
                  */
                 template <typename U>
-                bool evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
+                bool evaluateTemporalLogicPropertyWithStartAndEndTimePoints(
                     const FutureLogicPropertyAttribute &temporalLogicProperty, const U &lhsLogicProperty,
-                    unsigned long startTime, unsigned long endTime
+                    double startTime, double endTime
                 ) const {
-                    // Increment the considered starting timepoint index for the given time interval
+                    // Increment the considered starting time point index for the given time interval
                     // and check if the logic property evaluates to true
-                    for (unsigned long i = startTime; i <= endTime; i = trace.nextTimePointValue()) {
-                        trace.setSubTraceWithTimepointsValuesGreaterOrEqualTo(i);
+                    for (double i = startTime; Numeric::lessOrEqual(i, endTime); i = trace.nextTimePointValue()) {
+                        trace.setSubTraceWithTimePointsValuesGreaterOrEqualTo(i);
 
                         if (evaluate(temporalLogicProperty.logicProperty, trace)) {
                             return true;
                         }
                     }
 
-                    // If no timepoint was found for which the Future logic property holds
+                    // If no time point was found for which the Future logic property holds
                     // then return false
                     return false;
                 }
 
-                //! Evaluate the given temporal logic property having start and end timepoints
+                //! Evaluate the given temporal logic property having start and end time points
                 /*! The considered temporal logic property corresponds to the Global temporal operator.
                  *
                  * \param temporalLogicProperty The given temporal logic property (corresponding to
                  *                              the Global temporal operator)
                  * \param lhsLogicProperty      The left hand side logic property
-                 * \param startTime             The considered start timepoint
-                 * \param endTime               The considered end timepoint
+                 * \param startTime             The considered start time point
+                 * \param endTime               The considered end time point
                  */
                 template <typename U>
-                bool evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
+                bool evaluateTemporalLogicPropertyWithStartAndEndTimePoints(
                     const GlobalLogicPropertyAttribute &temporalLogicProperty, const U &lhsLogicProperty,
-                    unsigned long startTime, unsigned long endTime
+                    double startTime, double endTime
                 ) const {
-                    // Increment the considered starting timepoint index for the given time interval
+                    // Increment the considered starting time point index for the given time interval
                     // and check if the logic property evaluates to true
-                    for (unsigned long i = startTime; i <= endTime; i = trace.nextTimePointValue()) {
-                        trace.setSubTraceWithTimepointsValuesGreaterOrEqualTo(i);
+                    for (double i = startTime; Numeric::lessOrEqual(i, endTime); i = trace.nextTimePointValue()) {
+                        trace.setSubTraceWithTimePointsValuesGreaterOrEqualTo(i);
 
                         if (!evaluate(temporalLogicProperty.logicProperty, trace)) {
                             return false;
                         }
                     }
 
-                    // If no timepoint was found for which the Global logic property does not hold
+                    // If no time point was found for which the Global logic property does not hold
                     // then return true
                     return true;
                 }
@@ -641,8 +641,13 @@ namespace multiscale {
                 template <typename T>
                 bool evaluateNextKLogicProperty(const NextKLogicPropertyAttribute &nextKLogicProperty,
                                                 const T &lhsLogicProperty) const {
-                    return evaluateNextKLogicProperty(nextKLogicProperty.logicProperty, trace,
-                                                      nextKLogicProperty.nrOfTimepointsAhead);
+                    return (
+                        evaluateNextKLogicProperty(
+                            nextKLogicProperty.logicProperty,
+                            trace,
+                            nextKLogicProperty.nrOfTimePointsAhead
+                        )
+                    );
                 }
                 
                 //! Evaluate the given NextKLogicPropertyAttribute
@@ -654,7 +659,7 @@ namespace multiscale {
                 template <typename T>
                 bool evaluateNextKLogicProperty(const LogicPropertyAttributeType &logicProperty,
                                                 const T &lhsLogicProperty, unsigned long kValue) const {
-                    // Store the current begin timepoint index
+                    // Store the current begin time point index
                     trace.storeSubTraceBeginIndex();
 
                     // Advance the trace begin index with the value kValue
@@ -663,7 +668,7 @@ namespace multiscale {
                     // Evaluate the logic property
                     bool evaluationResult = evaluate(logicProperty, trace);
 
-                    // Restore the starting timepoint index to the immediately above stored value
+                    // Restore the starting time point index to the immediately above stored value
                     trace.restoreSubTraceBeginIndex();
 
                     // Return the evaluation result
@@ -756,12 +761,12 @@ namespace multiscale {
                 /*!
                  * \param temporalNumericMeasure    The given temporal numeric measure
                  * \param trace                     The given spatial temporal trace
-                 * \param timePointIndex            The index of the considered starting timepoint from the trace
+                 * \param timePointIndex            The index of the considered starting time point from the trace
                  */
                 double evaluateTemporalNumericMeasure(const TemporalNumericMeasureType &temporalNumericMeasure,
                                                       SpatialTemporalTrace &trace,
                                                       unsigned int timePointIndex = 0) const {
-                    // Store the current begin timepoint index
+                    // Store the current begin time point index
                     trace.storeSubTraceBeginIndex();
 
                     // Advance the trace begin index with the value kValue
@@ -775,7 +780,7 @@ namespace multiscale {
                                                   temporalNumericMeasure
                                               );
 
-                    // Restore the starting timepoint index to the immediately above stored value
+                    // Restore the starting time point index to the immediately above stored value
                     trace.restoreSubTraceBeginIndex();
 
                     // Return the evaluation result

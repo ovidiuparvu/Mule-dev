@@ -9,7 +9,7 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-// Print the spatial entities corresponding to the given timepoint and of the requested type
+// Print the spatial entities corresponding to the given time point and of the requested type
 void printSpatialEntities(TimePoint &timePoint, const SubsetSpecificType &spatialEntityType) {
     for (auto it = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
          it != timePoint.getSpatialEntitiesEndIterator(spatialEntityType); it++) {
@@ -19,9 +19,9 @@ void printSpatialEntities(TimePoint &timePoint, const SubsetSpecificType &spatia
     }
 }
 
-// Print the given timepoint
+// Print the given time point
 void printTimePoint(TimePoint &timePoint) {
-    std::cout << "Timepoint " << timePoint.getValue() << std::endl;
+    std::cout << "Time point " << timePoint.getValue() << std::endl;
 
     for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
         std::cout << "Subset specific type " << i << ": " << std::endl;

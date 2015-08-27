@@ -63,7 +63,7 @@ TEMPLATES_FOLDER_PATH = PROJECT_ROOT_FOLDER + str(
 
 TAG_WRN_AUTO_GENERATED_FILE = "auto_generated_warning"
 
-TAG_UNIT_TESTS_NR_OF_TIMEPOINTS = "nr_of_timepoints"
+TAG_UNIT_TESTS_NR_OF_TIMEPOINTS = "nr_of_time_points"
 
 TAG_SPATIAL_ENTITIES = "spatial_entities"
 TAG_SPATIAL_MEASURES = "spatial_measures"
@@ -123,10 +123,10 @@ TEMPLATE_PREPROCESSING_IO = [
     ),
     (
         TEMPLATES_FOLDER_PATH + str(
-            "/test/evaluation/timepoints_spatial_entities_attributes_initializer_hpp.tpl.in"
+            "/test/evaluation/time_points_spatial_entities_attributes_initializer_hpp.tpl.in"
         ),
         TEMPLATES_FOLDER_PATH + str(
-            "/test/evaluation/timepoints_spatial_entities_attributes_initializer_hpp.tpl"
+            "/test/evaluation/time_points_spatial_entities_attributes_initializer_hpp.tpl"
         ),
         10,
         20
@@ -214,9 +214,9 @@ SOURCE_FILE_GENERATING_IO = {
             "/evaluation/SpatialEntitiesTraceTest.hpp"
         )
     ,
-    "test/evaluation/timepoints_spatial_entities_attributes_initializer_hpp.tpl" :
+    "test/evaluation/time_points_spatial_entities_attributes_initializer_hpp.tpl" :
         MODEL_CHECKING_TEST_FOLDER + str(
-            "/evaluation/TimepointsSpatialEntitiesAttributesInitializer.hpp"
+            "/evaluation/TimePointsSpatialEntitiesAttributesInitializer.hpp"
         )
     ,
     "test/parsing/parser_test_hpp.tpl" :

@@ -422,16 +422,16 @@ TEST_F(EmptyTraceTest, GlobalLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
-// HeterogeneousTimeseriesComponent
+// HeterogeneousTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, HeterogeneousTimeseriesComponentPeak) {
+TEST_F(EmptyTraceTest, HeterogeneousTimeSeriesComponentPeak) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(enteringValue(peak, [0, 11] {A})) = 4]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, HeterogeneousTimeseriesComponentValley) {
+TEST_F(EmptyTraceTest, HeterogeneousTimeSeriesComponentValley) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 2]"), SpatialTemporalException);
 }
 
@@ -439,12 +439,12 @@ TEST_F(EmptyTraceTest, HeterogeneousTimeseriesComponentValley) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousHomogeneousTimeseries
+// HomogeneousHomogeneousTimeSeries
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, HomogeneousHomogeneousTimeseries) {
+TEST_F(EmptyTraceTest, HomogeneousHomogeneousTimeSeries) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(timeSpan(plateau, [0, 11] {B})) = 12]"), SpatialTemporalException);
 }
 
@@ -452,28 +452,28 @@ TEST_F(EmptyTraceTest, HomogeneousHomogeneousTimeseries) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousTimeseriesComponent
+// HomogeneousTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentAscent) {
+TEST_F(EmptyTraceTest, HomogeneousTimeSeriesComponentAscent) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(values(ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 1]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentDescent) {
+TEST_F(EmptyTraceTest, HomogeneousTimeSeriesComponentDescent) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 7.5]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentPlateau) {
+TEST_F(EmptyTraceTest, HomogeneousTimeSeriesComponentPlateau) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(values(plateau, [0, 11] {B})) = 2.999]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
+TEST_F(EmptyTraceTest, HomogeneousTimeSeriesComponentUniformAscent) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(values(uniformAscent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 11]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
+TEST_F(EmptyTraceTest, HomogeneousTimeSeriesComponentUniformDescent) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 6.6]"), SpatialTemporalException);
 }
 
@@ -481,16 +481,16 @@ TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousTimeseriesMeasure
+// HomogeneousTimeSeriesMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, HomogeneousTimeseriesMeasureTimeSpan) {
+TEST_F(EmptyTraceTest, HomogeneousTimeSeriesMeasureTimeSpan) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(timeSpan(ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 3]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, HomogeneousTimeseriesMeasureValue) {
+TEST_F(EmptyTraceTest, HomogeneousTimeSeriesMeasureValue) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 4.51]"), SpatialTemporalException);
 }
 
@@ -989,12 +989,12 @@ TEST_F(EmptyTraceTest, TemporalNumericMeasureCollection) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesComponent
+// TimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, TimeseriesComponent) {
+TEST_F(EmptyTraceTest, TimeSeriesComponent) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniformAscent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 5]"), SpatialTemporalException);
 }
 
@@ -1002,16 +1002,16 @@ TEST_F(EmptyTraceTest, TimeseriesComponent) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesMeasure
+// TimeSeriesMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, TimeseriesMeasureEnteringTime) {
+TEST_F(EmptyTraceTest, TimeSeriesMeasureEnteringTime) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(enteringTime(descent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) < 10]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, TimeseriesMeasureEnteringValue) {
+TEST_F(EmptyTraceTest, TimeSeriesMeasureEnteringValue) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniformDescent, [0, 11] {C})) = 3]"), SpatialTemporalException);
 }
 
@@ -1019,12 +1019,12 @@ TEST_F(EmptyTraceTest, TimeseriesMeasureEnteringValue) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesTimeseriesComponent
+// TimeSeriesTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, TimeseriesTimeseriesComponent) {
+TEST_F(EmptyTraceTest, TimeSeriesTimeSeriesComponent) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(enteringTime(peak, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 6]"), SpatialTemporalException);
 }
 

@@ -17,10 +17,10 @@ namespace multiscale {
 
             public:
 
-                //! Evaluate the provided numeric state variable for the given timepoint
+                //! Evaluate the provided numeric state variable for the given time point
                 /*!
                  * \param numericStateVariable          The provided numeric state variable
-                 * \param timePoint                     The given timepoint
+                 * \param timePoint                     The given time point
                  * \param multiscaleArchitectureGraph   The given multiscale architecture graph
                  */
                 static double evaluate(const NumericStateVariableAttribute &numericStateVariable,
@@ -55,7 +55,7 @@ namespace multiscale {
                 /*!
                  * \param name              The name of the numeric state variable
                  * \param scaleAndSubsystem The scale and subsystem associated with the numeric state variable
-                 * \param timePoint         The given timepoint
+                 * \param timePoint         The given time point
                  */
                 static double evaluate(const std::string &name,
                                        const std::string &scaleAndSubsystem,

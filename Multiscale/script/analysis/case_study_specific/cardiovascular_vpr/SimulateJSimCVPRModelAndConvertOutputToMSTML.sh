@@ -5,10 +5,10 @@
 # Script for simulating the Cardiovascular Virtual Physiological Rat JSim model
 # and converting the simulation output to MSTML. (TODO: Update)
 #
-# Author: Ovidiu Parvu
+# Author: Ovidiu Pârvu
 # Contact: ovidiu.parvu@gmail.com
 #
-# Copyright Ovidiu Parvu 2014
+# Copyright Ovidiu Pârvu 2014
 #
 ###############################################################################
 

@@ -8,9 +8,9 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-// Print the given timepoint
+// Print the given time point
 void printTimePoint(TimePoint &timePoint) {
-    std::cout << "Timepoint " << timePoint.getValue() << std::endl;
+    std::cout << "Time point " << timePoint.getValue() << std::endl;
 
     for (auto it = timePoint.getNumericStateVariablesBeginIterator();
          it != timePoint.getNumericStateVariablesEndIterator();

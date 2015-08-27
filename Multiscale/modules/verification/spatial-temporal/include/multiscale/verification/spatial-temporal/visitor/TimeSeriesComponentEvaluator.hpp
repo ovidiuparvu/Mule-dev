@@ -1,9 +1,8 @@
 #ifndef TIMESERIESCOMPONENTEVALUATOR_HPP
 #define TIMESERIESCOMPONENTEVALUATOR_HPP
 
+#include <multiscale/verification/spatial-temporal/attribute/HomogeneousTimeSeriesComponentAttribute.hpp>
 #include "multiscale/exception/MultiscaleException.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/HomogeneousTimeseriesComponentAttribute.hpp"
-
 #include <vector>
 
 
@@ -11,49 +10,49 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for evaluating timeseries components
-        class TimeseriesComponentEvaluator {
+        //! Class for evaluating time series components
+        class TimeSeriesComponentEvaluator {
 
             public:
 
-                //! Evaluate the homogeneous timeseries component considering the given collection of values
+                //! Evaluate the homogeneous time series component considering the given collection of values
                 /*!
-                 * \param homogeneousTimeseriesComponent    The given homogeneous timeseries component
+                 * \param homogeneousTimeSeriesComponent    The given homogeneous time series component
                  * \param values                            The given collection of values
                  */
                 static std::vector<std::size_t>
-                evaluate(const HomogeneousTimeseriesComponentAttribute &homogeneousTimeseriesComponent,
+                evaluate(const HomogeneousTimeSeriesComponentAttribute &homogeneousTimeSeriesComponent,
                          const std::vector<double> &values) {
-                    switch (homogeneousTimeseriesComponent.homogeneousTimeseriesComponent) {
-                        case HomogeneousTimeseriesComponentType::Ascent:
+                    switch (homogeneousTimeSeriesComponent.homogeneousTimeSeriesComponent) {
+                        case HomogeneousTimeSeriesComponentType::Ascent:
                             return evaluateHomogeneousComponentIndices(
                                 values, std::less<double>(),
                                 HomogeneousComponentEvaluator<std::less<double>>()
                             );
                             break;
 
-                        case HomogeneousTimeseriesComponentType::Descent:
+                        case HomogeneousTimeSeriesComponentType::Descent:
                             return evaluateHomogeneousComponentIndices(
                                 values, std::greater<double>(),
                                 HomogeneousComponentEvaluator<std::greater<double>>()
                             );
                             break;
 
-                        case HomogeneousTimeseriesComponentType::Plateau:
+                        case HomogeneousTimeSeriesComponentType::Plateau:
                             return evaluateHomogeneousComponentIndices(
                                 values, std::equal_to<double>(),
                                 HomogeneousComponentEvaluator<std::equal_to<double>>()
                             );
                             break;
 
-                        case HomogeneousTimeseriesComponentType::UniformAscent:
+                        case HomogeneousTimeSeriesComponentType::UniformAscent:
                             return evaluateHomogeneousComponentIndices(
                                 values, std::less<double>(),
                                 UniformHomogeneousComponentEvaluator<std::less<double>>()
                             );
                             break;
 
-                        case HomogeneousTimeseriesComponentType::UniformDescent:
+                        case HomogeneousTimeSeriesComponentType::UniformDescent:
                             return evaluateHomogeneousComponentIndices(
                                 values, std::greater<double>(),
                                 UniformHomogeneousComponentEvaluator<std::greater<double>>()
@@ -68,7 +67,7 @@ namespace multiscale {
                     return std::vector<std::size_t>();
                 }
 
-                //! Compute the set of (start, end) indices pointing to nonuniform homogeneous timeseries components
+                //! Compute the set of (start, end) indices pointing to nonuniform homogeneous time series components
                 /*!
                  *  The value of relation depending on the considered homogeneous component type is:
                  *      - (uniform) ascent: "<"
@@ -81,16 +80,16 @@ namespace multiscale {
                  */
                 template <
                     typename Relation,
-                    template <typename> class HomogeneousTimeseriesComponentEvaluator
+                    template <typename> class HomogeneousTimeSeriesComponentEvaluator
                 >
                 static std::vector<std::size_t>
                 evaluateHomogeneousComponentIndices(const std::vector<double> &values, const Relation &relation,
-                                                    const HomogeneousTimeseriesComponentEvaluator<Relation>
+                                                    const HomogeneousTimeSeriesComponentEvaluator<Relation>
                                                     &evaluator) {
                     std::vector<std::size_t> homogeneousComponentIndices;
 
                     std::size_t nrOfValues = values.size();
-                    std::size_t i = 0;
+                    std::size_t i          = 0;
 
                     // Compute the homogeneous components indices
                     while (i < nrOfValues) {

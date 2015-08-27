@@ -79,18 +79,18 @@ void initializeTrace(SpatialTemporalTrace &trace) {
     double regionsCentroidYMinValue = 0;
     double regionsCentroidYMaxValue = 1E+6;
 
-    // Initialize timepoints
+    // Initialize time points
     trace.clear();
 
     std::vector<TimePoint> timePoints;
 
-    // Add timepoints containing the numeric state variable "B" to the collection of timepoints
+    // Add time points containing the numeric state variable "B" to the collection of time points
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
         timePoints.push_back(TimePoint(i));
         timePoints[i].addNumericStateVariable(bNumericStateVariableId, bConstantValue);
     }
 
-    // Add a second numeric state variable to the collection of timepoints
+    // Add a second numeric state variable to the collection of time points
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
         if (i % 4 == 0) {
             timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue);
@@ -104,10 +104,10 @@ void initializeTrace(SpatialTemporalTrace &trace) {
         aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariableValue(aNumericStateVariableId));
     }
 
-    // Add spatial entities to each timepoint
+    // Add spatial entities to each time point
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
 
-        // Add clusters to the timepoint
+        // Add clusters to the time point
         for (std::size_t j = ((((i + 1) % 4) == 0) ? (i - 1) : 0); j <= i; j++) {
             std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
 
@@ -127,7 +127,7 @@ void initializeTrace(SpatialTemporalTrace &trace) {
             timePoints[i].addSpatialEntityAndType(cluster, SubsetSpecificType::Clusters);
         }
 
-        // Add regions to the timepoint
+        // Add regions to the time point
         for (std::size_t k = 0; k <= i; k++) {
             std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 
@@ -148,7 +148,7 @@ void initializeTrace(SpatialTemporalTrace &trace) {
         }
     }
 
-    // Add all timepoints to the trace
+    // Add all time points to the trace
     for (TimePoint &timePoint : timePoints) {
         trace.addTimePoint(timePoint);
     }

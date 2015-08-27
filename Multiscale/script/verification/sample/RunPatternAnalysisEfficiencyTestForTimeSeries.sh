@@ -3,7 +3,7 @@
 # Check if the provided number of arguments equals 2
 if [[ $# -ne 2 ]];
 then
-    echo "Usage: $0 <pattern-analysis-executable-path> <timeseries-file-path>.";
+    echo "Usage: $0 <pattern-analysis-executable-path> <time-series-file-path>.";
 
     exit 1;
 fi
@@ -16,10 +16,10 @@ then
     exit 1;
 fi
 
-# Check if the timeseries file path points to a regular file
+# Check if the time series file path points to a regular file
 if [[ ! -f $2 ]];
 then
-    echo "The timeseries file path does not point to a regular file. Please change.";
+    echo "The time series file path does not point to a regular file. Please change.";
 
     exit 1;
 fi
@@ -27,7 +27,7 @@ fi
 
 ###############################################################################
 #
-# Run the pattern analysis executable considering the provided timeseries and 
+# Run the pattern analysis executable considering the provided time series and 
 # record execution time
 #
 ###############################################################################
@@ -38,7 +38,7 @@ echo "Running pattern analysis procedure for input file $2...";
 # Start the timer for measuring the total execution time
 startTime=$(date +%s.%N);
 
-# Run the pattern analysis executable for the provided timeseries
+# Run the pattern analysis executable for the provided time series
 $1 $2;
 
 # End the timer for measuring the total execution time

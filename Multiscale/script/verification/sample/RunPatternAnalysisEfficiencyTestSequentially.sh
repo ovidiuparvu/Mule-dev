@@ -41,7 +41,7 @@ startTime=$(date +%s.%N);
 # Run the pattern analysis executable for the provided timeseries
 for file in $(find $2 -name "*.csv");
 do
-    RunPatternAnalysisEfficiencyTestForTimeseries.sh $1 ${file};
+    RunPatternAnalysisEfficiencyTestForTimeSeries.sh $1 ${file};
 done
 
 # End the timer for measuring the total execution time

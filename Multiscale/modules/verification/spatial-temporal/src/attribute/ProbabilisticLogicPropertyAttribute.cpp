@@ -33,4 +33,4 @@ bool ProbabilisticLogicPropertyAttribute::evaluate(SpatialTemporalTrace &trace,
 
 
 // Constants
-const std::string ProbabilisticLogicPropertyAttribute::ERR_TRACE_LENGTH_ZERO = "The length of the trace provided for evaluating the probabilistic logic property is zero. Please provide a trace which contains at least one timepoint.";
+const std::string ProbabilisticLogicPropertyAttribute::ERR_TRACE_LENGTH_ZERO = "The length of the trace provided for evaluating the probabilistic logic property is zero. Please provide a trace which contains at least one time point.";

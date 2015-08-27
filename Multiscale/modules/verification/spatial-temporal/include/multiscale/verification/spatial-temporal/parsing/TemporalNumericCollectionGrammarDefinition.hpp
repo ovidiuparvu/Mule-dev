@@ -49,8 +49,8 @@ namespace multiscale {
         template <typename Iterator>
         void TemporalNumericCollectionGrammar<Iterator>::initializeGrammar() {
             initializeTemporalNumericCollectionRule();
-            initializeTimeseriesMeasureRule();
-            initializeTimeseriesComponentRule();
+            initializeTimeSeriesMeasureRule();
+            initializeTimeSeriesComponentRule();
             initializeNumericMeasureRule();
         }
 
@@ -60,15 +60,15 @@ namespace multiscale {
             temporalNumericCollectionRule
                 =   temporalNumericMeasureCollectionRule
                 |   changeTemporalNumericCollectionRule
-                |   timeseriesTimeseriesComponentRule
-                |   homogeneousHomogeneousTimeseriesRule;
+                |   timeSeriesTimeSeriesComponentRule
+                |   homogeneousHomogeneousTimeSeriesRule;
 
             temporalNumericMeasureCollectionRule
                 =   (
                         '['
-                        > qi::ulong_
+                        > unsignedRealParser
                         > ','
-                        > qi::ulong_
+                        > unsignedRealParser
                         > ']'
                         > numericMeasureRule
                     );
@@ -81,49 +81,49 @@ namespace multiscale {
                         > ')'
                     );
 
-            timeseriesTimeseriesComponentRule
+            timeSeriesTimeSeriesComponentRule
                 =   (
-                        timeseriesMeasureRule
+                        timeSeriesMeasureRule
                         > '('
-                        > timeseriesComponentRule
+                        > timeSeriesComponentRule
                         > ','
                         > temporalNumericMeasureCollectionRule
                         > ')'
                     );
 
-            homogeneousHomogeneousTimeseriesRule
+            homogeneousHomogeneousTimeSeriesRule
                 =   (
-                        homogeneousTimeseriesMeasureRule
+                        homogeneousTimeSeriesMeasureRule
                         > '('
-                        > homogeneousTimeseriesComponentRule
+                        > homogeneousTimeSeriesComponentRule
                         > ','
                         > temporalNumericMeasureCollectionRule
                         > ')'
                     );
         }
 
-        //! Initialize the timeseries measure rule
+        //! Initialize the time series measure rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeseriesMeasureRule() {
-            timeseriesMeasureRule
-                =   timeseriesMeasureTypeParser;
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeSeriesMeasureRule() {
+            timeSeriesMeasureRule
+                =   timeSeriesMeasureTypeParser;
 
-            homogeneousTimeseriesMeasureRule
-                =   homogeneousTimeseriesMeasureTypeParser;
+            homogeneousTimeSeriesMeasureRule
+                =   homogeneousTimeSeriesMeasureTypeParser;
         }
 
-        //! Initialize the timeseries component rule
+        //! Initialize the time series component rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeseriesComponentRule() {
-            timeseriesComponentRule
-                =   heterogeneousTimeseriesComponentRule
-                |   homogeneousTimeseriesComponentRule;
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeSeriesComponentRule() {
+            timeSeriesComponentRule
+                =   heterogeneousTimeSeriesComponentRule
+                |   homogeneousTimeSeriesComponentRule;
 
-            heterogeneousTimeseriesComponentRule
-                =   heterogeneousTimeseriesComponentTypeParser;
+            heterogeneousTimeSeriesComponentRule
+                =   heterogeneousTimeSeriesComponentTypeParser;
 
-            homogeneousTimeseriesComponentRule
-                =   homogeneousTimeseriesComponentTypeParser;
+            homogeneousTimeSeriesComponentRule
+                =   homogeneousTimeSeriesComponentTypeParser;
         }
 
         //! Initialize the numeric measure rule
@@ -166,8 +166,8 @@ namespace multiscale {
         template <typename Iterator>
         void TemporalNumericCollectionGrammar<Iterator>::assignNamesToRules() {
             assignNamesToTemporalNumericCollectionRules();
-            assignNamesToTimeseriesMeasureRules();
-            assignNamesToTimeseriesComponentRules();
+            assignNamesToTimeSeriesMeasureRules();
+            assignNamesToTimeSeriesComponentRules();
             assignNamesToNumericMeasureRules();
         }
 
@@ -177,23 +177,23 @@ namespace multiscale {
             temporalNumericCollectionRule           .name("temporalNumericCollectionRule");
             temporalNumericMeasureCollectionRule    .name("temporalNumericMeasureCollectionRule");
             changeTemporalNumericCollectionRule     .name("changeTemporalNumericCollectionRule");
-            timeseriesTimeseriesComponentRule       .name("timeseriesTimeseriesComponentRule");
-            homogeneousHomogeneousTimeseriesRule    .name("homogeneousHomogeneousTimeseriesRule");
+            timeSeriesTimeSeriesComponentRule       .name("timeSeriesTimeSeriesComponentRule");
+            homogeneousHomogeneousTimeSeriesRule    .name("homogeneousHomogeneousTimeSeriesRule");
         }
 
-        //! Assign names to the timeseries measure rules
+        //! Assign names to the time series measure rules
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::assignNamesToTimeseriesMeasureRules() {
-            timeseriesMeasureRule           .name("timeseriesMeasureRule");
-            homogeneousTimeseriesMeasureRule.name("homogeneousTimeseriesMeasureRule");
+        void TemporalNumericCollectionGrammar<Iterator>::assignNamesToTimeSeriesMeasureRules() {
+            timeSeriesMeasureRule           .name("timeSeriesMeasureRule");
+            homogeneousTimeSeriesMeasureRule.name("homogeneousTimeSeriesMeasureRule");
         }
 
-        //! Assign names to the timeseries component rules
+        //! Assign names to the time series component rules
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::assignNamesToTimeseriesComponentRules() {
-            timeseriesComponentRule             .name("timeseriesComponentRule");
-            heterogeneousTimeseriesComponentRule.name("heterogeneousTimeseriesComponentRule");
-            homogeneousTimeseriesComponentRule  .name("homogeneousTimeseriesComponentRule");
+        void TemporalNumericCollectionGrammar<Iterator>::assignNamesToTimeSeriesComponentRules() {
+            timeSeriesComponentRule             .name("timeSeriesComponentRule");
+            heterogeneousTimeSeriesComponentRule.name("heterogeneousTimeSeriesComponentRule");
+            homogeneousTimeSeriesComponentRule  .name("homogeneousTimeSeriesComponentRule");
         }
 
         //! Assign names to the numeric measure rules
@@ -209,8 +209,8 @@ namespace multiscale {
         template <typename Iterator>
         void TemporalNumericCollectionGrammar<Iterator>::initializeRulesDebugging() {
             initializeTemporalNumericCollectionRuleDebugging();
-            initializeTimeseriesMeasureRuleDebugging();
-            initializeTimeseriesComponentRuleDebugging();
+            initializeTimeSeriesMeasureRuleDebugging();
+            initializeTimeSeriesComponentRuleDebugging();
             initializeNumericMeasureRuleDebugging();
         }
 
@@ -220,23 +220,23 @@ namespace multiscale {
             debug(temporalNumericCollectionRule);
             debug(temporalNumericMeasureCollectionRule);
             debug(changeTemporalNumericCollectionRule);
-            debug(timeseriesTimeseriesComponentRule);
-            debug(homogeneousHomogeneousTimeseriesRule);
+            debug(timeSeriesTimeSeriesComponentRule);
+            debug(homogeneousHomogeneousTimeSeriesRule);
         }
 
-        //! Initialize debugging for the timeseries measures rule
+        //! Initialize debugging for the time series measures rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeseriesMeasureRuleDebugging() {
-            debug(timeseriesMeasureRule);
-            debug(homogeneousTimeseriesMeasureRule);
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeSeriesMeasureRuleDebugging() {
+            debug(timeSeriesMeasureRule);
+            debug(homogeneousTimeSeriesMeasureRule);
         }
 
-        //! Initialize debugging for the timeseries component rule
+        //! Initialize debugging for the time series component rule
         template <typename Iterator>
-        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeseriesComponentRuleDebugging() {
-            debug(timeseriesComponentRule);
-            debug(homogeneousTimeseriesComponentRule);
-            debug(heterogeneousTimeseriesComponentRule);
+        void TemporalNumericCollectionGrammar<Iterator>::initializeTimeSeriesComponentRuleDebugging() {
+            debug(timeSeriesComponentRule);
+            debug(homogeneousTimeSeriesComponentRule);
+            debug(heterogeneousTimeSeriesComponentRule);
         }
 
         //! Initialize debugging for the numeric measure rule
@@ -266,11 +266,11 @@ namespace multiscale {
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
             qi::on_error<qi::fail>(
-                timeseriesTimeseriesComponentRule,
+                timeSeriesTimeSeriesComponentRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
             qi::on_error<qi::fail>(
-                homogeneousHomogeneousTimeseriesRule,
+                homogeneousHomogeneousTimeSeriesRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
         }

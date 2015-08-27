@@ -78,8 +78,8 @@ namespace multiscaletest {
 
            //! Initialize the collection of spatio-temporal traces with the given spatial entity clusteredness values
            /*!
-            * The assumption is that each timepoint contains only one spatial entity of the same type.
-            * Therefore each clusteredness value corresponds to a different timepoint and spatial entity.
+            * The assumption is that each time point contains only one spatial entity of the same type.
+            * Therefore each clusteredness value corresponds to a different time point and spatial entity.
             *
             * \param clusterednessValues The collection of clusteredness values
             */

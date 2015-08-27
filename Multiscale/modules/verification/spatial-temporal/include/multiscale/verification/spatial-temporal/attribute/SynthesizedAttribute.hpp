@@ -11,6 +11,7 @@
 
 // Include forward declared types
 
+#include <multiscale/verification/spatial-temporal/attribute/HomogeneousHomogeneousTimeSeriesAttribute.hpp>
 #include "multiscale/verification/spatial-temporal/attribute/NotLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/FutureLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/GlobalLogicPropertyAttribute.hpp"
@@ -31,9 +32,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericTemporalAttribute.hpp"
 
 #include "multiscale/verification/spatial-temporal/attribute/ChangeTemporalNumericCollectionAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/TimeseriesTimeseriesComponentAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/HomogeneousHomogeneousTimeseriesAttribute.hpp"
-
+#include "multiscale/verification/spatial-temporal/attribute/TimeSeriesTimeSeriesComponentAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/PrimaryNumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericNumericAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericNumericAttribute.hpp"

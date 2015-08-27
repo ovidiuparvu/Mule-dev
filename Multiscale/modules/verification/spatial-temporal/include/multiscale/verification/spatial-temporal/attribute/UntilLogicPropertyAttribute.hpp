@@ -15,8 +15,8 @@ namespace multiscale {
 
             public:
 
-                unsigned long               startTimepoint; /*!< The considered start timepoint */
-                unsigned long               endTimepoint;   /*!< The considered end timepoint */
+                double                      startTimePoint; /*!< The considered start time point */
+                double                      endTimePoint;   /*!< The considered end time point */
                 LogicPropertyAttributeType  logicProperty;  /*!< The logic property following the "until" operator */
 
         };
@@ -28,8 +28,8 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UntilLogicPropertyAttribute,
-    (unsigned long, startTimepoint)
-    (unsigned long, endTimepoint)
+    (double, startTimePoint)
+    (double, endTimePoint)
     (multiscale::verification::LogicPropertyAttributeType, logicProperty)
 )
 

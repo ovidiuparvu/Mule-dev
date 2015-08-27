@@ -8,7 +8,7 @@
  * FORMAT OF OUTPUT FILE:
  * Check format of input files for MapCartesianToScript program
  *
- * Author: Ovidiu Parvu
+ * Author: Ovidiu Pârvu
  * Date created: 22.07.2013
  * Date modified: 22.07.2013
  */

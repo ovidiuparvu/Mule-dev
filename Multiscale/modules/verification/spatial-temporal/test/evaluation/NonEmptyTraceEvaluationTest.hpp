@@ -12,9 +12,9 @@ namespace multiscaletest {
         protected:
 
             std::size_t
-                nrOfTimePoints;                 /*!< The number of timepoints in the trace */
+                nrOfTimePoints;                 /*!< The number of time points in the trace */
             std::vector<mv::TimePoint>
-                timePoints;                     /*! The collection of timepoints which will be added to
+                timePoints;                     /*! The collection of time points which will be added to
                                                     the trace */
 
         public:
@@ -23,8 +23,8 @@ namespace multiscaletest {
 
         protected:
 
-           //! Add values to timepoints
-           virtual void AddValuesToTimepoints() = 0;
+           //! Add values to time points
+           virtual void AddValuesToTimePoints() = 0;
 
         private:
 
@@ -34,11 +34,11 @@ namespace multiscaletest {
            //! Initialize the trace
            virtual void InitializeTrace() override;
 
-           //! Initialize timepoints
-           void InitializeTimepoints();
+           //! Initialize time points
+           void InitializeTimePoints();
 
-           //! Add timepoints to trace
-           void AddTimepointsToTrace();
+           //! Add time points to trace
+           void AddTimePointsToTrace();
 
         public:
 

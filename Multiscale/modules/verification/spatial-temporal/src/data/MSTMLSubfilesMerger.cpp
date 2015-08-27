@@ -1,6 +1,7 @@
 #include "multiscale/exception/MultiscaleException.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/exception/InvalidOutputException.hpp"
+#include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/data/MSTMLSubfilesMerger.hpp"
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataWriter.hpp"
@@ -12,8 +13,8 @@ using namespace multiscale::verification;
 
 
 MSTMLSubfilesMerger::MSTMLSubfilesMerger(const std::string &mstmlSubfilesFolderPath,
-                                         const std::string &timepointsValuesFilePath)
-                                         : timepointsValuesFilePath(timepointsValuesFilePath),
+                                         const std::string &timePointsValuesFilePath)
+                                         : timePointsValuesFilePath(timePointsValuesFilePath),
                                            traceReader(mstmlSubfilesFolderPath) {
     initialize();
 }
@@ -22,7 +23,7 @@ MSTMLSubfilesMerger::~MSTMLSubfilesMerger() {}
 
 void MSTMLSubfilesMerger::mergeMSTMLSubfiles() {
     addSubtracesToResultingTrace();
-    updateResultingTraceTimepointsValues();
+    updateResultingTraceTimePointsValues();
 }
 
 SpatialTemporalTrace MSTMLSubfilesMerger::getResultingMergedTrace() {
@@ -30,7 +31,7 @@ SpatialTemporalTrace MSTMLSubfilesMerger::getResultingMergedTrace() {
 }
 
 void MSTMLSubfilesMerger::outputResultingMSTMLFile(const std::string &mstmlFileOutputPath) {
-    // If the number of timepoints in the resulting trace is greater than 0 output the trace to an xml file
+    // If the number of time points in the resulting trace is greater than 0 output the trace to an xml file
     if (resultingTrace.length() > 0) {
         SpatialTemporalDataWriter::outputTraceInXmlFormatToFile(
             resultingTrace,
@@ -46,19 +47,19 @@ void MSTMLSubfilesMerger::outputResultingMSTMLFile(const std::string &mstmlFileO
 }
 
 void MSTMLSubfilesMerger::initialize() {
-    readTimepointsValues();
+    readTimePointsValues();
 }
 
-void MSTMLSubfilesMerger::readTimepointsValues() {
-    std::ifstream fin(timepointsValuesFilePath, std::ios::in);
+void MSTMLSubfilesMerger::readTimePointsValues() {
+    std::ifstream fin(timePointsValuesFilePath, std::ios::in);
 
     if (fin.is_open()) {
-        readTimepointsValuesFromStream(fin);
+        readTimePointsValuesFromStream(fin);
     } else {
         MS_throw(
             InvalidInputException,
             ERR_INVALID_TIMEPOINTS_VALUES_FILE_BEGIN +
-            timepointsValuesFilePath +
+            timePointsValuesFilePath +
             ERR_INVALID_TIMEPOINTS_VALUES_FILE_END
         );
     }
@@ -66,31 +67,31 @@ void MSTMLSubfilesMerger::readTimepointsValues() {
     fin.close();
 }
 
-void MSTMLSubfilesMerger::readTimepointsValuesFromStream(std::ifstream &fin) {
-    unsigned long timepointValue;
+void MSTMLSubfilesMerger::readTimePointsValuesFromStream(std::ifstream &fin) {
+    double      timePointValue;
     std::string line;
 
     // Skip the first header line (usually "Time")
     getline(fin, line);
 
-    // Read the timepoints values
+    // Read the time points values
     while (getline(fin, line)) {
-        // Convert the line to a timepoint value
-        timepointValue = convertToTimepointValue(line);
+        // Convert the line to a time point value
+        timePointValue = convertToTimePointValue(line);
 
-        // Store the timepoint value
-        timepointsValues.push_back(timepointValue);
+        // Store the time point value
+        timePointsValues.push_back(timePointValue);
     }
 }
 
-unsigned long MSTMLSubfilesMerger::convertToTimepointValue(const std::string &timepointValueAsString) {
+double MSTMLSubfilesMerger::convertToTimePointValue(const std::string &timePointValueAsString) {
     try {
-        return StringManipulator::convert<unsigned long>(timepointValueAsString);
+        return StringManipulator::convert<double>(timePointValueAsString);
     } catch (const MultiscaleException &ex) {
         MS_throw(
             InvalidInputException,
             ERR_INVALID_FORMAT_TIMEPOINT_VALUE_BEGIN +
-            timepointsValuesFilePath +
+            timePointsValuesFilePath +
             ERR_INVALID_FORMAT_TIMEPOINT_VALUE_END
         );
     }
@@ -121,37 +122,37 @@ void MSTMLSubfilesMerger::addSubtraceToResultingTrace(const SpatialTemporalTrace
 
 void MSTMLSubfilesMerger::validateSubtrace(const SpatialTemporalTrace &subtrace,
                                            const std::string &subtraceFilepath) {
-    validateSubtraceNumberOfTimepoints(subtrace, subtraceFilepath);
-    validateSubtraceTimepointsValues(subtrace, subtraceFilepath);
+    validateSubtraceNumberOfTimePoints(subtrace, subtraceFilepath);
+    validateSubtraceTimePointsValues(subtrace, subtraceFilepath);
 }
 
-void MSTMLSubfilesMerger::validateSubtraceNumberOfTimepoints(const SpatialTemporalTrace &subtrace,
+void MSTMLSubfilesMerger::validateSubtraceNumberOfTimePoints(const SpatialTemporalTrace &subtrace,
                                                              const std::string &subtraceFilepath) {
-    unsigned int nrOfTimepointsInSubtrace = subtrace.length();
-    unsigned int expectedNrOfTimepoints = static_cast<unsigned int>(timepointsValues.size());
+    unsigned int nrOfTimePointsInSubtrace = subtrace.length();
+    unsigned int expectedNrOfTimePoints   = static_cast<unsigned int>(timePointsValues.size());
 
-    if (nrOfTimepointsInSubtrace != expectedNrOfTimepoints) {
+    if (nrOfTimePointsInSubtrace != expectedNrOfTimePoints) {
         MS_throw(
             InvalidInputException,
             ERR_INVALID_NR_TIMEPOINTS_BEGIN +
             subtraceFilepath +
             ERR_INVALID_NR_TIMEPOINTS_MIDDLE1 +
-            StringManipulator::toString<unsigned int>(nrOfTimepointsInSubtrace) +
+            StringManipulator::toString<unsigned int>(nrOfTimePointsInSubtrace) +
             ERR_INVALID_NR_TIMEPOINTS_MIDDLE2 +
-            StringManipulator::toString<unsigned int>(expectedNrOfTimepoints) +
+            StringManipulator::toString<unsigned int>(expectedNrOfTimePoints) +
             ERR_INVALID_NR_TIMEPOINTS_MIDDLE3 +
-            timepointsValuesFilePath +
+            timePointsValuesFilePath +
             ERR_INVALID_NR_TIMEPOINTS_END
         );
     }
 }
 
-void MSTMLSubfilesMerger::validateSubtraceTimepointsValues(const SpatialTemporalTrace &subtrace,
+void MSTMLSubfilesMerger::validateSubtraceTimePointsValues(const SpatialTemporalTrace &subtrace,
                                                            const std::string &subtraceFilepath) {
     // If the resulting trace is not empty i.e. this is not the first subtrace
     // which will be added to the resulting trace
     if (resultingTrace.length() > 0) {
-        if (areMismatchingTimepointValues(subtrace)) {
+        if (areMismatchingTimePointValues(subtrace)) {
             MS_throw(
                 InvalidInputException,
                 ERR_NON_MATCHING_TIMEPOINT_VALUE_BEGIN +
@@ -162,24 +163,24 @@ void MSTMLSubfilesMerger::validateSubtraceTimepointsValues(const SpatialTemporal
     }
 }
 
-bool MSTMLSubfilesMerger::areMismatchingTimepointValues(const SpatialTemporalTrace &subtrace) {
+bool MSTMLSubfilesMerger::areMismatchingTimePointValues(const SpatialTemporalTrace &subtrace) {
     // This condition should have been checked by a previously called method
     assert(subtrace.length() == resultingTrace.length());
 
-    // Compute the number of timepoints
-    std::size_t nrOfTimepoints = timepointsValues.size();
+    // Compute the number of time points
+    std::size_t nrOfTimePoints = timePointsValues.size();
 
-    for (std::size_t i = 0; i < nrOfTimepoints; i++) {
-        unsigned long resultingTraceTimepointValue = resultingTrace.getTimePointReference(i).getValue();
-        unsigned long subtraceTimepointValue = subtrace.getTimePointReference(i).getValue();
+    for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+        double resultingTraceTimePointValue = resultingTrace.getTimePointReference(i).getValue();
+        double subtraceTimePointValue       = subtrace.getTimePointReference(i).getValue();
 
-        // If there exists a mismatching pair of timepoint values
-        if (resultingTraceTimepointValue != subtraceTimepointValue) {
+        // If there exists a mismatching pair of time point values
+        if (!Numeric::almostEqual(resultingTraceTimePointValue, subtraceTimePointValue)) {
             return true;
         }
     }
 
-    // All timepoints values are matching
+    // All time points values are matching
     return false;
 }
 
@@ -195,10 +196,10 @@ void MSTMLSubfilesMerger::addSubtraceStateVariablesToResultingTrace(const Spatia
 
 void MSTMLSubfilesMerger::addSubtraceStateVariablesToEmptyResultingTrace(const SpatialTemporalTrace &subtrace,
                                                                          const std::string &subtraceFilepath) {
-    std::size_t nrOfTimepoints = timepointsValues.size();
+    std::size_t nrOfTimePoints = timePointsValues.size();
 
-    // Add each timepoint from the subtrace to the resulting trace
-    for (std::size_t i = 0; i < nrOfTimepoints; i++) {
+    // Add each time point from the subtrace to the resulting trace
+    for (std::size_t i = 0; i < nrOfTimePoints; i++) {
         resultingTrace.addTimePoint(
             subtrace.getTimePoint(i)
         );
@@ -207,48 +208,48 @@ void MSTMLSubfilesMerger::addSubtraceStateVariablesToEmptyResultingTrace(const S
 
 void MSTMLSubfilesMerger::addSubtraceStateVariablesToNonEmptyResultingTrace(const SpatialTemporalTrace &subtrace,
                                                                             const std::string &subtraceFilepath) {
-    std::size_t nrOfTimepoints = timepointsValues.size();
+    std::size_t nrOfTimePoints = timePointsValues.size();
 
-    // Add timepoint state variables from subtrace to resulting trace
-    for (std::size_t i = 0; i < nrOfTimepoints; i++) {
-        const TimePoint &subtraceTimepoint = subtrace.getTimePointReference(i);
-        TimePoint &resultingTraceTimepoint = resultingTrace.getTimePointReference(i);
+    // Add time point state variables from subtrace to resulting trace
+    for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+        const TimePoint &subtraceTimePoint = subtrace.getTimePointReference(i);
+        TimePoint &resultingTraceTimePoint = resultingTrace.getTimePointReference(i);
 
-        addNumericStateVariablesToResultingTraceTimepoint(
-            subtraceTimepoint, resultingTraceTimepoint, subtraceFilepath
+        addNumericStateVariablesToResultingTraceTimePoint(
+            subtraceTimePoint, resultingTraceTimePoint, subtraceFilepath
         );
-        addSpatialEntitiesToResultingTraceTimepoint(
-            subtraceTimepoint, resultingTraceTimepoint, subtraceFilepath
+        addSpatialEntitiesToResultingTraceTimePoint(
+            subtraceTimePoint, resultingTraceTimePoint, subtraceFilepath
         );
     }
 }
 
-void MSTMLSubfilesMerger::addNumericStateVariablesToResultingTraceTimepoint(const TimePoint &subtraceTimepoint,
-                                                                            TimePoint &resultingTraceTimepoint,
+void MSTMLSubfilesMerger::addNumericStateVariablesToResultingTraceTimePoint(const TimePoint &subtraceTimePoint,
+                                                                            TimePoint &resultingTraceTimePoint,
                                                                             const std::string &subtraceFilepath) {
-    auto beginIterator  = subtraceTimepoint.getNumericStateVariablesBeginIterator();
-    auto endIterator    = subtraceTimepoint.getNumericStateVariablesEndIterator();
+    auto beginIterator  = subtraceTimePoint.getNumericStateVariablesBeginIterator();
+    auto endIterator    = subtraceTimePoint.getNumericStateVariablesEndIterator();
 
-    // Add each numeric state variable in the subtrace timepoint
+    // Add each numeric state variable in the subtrace time point
     for (auto it = beginIterator; it != endIterator; it++) {
         NumericStateVariableId subtraceNumericStateVariableId = it->first;
         double subtraceNumericStateVariableValue = it->second;
 
-        addNumericStateVariableToTimepoint(
+        addNumericStateVariableToTimePoint(
             subtraceNumericStateVariableId,
             subtraceNumericStateVariableValue,
-            resultingTraceTimepoint,
+            resultingTraceTimePoint,
             subtraceFilepath
         );
     }
 }
 
-void MSTMLSubfilesMerger::addNumericStateVariableToTimepoint(const NumericStateVariableId &numericStateVariableId,
+void MSTMLSubfilesMerger::addNumericStateVariableToTimePoint(const NumericStateVariableId &numericStateVariableId,
                                                              double numericStateVariableValue,
-                                                             TimePoint &timepoint,
+                                                             TimePoint &timePoint,
                                                              const std::string &subtraceFilepath) {
-    // If timepoint already contains a numeric state variable with this id throw exception
-    if (timepoint.containsNumericStateVariable(numericStateVariableId)) {
+    // If time point already contains a numeric state variable with this id throw exception
+    if (timePoint.containsNumericStateVariable(numericStateVariableId)) {
         MS_throw(
             InvalidInputException,
             ERR_NUMERIC_STATE_VARIABLE_EXISTS_BEGIN +
@@ -257,52 +258,55 @@ void MSTMLSubfilesMerger::addNumericStateVariableToTimepoint(const NumericStateV
             subtraceFilepath +
             ERR_NUMERIC_STATE_VARIABLE_EXISTS_END
         );
-    // Otherwise add numeric state variable to timepoint
+    // Otherwise add numeric state variable to time point
     } else {
-        timepoint.addNumericStateVariable(numericStateVariableId, numericStateVariableValue);
+        timePoint.addNumericStateVariable(
+            numericStateVariableId,
+            numericStateVariableValue
+        );
     }
 }
 
-void MSTMLSubfilesMerger::addSpatialEntitiesToResultingTraceTimepoint(const TimePoint &subtraceTimepoint,
-                                                                      TimePoint &resultingTraceTimepoint,
+void MSTMLSubfilesMerger::addSpatialEntitiesToResultingTraceTimePoint(const TimePoint &subtraceTimePoint,
+                                                                      TimePoint &resultingTraceTimePoint,
                                                                       const std::string &subtraceFilepath) {
-    // Add spatial entities to resulting trace timepoint considering each spatial entity type
+    // Add spatial entities to resulting trace time point considering each spatial entity type
     for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
         SubsetSpecificType spatialEntityType = subsetspecific::computeSubsetSpecificType(i);
 
-        addSpatialEntitiesToResultingTraceTimepoint(
+        addSpatialEntitiesToResultingTraceTimePoint(
             spatialEntityType,
-            subtraceTimepoint,
-            resultingTraceTimepoint,
+            subtraceTimePoint,
+            resultingTraceTimePoint,
             subtraceFilepath
         );
     }
 }
 
-void MSTMLSubfilesMerger::addSpatialEntitiesToResultingTraceTimepoint(const SubsetSpecificType &spatialEntityType,
-                                                                      const TimePoint &subtraceTimepoint,
-                                                                      TimePoint &resultingTraceTimepoint,
+void MSTMLSubfilesMerger::addSpatialEntitiesToResultingTraceTimePoint(const SubsetSpecificType &spatialEntityType,
+                                                                      const TimePoint &subtraceTimePoint,
+                                                                      TimePoint &resultingTraceTimePoint,
                                                                       const std::string &subtraceFilepath) {
-    auto spatialEntitiesBeginIterator   = subtraceTimepoint.getSpatialEntitiesBeginIterator(spatialEntityType);
-    auto spatialEntitiesEndIterator     = subtraceTimepoint.getSpatialEntitiesEndIterator(spatialEntityType);
+    auto spatialEntitiesBeginIterator   = subtraceTimePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
+    auto spatialEntitiesEndIterator     = subtraceTimePoint.getSpatialEntitiesEndIterator(spatialEntityType);
 
-    // Add each spatial entity in the subtrace timepoint
+    // Add each spatial entity in the subtrace time point
     for (auto it = spatialEntitiesBeginIterator; it != spatialEntitiesEndIterator; it++) {
-        addSpatialEntityToTimepoint(
+        addSpatialEntityToTimePoint(
             (*it),
             spatialEntityType,
-            resultingTraceTimepoint,
+            resultingTraceTimePoint,
             subtraceFilepath
         );
     }
 }
 
-void MSTMLSubfilesMerger::addSpatialEntityToTimepoint(const std::shared_ptr<SpatialEntity> &spatialEntity,
+void MSTMLSubfilesMerger::addSpatialEntityToTimePoint(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                                       const SubsetSpecificType &spatialEntityType,
-                                                      TimePoint &timepoint,
+                                                      TimePoint &timePoint,
                                                       const std::string &subtraceFilepath) {
-    // If the timepoint contains an equal valued spatial entity throw an exception
-    if (timepoint.containsSpatialEntity(spatialEntity, spatialEntityType)) {
+    // If the time point contains an equal valued spatial entity throw an exception
+    if (timePoint.containsSpatialEntity(spatialEntity, spatialEntityType)) {
         MS_throw(
             InvalidInputException,
             ERR_SPATIAL_ENTITY_EXISTS_BEGIN +
@@ -311,42 +315,45 @@ void MSTMLSubfilesMerger::addSpatialEntityToTimepoint(const std::shared_ptr<Spat
             subtraceFilepath +
             ERR_SPATIAL_ENTITY_EXISTS_END
         );
-    // Otherwise add the spatial entity to the timepoint
+    // Otherwise add the spatial entity to the time point
     } else {
-        timepoint.addSpatialEntityAndType(spatialEntity, spatialEntityType);
+        timePoint.addSpatialEntityAndType(
+            spatialEntity,
+            spatialEntityType
+        );
     }
 }
 
-void MSTMLSubfilesMerger::updateResultingTraceTimepointsValues() {
-    validateNumberOfTimepointsInResultingTrace();
+void MSTMLSubfilesMerger::updateResultingTraceTimePointsValues() {
+    validateNumberOfTimePointsInResultingTrace();
 
-    // Compute the number of timepoints in the timepoints values file
-    std::size_t nrOfTimepoints = timepointsValues.size();
+    // Compute the number of time points in the time points values file
+    std::size_t nrOfTimePoints = timePointsValues.size();
 
-    // Set the resulting trace timepoints values
-    for (std::size_t i = 0; i < nrOfTimepoints; i++) {
-        TimePoint       &timepoint      = resultingTrace.getTimePointReference(i);
-        unsigned long   timepointValue  = timepointsValues[i];
+    // Set the resulting trace time points values
+    for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+        TimePoint   &timePoint      = resultingTrace.getTimePointReference(i);
+        double      timePointValue  = timePointsValues[i];
 
-        timepoint.setValue(timepointValue);
+        timePoint.setValue(timePointValue);
     }
 }
 
-void MSTMLSubfilesMerger::validateNumberOfTimepointsInResultingTrace() {
-    std::size_t nrOfTimepointsInTimepointsValues = timepointsValues.size();
-    std::size_t nrOfTimepointsInResultingTrace = static_cast<std::size_t>(resultingTrace.length());
+void MSTMLSubfilesMerger::validateNumberOfTimePointsInResultingTrace() {
+    std::size_t nrOfTimePointsInTimePointsValues = timePointsValues.size();
+    std::size_t nrOfTimePointsInResultingTrace   = static_cast<std::size_t>(resultingTrace.length());
 
-    // If the number of timepoints differs throw an exception
-    if (nrOfTimepointsInResultingTrace != nrOfTimepointsInTimepointsValues) {
+    // If the number of time points differs throw an exception
+    if (nrOfTimePointsInResultingTrace != nrOfTimePointsInTimePointsValues) {
         MS_throw(
             InvalidInputException,
             ERR_INVALID_NR_TIMEPOINTS_RESULTING_TRACE_BEGIN +
             ERR_INVALID_NR_TIMEPOINTS_MIDDLE1 +
-            StringManipulator::toString(nrOfTimepointsInResultingTrace) +
+            StringManipulator::toString(nrOfTimePointsInResultingTrace) +
             ERR_INVALID_NR_TIMEPOINTS_MIDDLE2 +
-            StringManipulator::toString(nrOfTimepointsInTimepointsValues) +
+            StringManipulator::toString(nrOfTimePointsInTimePointsValues) +
             ERR_INVALID_NR_TIMEPOINTS_MIDDLE3 +
-            timepointsValuesFilePath +
+            timePointsValuesFilePath +
             ERR_INVALID_NR_TIMEPOINTS_END
         );
     }
@@ -354,22 +361,22 @@ void MSTMLSubfilesMerger::validateNumberOfTimepointsInResultingTrace() {
 
 
 // Constants
-const std::string MSTMLSubfilesMerger::ERR_INVALID_TIMEPOINTS_VALUES_FILE_BEGIN = "The provided timepoints' values input file (";
+const std::string MSTMLSubfilesMerger::ERR_INVALID_TIMEPOINTS_VALUES_FILE_BEGIN = "The provided time points' values input file (";
 const std::string MSTMLSubfilesMerger::ERR_INVALID_TIMEPOINTS_VALUES_FILE_END   = ") could not be opened. Please make sure that the file path is valid and the file accessible.";
 
 const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_RESULTING_TRACE_BEGIN  = "The resulting MSTML trace";
 
 const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_BEGIN      = "The MSTML subfile ";
 const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_MIDDLE1    = " contains ";
-const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_MIDDLE2    = " timepoints instead of the expected number of timepoints (";
-const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_MIDDLE3    = ") specified in the timepoints values file ";
+const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_MIDDLE2    = " time points instead of the expected number of time points (";
+const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_MIDDLE3    = ") specified in the time points values file ";
 const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_END        = ". Please change.";
 
-const std::string MSTMLSubfilesMerger::ERR_INVALID_FORMAT_TIMEPOINT_VALUE_BEGIN = "The provided timepoints values input file ";
-const std::string MSTMLSubfilesMerger::ERR_INVALID_FORMAT_TIMEPOINT_VALUE_END   = " contains incorrectly formatted timepoint values. ";
+const std::string MSTMLSubfilesMerger::ERR_INVALID_FORMAT_TIMEPOINT_VALUE_BEGIN = "The provided time points values input file ";
+const std::string MSTMLSubfilesMerger::ERR_INVALID_FORMAT_TIMEPOINT_VALUE_END   = " contains incorrectly formatted time point values. ";
 
 const std::string MSTMLSubfilesMerger::ERR_NON_MATCHING_TIMEPOINT_VALUE_BEGIN   = "The MSTML subfile ";
-const std::string MSTMLSubfilesMerger::ERR_NON_MATCHING_TIMEPOINT_VALUE_END     = ")  which does not match the corresponding timepoint value from the resulting trace. Please change.";
+const std::string MSTMLSubfilesMerger::ERR_NON_MATCHING_TIMEPOINT_VALUE_END     = ")  which does not match the corresponding time point value from the resulting trace. Please change.";
 
 const std::string MSTMLSubfilesMerger::ERR_NUMERIC_STATE_VARIABLE_EXISTS_BEGIN  = "The resulting trace contains a numeric state variable which has the same id ";
 const std::string MSTMLSubfilesMerger::ERR_NUMERIC_STATE_VARIABLE_EXISTS_MIDDLE = " as one of the numeric state variables in the subtrace ";
@@ -379,4 +386,4 @@ const std::string MSTMLSubfilesMerger::ERR_SPATIAL_ENTITY_EXISTS_BEGIN  = "The r
 const std::string MSTMLSubfilesMerger::ERR_SPATIAL_ENTITY_EXISTS_MIDDLE = ") as one of the spatial entities in the subtrace ";
 const std::string MSTMLSubfilesMerger::ERR_SPATIAL_ENTITY_EXISTS_END    = ". Please update the subtrace such that each spatial entity is unique among all subtraces.";
 
-const std::string MSTMLSubfilesMerger::ERR_EMPTY_RESULTING_MSTML_FILE   = "The resulting trace should contain at least one timepoint but it does not. Please update the MSTML subfiles such that the resulting trace contains at least one timepoint.";
+const std::string MSTMLSubfilesMerger::ERR_EMPTY_RESULTING_MSTML_FILE   = "The resulting trace should contain at least one time point but it does not. Please update the MSTML subfiles such that the resulting trace contains at least one time point.";

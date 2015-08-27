@@ -7,7 +7,7 @@
  * FORMAT OF OUTPUT FILE:
  * If in debug mode, then also display results. Else only print them in a .csv/xml file.
  *
- * Author: Ovidiu Parvu
+ * Author: ${PROJECT_AUTHOR}
  * Date created: 03.07.2013
  * Date modified: 05.07.2013
  */

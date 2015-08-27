@@ -22,7 +22,7 @@ namespace multiscale {
             private:
 
                 TimePoint
-                    &timePoint;                     /*!< The considered timepoint */
+                    &timePoint;                     /*!< The considered time point */
                 const MultiscaleArchitectureGraph
                     &multiscaleArchitectureGraph;   /*!< The considered multiscale architecture graph */
 

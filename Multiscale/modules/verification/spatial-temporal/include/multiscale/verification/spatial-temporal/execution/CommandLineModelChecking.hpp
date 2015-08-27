@@ -364,6 +364,8 @@ namespace multiscale {
                 static const std::string    HELP_USAGE_MSG;
                 static const std::string    HELP_DESCRIPTION_LABEL;
                 static const std::string    HELP_DESCRIPTION_MSG;
+                static const std::string    HELP_VERSION_LABEL;
+                static const std::string    HELP_VERSION_MSG;
                 static const std::string    HELP_AUTHOR_LABEL;
                 static const std::string    HELP_AUTHOR_MSG;
                 static const std::string    HELP_COPYRIGHT_LABEL;

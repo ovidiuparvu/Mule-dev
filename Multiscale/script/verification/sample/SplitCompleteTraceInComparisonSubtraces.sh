@@ -3,15 +3,15 @@
 # Check if the number of provided command line arguments is two (i.e. input trace and output folder)
 if [[ $# -ne 2 ]];
 then
-    echo "Usage: $0 <complete-timeseries-input-file> <output-folder>";
+    echo "Usage: $0 <complete-time-series-input-file> <output-folder>";
 
     exit 1;
 fi
 
-# Check if the complete timeseries input file is a regular file
+# Check if the complete time series input file is a regular file
 if [[ ! -f $1 ]];
 then
-    echo "The provided complete timeseries input file is not a regular file. Please change.";
+    echo "The provided complete time series input file is not a regular file. Please change.";
 
     exit 1;
 fi

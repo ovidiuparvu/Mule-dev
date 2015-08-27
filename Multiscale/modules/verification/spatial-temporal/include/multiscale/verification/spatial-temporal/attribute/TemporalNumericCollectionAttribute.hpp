@@ -12,16 +12,16 @@ namespace multiscale {
 
         // Forward declaration of classes
         class ChangeTemporalNumericCollectionAttribute;
-        class HomogeneousHomogeneousTimeseriesAttribute;
-        class TimeseriesTimeseriesComponentAttribute;
+        class HomogeneousHomogeneousTimeSeriesAttribute;
+        class TimeSeriesTimeSeriesComponentAttribute;
 
 
         //! Variant for the temporal numeric collection attribute
         typedef boost::variant<
             TemporalNumericMeasureCollectionAttribute,
             boost::recursive_wrapper<ChangeTemporalNumericCollectionAttribute>,
-            boost::recursive_wrapper<TimeseriesTimeseriesComponentAttribute>,
-            boost::recursive_wrapper<HomogeneousHomogeneousTimeseriesAttribute>
+            boost::recursive_wrapper<TimeSeriesTimeSeriesComponentAttribute>,
+            boost::recursive_wrapper<HomogeneousHomogeneousTimeSeriesAttribute>
         > TemporalNumericCollectionType;
 
 

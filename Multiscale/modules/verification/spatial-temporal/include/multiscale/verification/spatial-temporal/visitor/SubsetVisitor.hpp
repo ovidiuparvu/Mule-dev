@@ -16,7 +16,7 @@ namespace multiscale {
             private:
 
                 TimePoint
-                    &timePoint;                     /*!< The initial timepoint */
+                    &timePoint;                     /*!< The initial time point */
                 const MultiscaleArchitectureGraph
                     &multiscaleArchitectureGraph;   /*!< The considered multiscale architecture graph */
 
@@ -88,10 +88,10 @@ namespace multiscale {
 
             private:
 
-                //! Evaluate the subset considering the given timepoint
+                //! Evaluate the subset considering the given time point
                 /*!
                  * \param subset    The subset
-                 * \param timePoint The given timepoint
+                 * \param timePoint The given time point
                  */
                 TimePoint evaluate(const SubsetAttributeType &subset, TimePoint &timePoint) const {
                     return (
@@ -105,9 +105,9 @@ namespace multiscale {
                     );
                 }
 
-                //! Set the considered spatial entity type for the given timepoint using the specific subset type
+                //! Set the considered spatial entity type for the given time point using the specific subset type
                 /*!
-                 * \param timePoint     The given timepoint
+                 * \param timePoint     The given time point
                  * \param subsetType    The specific subset type
                  */
                 void setTimePointConsideredSpatialEntityType(TimePoint &timePoint,
@@ -115,19 +115,19 @@ namespace multiscale {
                     timePoint.setConsideredSpatialEntityType(subsetType);
                 }
 
-                //! Filter the given timepoint considering the provided constraint
+                //! Filter the given time point considering the provided constraint
                 /*!
-                 * \param timePoint     The given timepoint
+                 * \param timePoint     The given time point
                  * \param constraint    The provided constraint
                  */
                 TimePoint filterTimePoint(TimePoint &timePoint,
                                           const ConstraintAttributeType &constraint) const;
 
-                //! Evaluate subsetOperation against the given subsets timepoints
+                //! Evaluate subsetOperation against the given subsets time points
                 /*!
                  * \param subsetOperation       The considered subset operation
-                 * \param firstSubsetTimePoint  The timepoint corresponding to the first subset
-                 * \param secondSubsetTimePoint The timepoint corresponding to the second subset
+                 * \param firstSubsetTimePoint  The time point corresponding to the first subset
+                 * \param secondSubsetTimePoint The time point corresponding to the second subset
                  */
                 TimePoint evaluateSubsetOperation(const SubsetOperationType &subsetOperation,
                                                   const TimePoint &firstSubsetTimePoint,

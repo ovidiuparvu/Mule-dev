@@ -9,7 +9,7 @@
 using namespace multiscaletest;
 
 
-NonEmptyTraceEvaluationTest::NonEmptyTraceEvaluationTest() : TraceEvaluationTest(), nrOfTimePoints(/*{{ nr_of_timepoints }}*/) {}
+NonEmptyTraceEvaluationTest::NonEmptyTraceEvaluationTest() : TraceEvaluationTest(), nrOfTimePoints(/*{{ nr_of_time_points }}*/) {}
 
 void NonEmptyTraceEvaluationTest::InitializeMultiscaleArchitectureGraph() {
     multiscaleArchitectureGraph.reset();
@@ -31,22 +31,22 @@ void NonEmptyTraceEvaluationTest::InitializeMultiscaleArchitectureGraph() {
 void NonEmptyTraceEvaluationTest::InitializeTrace() {
     trace.clear();
 
-    InitializeTimepoints();
-    AddValuesToTimepoints();
-    AddTimepointsToTrace();
+    InitializeTimePoints();
+    AddValuesToTimePoints();
+    AddTimePointsToTrace();
 }
 
-void NonEmptyTraceEvaluationTest::InitializeTimepoints() {
+void NonEmptyTraceEvaluationTest::InitializeTimePoints() {
     timePoints.clear();
 
-    // Create collection of timepoints
+    // Create collection of time points
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
         timePoints.push_back(TimePoint(i));
     }
 }
 
-void NonEmptyTraceEvaluationTest::AddTimepointsToTrace() {
-    // Add all timepoints to the trace
+void NonEmptyTraceEvaluationTest::AddTimePointsToTrace() {
+    // Add all time points to the trace
     for (TimePoint &timePoint : timePoints) {
         trace.addTimePoint(timePoint);
     }

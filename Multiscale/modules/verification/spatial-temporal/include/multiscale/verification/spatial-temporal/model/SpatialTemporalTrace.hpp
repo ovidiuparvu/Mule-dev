@@ -20,7 +20,7 @@ namespace multiscale {
                 unsigned int                beginIndex;         /*!< The currently employed trace begin index */
 
                 std::vector<TimePoint>      timePoints;         /*!< The array of time points */
-                unsigned long               lastTimePointValue; /*!< The value of the last added timepoint */
+                double                      lastTimePointValue; /*!< The value of the last added time point */
 
                 bool isLastTimePointValueInitialized;  /*!< Flag to indicate if the last time point value was initialized */
 
@@ -37,7 +37,7 @@ namespace multiscale {
                  */
                 void addTimePoint(const TimePoint &timePoint);
 
-                //! Clear all the stored timepoints and reinitialize
+                //! Clear all the stored time points and reinitialize
                 void clear();
 
                 //! Get the time point at the given index in the array
@@ -58,17 +58,17 @@ namespace multiscale {
                  */
                 const TimePoint& getTimePointReference(unsigned int index) const;
 
-                //! Get the length of the spatial temporal trace (i.e. number of timepoints)
+                //! Get the length of the spatial temporal trace (i.e. number of time points)
                 unsigned int length() const;
 
-                //! Get the value of the next timepoint considering beginIndex
-                unsigned long nextTimePointValue() const;
+                //! Get the value of the next time point considering beginIndex
+                double nextTimePointValue() const;
 
-                //! Set the subtrace containing timepoints with values greater or equal to the given start value
+                //! Set the subtrace containing time points with values greater or equal to the given start value
                 /*!
                  * \param startValue    The starting value of the subtrace
                  */
-                void setSubTraceWithTimepointsValuesGreaterOrEqualTo(unsigned long startValue);
+                void setSubTraceWithTimePointsValuesGreaterOrEqualTo(double startValue);
 
                 //! Advance the trace begin index by the given value
                 /*!
@@ -113,16 +113,16 @@ namespace multiscale {
                 //! Initialize the member fields
                 void initialize();
 
-                //! Update the last timepoint value
+                //! Update the last time point value
                 /*!
-                 * \param timePoint The last added timepoint
+                 * \param timePoint The last added time point
                  */
                 void updateLastTimePointValue(TimePoint &timePoint);
 
                 //! Check if the provided time point value is greater than the last time point value
-                /*! The timepoint is considered to be uninitialized if the value is equal to the
-                 *  maximum value which can be represented as an unsigned long.
-                 *  Otherwise if the timepoint value is less or equal to the lastTimePointValue
+                /*! The time point is considered to be uninitialized if the value is equal to the
+                 *  maximum value which can be represented as a double.
+                 *  Otherwise if the time point value is less or equal to the lastTimePointValue
                  *  then an exception is thrown.
                  *
                  * \param timePoint    The given time point
@@ -130,60 +130,59 @@ namespace multiscale {
                 void validateTimePointValue(const TimePoint &timePoint);
 
                 //! Check if the provided time point value is greater than the last time point value
-                /*! The timepoint is considered to be uninitialized if the value is equal to the
-                 *  maximum value which can be represented as an unsigned long.
-                 *  Otherwise if the timepoint value is less or equal to the lastTimePointValue
+                /*! The time point is considered to be uninitialized if the value is equal to the
+                 *  maximum value which can be represented as a double.
+                 *  Otherwise if the time point value is less or equal to the lastTimePointValue
                  *  then an exception is thrown.
                  *
-                 * \param timePointValue    The value of the timepoint
+                 * \param timePointValue    The value of the time point
                  */
-                void validateTimePointValue(unsigned long timePointValue);
+                void validateTimePointValue(double timePointValue);
 
                 //! Set the begin index for the subtrace starting with the given value
                 /*!
-                 * \param startValue    The starting timepoint value of the subtrace
+                 * \param startValue    The starting time point value of the subtrace
                  */
-                void setSubTraceIndex(unsigned long startValue);
+                void setSubTraceIndex(double startValue);
 
-                //! Get the value of the next timepoint when beginIndex is the index of the last timepoint
+                //! Get the value of the next time point when beginIndex is the index of the last time point
                 /*!
-                 *  Return maximum unsigned long value if the value of the
-                 *  last timepoint is smaller than the maximum unsigned long value.
-                 *  Otherwise throw an exception.
+                 *  Return maximum double value, if the value of the last time point is smaller than the
+                 *  maximum double value. Otherwise throw an exception.
                  */
-                unsigned long nextTimePointValueForLastTimePoint() const;
+                double nextTimePointValueForLastTimePoint() const;
 
-                //! Add the timepoints starting and ending with the given indices to the subtrace
+                //! Add the time points starting and ending with the given indices to the subtrace
                 /*!
                  * \param subTrace      The resulting subtrace
-                 * \param startIndex    The starting timepoint index
-                 * \param endIndex      The end timepoint index
+                 * \param startIndex    The starting time point index
+                 * \param endIndex      The end time point index
                  */
                 void addTimePointsToSubTrace(SpatialTemporalTrace &subTrace, int startIndex, int endIndex) const;
 
-                //! Get the index of the first timepoint which has a value greater than or equal to the given value
+                //! Get the index of the first time point which has a value greater than or equal to the given value
                 /*!
                  * \param value     The given value
                  */
-                int indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value) const;
+                int indexOfFirstTimePointGreaterOrEqualToValue(double value) const;
 
-                //! Check if relative to beginIndex the provided index is smaller than the number of timepoints
+                //! Check if relative to beginIndex the provided index is smaller than the number of time points
                 /*!
                  * \param index The provided index
                  */
                 void validateIndexRelativeToBeginIndex(unsigned int index) const;
 
-                //! Check if the provided absolute index is smaller than the number of timepoints
+                //! Check if the provided absolute index is smaller than the number of time points
                 /*!
                  * \param index The provided index
                  */
                 void validateAbsoluteIndex(unsigned int index) const;
 
-                //! Check if the provided value is smaller than or equal to the maximum timepoint value
+                //! Check if the provided value is smaller than or equal to the maximum time point value
                 /*!
                  * \param value The provided value
                  */
-                void validateValue(unsigned long value) const;
+                void validateValue(double value) const;
 
 
                 // Constants

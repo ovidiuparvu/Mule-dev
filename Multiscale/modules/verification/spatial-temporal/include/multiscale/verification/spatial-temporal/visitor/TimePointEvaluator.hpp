@@ -8,14 +8,14 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class used to evaluate timepoints
+        //! Class used to evaluate time points
         class TimePointEvaluator {
 
             public:
 
-                //! Return the spatial measure values for all considered spatial entities in the given timepoint
+                //! Return the spatial measure values for all considered spatial entities in the given time point
                 /*!
-                 * \param timePoint         The considered timepoint
+                 * \param timePoint         The considered time point
                  * \param spatialMeasure    The considered spatial measure
                  */
                 static std::vector<double> getSpatialMeasureValues(const TimePoint &timePoint,
@@ -32,7 +32,7 @@ namespace multiscale {
 
             private:
 
-                //! Return the spatial measure values for all considered spatial entities in the given timepoint
+                //! Return the spatial measure values for all considered spatial entities in the given time point
                 /*!
                  * \param consideredSpatialEntities The considered spatial entities
                  * \param spatialMeasureValues      The collection of values for the given spatial measure

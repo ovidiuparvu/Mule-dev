@@ -25,14 +25,14 @@ NumericCsvModelCheckingPerformanceTest::RunNumericCsvModelCheckingPerformanceTes
 
 void
 NumericCsvModelCheckingPerformanceTest::RunTest() {
-    TemporalDataReader timeseriesReader;
+    TemporalDataReader timeSeriesReader;
     LogicPropertyDataReader logicPropertiesReader;
 
     std::vector<std::string> logicProperties
         = logicPropertiesReader.readLogicPropertiesFromFile(logicPropertiesInputFilePath);
 
     SpatialTemporalTrace timeSeries
-        = timeseriesReader.readTimeSeriesFromFile(timeSeriesInputFilePath);
+        = timeSeriesReader.readTimeSeriesFromFile(timeSeriesInputFilePath);
 
     EvaluateLogicProperties(logicProperties, timeSeries);
 }

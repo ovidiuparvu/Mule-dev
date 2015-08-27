@@ -3,10 +3,10 @@
 
 #include "multiscale/exception/MultiscaleException.hpp"
 #include "multiscale/util/Numeric.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/TimeseriesComponentAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/TimeseriesComponentEvaluator.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/TimeSeriesComponentEvaluator.hpp"
 
 #include <boost/variant.hpp>
+#include <multiscale/verification/spatial-temporal/attribute/TimeSeriesComponentAttribute.hpp>
 #include <functional>
 
 
@@ -14,14 +14,14 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for evaluating timeseries components
+        //! Class for evaluating time series components
         /*!
          * The output values of the visitor is a collection of indices pointing to the
-         * start and end positions of the timeseries components identified in the given collection of
-         * values. In case of heterogeneous timeseries components the start position = end position,
-         * while in the case of homogeneous timeseries components start position != end position.
+         * start and end positions of the time series components identified in the given collection of
+         * values. In case of heterogeneous time series components the start position = end position,
+         * while in the case of homogeneous time series components start position != end position.
          */
-        class TimeseriesComponentVisitor : public boost::static_visitor<std::vector<std::size_t>> {
+        class TimeSeriesComponentVisitor : public boost::static_visitor<std::vector<std::size_t>> {
 
             private:
 
@@ -29,22 +29,22 @@ namespace multiscale {
 
             public:
 
-                TimeseriesComponentVisitor(const std::vector<double> &values) : values(values) {}
+                TimeSeriesComponentVisitor(const std::vector<double> &values) : values(values) {}
 
-                //! Overloading the "()" operator for the HeterogeneousTimeseriesComponentAttribute alternative
+                //! Overloading the "()" operator for the HeterogeneousTimeSeriesComponentAttribute alternative
                 /*!
-                 * \param heterogeneousTimeseriesComponent  The heterogeneous timeseries component
+                 * \param heterogeneousTimeSeriesComponent  The heterogeneous time series component
                  */
                 std::vector<std::size_t>
-                operator()(const HeterogeneousTimeseriesComponentAttribute &heterogeneousTimeseriesComponent) const {
-                    switch (heterogeneousTimeseriesComponent.heterogeneousTimeseriesComponent) {
-                        case HeterogeneousTimeseriesComponentType::Peak:
+                operator()(const HeterogeneousTimeSeriesComponentAttribute &heterogeneousTimeSeriesComponent) const {
+                    switch (heterogeneousTimeSeriesComponent.heterogeneousTimeSeriesComponent) {
+                        case HeterogeneousTimeSeriesComponentType::Peak:
                             return duplicateCollectionElements(
                                 evaluateHeterogeneousComponentsIndices(values, std::less<double>())
                             );
                             break;
 
-                        case HeterogeneousTimeseriesComponentType::Valley:
+                        case HeterogeneousTimeSeriesComponentType::Valley:
                             return duplicateCollectionElements(
                                 evaluateHeterogeneousComponentsIndices(values, std::greater<double>())
                             );
@@ -58,14 +58,14 @@ namespace multiscale {
                     return std::vector<std::size_t>();
                 }
 
-                //! Overloading the "()" operator for the HomogeneousTimeseriesComponentAttribute alternative
+                //! Overloading the "()" operator for the HomogeneousTimeSeriesComponentAttribute alternative
                 /*!
-                 * \param homogeneousTimeseriesComponent  The homogeneous timeseries component
+                 * \param homogeneousTimeSeriesComponent  The homogeneous time series component
                  */
                 std::vector<std::size_t>
-                operator()(const HomogeneousTimeseriesComponentAttribute &homogeneousTimeseriesComponent) const {
-                    return TimeseriesComponentEvaluator::evaluate(
-                        homogeneousTimeseriesComponent,
+                operator()(const HomogeneousTimeSeriesComponentAttribute &homogeneousTimeSeriesComponent) const {
+                    return TimeSeriesComponentEvaluator::evaluate(
+                        homogeneousTimeSeriesComponent,
                         values
                     );
                 }

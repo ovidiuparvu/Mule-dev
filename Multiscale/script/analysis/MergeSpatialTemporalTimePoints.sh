@@ -3,11 +3,11 @@
 ###########################################################
 #
 #
-# A script for merging multiple timepoints into a single
+# A script for merging multiple time points into a single
 # spatial temporal trace.
 #
-# Each timepoint is represented by a different xml file.
-# The order of merging timepoints is the natural order
+# Each time point is represented by a different xml file.
+# The order of merging time points is the natural order
 # of the xml files.
 #
 #
@@ -16,7 +16,7 @@
 # Check if the required number of parameters was provided
 if [ $# -ne 4 ];
 then
-    echo "Please run the script with the reguired parameters: MergeSpatialTemporalTimePoints.sh <input-folder> <xml-lines-before-timepoint-content> <xml-lines-after-timepoint-content> <output-path>.";
+    echo "Please run the script with the reguired parameters: MergeSpatialTemporalTimePoints.sh <input-folder> <xml-lines-before-time-point-content> <xml-lines-after-time-point-content> <output-path>.";
     
     exit 1;
 fi
@@ -34,7 +34,7 @@ numericPattern='^(0|-?[1-9]([0-9]+)?)$';
 
 if ! [[ $2 =~ ${numericPattern} ]] || ! [[ $3 =~ ${numericPattern} ]];
 then
-    echo "The number of lines before/after timepoint content should be numeric values.";
+    echo "The number of lines before/after time point content should be numeric values.";
 
     exit 1;
 fi

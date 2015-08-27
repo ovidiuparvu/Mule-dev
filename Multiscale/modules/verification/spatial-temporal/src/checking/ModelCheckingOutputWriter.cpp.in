@@ -290,13 +290,13 @@ const std::string ModelCheckingOutputWriter::TAG_TRUE       = "[ TRUE     ]";
 const std::string ModelCheckingOutputWriter::TAG_FALSE      = "[ FALSE    ]";
 const std::string ModelCheckingOutputWriter::TAG_SEPARATOR  = "[==========]";
 
-const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mule ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_BUILD} (Multidimensional multiscale model checker)";
-const std::string ModelCheckingOutputWriter::MSG_INTRO_COPYRIGHT                    = "Copyright Ovidiu Pârvu 2014";
+const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mule ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_BUILD} (Multiscale multidimensional spatio-temporal model checker)";
+const std::string ModelCheckingOutputWriter::MSG_INTRO_COPYRIGHT                    = "Copyright ${PROJECT_AUTHOR} ${CURRENT_YEAR}";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_TYPE          = "Model checker type: ";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_PARAMETERS    = "Parameters:         ";
-const std::string ModelCheckingOutputWriter::MSG_INTRO_CONTACT                      = "For more details, recommendations or suggestions feel free to contact me at <ovidiu.parvu[AT]gmail.com>.";
+const std::string ModelCheckingOutputWriter::MSG_INTRO_CONTACT                      = "For more details, recommendations or suggestions feel free to contact me at ${PROJECT_AUTHOR_EMAIL}.";
 
-const std::string ModelCheckingOutputWriter::MSG_INIT_EXECUTION_PARAMETERS  = "Multidimensional multiscale model checking input parameters";
+const std::string ModelCheckingOutputWriter::MSG_INIT_EXECUTION_PARAMETERS  = "Multiscale multidimensional spatio-temporal model checking input parameters";
 const std::string ModelCheckingOutputWriter::MSG_INIT_LOGIC_PROPERTIES_PATH = "Logic properties input file:          ";
 const std::string ModelCheckingOutputWriter::MSG_INIT_TRACES_FOLDER_PATH    = "Spatio-temporal traces input folder:  ";
 const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "Extra evaluation time (minutes):      ";

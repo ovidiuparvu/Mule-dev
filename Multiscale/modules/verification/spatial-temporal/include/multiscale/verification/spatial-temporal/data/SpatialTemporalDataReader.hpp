@@ -105,24 +105,24 @@ namespace multiscale {
                  */
                 SpatialTemporalTrace constructSpatialTemporalTrace(const pt::ptree &tree);
 
-                //! Add a timepoint corresponding to the given property tree to the spatial temporal trace
+                //! Add a time point corresponding to the given property tree to the spatial temporal trace
                 /*!
-                 * \param timePointTree The property tree corresponding to the timepoint
+                 * \param timePointTree The property tree corresponding to the time point
                  * \param trace         The spatial temporal trace
                  */
                 void addTimePointToTrace(const pt::ptree &timePointTree, SpatialTemporalTrace &trace);
 
-                //! Convert a time point from a property tree to a timepoint representation
+                //! Convert a time point from a property tree to a time point representation
                 /*!
-                 * \param timePointTree Property tree representation of the timepoint
-                 * \param timePoint     The TimePoint representation of the timepoint
+                 * \param timePointTree Property tree representation of the time point
+                 * \param timePoint     The TimePoint representation of the time point
                  */
                 void convertTimePointPropertyTreeToTrace(const pt::ptree &timePointTree, TimePoint &timePoint);
 
-                //! Set the value of the timepoint considering the given timepoint tree
+                //! Set the value of the time point considering the given time point tree
                 /*!
-                 * \param timePointTree Property tree representation of the timepoint
-                 * \param timePoint     The TimePoint representation of the timepoint
+                 * \param timePointTree Property tree representation of the time point
+                 * \param timePoint     The TimePoint representation of the time point
                  */
                 void setTimePointValue(const pt::ptree &timePointTree, TimePoint& timePoint);
 
@@ -131,26 +131,26 @@ namespace multiscale {
                  * \param propertyTree  The provided property tree
                  * \param value         The value (if it exists)
                  */
-                bool timePointHasValue(const pt::ptree &propertyTree, unsigned long &value);
+                bool timePointHasValue(const pt::ptree &propertyTree, double &value);
 
-                //! Add the numeric state variables and spatial entities contained by the property tree to the given timepoint
+                //! Add the numeric state variables and spatial entities contained by the property tree to the given time point
                 /*!
                  * \param timePointTree The given property tree
-                 * \param timePoint     The given timepoint
+                 * \param timePoint     The given time point
                  */
                 void addEntitiesToTimePoint(const pt::ptree &timePointTree, TimePoint &timePoint);
 
-                //! Add the numeric state variable (provided as a tree) to the provided timepoint
+                //! Add the numeric state variable (provided as a tree) to the provided time point
                 /*!
                  * \param numericStateVariableTree  The provided numeric state variable property tree
-                 * \param timePoint                 The given timepoint
+                 * \param timePoint                 The given time point
                  */
                 void addNumericStateVariableToTimePoint(const pt::ptree &numericStateVariableTree, TimePoint &timePoint);
 
                 //! Add the spatial entity contained by the property tree to the given timePoint
                 /*!
                  * \param spatialEntityTree The given spatial entity represented as a property tree
-                 * \param timePoint         The given timepoint
+                 * \param timePoint         The given time point
                  */
                 void addSpatialEntityToTimePoint(const pt::ptree &spatialEntityTree, TimePoint &timePoint);
 
@@ -206,15 +206,15 @@ namespace multiscale {
                 /*! An input file is valid if it is an xml file which conforms to the formal
                  *  specification given in the xml schema (xsd file).
                  *
-                 *  WARNING: The Timepoint class contains as members lists of spatial entities
+                 *  WARNING: The TimePoint class contains as members lists of spatial entities
                  *           because the uniqueness of the spatial entities is determined using this
                  *           method. If this method is no longer used then replace the lists
-                 *           in the Timepoint class with sets or unordered_sets in order to ensure
+                 *           in the TimePoint class with sets or unordered_sets in order to ensure
                  *           the uniqueness of the elements.
                  *
                  * \param inputFilepath The path to the input file
                  */
-                // TODO: Update Timepoint class if no longer using this function in the code
+                // TODO: Update TimePoint class if no longer using this function in the code
                 bool isValidInputFile(const std::string &inputFilepath);
 
                 //! Check if the given folder path is valid

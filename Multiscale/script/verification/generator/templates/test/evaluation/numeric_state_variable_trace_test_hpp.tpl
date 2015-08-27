@@ -7,7 +7,7 @@
 /*{% endfor %}*/
  *****************************************************************************/
 
-#include "TimepointsNumericValuesInitializer.hpp"
+#include "TimePointsNumericValuesInitializer.hpp"
 
 using namespace multiscale;
 using namespace multiscaletest;
@@ -20,16 +20,16 @@ namespace multiscaletest {
 
         private:
 
-            //! Add values to timepoints
-            virtual void AddValuesToTimepoints() override;
+            //! Add values to time points
+            virtual void AddValuesToTimePoints() override;
 
     };
 
 
-    void NumericStateVariableTraceTest::AddValuesToTimepoints() {
-        TimepointsNumericValuesInitializer numericValuesInitializer;
+    void NumericStateVariableTraceTest::AddValuesToTimePoints() {
+        TimePointsNumericValuesInitializer numericValuesInitializer;
 
-        numericValuesInitializer.addValuesOfNumericStateVariablesToTimepoints(timePoints);
+        numericValuesInitializer.addValuesOfNumericStateVariablesToTimePoints(timePoints);
     }
 
 };
@@ -413,16 +413,16 @@ TEST_F(NumericStateVariableTraceTest, GlobalLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
-// HeterogeneousTimeseriesComponent
+// HeterogeneousTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeseriesComponentPeak) {
+TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeSeriesComponentPeak) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(enteringValue(peak, [0, 11] {A})) > 8]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeseriesComponentValley) {
+TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeSeriesComponentValley) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) < 7.001 ^ avg(enteringValue(valley, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) > 6.99]"));
 }
 
@@ -430,12 +430,12 @@ TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeseriesComponentValley) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousHomogeneousTimeseries
+// HomogeneousHomogeneousTimeSeries
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, HomogeneousHomogeneousTimeseries) {
+TEST_F(NumericStateVariableTraceTest, HomogeneousHomogeneousTimeSeries) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(timeSpan(plateau, [0, 11] 2)) = 11]"));
 }
 
@@ -443,28 +443,28 @@ TEST_F(NumericStateVariableTraceTest, HomogeneousHomogeneousTimeseries) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousTimeseriesComponent
+// HomogeneousTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentAscent) {
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeSeriesComponentAscent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [median(values(ascent, [0, 11] {A})) = 6]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentDescent) {
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeSeriesComponentDescent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [mode(values(descent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 12]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentPlateau) {
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeSeriesComponentPlateau) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(timeSpan(plateau, [0, 11] {B})) = 11]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeSeriesComponentUniformAscent) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(uniformAscent, [0, 11] {A})) = 4]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeSeriesComponentUniformDescent) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 7.5]"));
 }
 
@@ -472,16 +472,16 @@ TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformDesce
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousTimeseriesMeasure
+// HomogeneousTimeSeriesMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesMeasureTimeSpan) {
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeSeriesMeasureTimeSpan) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(descent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 3]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesMeasureValue) {
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeSeriesMeasureValue) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(values(plateau, [0, 11] {A})) > 0]"));
 }
 
@@ -998,12 +998,12 @@ TEST_F(NumericStateVariableTraceTest, TemporalNumericMeasureCollection) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesComponent
+// TimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, TimeseriesComponent) {
+TEST_F(NumericStateVariableTraceTest, TimeSeriesComponent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(enteringValue(uniformAscent, [0, 11] {A})) < 11]"));
 }
 
@@ -1011,16 +1011,16 @@ TEST_F(NumericStateVariableTraceTest, TimeseriesComponent) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesMeasure
+// TimeSeriesMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureEnteringTime) {
+TEST_F(NumericStateVariableTraceTest, TimeSeriesMeasureEnteringTime) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(enteringTime(descent, [0, 11] {A})) = 7]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureEnteringValue) {
+TEST_F(NumericStateVariableTraceTest, TimeSeriesMeasureEnteringValue) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(enteringValue(uniformDescent, [0, 11] {C})) < 12]"));
 }
 
@@ -1028,12 +1028,12 @@ TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureEnteringValue) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesTimeseriesComponent
+// TimeSeriesTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, TimeseriesTimeseriesComponent) {
+TEST_F(NumericStateVariableTraceTest, TimeSeriesTimeSeriesComponent) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(enteringTime(peak, [0, 11] {A})) > 5]"));
 }
 

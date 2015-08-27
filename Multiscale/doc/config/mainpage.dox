@@ -3,9 +3,9 @@
     
     \section sec_brief_description Brief description
     
-    The "Multiscale" software is a multiscale model checker implemented during the PhD research project carried out by Ovidiu Parvu, Brunel University, London, United Kingdom, October 2012 - present.
+    The "Multiscale" project comprises software modules for the validation of multiscale spatio-temporal computational models, and the visualisation and analysis of their simulation output. One of the most important software module developed during this project is the multiscale multidimensional spatio-temporal meta model checker Mule. The project was developed by Ovidiu Pârvu while he was a PhD student in the Department of Computer Science of Brunel University London, London, United Kingdom, 2012-2015.
     
     \section sec_contact Contact
     
-    For more information, comments, recommendations or suggestions please visit the author's <A HREF="http://people.brunel.ac.uk/~cspgoop">institutional web page</a>, where contact details are provided.
+    For more information, comments, recommendations or suggestions please visit the author's <A HREF="http://ovidiuparvu.com">web page</a>, where contact details are provided.
 */

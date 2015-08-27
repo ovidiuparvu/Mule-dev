@@ -75,8 +75,8 @@ namespace multiscaletest {
 
            //! Initialize the collection of spatio-temporal traces with the given spatial entity /*{{ spatial_measures[0].name }}*/ values
            /*!
-            * The assumption is that each timepoint contains only one spatial entity of the same type.
-            * Therefore each /*{{ spatial_measures[0].name }}*/ value corresponds to a different timepoint and spatial entity.
+            * The assumption is that each time point contains only one spatial entity of the same type.
+            * Therefore each /*{{ spatial_measures[0].name }}*/ value corresponds to a different time point and spatial entity.
             *
             * \param /*{{ spatial_measures[0].name }}*/Values The collection of /*{{ spatial_measures[0].name }}*/ values
             */

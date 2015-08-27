@@ -21,9 +21,9 @@ namespace multiscale {
             private:
 
                 TimePoint
-                    &initialTimePoint;              /*!< A copy of the initial timepoint */
+                    &initialTimePoint;              /*!< A copy of the initial time point */
                 TimePoint
-                    &constraintTimePoint;           /*!< The currently obtained constraint timepoint */
+                    &constraintTimePoint;           /*!< The currently obtained constraint time point */
                 const MultiscaleArchitectureGraph
                     &multiscaleArchitectureGraph;   /*!< The considered multiscale architecture graph */
 
@@ -47,12 +47,12 @@ namespace multiscale {
                  * \param constraint     The constraint
                  */
                 TimePoint operator() (const ConstraintAttribute &constraint) const {
-                    // Apply the first constraint to the timepoint
+                    // Apply the first constraint to the time point
                     TimePoint timePoint(
                         evaluate(constraint.firstConstraint, initialTimePoint)
                     );
 
-                    // Apply the remaining constraints to the timepoint
+                    // Apply the remaining constraints to the time point
                     return evaluateNextConstraints(constraint, timePoint);
                 }
 
@@ -174,10 +174,10 @@ namespace multiscale {
 
             private:
 
-                //! Evaluate the constraint considering the given timepoint
+                //! Evaluate the constraint considering the given time point
                 /*!
                  * \param constraint    The given constraint
-                 * \param timePoint     The given timepoint
+                 * \param timePoint     The given time point
                  */
                 TimePoint evaluate(const ConstraintAttributeType &constraint, TimePoint &timePoint) const {
                     return (
@@ -192,10 +192,10 @@ namespace multiscale {
                     );
                 }
 
-                //! Evaluate the primary constraint considering the given timepoints
+                //! Evaluate the primary constraint considering the given time points
                 /*!
                  * \param primaryConstraint The given primary constraint
-                 * \param timePoint         The given timepoint
+                 * \param timePoint         The given time point
                  */
                 TimePoint evaluate(const PrimaryConstraintAttributeType &primaryConstraint,
                                    TimePoint &timePoint) const {
@@ -213,11 +213,11 @@ namespace multiscale {
 
                 //! Evaluate the next constraints
                 /*!
-                 * Evaluate the next constraints considering the given constraint and timepoints
+                 * Evaluate the next constraints considering the given constraint and time points
                  *
                  * \param constraint    The given constraint
-                 * \param timePoint     The resulting timepoint after applying the first constraint to the
-                 *                      initial timepoint
+                 * \param timePoint     The resulting time point after applying the first constraint to the
+                 *                      initial time point
                  */
                 TimePoint evaluateNextConstraints(const ConstraintAttribute &constraint,
                                                   const TimePoint &timePoint) const {
@@ -239,11 +239,11 @@ namespace multiscale {
 
                 //! Evaluate the unary scale and subsystem constraint
                 /*! Evaluate the unary scale and subsystem constraint considering the given spatial measure,
-                 *  comparator, scale and subsystem and timepoint
+                 *  comparator, scale and subsystem and time point
                  *
                  * \param comparator        The comparator type
                  * \param scaleAndSubsystem The scale and subsystem
-                 * \param timePoint         The considered timepoint
+                 * \param timePoint         The considered time point
                  */
                 TimePoint evaluateUnaryScaleAndSubsystemConstraint(
                     const ComparatorType &comparator,
@@ -261,9 +261,9 @@ namespace multiscale {
                     return unaryConstraintTimePoint;
                 }
 
-                //! Filter the timepoint's spatial entities considering the scale and subsystem of each spatial entity
+                //! Filter the time point's spatial entities considering the scale and subsystem of each spatial entity
                 /*!
-                 * \param timePoint         The timepoint storing the collection of spatial entities which
+                 * \param timePoint         The time point storing the collection of spatial entities which
                  *                          will be filtered
                  * \param comparator        The type of the comparator
                  * \param scaleAndSubsystem The scale and subsystem
@@ -289,12 +289,12 @@ namespace multiscale {
 
                 //! Evaluate the unary spatial constraint
                 /*! Evaluate the unary spatial constraint considering the given spatial measure, comparator,
-                 *  numeric measure and timepoint
+                 *  numeric measure and time point
                  *
                  * \param spatialMeasure        The spatial measure type
                  * \param comparator            The comparator type
                  * \param filterNumericMeasure  The filter numeric measure
-                 * \param timePoint             The considered timepoint
+                 * \param timePoint             The considered time point
                  */
                 TimePoint evaluateUnarySpatialConstraint(const SpatialMeasureType &spatialMeasure,
                                                          const ComparatorType &comparator,
@@ -312,10 +312,10 @@ namespace multiscale {
                     return unaryConstraintTimePoint;
                 }
 
-                //! Evaluate the numeric measure considering the given timepoint
+                //! Evaluate the numeric measure considering the given time point
                 /*!
                  * \param numericMeasure    The numeric measure
-                 * \param timePoint         The given timepoint
+                 * \param timePoint         The given time point
                  */
                 double evaluateNumericMeasure(const NumericMeasureType &numericMeasure,
                                               TimePoint &timePoint) const {
@@ -330,12 +330,12 @@ namespace multiscale {
                     );
                 }
 
-                //! Filter the timepoint's spatial entities considering the given spatial measure constraint
+                //! Filter the time point's spatial entities considering the given spatial measure constraint
                 /*!
                  * All considered spatial entities which fail to meet the constraints
-                 * will be removed from the given timepoint.
+                 * will be removed from the given time point.
                  *
-                 * \param timePoint             The timepoint storing the collection of spatial entities which
+                 * \param timePoint             The time point storing the collection of spatial entities which
                  *                              will be filtered
                  * \param spatialMeasure        The type of the spatial measure
                  * \param comparator            The type of the comparator
@@ -364,9 +364,9 @@ namespace multiscale {
                     }
                 }
 
-                //! Remove from the timepoint the spatial entities which fail to meet the spatial measure constraint
+                //! Remove from the time point the spatial entities which fail to meet the spatial measure constraint
                 /*!
-                 * \param timePoint             The timepoint which will be filtered
+                 * \param timePoint             The time point which will be filtered
                  * \param spatialEntityType     The considered spatial entity type
                  * \param spatialMeasure        The type of the spatial measure
                  * \param comparator            The type of the comparator
@@ -398,9 +398,9 @@ namespace multiscale {
                     }
                 }
 
-                //! Remove from timepoint the spatial entities which fail to meet the scale and subsystem constraint
+                //! Remove from time point the spatial entities which fail to meet the scale and subsystem constraint
                 /*!
-                 * \param timePoint             The timepoint which will be filtered
+                 * \param timePoint             The time point which will be filtered
                  * \param subsetSpecificType    The considered subset specific type
                  * \param comparator            The type of the comparator
                  * \param scaleAndSubsystem     The scaleAndSubsystem type
@@ -429,11 +429,11 @@ namespace multiscale {
                     );
                 }
 
-                //! Remove from timepoint the spatial entities which fail to meet the scale and subsystem constraint
+                //! Remove from time point the spatial entities which fail to meet the scale and subsystem constraint
                 /*! The assumption for this method is that the provided scale and subsystem exists in the
                  *  multiscale architecture graph.
                  *
-                 * \param timePoint             The timepoint which will be filtered
+                 * \param timePoint             The time point which will be filtered
                  * \param spatialEntityType     The considered spatial entity type
                  * \param comparator            The type of the comparator
                  * \param scaleAndSubsystem     The scale and subsystem
@@ -458,12 +458,12 @@ namespace multiscale {
                     }
                 }
 
-                //! Remove from timepoint the spatial entities which fail to meet the scale and subsystem constraint
+                //! Remove from time point the spatial entities which fail to meet the scale and subsystem constraint
                 /*! The assumption for this method is that the considered comparator is "=".
                  *
                  * In this case the multiscale architecture graph is NOT used.
                  *
-                 * \param timePoint             The timepoint which will be filtered
+                 * \param timePoint             The time point which will be filtered
                  * \param spatialEntityType     The considered spatial entity type
                  * \param rhsScaleAndSubsystem  The scale and subsystem on the right hand side of the comparator
                  */
@@ -486,12 +486,12 @@ namespace multiscale {
                     }
                 }
 
-                //! Remove from timepoint the spatial entities which fail to meet the scale and subsystem constraint
+                //! Remove from time point the spatial entities which fail to meet the scale and subsystem constraint
                 /*! The assumption for this method is that the considered comparator is different from "=".
                  *
                  * In this case the multiscale architecture graph is used.
                  *
-                 * \param timePoint             The timepoint which will be filtered
+                 * \param timePoint             The time point which will be filtered
                  * \param spatialEntityType     The considered spatial entity type
                  * \param comparator            The type of the comparator
                  * \param rhsScaleAndSubsystem  The scale and subsystem on the right hand side of the comparator
@@ -522,10 +522,10 @@ namespace multiscale {
                     }
                 }
 
-                //! Evaluate the filter numeric measure considering the provided timepoint and spatial entity
+                //! Evaluate the filter numeric measure considering the provided time point and spatial entity
                 /*!
                  * \param filterNumericMeasure  The filter numeric measure
-                 * \param timePoint             The considered timepoint
+                 * \param timePoint             The considered time point
                  * \param spatialEntity         The considered spatial entity
                  */
                 double evaluateFilterNumericMeasure(const FilterNumericMeasureAttributeType &filterNumericMeasure,

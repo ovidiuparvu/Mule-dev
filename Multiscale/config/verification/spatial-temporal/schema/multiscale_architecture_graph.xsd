@@ -7,7 +7,7 @@
 	<xs:annotation>
 		<xs:documentation xml:lang="en">
 			Multiscale architecture graph schema used for multiscale multidimensional model checking.
-			Copyright 2015 Ovidiu Parvu. 
+			Copyright 2015 Ovidiu Pârvu. 
 		</xs:documentation>
 	</xs:annotation>
 

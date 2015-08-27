@@ -10,8 +10,8 @@
  *
  *****************************************************************************/
 
-#include "TimepointsNumericValuesInitializer.hpp"
-#include "TimepointsSpatialEntitiesAttributesInitializer.hpp"
+#include "TimePointsNumericValuesInitializer.hpp"
+#include "TimePointsSpatialEntitiesAttributesInitializer.hpp"
  
 using namespace multiscale;
 using namespace multiscaletest;
@@ -24,18 +24,18 @@ namespace multiscaletest {
 
         private:
     
-            //! Add values to timepoints
-            virtual void AddValuesToTimepoints() override;
+            //! Add values to time points
+            virtual void AddValuesToTimePoints() override;
     
     };
     
     
-    void CompleteTraceTest::AddValuesToTimepoints() {
-        TimepointsNumericValuesInitializer numericValuesInitializer;
-        TimepointsSpatialEntitiesAttributesInitializer spatialEntitiesAttributesInitializer;
+    void CompleteTraceTest::AddValuesToTimePoints() {
+        TimePointsNumericValuesInitializer numericValuesInitializer;
+        TimePointsSpatialEntitiesAttributesInitializer spatialEntitiesAttributesInitializer;
             
-        numericValuesInitializer.addValuesOfNumericStateVariablesToTimepoints(timePoints);
-        spatialEntitiesAttributesInitializer.addSpatialEntitiesAttributesToTimepoints(timePoints);
+        numericValuesInitializer.addValuesOfNumericStateVariablesToTimePoints(timePoints);
+        spatialEntitiesAttributesInitializer.addSpatialEntitiesAttributesToTimePoints(timePoints);
     }
 
 };
@@ -418,16 +418,16 @@ TEST_F(CompleteTraceTest, GlobalLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
-// HeterogeneousTimeseriesComponent
+// HeterogeneousTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, HeterogeneousTimeseriesComponentPeak) {
+TEST_F(CompleteTraceTest, HeterogeneousTimeSeriesComponentPeak) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(peak, [0, 11] {A})) = 4]"));
 }
 
-TEST_F(CompleteTraceTest, HeterogeneousTimeseriesComponentValley) {
+TEST_F(CompleteTraceTest, HeterogeneousTimeSeriesComponentValley) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] count(clusteredness(clusters)))) = 2]"));
 }
 
@@ -435,12 +435,12 @@ TEST_F(CompleteTraceTest, HeterogeneousTimeseriesComponentValley) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousHomogeneousTimeseries
+// HomogeneousHomogeneousTimeSeries
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, HomogeneousHomogeneousTimeseries) {
+TEST_F(CompleteTraceTest, HomogeneousHomogeneousTimeSeries) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(plateau, [0, 11] {B})) = 11]"));
 }
 
@@ -448,28 +448,28 @@ TEST_F(CompleteTraceTest, HomogeneousHomogeneousTimeseries) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousTimeseriesComponent
+// HomogeneousTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentAscent) {
+TEST_F(CompleteTraceTest, HomogeneousTimeSeriesComponentAscent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(values(ascent, [0, 11] count(clusteredness(clusters)))) = 1]"));
 }
 
-TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentDescent) {
+TEST_F(CompleteTraceTest, HomogeneousTimeSeriesComponentDescent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 7.5]"));
 }
 
-TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentPlateau) {
+TEST_F(CompleteTraceTest, HomogeneousTimeSeriesComponentPlateau) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(values(plateau, [0, 11] {B})) = 2.999]"));
 }
 
-TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
+TEST_F(CompleteTraceTest, HomogeneousTimeSeriesComponentUniformAscent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(values(uniformAscent, [0, 11] count(clusteredness(clusters)))) = 11]"));
 }
 
-TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
+TEST_F(CompleteTraceTest, HomogeneousTimeSeriesComponentUniformDescent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 6.6]"));
 }
 
@@ -477,16 +477,16 @@ TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousTimeseriesMeasure
+// HomogeneousTimeSeriesMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, HomogeneousTimeseriesMeasureTimeSpan) {
+TEST_F(CompleteTraceTest, HomogeneousTimeSeriesMeasureTimeSpan) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(timeSpan(ascent, [0, 11] count(clusteredness(clusters)))) = 2]"));
 }
 
-TEST_F(CompleteTraceTest, HomogeneousTimeseriesMeasureValue) {
+TEST_F(CompleteTraceTest, HomogeneousTimeSeriesMeasureValue) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] count(clusteredness(clusters)))) = 4.51]"));
 }
 
@@ -1028,12 +1028,12 @@ TEST_F(CompleteTraceTest, TemporalNumericMeasureCollection) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesComponent
+// TimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, TimeseriesComponent) {
+TEST_F(CompleteTraceTest, TimeSeriesComponent) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniformAscent, [0, 11] count(clusteredness(clusters)))) > 5]"));
 }
 
@@ -1041,16 +1041,16 @@ TEST_F(CompleteTraceTest, TimeseriesComponent) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesMeasure
+// TimeSeriesMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringTime) {
+TEST_F(CompleteTraceTest, TimeSeriesMeasureEnteringTime) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(enteringTime(descent, [0, 11] count(clusteredness(clusters)))) < 10]"));
 }
 
-TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringValue) {
+TEST_F(CompleteTraceTest, TimeSeriesMeasureEnteringValue) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniformDescent, [0, 11] {C}(scaleAndSubsystem = Organ.Heart))) = 3]"));
 }
 
@@ -1058,12 +1058,12 @@ TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringValue) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesTimeseriesComponent
+// TimeSeriesTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, TimeseriesTimeseriesComponent) {
+TEST_F(CompleteTraceTest, TimeSeriesTimeSeriesComponent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(enteringTime(peak, [0, 11] count(clusteredness(clusters)))) = 6]"));
 }
 

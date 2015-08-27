@@ -5,10 +5,10 @@
 # Script for simulating the Acute inflammation of gut and lung NetLogo model
 # and converting the simulation output to MSTML. (TODO: Update)
 #
-# Author: Ovidiu Parvu
+# Author: Ovidiu Pârvu
 # Contact: ovidiu.parvu@gmail.com
 #
-# Copyright Ovidiu Parvu 2015
+# Copyright Ovidiu Pârvu 2015
 #
 ###############################################################################
 

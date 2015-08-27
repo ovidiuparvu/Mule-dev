@@ -18,7 +18,7 @@ namespace multiscale {
             private:
 
                 TimePoint
-                    &timePoint;                     /*!< The considered timepoint */
+                    &timePoint;                     /*!< The considered time point */
                 const SpatialEntity
                     &spatialEntity;                 /*!< The considered spatial entity */
                 const MultiscaleArchitectureGraph

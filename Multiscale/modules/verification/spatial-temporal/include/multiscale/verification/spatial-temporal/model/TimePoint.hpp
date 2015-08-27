@@ -25,7 +25,7 @@ namespace multiscale {
 
             private:
 
-                unsigned long value;   /*!< The value of the time point within a simulation/experiment */
+                double value;   /*!< The value of the time point within a simulation/experiment */
 
                 /*
                  * TODO: Update TimePoint class if no longer validating input XML files
@@ -54,18 +54,18 @@ namespace multiscale {
 
             public:
 
-                TimePoint(unsigned long value = std::numeric_limits<unsigned long>::max());
+                TimePoint(double value = std::numeric_limits<double>::max());
                 TimePoint(const TimePoint &timePoint);
                 ~TimePoint();
 
                 //! Get the value of the time point
-                unsigned long getValue() const;
+                double getValue() const;
 
                 //! Set the value of the time point
                 /*!
                  * \param value The value of the time point
                  */
-                void setValue(unsigned long value);
+                void setValue(double value);
 
                 //! Get the considered spatial entity type
                 std::bitset<NR_SUBSET_SPECIFIC_TYPES> getConsideredSpatialEntityTypes();
@@ -316,15 +316,15 @@ namespace multiscale {
 
                 //! Check if two time points (this instance and the provided one) are equal
                 /*!
-                 * \param rhsTimepoint  The provided time point against which this time point is compared
+                 * \param rhsTimePoint  The provided time point against which this time point is compared
                  */
-                bool operator==(const TimePoint &rhsTimepoint);
+                bool operator==(const TimePoint &rhsTimePoint);
 
                 //! Check if two time points (this instance and the provided one) are different (i.e. not equal)
                 /*!
-                 * \param rhsTimepoint  The provided time point against which this time point is compared
+                 * \param rhsTimePoint  The provided time point against which this time point is compared
                  */
-                bool operator!=(const TimePoint &rhsTimepoint);
+                bool operator!=(const TimePoint &rhsTimePoint);
 
             private:
 
@@ -372,25 +372,25 @@ namespace multiscale {
 
                 /*! Check if this and the provided time point contain the same numeric state variables
                  *
-                 * \param rhsTimepoint  The time point against which this timepoint's numeric state variables
+                 * \param rhsTimePoint  The time point against which this time point's numeric state variables
                  *                      are compared
                  */
-                bool areEqualNumericStateVariables(const TimePoint &rhsTimepoint);
+                bool areEqualNumericStateVariables(const TimePoint &rhsTimePoint);
 
                 //! Check if this and the provided time point contain the same spatial entities
                 /*!
-                 * \param rhsTimepoint  The time point against which this timepoint's numeric state variables
+                 * \param rhsTimePoint  The time point against which this time point's numeric state variables
                  *                      are compared
                  */
-                bool areEqualSpatialEntities(const TimePoint &rhsTimepoint);
+                bool areEqualSpatialEntities(const TimePoint &rhsTimePoint);
 
                 //! Check if this and the provided time point contain the same spatial entities of the given type
                 /*!
-                 * \param rhsTimepoint              The time point against which this timepoint's numeric state
+                 * \param rhsTimePoint              The time point against which this time point's numeric state
                  *                                  variables are compared
                  * \param spatialEntityTypeIndex    The index of the considered spatial entity type
                  */
-                bool areEqualSpatialEntitiesOfSpecificType(const TimePoint &rhsTimepoint,
+                bool areEqualSpatialEntitiesOfSpecificType(const TimePoint &rhsTimePoint,
                                                            const std::size_t &spatialEntityTypeIndex);
 
 

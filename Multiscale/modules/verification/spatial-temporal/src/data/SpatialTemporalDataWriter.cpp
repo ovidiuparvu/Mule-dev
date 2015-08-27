@@ -22,77 +22,77 @@ void SpatialTemporalDataWriter::constructPropertyTreeFromTrace(const SpatialTemp
                                                                pt::ptree &propertyTree) {
     pt::ptree experimentPropertyTree;
 
-    // Add timepoints to the experiment tree
-    addTimepointsToExperimentPropertyTree(trace, experimentPropertyTree);
+    // Add time points to the experiment tree
+    addTimePointsToExperimentPropertyTree(trace, experimentPropertyTree);
 
     // Add the experiment tree to the property tree
     propertyTree.add_child(LABEL_EXPERIMENT, experimentPropertyTree);
 }
 
-void SpatialTemporalDataWriter::addTimepointsToExperimentPropertyTree(const SpatialTemporalTrace &trace,
+void SpatialTemporalDataWriter::addTimePointsToExperimentPropertyTree(const SpatialTemporalTrace &trace,
                                                                       pt::ptree &experimentPropertyTree) {
-    unsigned int nrOfTimepoints = trace.length();
+    unsigned int nrOfTimePoints = trace.length();
 
-    // Add each timepoint to the experiment property tree
-    for (unsigned int i = 0; i < nrOfTimepoints; i++) {
-        // Construct timepoint property tree
-        pt::ptree timepointPropertyTree
-            = constructPropertyTreeFromTimepoint(trace.getTimePointReference(i));
+    // Add each time point to the experiment property tree
+    for (unsigned int i = 0; i < nrOfTimePoints; i++) {
+        // Construct time point property tree
+        pt::ptree timePointPropertyTree
+            = constructPropertyTreeFromTimePoint(trace.getTimePointReference(i));
 
-        // Add the timepoint to the experiment property tree
-        experimentPropertyTree.add_child(LABEL_TIMEPOINT, timepointPropertyTree);
+        // Add the time point to the experiment property tree
+        experimentPropertyTree.add_child(LABEL_TIMEPOINT, timePointPropertyTree);
     }
 }
 
-pt::ptree SpatialTemporalDataWriter::constructPropertyTreeFromTimepoint(const TimePoint &timepoint) {
-    pt::ptree timepointTree;
+pt::ptree SpatialTemporalDataWriter::constructPropertyTreeFromTimePoint(const TimePoint &timePoint) {
+    pt::ptree timePointTree;
 
-    addValueAttributeToTimepointTree(timepoint, timepointTree);
-    addSpatialEntitiesToTimepointTree(timepoint, timepointTree);
-    addNumericStateVariablesToTimepointTree(timepoint, timepointTree);
+    addValueAttributeToTimePointTree(timePoint, timePointTree);
+    addSpatialEntitiesToTimePointTree(timePoint, timePointTree);
+    addNumericStateVariablesToTimePointTree(timePoint, timePointTree);
 
-    return timepointTree;
+    return timePointTree;
 }
 
-void SpatialTemporalDataWriter::addValueAttributeToTimepointTree(const TimePoint &timepoint,
-                                                                 pt::ptree &timepointTree) {
+void SpatialTemporalDataWriter::addValueAttributeToTimePointTree(const TimePoint &timePoint,
+                                                                 pt::ptree &timePointTree) {
     // Create the value attribute tree
     addAttributeToTree(
         LABEL_TIMEPOINT_VALUE_ATTRIBUTE,
-        StringManipulator::toString(timepoint.getValue()),
-        timepointTree
+        StringManipulator::toString(timePoint.getValue()),
+        timePointTree
     );
 }
 
-void SpatialTemporalDataWriter::addSpatialEntitiesToTimepointTree(const TimePoint &timepoint,
-                                                                  pt::ptree &timepointTree) {
-    // Add spatial entities of each type to the timepoint tree
+void SpatialTemporalDataWriter::addSpatialEntitiesToTimePointTree(const TimePoint &timePoint,
+                                                                  pt::ptree &timePointTree) {
+    // Add spatial entities of each type to the time point tree
     for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
-        addSpatialEntitiesOfSpecificTypeToTimepointTree(i, timepoint, timepointTree);
+        addSpatialEntitiesOfSpecificTypeToTimePointTree(i, timePoint, timePointTree);
     }
 }
 
-void SpatialTemporalDataWriter::addSpatialEntitiesOfSpecificTypeToTimepointTree(const std::size_t &spatialEntitiesType,
-                                                                                const TimePoint &timepoint,
-                                                                                pt::ptree &timepointTree) {
+void SpatialTemporalDataWriter::addSpatialEntitiesOfSpecificTypeToTimePointTree(const std::size_t &spatialEntitiesType,
+                                                                                const TimePoint &timePoint,
+                                                                                pt::ptree &timePointTree) {
     // Obtain references to the spatial entities begin and end iterators
-    auto beginIterator  = timepoint.getSpatialEntitiesBeginIterator(spatialEntitiesType);
-    auto endIterator    = timepoint.getSpatialEntitiesEndIterator(spatialEntitiesType);
+    auto beginIterator  = timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType);
+    auto endIterator    = timePoint.getSpatialEntitiesEndIterator(spatialEntitiesType);
 
-    // Add spatial entities of the given type to the timepoint tree
+    // Add spatial entities of the given type to the time point tree
     for (auto it = beginIterator; it != endIterator; it++) {
-        addSpatialEntityOfSpecificTypeToTimepointTree(
+        addSpatialEntityOfSpecificTypeToTimePointTree(
             subsetspecific::toString(spatialEntitiesType),      // Spatial entity type
             (*it),                                              // Shared pointer to spatial entity
-            timepointTree
+            timePointTree
         );
     }
 }
 
-void SpatialTemporalDataWriter::addSpatialEntityOfSpecificTypeToTimepointTree(const std::string &spatialEntityType,
+void SpatialTemporalDataWriter::addSpatialEntityOfSpecificTypeToTimePointTree(const std::string &spatialEntityType,
                                                                               const std::shared_ptr<SpatialEntity>
                                                                               &spatialEntity,
-                                                                              pt::ptree &timepointTree) {
+                                                                              pt::ptree &timePointTree) {
     pt::ptree spatialEntityTree;
 
     addSpatialTypeAttributeToTree(
@@ -107,17 +107,17 @@ void SpatialTemporalDataWriter::addSpatialEntityOfSpecificTypeToTimepointTree(co
     // Add the spatial measures values to the spatial entity tree
     addSpatialMeasuresValuesToTree(spatialEntity, spatialEntityTree);
 
-    // Add the spatial entity tree to the timepoint tree
-    timepointTree.add_child(LABEL_SPATIAL_ENTITY, spatialEntityTree);
+    // Add the spatial entity tree to the time point tree
+    timePointTree.add_child(LABEL_SPATIAL_ENTITY, spatialEntityTree);
 }
 
-void SpatialTemporalDataWriter::addNumericStateVariablesToTimepointTree(const TimePoint &timepoint,
-                                                                        pt::ptree &timepointTree) {
+void SpatialTemporalDataWriter::addNumericStateVariablesToTimePointTree(const TimePoint &timePoint,
+                                                                        pt::ptree &timePointTree) {
     // Get references to the begin and end iterators
-    auto beginIterator  = timepoint.getNumericStateVariablesBeginIterator();
-    auto endIterator    = timepoint.getNumericStateVariablesEndIterator();
+    auto beginIterator  = timePoint.getNumericStateVariablesBeginIterator();
+    auto endIterator    = timePoint.getNumericStateVariablesEndIterator();
 
-    // Add each numeric state variable to the timepoint tree
+    // Add each numeric state variable to the time point tree
     for (auto it = beginIterator; it != endIterator; it++) {
         pt::ptree numericStateVariableTree
             = constructPropertyTreeFromNumericStateVariable(
@@ -125,8 +125,8 @@ void SpatialTemporalDataWriter::addNumericStateVariablesToTimepointTree(const Ti
                   it->second        // Numeric state variable value
               );
 
-        // Construct and add the numeric state variable tree to the timepoint tree
-        timepointTree.add_child(LABEL_NUMERIC_STATE_VARIABLE, numericStateVariableTree);
+        // Construct and add the numeric state variable tree to the time point tree
+        timePointTree.add_child(LABEL_NUMERIC_STATE_VARIABLE, numericStateVariableTree);
     }
 }
 

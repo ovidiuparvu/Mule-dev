@@ -12,7 +12,7 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-// Analyse patterns considering timeseries data provided in the input file
+// Analyse patterns considering time series data provided in the input file
 int analysePatterns(const std::string &inputFilePath) {
     std::string logicStatement;
     AbstractSyntaxTree result;
@@ -66,7 +66,7 @@ int analysePatterns(const std::string &inputFilePath) {
 // Main program
 int main(int argc, char **argv) {
     if (argc != 2) {
-        std::cerr << "Usage: PatternAnalysisInteractiveSample <timeseries-input-file>" << std::endl;
+        std::cerr << "Usage: PatternAnalysisInteractiveSample <time-series-input-file>" << std::endl;
 
         return EXEC_ERR_CODE;
     }

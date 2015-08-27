@@ -157,20 +157,19 @@ SpatialTemporalDataReader::convertTimePointPropertyTreeToTrace(const pt::ptree &
 
 void
 SpatialTemporalDataReader::setTimePointValue(const pt::ptree &timePointTree, TimePoint &timePoint) {
-    unsigned long timePointValue;
+    double timePointValue;
 
     if (timePointHasValue(timePointTree, timePointValue)) {
         timePoint.setValue(timePointValue);
     } else {
-        timePoint.setValue(std::numeric_limits<unsigned long>::max());
+        timePoint.setValue(std::numeric_limits<double>::max());
     }
 }
 
 bool
-SpatialTemporalDataReader::timePointHasValue(const pt::ptree &propertyTree, unsigned long &value) {
-    boost::optional<unsigned long> timePointValue = propertyTree.get_optional<unsigned long>(
-                                                        LABEL_TIMEPOINT_VALUE
-                                                    );
+SpatialTemporalDataReader::timePointHasValue(const pt::ptree &propertyTree, double &value) {
+    boost::optional<double> timePointValue
+        = propertyTree.get_optional<double>(LABEL_TIMEPOINT_VALUE);
 
     if (timePointValue.is_initialized()) {
         value = *timePointValue;

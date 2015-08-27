@@ -10,7 +10,7 @@
  *
  *****************************************************************************/
 
-#include "TimepointsSpatialEntitiesAttributesInitializer.hpp"
+#include "TimePointsSpatialEntitiesAttributesInitializer.hpp"
 
 using namespace multiscale;
 using namespace multiscaletest;
@@ -23,16 +23,16 @@ namespace multiscaletest {
 
         private:
     
-            //! Add values to timepoints
-            virtual void AddValuesToTimepoints() override;
+            //! Add values to time points
+            virtual void AddValuesToTimePoints() override;
 
     };
     
     
-    void SpatialEntitiesTraceTest::AddValuesToTimepoints() {
-        TimepointsSpatialEntitiesAttributesInitializer spatialEntitiesAttributesInitializer;
+    void SpatialEntitiesTraceTest::AddValuesToTimePoints() {
+        TimePointsSpatialEntitiesAttributesInitializer spatialEntitiesAttributesInitializer;
     
-        spatialEntitiesAttributesInitializer.addSpatialEntitiesAttributesToTimepoints(timePoints);
+        spatialEntitiesAttributesInitializer.addSpatialEntitiesAttributesToTimePoints(timePoints);
     }
 
 };
@@ -416,16 +416,16 @@ TEST_F(SpatialEntitiesTraceTest, GlobalLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
-// HeterogeneousTimeseriesComponent
+// HeterogeneousTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, HeterogeneousTimeseriesComponentPeak) {
+TEST_F(SpatialEntitiesTraceTest, HeterogeneousTimeSeriesComponentPeak) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(enteringValue(peak, [0, 11] avg(clusteredness(clusters)))) > 0.590809090909]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, HeterogeneousTimeseriesComponentValley) {
+TEST_F(SpatialEntitiesTraceTest, HeterogeneousTimeSeriesComponentValley) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [median(enteringValue(valley, [0, 11] count(clusteredness(clusters)))) < 2]"));
 }
 
@@ -433,12 +433,12 @@ TEST_F(SpatialEntitiesTraceTest, HeterogeneousTimeseriesComponentValley) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousHomogeneousTimeseries
+// HomogeneousHomogeneousTimeSeries
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, HomogeneousHomogeneousTimeseries) {
+TEST_F(SpatialEntitiesTraceTest, HomogeneousHomogeneousTimeSeries) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(values(plateau, [0, 11] count(clusteredness(clusters)))) = 0]"));
 }
 
@@ -446,28 +446,28 @@ TEST_F(SpatialEntitiesTraceTest, HomogeneousHomogeneousTimeseries) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousTimeseriesComponent
+// HomogeneousTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesComponentAscent) {
+TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeSeriesComponentAscent) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(values(ascent, [0, 11] count(clusteredness(clusters)))) > 1]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesComponentDescent) {
+TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeSeriesComponentDescent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(descent, [0, 11] count(clusteredness(clusters)))) = 1]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesComponentPlateau) {
+TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeSeriesComponentPlateau) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [mode(values(plateau, [0, 11] count(clusteredness(clusters)))) > 0]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
+TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeSeriesComponentUniformAscent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(values(uniformAscent, [0, 11] count(clusteredness(clusters)))) = 11]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
+TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeSeriesComponentUniformDescent) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] avg(clusteredness(clusters)))) > 0]"));
 }
 
@@ -475,16 +475,16 @@ TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousTimeseriesMeasure
+// HomogeneousTimeSeriesMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesMeasureTimeSpan) {
+TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeSeriesMeasureTimeSpan) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(timeSpan(ascent, [0, 11] count(clusteredness(clusters)))) > 4]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesMeasureValue) {
+TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeSeriesMeasureValue) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(values(descent, [0, 11] count(clusteredness(clusters)))) = 2]"));
 }
 
@@ -1027,12 +1027,12 @@ TEST_F(SpatialEntitiesTraceTest, TemporalNumericMeasureCollection) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesComponent
+// TimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, TimeseriesComponent) {
+TEST_F(SpatialEntitiesTraceTest, TimeSeriesComponent) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniformAscent, [0, 11] count(clusteredness(clusters)))) < 5]"));
 }
 
@@ -1040,16 +1040,16 @@ TEST_F(SpatialEntitiesTraceTest, TimeseriesComponent) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesMeasure
+// TimeSeriesMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, TimeseriesMeasureEnteringTime) {
+TEST_F(SpatialEntitiesTraceTest, TimeSeriesMeasureEnteringTime) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(enteringTime(descent, [0, 11] count(clusteredness(clusters)))) < 2]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, TimeseriesMeasureEnteringValue) {
+TEST_F(SpatialEntitiesTraceTest, TimeSeriesMeasureEnteringValue) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniformDescent, [0, 11] max(clusteredness(clusters)))) > 0]"));
 }
 
@@ -1057,12 +1057,12 @@ TEST_F(SpatialEntitiesTraceTest, TimeseriesMeasureEnteringValue) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesTimeseriesComponent
+// TimeSeriesTimeSeriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, TimeseriesTimeseriesComponent) {
+TEST_F(SpatialEntitiesTraceTest, TimeSeriesTimeSeriesComponent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [median(enteringTime(peak, [0, 11] count(clusteredness(clusters)))) = 6]"));
 }
 

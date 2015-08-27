@@ -9,7 +9,7 @@
 FROM ubuntu
 
 # Set the maintainer of the created image
-MAINTAINER Ovidiu Parvu <ovidiu.parvu@gmail.com>
+MAINTAINER Ovidiu Pârvu <ovidiu.parvu@gmail.com>
 
 # Set environment variables accordingly
 ENV BOOST_FOLDER_NAME Boost1.55

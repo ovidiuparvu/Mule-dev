@@ -26,7 +26,7 @@ void printEvaluationResults(const std::vector<std::string> &logicProperties,
 
 // Evaluate logic properties considering the provided time series data
 void evaluateLogicProperties(const std::vector<std::string> &logicProperties,
-                             SpatialTemporalTrace &timeseries,
+                             SpatialTemporalTrace &timeSeries,
                              std::vector<bool> &evaluationResults) {
     AbstractSyntaxTree          abstractSyntaxTree;
     MultiscaleArchitectureGraph multiscaleArchitectureGraph;
@@ -41,14 +41,14 @@ void evaluateLogicProperties(const std::vector<std::string> &logicProperties,
         parser.parse(abstractSyntaxTree);
 
         // Evaluate the abstract syntax tree considering the provided time series data
-        evaluationResults[i] = abstractSyntaxTree.evaluate(timeseries, multiscaleArchitectureGraph);
+        evaluationResults[i] = abstractSyntaxTree.evaluate(timeSeries, multiscaleArchitectureGraph);
     }
 }
 
 // Evaluate logic properties considering the provided time series data
-int evaluateLogicProperties(const std::string &timeseriesInputFilePath,
+int evaluateLogicProperties(const std::string &timeSeriesInputFilePath,
                             const std::string &logicPropertiesInputFilePath) {
-    TemporalDataReader      timeseriesReader;
+    TemporalDataReader      timeSeriesReader;
     LogicPropertyDataReader logicPropertiesReader;
 
     // Read the logic properties from the given file
@@ -56,14 +56,14 @@ int evaluateLogicProperties(const std::string &timeseriesInputFilePath,
         = logicPropertiesReader.readLogicPropertiesFromFile(logicPropertiesInputFilePath);
 
     // Read the time series data from the given file
-    SpatialTemporalTrace timeseries
-        = timeseriesReader.readTimeSeriesFromFile(timeseriesInputFilePath);
+    SpatialTemporalTrace timeSeries
+        = timeSeriesReader.readTimeSeriesFromFile(timeSeriesInputFilePath);
 
     // Define a vector for storing the result of evaluating logic properties against time series data
     std::vector<bool> evaluationResults(logicProperties.size());
 
     // Evaluate the logic properties
-    evaluateLogicProperties(logicProperties, timeseries, evaluationResults);
+    evaluateLogicProperties(logicProperties, timeSeries, evaluationResults);
 
     // Print the evaluation results
     printEvaluationResults(logicProperties, evaluationResults);
@@ -74,7 +74,7 @@ int evaluateLogicProperties(const std::string &timeseriesInputFilePath,
 // Main program
 int main(int argc, char **argv) {
     if (argc != 3) {
-        printf("Usage: NumericCsvModelCheckerSample <timeseries-csv-input-file> <logic-properties-input-file>.\n");
+        printf("Usage: NumericCsvModelCheckerSample <time-series-csv-input-file> <logic-properties-input-file>.\n");
 
         return EXEC_ERR_CODE;
     }

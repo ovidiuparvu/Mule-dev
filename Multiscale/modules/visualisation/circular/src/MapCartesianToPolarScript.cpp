@@ -29,7 +29,7 @@
  * GNUPLOT version: 4.6
  * BOOST version: 1.52.0
  *
- * Author: Ovidiu Parvu
+ * Author: Ovidiu Pârvu
  * Date created: 21.12.2012
  * Date modified: 09.01.2013
  */

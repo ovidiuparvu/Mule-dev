@@ -45,7 +45,7 @@ do
     do
         echo "${header}" > ${tracesFolder}/traces_constant_${j}.xml;
 
-        # Add timepoints to the trace
+        # Add time points to the trace
         for k in `seq 1 1 ${nrOfTimepoints}`;
         do
             echo "${contents}" >> ${tracesFolder}/traces_constant_${j}.xml;
@@ -59,7 +59,7 @@ do
     do
         echo "${header}" > ${tracesFolder}/traces_increasing_${j}.xml;
 
-        # Add timepoints to the trace
+        # Add time points to the trace
         for k in `seq 1 1 ${nrOfTimepoints}`;
         do
             echo "${contents}" | sed "s/<area>[0-9.]\+<\/area>/<area>${k}<\/area>/g" >> ${tracesFolder}/traces_increasing_${j}.xml;
@@ -73,7 +73,7 @@ do
     do
         echo "${header}" > ${tracesFolder}/traces_decreasing_${j}.xml;
 
-        # Add timepoints to the trace
+        # Add time points to the trace
         for k in `seq 1 1 ${nrOfTimepoints}`;
         do
             echo "${contents}" | sed "s/<area>[0-9.]\+<\/area>/<area>$(( ${nrOfTimepoints} - ${k} ))<\/area>/g" >> ${tracesFolder}/traces_decreasing_${j}.xml;
@@ -87,7 +87,7 @@ do
     do
         echo "${header}" > ${tracesFolder}/traces_oscillating_${j}.xml;
 
-        # Add timepoints to the trace
+        # Add time points to the trace
         for k in `seq 1 1 ${nrOfTimepoints}`;
         do
             if [[ $(( $k % 4 )) -eq 0 ]];

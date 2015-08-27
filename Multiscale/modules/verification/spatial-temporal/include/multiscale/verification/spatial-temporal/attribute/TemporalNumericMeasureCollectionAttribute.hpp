@@ -15,8 +15,8 @@ namespace multiscale {
 
             public:
 
-                unsigned long       startTimepoint; /*!< The considered start timepoint */
-                unsigned long       endTimepoint;   /*!< The considered end timepoint */
+                double              startTimePoint; /*!< The considered start time point */
+                double              endTimePoint;   /*!< The considered end time point */
 
                 NumericMeasureType  numericMeasure; /*!< The numeric measure */
 
@@ -29,8 +29,8 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::TemporalNumericMeasureCollectionAttribute,
-    (unsigned long, startTimepoint)
-    (unsigned long, endTimepoint)
+    (double, startTimePoint)
+    (double, endTimePoint)
     (multiscale::verification::NumericMeasureType, numericMeasure)
 )
 

@@ -5,9 +5,9 @@
 #include "multiscale/verification/spatial-temporal/parsing/LogicPropertyGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
-#include <boost/spirit/include/qi.hpp>
-#include <boost/spirit/include/phoenix_operator.hpp>
 #include <boost/spirit/include/phoenix_function.hpp>
+#include <boost/spirit/include/phoenix_operator.hpp>
+#include <boost/spirit/include/qi.hpp>
 
 #include <string>
 
@@ -138,10 +138,10 @@ namespace multiscale {
                 =   (
                         qi::lit('F')
                         > '['
-                        > qi::ulong_
+                        > unsignedRealParser
                         > ','
                         > (
-                            qi::ulong_
+                            unsignedRealParser
                             > ']'
                             > logicPropertyRule
                         )
@@ -151,10 +151,10 @@ namespace multiscale {
                 =   (
                         qi::lit('G')
                         > '['
-                        > qi::ulong_
+                        > unsignedRealParser
                         > ','
                         > (
-                            qi::ulong_
+                            unsignedRealParser
                             > ']'
                             > logicPropertyRule
                         )
@@ -191,10 +191,10 @@ namespace multiscale {
                 =   (
                         qi::lit('U')
                         > '['
-                        > qi::ulong_
+                        > unsignedRealParser
                         > ','
                         > (
-                            qi::ulong_
+                            unsignedRealParser
                             > ']'
                             > logicPropertyRule
                         )

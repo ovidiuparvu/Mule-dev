@@ -61,27 +61,27 @@ namespace multiscale {
                 qi::rule<Iterator, ChangeTemporalNumericCollectionAttribute(), qi::space_type>
                     changeTemporalNumericCollectionRule;            /*!< The rule for parsing a change temporal numeric
                                                                          collections attribute */
-                qi::rule<Iterator, TimeseriesTimeseriesComponentAttribute(), qi::space_type>
-                    timeseriesTimeseriesComponentRule;              /*!< The rule for parsing a timeseries timeseries
+                qi::rule<Iterator, TimeSeriesTimeSeriesComponentAttribute(), qi::space_type>
+                    timeSeriesTimeSeriesComponentRule;              /*!< The rule for parsing a time series time series
                                                                          component attribute */
-                qi::rule<Iterator, HomogeneousHomogeneousTimeseriesAttribute(), qi::space_type>
-                    homogeneousHomogeneousTimeseriesRule;           /*!< The rule for parsing a homogeneous homogeneous
-                                                                         timeseries measure attribute */
+                qi::rule<Iterator, HomogeneousHomogeneousTimeSeriesAttribute(), qi::space_type>
+                    homogeneousHomogeneousTimeSeriesRule;           /*!< The rule for parsing a homogeneous homogeneous
+                                                                         time series measure attribute */
 
-                qi::rule<Iterator, TimeseriesMeasureAttribute(), qi::space_type>
-                    timeseriesMeasureRule;                          /*!< The rule for parsing a timeseries measure */
-                qi::rule<Iterator, HomogeneousTimeseriesMeasureAttribute(), qi::space_type>
-                    homogeneousTimeseriesMeasureRule;               /*!< The rule for parsing a homogeneous timeseries
+                qi::rule<Iterator, TimeSeriesMeasureAttribute(), qi::space_type>
+                    timeSeriesMeasureRule;                          /*!< The rule for parsing a time series measure */
+                qi::rule<Iterator, HomogeneousTimeSeriesMeasureAttribute(), qi::space_type>
+                    homogeneousTimeSeriesMeasureRule;               /*!< The rule for parsing a homogeneous time series
                                                                          measure */
 
-                qi::rule<Iterator, TimeseriesComponentAttribute(), qi::space_type>
-                    timeseriesComponentRule;                        /*!< The rule for parsing a timeseries
+                qi::rule<Iterator, TimeSeriesComponentAttribute(), qi::space_type>
+                    timeSeriesComponentRule;                        /*!< The rule for parsing a time series
                                                                          component */
-                qi::rule<Iterator, HeterogeneousTimeseriesComponentAttribute(), qi::space_type>
-                    heterogeneousTimeseriesComponentRule;           /*!< The rule for parsing a heterogeneous
-                                                                         timeseries component */
-                qi::rule<Iterator, HomogeneousTimeseriesComponentAttribute(), qi::space_type>
-                    homogeneousTimeseriesComponentRule;             /*!< The rule for parsing a homogeneous timeseries
+                qi::rule<Iterator, HeterogeneousTimeSeriesComponentAttribute(), qi::space_type>
+                    heterogeneousTimeSeriesComponentRule;           /*!< The rule for parsing a heterogeneous
+                                                                         time series component */
+                qi::rule<Iterator, HomogeneousTimeSeriesComponentAttribute(), qi::space_type>
+                    homogeneousTimeSeriesComponentRule;             /*!< The rule for parsing a homogeneous time series
                                                                          component */
 
                 qi::rule<Iterator, NumericMeasureAttribute(), qi::space_type>
@@ -95,18 +95,23 @@ namespace multiscale {
 
                 // Enumeration parsers
 
-                TimeseriesMeasureTypeParser
-                    timeseriesMeasureTypeParser;                    /*!< The timeseries measure type parser */
-                HomogeneousTimeseriesMeasureTypeParser
-                    homogeneousTimeseriesMeasureTypeParser;         /*!< The homogeneous timeseries measure type
+                TimeSeriesMeasureTypeParser
+                    timeSeriesMeasureTypeParser;                    /*!< The time series measure type parser */
+                HomogeneousTimeSeriesMeasureTypeParser
+                    homogeneousTimeSeriesMeasureTypeParser;         /*!< The homogeneous time series measure type
                                                                          parser */
 
-                HeterogeneousTimeseriesComponentTypeParser
-                    heterogeneousTimeseriesComponentTypeParser;     /*!< The heterogeneous timeseries component type
+                HeterogeneousTimeSeriesComponentTypeParser
+                    heterogeneousTimeSeriesComponentTypeParser;     /*!< The heterogeneous time series component type
                                                                          parser */
-                HomogeneousTimeseriesComponentTypeParser
-                    homogeneousTimeseriesComponentTypeParser;       /*!< The homogeneous timeseries component type
+                HomogeneousTimeSeriesComponentTypeParser
+                    homogeneousTimeSeriesComponentTypeParser;       /*!< The homogeneous time series component type
                                                                          parser */
+
+                // Define an unsigned real number parser
+
+                qi::real_parser<double, qi::ureal_policies<double>>
+                    unsignedRealParser;                             /*!< The unsigned real number parser */
 
             public:
 
@@ -123,11 +128,11 @@ namespace multiscale {
                 //! Initialize the temporal numeric collection rule
                 void initializeTemporalNumericCollectionRule();
 
-                //! Initialize the timeseries measure rule
-                void initializeTimeseriesMeasureRule();
+                //! Initialize the time series measure rule
+                void initializeTimeSeriesMeasureRule();
 
-                //! Initialize the timeseries component rule
-                void initializeTimeseriesComponentRule();
+                //! Initialize the time series component rule
+                void initializeTimeSeriesComponentRule();
 
                 //! Initialize the numeric measure rule
                 void initializeNumericMeasureRule();
@@ -141,11 +146,11 @@ namespace multiscale {
                 //! Assign names to the temporal numeric collection rule
                 void assignNamesToTemporalNumericCollectionRules();
 
-                //! Assign names to the timeseries measure rule
-                void assignNamesToTimeseriesMeasureRules();
+                //! Assign names to the time series measure rule
+                void assignNamesToTimeSeriesMeasureRules();
 
-                //! Assign names to the timeseries component rule
-                void assignNamesToTimeseriesComponentRules();
+                //! Assign names to the time series component rule
+                void assignNamesToTimeSeriesComponentRules();
 
                 //! Assign names to the numeric measure rules
                 void assignNamesToNumericMeasureRules();
@@ -156,11 +161,11 @@ namespace multiscale {
                 //! Initialize debugging for the temporal numeric collection rule
                 void initializeTemporalNumericCollectionRuleDebugging();
 
-                //! Initialize debugging for the timeseries measure rule
-                void initializeTimeseriesMeasureRuleDebugging();
+                //! Initialize debugging for the time series measure rule
+                void initializeTimeSeriesMeasureRuleDebugging();
 
-                //! Initialize debugging for the timeseries component rule
-                void initializeTimeseriesComponentRuleDebugging();
+                //! Initialize debugging for the time series component rule
+                void initializeTimeSeriesComponentRuleDebugging();
 
                 //! Initialize debugging for the numeric measure rule
                 void initializeNumericMeasureRuleDebugging();

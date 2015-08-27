@@ -8,16 +8,11 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-ApproximateBayesianModelChecker::ApproximateBayesianModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
-                                                                 const MultiscaleArchitectureGraph
-                                                                     &multiscaleArchitectureGraph,
-                                                                 double alpha,
-                                                                 double beta,
-                                                                 double varianceThreshold)
-                                                                 : ModelChecker(
-                                                                       abstractSyntaxTree,
-                                                                       multiscaleArchitectureGraph
-                                                                   ) {
+ApproximateBayesianModelChecker::ApproximateBayesianModelChecker(
+    const AbstractSyntaxTree &abstractSyntaxTree,
+    const MultiscaleArchitectureGraph &multiscaleArchitectureGraph,
+    double alpha, double beta, double varianceThreshold
+) : ModelChecker(abstractSyntaxTree, multiscaleArchitectureGraph) {
     validateInput(alpha, beta, varianceThreshold);
 
     this->alpha                 = alpha;

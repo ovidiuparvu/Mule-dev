@@ -21,8 +21,8 @@ using namespace multiscaletest;
 
 namespace multiscaletest {
 
-    //! Class for initializing spatial entities' attributes in a given collection of timepoints
-    class TimepointsSpatialEntitiesAttributesInitializer {
+    //! Class for initializing spatial entities' attributes in a given collection of time points
+    class TimePointsSpatialEntitiesAttributesInitializer {
 
         protected:
 
@@ -73,19 +73,19 @@ namespace multiscaletest {
 
         public:
 
-            TimepointsSpatialEntitiesAttributesInitializer();
-            ~TimepointsSpatialEntitiesAttributesInitializer();
+            TimePointsSpatialEntitiesAttributesInitializer();
+            ~TimePointsSpatialEntitiesAttributesInitializer();
 
-            //! Add spatial entities attributes to the provided collection of timepoints
+            //! Add spatial entities attributes to the provided collection of time points
             /*!
-             * \param timePoints    The collection of timepoints to which numeric state variables values are added
+             * \param timePoints    The collection of time points to which numeric state variables values are added
              */
-            void addSpatialEntitiesAttributesToTimepoints(std::vector<mv::TimePoint> &timePoints);
+            void addSpatialEntitiesAttributesToTimePoints(std::vector<mv::TimePoint> &timePoints);
 
     };
 
 
-    TimepointsSpatialEntitiesAttributesInitializer::TimepointsSpatialEntitiesAttributesInitializer() 
+    TimePointsSpatialEntitiesAttributesInitializer::TimePointsSpatialEntitiesAttributesInitializer()
         : clustersClusterednessMinValue(0),
           clustersClusterednessMaxValue(1),
           clustersDensityMinValue(0),
@@ -131,17 +131,17 @@ namespace multiscaletest {
           regionsCentroidYMinValue(0),
           regionsCentroidYMaxValue(1E+6) {}
 
-    TimepointsSpatialEntitiesAttributesInitializer::~TimepointsSpatialEntitiesAttributesInitializer() {}
+    TimePointsSpatialEntitiesAttributesInitializer::~TimePointsSpatialEntitiesAttributesInitializer() {}
 
-    void TimepointsSpatialEntitiesAttributesInitializer::addSpatialEntitiesAttributesToTimepoints(
+    void TimePointsSpatialEntitiesAttributesInitializer::addSpatialEntitiesAttributesToTimePoints(
         std::vector<mv::TimePoint> &timePoints
     ) {
         std::size_t nrOfTimePoints = timePoints.size();
         
-        // Add spatial entities to each timepoint
+        // Add spatial entities to each time point
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
 
-            // Add clusters with scale and subsystem "Organ.Kidney" to the timepoint
+            // Add clusters with scale and subsystem "Organ.Kidney" to the time point
             for (std::size_t j = ((((i + 1) % 4) == 0) ? (i - 1) : 0); j <= i; j++) {
                 std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
 
@@ -161,7 +161,7 @@ namespace multiscaletest {
                 timePoints[i].addSpatialEntityAndType(cluster, SubsetSpecificType::Clusters);
             }
             
-            // Add regions with default scale and subsystem to the timepoint
+            // Add regions with default scale and subsystem to the time point
             for (std::size_t k = 0; k <= i; k++) {
                 std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 
@@ -181,7 +181,7 @@ namespace multiscaletest {
                 timePoints[i].addSpatialEntityAndType(region, SubsetSpecificType::Regions);
             }
             
-            // Add regions with scale and subsystem "Organ.Heart" to the timepoint
+            // Add regions with scale and subsystem "Organ.Heart" to the time point
             for (std::size_t k = 0; k <= i; k++) {
                 std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 

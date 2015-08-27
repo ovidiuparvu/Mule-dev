@@ -47,62 +47,62 @@ namespace multiscale {
                 constructPropertyTreeFromTrace(const SpatialTemporalTrace &trace,
                                                pt::ptree &propertyTree);
 
-                //! Add timepoints from the trace to the provided experiment property tree
+                //! Add time points from the trace to the provided experiment property tree
                 /*!
                  * \param trace                     The provided spatial temporal trace
                  * \param experimentPropertyTree    The experiment property tree which corresponds to the
                  *                                  experiment root xml element
                  */
                 static void
-                addTimepointsToExperimentPropertyTree(const SpatialTemporalTrace &trace,
+                addTimePointsToExperimentPropertyTree(const SpatialTemporalTrace &trace,
                                                       pt::ptree &experimentPropertyTree);
 
-                //! Construct the property tree corresponding to the provided timepoint
+                //! Construct the property tree corresponding to the provided time point
                 /*!
-                 * \param timepoint     The provided timepoint
+                 * \param timePoint     The provided time point
                  */
                 static pt::ptree
-                constructPropertyTreeFromTimepoint(const TimePoint &timepoint);
+                constructPropertyTreeFromTimePoint(const TimePoint &timePoint);
 
-                //! Add the timepoint value as an attribute to the timepoint tree
+                //! Add the time point value as an attribute to the time point tree
                 /*!
-                 * \param timepoint     The considered timepoint
-                 * \param timepointTree The timepoint tree to which the value attribute is added
+                 * \param timePoint     The considered time point
+                 * \param timePointTree The time point tree to which the value attribute is added
                  */
                 static void
-                addValueAttributeToTimepointTree(const TimePoint& timepoint,
-                                                 pt::ptree &timepointTree);
+                addValueAttributeToTimePointTree(const TimePoint& timePoint,
+                                                 pt::ptree &timePointTree);
 
-                //! Add the spatial entities from the timepoint to the timepoint tree
+                //! Add the spatial entities from the time point to the time point tree
                 /*!
-                 * \param timepoint     The considered timepoint
-                 * \param timepointTree The timepoint tree to which the spatial entities are added
+                 * \param timePoint     The considered time point
+                 * \param timePointTree The time point tree to which the spatial entities are added
                  */
                 static void
-                addSpatialEntitiesToTimepointTree(const TimePoint &timepoint,
-                                                  pt::ptree &timepointTree);
+                addSpatialEntitiesToTimePointTree(const TimePoint &timePoint,
+                                                  pt::ptree &timePointTree);
 
-                //! Add the spatial entities of the specified type to the timepoint tree
+                //! Add the spatial entities of the specified type to the time point tree
                 /*!
                  * \param spatialEntitiesType   The considered spatial entities type
-                 * \param timepoint             The considered timepoint
-                 * \param timepointTree         The timepoint tree to which the spatial entities are added
+                 * \param timePoint             The considered time point
+                 * \param timePointTree         The time point tree to which the spatial entities are added
                  */
                 static void
-                addSpatialEntitiesOfSpecificTypeToTimepointTree(const std::size_t &spatialEntitiesType,
-                                                                const TimePoint &timepoint,
-                                                                pt::ptree &timepointTree);
+                addSpatialEntitiesOfSpecificTypeToTimePointTree(const std::size_t &spatialEntitiesType,
+                                                                const TimePoint &timePoint,
+                                                                pt::ptree &timePointTree);
 
-                //! Add a spatial entity of the specified type to the timepoint tree
+                //! Add a spatial entity of the specified type to the time point tree
                 /*!
                  * \param spatialEntityType The type of the spatial entity
                  * \param spatialEntity     The considered spatial entity
-                 * \param timepointTree     The timepoint tree to which the spatial entity is added
+                 * \param timePointTree     The time point tree to which the spatial entity is added
                  */
                 static void
-                addSpatialEntityOfSpecificTypeToTimepointTree(const std::string &spatialEntityType,
+                addSpatialEntityOfSpecificTypeToTimePointTree(const std::string &spatialEntityType,
                                                               const std::shared_ptr<SpatialEntity> &spatialEntity,
-                                                              pt::ptree &timepointTree);
+                                                              pt::ptree &timePointTree);
 
                 //! Add the spatial measures values for the given spatial entity to the provided spatial entity tree
                 /*!
@@ -113,14 +113,14 @@ namespace multiscale {
                 addSpatialMeasuresValuesToTree(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                                pt::ptree &spatialEntityTree);
 
-                //! Add the numeric state variables from the timepoint to the timepoint tree
+                //! Add the numeric state variables from the time point to the time point tree
                 /*!
-                 * \param timepoint     The considered timepoint
-                 * \param timepointTree The timepoint tree to which the value attribute is added
+                 * \param timePoint     The considered time point
+                 * \param timePointTree The time point tree to which the value attribute is added
                  */
                 static void
-                addNumericStateVariablesToTimepointTree(const TimePoint &timepoint,
-                                                        pt::ptree &timepointTree);
+                addNumericStateVariablesToTimePointTree(const TimePoint &timePoint,
+                                                        pt::ptree &timePointTree);
 
                 //! Construct the property tree corresponding to the provided numeric state variable
                 /*!

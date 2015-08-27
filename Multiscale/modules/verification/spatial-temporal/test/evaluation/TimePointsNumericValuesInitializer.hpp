@@ -6,8 +6,8 @@
 
 namespace multiscaletest {
 
-    //! Class for initializing numeric values in a given collection of timepoints
-    class TimepointsNumericValuesInitializer {
+    //! Class for initializing numeric values in a given collection of time points
+    class TimePointsNumericValuesInitializer {
 
         protected:
 
@@ -33,45 +33,45 @@ namespace multiscaletest {
 
         public:
 
-            TimepointsNumericValuesInitializer();
-            ~TimepointsNumericValuesInitializer();
+            TimePointsNumericValuesInitializer();
+            ~TimePointsNumericValuesInitializer();
 
-            //! Add numeric state variables values to the provided collection of timepoints
+            //! Add numeric state variables values to the provided collection of time points
             /*!
-             * \param timePoints    The collection of timepoints to which numeric state variables values are added
+             * \param timePoints    The collection of time points to which numeric state variables values are added
              */
-            void addValuesOfNumericStateVariablesToTimepoints(std::vector<mv::TimePoint> &timePoints);
+            void addValuesOfNumericStateVariablesToTimePoints(std::vector<mv::TimePoint> &timePoints);
 
         private:
 
-            //! Add the values of the numeric state variables A to timepoints
+            //! Add the values of the numeric state variables A to time points
             /*!
-             * \param timePoints    The collection of timepoints to which numeric state variables values are added
+             * \param timePoints    The collection of time points to which numeric state variables values are added
              */
-            void addValuesOfNumericStateVariablesAToTimepoints(std::vector<mv::TimePoint> &timePoints);
+            void addValuesOfNumericStateVariablesAToTimePoints(std::vector<mv::TimePoint> &timePoints);
 
-            //! Add the values of the numeric state variables B to timepoints
+            //! Add the values of the numeric state variables B to time points
             /*!
-             * \param timePoints    The collection of timepoints to which numeric state variables values are added
+             * \param timePoints    The collection of time points to which numeric state variables values are added
              */
-            void addValuesOfNumericStateVariablesBToTimepoints(std::vector<mv::TimePoint> &timePoints);
+            void addValuesOfNumericStateVariablesBToTimePoints(std::vector<mv::TimePoint> &timePoints);
 
-            //! Add the values of the numeric state variables C to timepoints
+            //! Add the values of the numeric state variables C to time points
             /*!
-             * \param timePoints    The collection of timepoints to which numeric state variables values are added
+             * \param timePoints    The collection of time points to which numeric state variables values are added
              */
-            void addValuesOfNumericStateVariablesCToTimepoints(std::vector<mv::TimePoint> &timePoints);
+            void addValuesOfNumericStateVariablesCToTimePoints(std::vector<mv::TimePoint> &timePoints);
 
-            //! Add the values of the numeric state variables D to timepoints
+            //! Add the values of the numeric state variables D to time points
             /*!
-             * \param timePoints    The collection of timepoints to which numeric state variables values are added
+             * \param timePoints    The collection of time points to which numeric state variables values are added
              */
-            void addValuesOfNumericStateVariablesDToTimepoints(std::vector<mv::TimePoint> &timePoints);
+            void addValuesOfNumericStateVariablesDToTimePoints(std::vector<mv::TimePoint> &timePoints);
 
     };
 
 
-    TimepointsNumericValuesInitializer::TimepointsNumericValuesInitializer()
+    TimePointsNumericValuesInitializer::TimePointsNumericValuesInitializer()
         : aNumericStateVariableId("A", ScaleAndSubsystem::DEFAULT_VALUE),
           bNumericStateVariableId("B", ScaleAndSubsystem::DEFAULT_VALUE),
           aWithTypeNumericStateVariableId("A", NonEmptyTraceEvaluationTest::SCALE_AND_SUBSYSTEM_ORGAN_KIDNEY),
@@ -85,23 +85,23 @@ namespace multiscaletest {
           cMaxValue(12),
           dConstantValue(5) {}
 
-    TimepointsNumericValuesInitializer::~TimepointsNumericValuesInitializer() {}
+    TimePointsNumericValuesInitializer::~TimePointsNumericValuesInitializer() {}
 
-    void TimepointsNumericValuesInitializer::addValuesOfNumericStateVariablesToTimepoints(
+    void TimePointsNumericValuesInitializer::addValuesOfNumericStateVariablesToTimePoints(
         std::vector<mv::TimePoint> &timePoints
     ) {
-        addValuesOfNumericStateVariablesAToTimepoints(timePoints);
-        addValuesOfNumericStateVariablesBToTimepoints(timePoints);
-        addValuesOfNumericStateVariablesCToTimepoints(timePoints);
-        addValuesOfNumericStateVariablesDToTimepoints(timePoints);
+        addValuesOfNumericStateVariablesAToTimePoints(timePoints);
+        addValuesOfNumericStateVariablesBToTimePoints(timePoints);
+        addValuesOfNumericStateVariablesCToTimePoints(timePoints);
+        addValuesOfNumericStateVariablesDToTimePoints(timePoints);
     }
 
-    void TimepointsNumericValuesInitializer::addValuesOfNumericStateVariablesAToTimepoints(
+    void TimePointsNumericValuesInitializer::addValuesOfNumericStateVariablesAToTimePoints(
         std::vector<mv::TimePoint> &timePoints
     ) {
         std::size_t nrOfTimePoints = timePoints.size();
 
-        // Add a numeric state variable "A" (without type) to the collection of timepoints
+        // Add a numeric state variable "A" (without type) to the collection of time points
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             if (i % 4 == 0) {
                 timePoints[i].addNumericStateVariable(
@@ -116,7 +116,7 @@ namespace multiscaletest {
             }
         }
 
-        // Add a numeric state variable "A" (with type) to the collection of timepoints
+        // Add a numeric state variable "A" (with type) to the collection of time points
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             if (i % 4 == 0) {
                 timePoints[i].addNumericStateVariable(
@@ -132,28 +132,28 @@ namespace multiscaletest {
         }
     }
 
-    void TimepointsNumericValuesInitializer::addValuesOfNumericStateVariablesBToTimepoints(
+    void TimePointsNumericValuesInitializer::addValuesOfNumericStateVariablesBToTimePoints(
         std::vector<mv::TimePoint> &timePoints
     ) {
         std::size_t nrOfTimePoints = timePoints.size();
 
-        // Add a numeric state variable "B" (without type) to the collection of timepoints
+        // Add a numeric state variable "B" (without type) to the collection of time points
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             timePoints[i].addNumericStateVariable(bNumericStateVariableId, bConstantValue);
         }
 
-        // Add a numeric state variable "B" (with type) to the collection of timepoints
+        // Add a numeric state variable "B" (with type) to the collection of time points
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             timePoints[i].addNumericStateVariable(bWithTypeNumericStateVariableId, bConstantValue);
         }
     }
 
-    void TimepointsNumericValuesInitializer::addValuesOfNumericStateVariablesCToTimepoints(
+    void TimePointsNumericValuesInitializer::addValuesOfNumericStateVariablesCToTimePoints(
         std::vector<mv::TimePoint> &timePoints
     ) {
         std::size_t nrOfTimePoints = timePoints.size();
 
-        // Add a numeric state variable "C" to the collection of timepoints
+        // Add a numeric state variable "C" to the collection of time points
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             if (i % 4 == 0) {
                 timePoints[i].addNumericStateVariable(
@@ -173,12 +173,12 @@ namespace multiscaletest {
         }
     }
 
-    void TimepointsNumericValuesInitializer::addValuesOfNumericStateVariablesDToTimepoints(
+    void TimePointsNumericValuesInitializer::addValuesOfNumericStateVariablesDToTimePoints(
         std::vector<mv::TimePoint> &timePoints
     ) {
         std::size_t nrOfTimePoints = timePoints.size();
 
-        // Add a numeric state variable "D" (with type) to the collection of timepoints
+        // Add a numeric state variable "D" (with type) to the collection of time points
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             timePoints[i].addNumericStateVariable(dNumericStateVariableId, dConstantValue);
         }

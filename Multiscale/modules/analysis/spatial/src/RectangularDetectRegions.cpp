@@ -7,7 +7,7 @@
  * FORMAT OF OUTPUT FILE:
  * If in debug mode, then also display results. Else only print them in a .csv/xml file.
  *
- * Author: Ovidiu Parvu
+ * Author: Ovidiu Pârvu
  * Date created: 18.03.2013
  * Date modified: 27.03.2013
  */

@@ -8,7 +8,7 @@
  * FORMAT OF OUTPUT FILE:
  * Check format of input files for MapCartesianToPolarScript program
  *
- * Author: Ovidiu Parvu
+ * Author: Ovidiu Pârvu
  * Date created: 13.01.2013
  * Date modified: 13.01.2013
  */

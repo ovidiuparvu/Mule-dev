@@ -1,7 +1,7 @@
 /**
  * This program is used for multidimensional multiscale model checking
  *
- * Author: Ovidiu Parvu
+ * Author: Ovidiu Pârvu
  * Date created: 16.03.2014
  */
 

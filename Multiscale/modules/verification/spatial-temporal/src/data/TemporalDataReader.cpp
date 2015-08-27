@@ -140,7 +140,7 @@ void TemporalDataReader::createTimePointFromTokens(const std::vector<std::string
 
 void TemporalDataReader::setTimePointValue(const std::vector<std::string> &lineTokens,
                                            TimePoint &timePoint) {
-    unsigned long timePointValue = StringManipulator::convert<unsigned long>(lineTokens[0]);
+    double timePointValue = StringManipulator::convert<double>(lineTokens[0]);
 
     timePoint.setValue(timePointValue);
 }
