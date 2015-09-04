@@ -2369,12 +2369,20 @@ TEST(TemporalNumericMeasureCollection, IncorrectInputMissingBeginTimePoint) {
     EXPECT_THROW(parseInputString("P >= 0.3 [min([, 11] count(clusteredness(clusters))) = 1]"), InvalidInputException);
 }
 
+TEST(TemporalNumericMeasureCollection, IncorrectInputInvalidBeginTimePoint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([-11, 100] count(clusteredness(clusters))) = 1]"), InvalidInputException);
+}
+
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingComma) {
     EXPECT_THROW(parseInputString("P >= 0.3 [min([0 11] count(clusteredness(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingEndTimePoint) {
     EXPECT_THROW(parseInputString("P >= 0.3 [min([0, ] count(clusteredness(clusters))) = 1]"), InvalidInputException);
+}
+
+TEST(TemporalNumericMeasureCollection, IncorrectInputInvalidEndTimePoint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([11, 100a] count(clusteredness(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingEndTimePointAndComma) {
