@@ -61,7 +61,7 @@ rm -rf Multiscale/script/video/
 projectModifiedDateLineNumber=$(cat Multiscale/CMakeLists.txt | grep -n "# Project modified date" | head -n1 | grep -o "^[0-9]\+") && TMP_FILE=$(mktemp) && sed -e "$((${projectModifiedDateLineNumber} - 1)),$((${projectModifiedDateLineNumber} + 8))d" Multiscale/CMakeLists.txt > ${TMP_FILE} && mv ${TMP_FILE} Multiscale/CMakeLists.txt;
 
 # Remove the pattern analysis targets from the corresponding CMakeLists.txt file
-patternAnalysisLineNumber=$(cat Multiscale/modules/verification/spatial-temporal/CMakeLists.txt | grep -n "# PatternAnalysisInteractiveSample" | head -n1 | grep -o "^[0-9]\+") && TMP_FILE=$(mktemp) && sed -e "${patternAnalysisLineNumber},$((${patternAnalysisLineNumber} + 32))d" Multiscale/modules/verification/spatial-temporal/CMakeLists.txt > ${TMP_FILE} && mv ${TMP_FILE} Multiscale/modules/verification/spatial-temporal/CMakeLists.txt;
+patternAnalysisLineNumber=$(cat Multiscale/modules/verification/spatial-temporal/CMakeLists.txt | grep -n "# PatternAnalysisInteractiveSample" | head -n1 | grep -o "^[0-9]\+") && TMP_FILE=$(mktemp) && sed -e "${patternAnalysisLineNumber},$((${patternAnalysisLineNumber} + 28))d" Multiscale/modules/verification/spatial-temporal/CMakeLists.txt > ${TMP_FILE} && mv ${TMP_FILE} Multiscale/modules/verification/spatial-temporal/CMakeLists.txt;
 
 # Create the "Debug" and "Release" build folders
 mkdir -p Multiscale/build/Debug;
