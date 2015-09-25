@@ -1,4 +1,4 @@
-<a name="top"></a> The multiscale multidimensional meta-model checking project 
+<a name="top"></a> The multiscale spatio-temporal meta model checking project 
 ==========
 
 ## Contents
@@ -10,7 +10,7 @@
 
 ## <a name="description"></a> 1. Description 
 
-Mule is a multiscale multidimensional spatio-temporal approximate probabilistic meta-model checker employed for the validation of computational models relative to a given formal specification.
+Mule is a multiscale spatio-temporal approximate probabilistic meta model checker employed for the validation of computational models relative to a given formal PBLMSTL specification.
 
 **Author:**      Ovidiu Pârvu   
 **Created on:**  04.02.2013                                          
@@ -22,7 +22,7 @@ Click [here](#top) to go back to the top of the page.
 
 ### 2.1. Prerequisites
 
-For building and installing the model checker ensure the following software are installed on your computer:
+For building and installing the model checker Mule please ensure the following libraries and software are installed on your computer:
 * Boost library (ver. 1.55.0);
 * CMake (ver. 2.8);
 * g++ (ver. 4.7);
@@ -50,10 +50,10 @@ cmake -G %GENERATOR% -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUSTOM_BUILD_TYPE=Packag
 
 where:
 
-* -G specifies the custom build system generator (e.g. replace %GENERATOR% with "Unix Makefiles" for Linux, respectively "MinGW Makefiles" for Windows)
-* -DCMAKE_BUILD_TYPE specifies the build type which can be either "Release" or "Debug"
-* -DCMAKE_CUSTOM_BUILD_TYPE specifies if files for generating an installer should be created (files are created if parameter value is equal to "Package")
-* -DCMAKE_CUSTOM_MODEL_CHECKER specifies if a custom instance of the model checker should be generated considering the spatial entity types and properties described in the %PROJECT_SOURCE_DIRECTORY%/config/verification/spatial-temporal/generator/spatial_description.xml configuration file
+* -G specifies the custom build system generator (e.g. replace %GENERATOR% with "Unix Makefiles" for Linux, respectively "MinGW Makefiles" for Windows);
+* -DCMAKE_BUILD_TYPE specifies the build type (which can be either "Release" or "Debug");
+* -DCMAKE_CUSTOM_BUILD_TYPE specifies the custom build type (when CMAKE_CUSTOM_BUILD_TYPE=Package the files required for generating an installer are created);
+* -DCMAKE_CUSTOM_MODEL_CHECKER specifies if a custom instance of the model checker should be generated considering the spatial entity types and properties described in the %PROJECT_SOURCE_DIRECTORY%/config/verification/spatial-temporal/generator/spatial_description.xml configuration file.
 
 3) Build the project using:
 
@@ -77,7 +77,7 @@ Click [here](#top) to go back to the top of the page.
 
 For running all scripts and/or executable modules ensure the following software are installed on your computer:
 * avconv (ver. 0.8.16-4:0.8.16-0ubuntu0.12.04.1) - employed only by visualisation scripts;
-* Bash and standard Unix utility tools (employed utility tools are specific to each Bash script);
+* Bash and standard Unix utility tools (e.g. awk, grep, sed);
 * GNU parallel (ver. 20140722) - employed only by scripts to run tasks in parallel;
 * gnuplot (ver. 4.6) - employed only by visualisation scripts.
 
@@ -94,13 +94,13 @@ The executable modules can be run using:
 where %EXECUTABLE_MODULE% is one of the following:
 
 * **CircularDetectRegions**: Spatio-temporal module for automatically detecting regions and computing their geometric properties (e.g. area) considering a circular geometry;
-* **MapCartesianToPolarScript**: Module for converting timepoint input files (i.e. input files corresponding to a single simulation timepoint) to gnuplot scripts considering a circular geometry;
-* **MapCartesianToScript**: Module for converting timepoint input files to gnuplot scripts considering a rectangular geometry;
-* **Mule**: The multiscale multidimensional meta-model checker;
-* **PolarMapCsvToInputFiles**: Module for converting csv files considering a circular geometry to timepoint input files which are employed either for (regions) spatio-temporal analysis or for generating gnuplot scripts;
+* **MapCartesianToPolarScript**: Module for converting time point input files (i.e. input files corresponding to a single simulation time point) to gnuplot scripts, considering a circular geometry;
+* **MapCartesianToScript**: Module for converting time point input files to gnuplot scripts, considering a rectangular geometry;
+* **Mule**: The multiscale spatio-temporal approximate probabilistic meta model checker;
+* **PolarMapCsvToInputFiles**: Module for converting csv files considering a circular geometry to time point input files which are employed either for (regions) spatio-temporal analysis or for generating gnuplot scripts;
 * **RectangularDetectRegions**: Spatio-temporal module for automatically detecting regions and computing their geometric properties (e.g. area) considering a rectangular geometry;
-* **RectangularMapCsvToInputFiles**: Module for converting csv files considering a rectangular geometry to timepoint input files which are employed either for (regions) spatio-temporal analysis or for generating gnuplot scripts;
-* **RectangularMapEntityCsvToInputFiles**: Module for converting csv files describing positions of spatial entities in 2D space to timepoint input files which are employed either for (clusters) spatio-temporal analysis or for generating gnuplot scripts;
+* **RectangularMapCsvToInputFiles**: Module for converting csv files considering a rectangular geometry to time point input files which are employed either for (regions) spatio-temporal analysis or for generating gnuplot scripts;
+* **RectangularMapEntityCsvToInputFiles**: Module for converting csv files describing positions of spatial entities in 2D space to time point input files which are employed either for (clusters) spatio-temporal analysis or for generating gnuplot scripts;
 * **SimulationDetectClusters**: Spatio-temporal module for automatically detecting clusters and computing their geometric properties (e.g. area).
 
 __Remark:__ Assuming the executable modules were set up using the installer and their installation path was added to the PATH environment variable, they can be executed from the command line without prefixing them with the "%PROJECT_SOURCE_DIRECTORY%/bin" path.

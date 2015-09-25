@@ -42,7 +42,7 @@ endif(NOT "$ENV{OPENCV}" STREQUAL "")
 if(UNIX)
 	# Set the CMake OS dependant find library prefixes and suffixes
 	set(CMAKE_FIND_LIBRARY_PREFIXES "lib")
-	set(CMAKE_FIND_LIBRARY_SUFFIXES ".so", ".a")
+	set(CMAKE_FIND_LIBRARY_SUFFIXES ".so" ".a")
 	
 	# Update OpenCV possible library paths variable
     set(OPENCV_POSSIBLE_LIBRARY_PATHS
@@ -74,7 +74,7 @@ if(UNIX)
 elseif(WIN32)
 	# Set the CMake OS dependant find library prefixes and suffixes
 	set(CMAKE_FIND_LIBRARY_PREFIXES "" "lib")
-	set(CMAKE_FIND_LIBRARY_SUFFIXES ".dll", ".lib")
+	set(CMAKE_FIND_LIBRARY_SUFFIXES ".dll" ".lib")
 	
 	# Update OpenCV possible library paths variable
     set(OPENCV_POSSIBLE_LIBRARY_PATHS
