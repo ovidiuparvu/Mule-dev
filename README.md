@@ -14,7 +14,7 @@ Mule is a multiscale spatio-temporal approximate probabilistic meta model checke
 
 **Author:**      Ovidiu Pârvu   
 **Created on:**  04.02.2013                                          
-**Modified on:** 25.09.2015
+**Modified on:** 08.10.2015
 
 Click [here](#top) to go back to the top of the page.
 

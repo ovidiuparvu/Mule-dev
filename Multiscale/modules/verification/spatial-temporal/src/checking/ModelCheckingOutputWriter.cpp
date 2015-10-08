@@ -290,7 +290,7 @@ const std::string ModelCheckingOutputWriter::TAG_TRUE       = "[ TRUE     ]";
 const std::string ModelCheckingOutputWriter::TAG_FALSE      = "[ FALSE    ]";
 const std::string ModelCheckingOutputWriter::TAG_SEPARATOR  = "[==========]";
 
-const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mule 1.1.6 (Multiscale multidimensional spatio-temporal model checker)";
+const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mule 1.1.7 (Multiscale multidimensional spatio-temporal model checker)";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_COPYRIGHT                    = "Copyright Ovidiu Pârvu 2015";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_TYPE          = "Model checker type: ";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_PARAMETERS    = "Parameters:         ";
