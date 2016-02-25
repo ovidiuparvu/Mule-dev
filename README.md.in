@@ -1,4 +1,4 @@
-<a name="top"></a> The multiscale spatio-temporal meta model checking project 
+<a name="top"></a>The multiscale spatio-temporal meta model checking project 
 ==========
 
 ## Contents
